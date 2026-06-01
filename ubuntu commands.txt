@@ -1,0 +1,18 @@
+for entering directory:
+cd /mnt/e/Desktop/voicebot
+
+  Вот ответ
+
+
+
+-H "Content-Type: application/json" \
+
+     -d '{"callId":"test1","text":"Здравствуйте! Делаете баннеры три на шесть метров?"}'
+
+{"reply":"Здравствуйте! Да, делаем. Уточните, пожалуйста, ваш запрос, и я передам информацию менеджеру для уточнения деталей."}omarh@QUANTUMCOMPUTER:/mnt/e/Desktop/voicurl -s -X POST http://localhost:3000/reply \reply \
+
+     -H "Content-Type: application/json" \
+
+     -d '{"callId":"test1","text":"А за сколько дней сделаете?"}'
+
+{"reply":"Срок изготовления зависит от загруженности нашей типографии. Уточните, пожалуйста, ваш запрос, и я передам информацию менеджеру для уточнения сроков."}o
