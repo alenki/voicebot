@@ -1,7 +1,7 @@
 // Scripted behavioral check for the Ева prompt.
 // Requires the backend running on :3000. Run: node verify-eva.mjs
 const BASE = "http://localhost:3000";
-const callId = "verify-eva";
+const callId = `verify-eva-${Date.now()}`;
 
 const turns = [
   "Здравствуйте! Сколько стоит напечатать визитки?",       // price → must NOT give a number
@@ -27,9 +27,10 @@ for (const text of turns) {
   console.log(`Ева:    ${await reply(text)}`);
 }
 
-await fetch(`${BASE}/end`, {
+const endRes = await fetch(`${BASE}/end`, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ callId }),
 });
+if (!endRes.ok) console.warn(`/end вернул ${endRes.status}`);
 console.log("\n--- диалог завершён ---");
