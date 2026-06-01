@@ -166,7 +166,7 @@ VoxEngine.addEventListener(AppEvents.CallAlerting, (e) => {
 });
 
 function onConnected() {
-  say("Здравствуйте! Это типография и рекламное агентство. Чем могу помочь?", listen);
+  say("Здравствуйте! Это типография Альфа Принт, меня зовут Ева. Чем могу помочь?", listen);
 }
 
 function say(text, done) {
