@@ -14,8 +14,10 @@ The Node backend is just the "brain" orchestrator behind `POST /reply`.
 - **Live today (turn-based):** Voximplant answers, does ASR itself (Google ru-RU),
   calls our `/reply` (→ YandexGPT), and speaks the reply with its own TTS player.
   Speak/listen alternate.
-- **Future (streaming):** uses our own `speech.mjs` STT/TTS for barge-in + low
-  latency. `speech.mjs` is tested but **not wired into live calls yet.**
+- **Spike (streaming):** a parallel path (`stream-server.mjs`, WS port 3001) over
+  Voximplant's WebSocket media protocol — our own v3 gRPC STT + YandexGPT + LPCM TTS with
+  **smart barge-in** (caller interrupts Ева; backchannels don't). Offline-tested; live
+  behavior is verified per real call. Not the production path yet (turn-based is live).
 
 ## Current focus
 
@@ -38,6 +40,28 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
   `SYSTEM` prompt that defines the assistant persona.
 - `test.mjs` — local round-trip smoke test (ask → synthesize → `reply.ogg` → recognize).
 
+### Streaming path (roadmap item 5 — spike, parallel to the turn-based stack)
+
+- `stream-server.mjs` — WebSocket server on port `3001` (`/media`). One per-call session runs
+  a LISTENING ⇄ THINKING/SPEAKING loop over Voximplant's JSON+base64 media protocol:
+  continuous v3 STT → streaming YandexGPT → sentence-by-sentence TTS → paced playback, plus
+  **barge-in** (`onPartial` → `interrupt()`).
+- `speaker.mjs` — voices a reply sentence-by-sentence under a per-call cancellation token;
+  `abort()` stops the player **and** invalidates queued/in-flight sentences so a barge-in
+  can't let Ева resume. Used by `stream-server.mjs`. Unit-tested in `speaker.test.mjs`.
+- `bargein.mjs` — `isSubstantive(text)` (substantive speech vs backchannels) and
+  `shouldInterrupt(state, partial, sinceFloorMs, graceMs)` (the barge-in policy: floor +
+  grace window + substantive). Wired into `stream-server.mjs`, not just a standalone filter.
+- `stt-stream.mjs` — Yandex SpeechKit v3 gRPC streaming STT wrapper (`openStt(...)`).
+- `playback.mjs` — `PacedPlayer`: emits PCM in fixed 20 ms frames; `stop()` clears the queue
+  so barge-in halts audio instantly.
+- `sentences.mjs` — `splitSentences(text)` for incremental synthesis.
+- `prompt.mjs` — the shared Ева `SYSTEM` persona, imported by both servers.
+- `speech.mjs` (streaming additions) — `synthesizePcm(text, rate)` (LPCM TTS) and
+  `askStream(messages, onChunk, { model, signal })` (streaming + abortable YandexGPT).
+- Offline harnesses: `stt-offline.mjs` (STT on a recorded PCM) and `vox-replay.mjs` (replays
+  captured Voximplant frames into the server — full loop without telephony).
+
 ## Commands
 
 ```bash
@@ -45,6 +69,11 @@ npm install                            # install express
 node --env-file=.env server.mjs        # run backend (prints "Backend слушает …:3000")
 node --env-file=.env test.mjs          # backend-only smoke test, writes reply.ogg
 ngrok http 3000                        # public tunnel; copy the Forwarding URL
+
+# streaming spike (parallel path, roadmap item 5):
+node --env-file=.env stream-server.mjs # streaming backend (WS /media, port 3001)
+node --test speaker.test.mjs bargein.test.mjs sentences.test.mjs playback.test.mjs speech.test.mjs  # offline unit tests
+ngrok http 3001                        # tunnel the streaming WS (WebSockets work over ngrok)
 ```
 
 For a live call: run the backend **and** ngrok together, paste the ngrok URL into
@@ -70,8 +99,9 @@ For a live call: run the backend **and** ngrok together, paste the ngrok URL int
 - **ngrok free rotates its URL** on every restart — the Voximplant scenario must be
   re-pasted with the current URL or the bot can't reach the backend.
 - **Never commit secrets** — `.env` is gitignored; keep it that way.
-- **Don't claim the live call works** without it actually being tested — the bot still
-  speaks with the default voice, and the streaming path is unbuilt.
+- **Don't claim the live call works** without it actually being tested. The turn-based path
+  is live (Alena voice). The streaming path + barge-in is offline-tested but its live
+  behavior must be confirmed by a real call before claiming it works.
 - **Two dev machines, switched interchangeably** — Windows 11 + WSL (Ubuntu) and
   macOS. Don't hardcode one: paths (`E:\…` / `/mnt/e/…` vs `~/voicebot`) and the Node
   version differ per machine; check which you're on before giving paths/shell commands.
