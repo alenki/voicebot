@@ -1,33 +1,10 @@
 import express from "express";
    import { ask } from "./speech.mjs";
    import { SYSTEM } from "./prompt.mjs";
+   import { cleanReply } from "./reply-clean.mjs";
 
    const app = express();
    app.use(express.json());
-
-   // YandexGPT-lite зеркалит приветствие клиента в первом ответе, даже когда промпт
-   // это запрещает. Сценарий Voximplant уже здоровается в начале звонка, поэтому
-   // срезаем ведущее приветствие из ответа — гарантированно, без надежды на модель.
-   const GREETING_RE =
-     /^[\s—–-]*(здравствуй(?:те)?|добр(?:ый|ое|ого)\s+(?:день|утро|вечер|дня|времени\s+суток)|приветствую(?:\s+вас)?|привет)[\s,!.…—–-]*/iu;
-
-   function stripGreeting(text) {
-     const stripped = text.replace(GREETING_RE, "");
-     if (stripped === text || stripped.length === 0) return text; // приветствия не было — не трогаем
-     return stripped.charAt(0).toUpperCase() + stripped.slice(1);  // восстанавливаем заглавную букву
-   }
-
-   // YandexGPT-lite иногда «доигрывает» диалог за обе стороны и дописывает фальшивые
-   // реплики вида «Пользователь: …» / «Ассистент: …». Реплики по телефону короткие и
-   // без переносов строк, поэтому метка роли с новой строки — это почти всегда галлюцинация.
-   // Обрезаем ответ на первой такой метке: клиент должен услышать только первую реплику Евы.
-   const ROLEPLAY_RE = /\n+\s*(?:пользовател[ья]|ассистент|клиент|оператор|ева|бот|собеседник|менеджер|user|assistant)\s*:/iu;
-
-   function stripRolePlay(text) {
-     const m = text.match(ROLEPLAY_RE);
-     if (!m || m.index === 0) return text; // метки нет (или она в самом начале) — не трогаем
-     return text.slice(0, m.index).trimEnd();
-   }
 
    const dialogs = new Map(); // callId -> история диалога
 
@@ -43,7 +20,7 @@ import express from "express";
        }
        history.push({ role: "user", text });
 
-       const reply = stripGreeting(stripRolePlay(await ask(history)));
+       const reply = cleanReply(await ask(history));
        history.push({ role: "assistant", text: reply });
 
        console.log(`[${callId}] клиент: ${text}`);
