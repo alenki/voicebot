@@ -16,6 +16,22 @@ export async function synthesize(text, voice = "alena") {
   return Buffer.from(await res.arrayBuffer());
 }
 
+// Синтез в сыром PCM (LINEAR16) для стриминга обратно в Voximplant без перекодирования.
+// Yandex TTS v1 поддерживает format=lpcm с sampleRateHertz 8000/16000/48000.
+export async function synthesizePcm(text, sampleRateHertz = 8000, voice = "alena") {
+  const body = new URLSearchParams({
+    text, lang: "ru-RU", voice, emotion: "good", speed: "1.0",
+    format: "lpcm", sampleRateHertz: String(sampleRateHertz), folderId: FOLDER_ID,
+  });
+  const res = await fetch("https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize", {
+    method: "POST",
+    headers: { Authorization: `Api-Key ${API_KEY}` },
+    body,
+  });
+  if (!res.ok) throw new Error(`TTS ${res.status}: ${await res.text()}`);
+  return Buffer.from(await res.arrayBuffer());
+}
+
 // Распознавание: аудио (Buffer) -> текст
 export async function recognize(audio) {
   const url = "https://stt.api.cloud.yandex.net/speech/v1/stt:recognize"
