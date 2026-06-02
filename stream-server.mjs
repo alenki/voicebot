@@ -17,6 +17,8 @@ import { splitSentences } from "./sentences.mjs";
 import { PacedPlayer } from "./playback.mjs";
 import { openStt } from "./stt-stream.mjs";
 import { stripLeadingGreeting, stripMarkup } from "./reply-clean.mjs";
+import { Speaker } from "./speaker.mjs";
+import { shouldInterrupt } from "./bargein.mjs";
 
 const PORT = 3001;
 const GREETING = "Здравствуйте! Это типография Альфа Принт, меня зовут Ева. Чем могу помочь?";
@@ -29,6 +31,12 @@ wss.on("connection", (ws) => {
   let sampleRate = 8000;
   let player = null;
   let stt = null;
+  let speaker = null;        // озвучка ответа под токеном хода (для barge-in)
+  let currentTurn = null;    // AbortController текущего хода LLM (если идёт THINKING)
+  let floorAt = 0;           // когда «слово» перешло к Еве — отсчёт окна прогрева barge-in
+  let turnStartedAt = 0;     // старт текущего хода — для лога «время до 1го кадра»
+  let lastFinalText = "";    // последняя финализированная реплика абонента (эхо-защита)
+  const GRACE_MS = 500;      // окно прогрева: первые 500мс речи Евы не перебиваем (хвост абонента)
   let state = "SPEAKING"; // пока играет приветствие
   let lastVoiceAt = 0;    // время последнего партиала — для замера паузы EOU
   let inCount = 0;        // принято медиа-кадров от Voximplant (по 20мс каждый)
@@ -84,19 +92,19 @@ wss.on("connection", (ws) => {
     }
   }
 
-  // ⏱ возвращает время (мс) до ПЕРВОГО синтезированного кадра — это и есть «время до звука».
-  async function speak(text, onFirstFrame) {
+  // Озвучить готовый текст (приветствие / извинение) — не из LLM. Через speaker, чтобы
+  // barge-in мог прервать его так же, как обычный ответ. Сам возвращает сессию в LISTENING,
+  // если речь не была перебита (если перебита — interrupt() уже выставил LISTENING).
+  async function speak(text) {
+    turnStartedAt = Date.now();
+    floorAt = Date.now();
+    currentTurn = null;               // не из LLM — отменять нечего
     state = "SPEAKING";
-    let first = true;
-    for (const sentence of splitSentences(text)) {
-      try {
-        const pcm = await synthPcm(sentence);
-        if (first) { first = false; onFirstFrame?.(); }
-        player.enqueue(pcm);
-      } catch (e) {
-        console.error(`[${callId}] TTS пропуск предложения:`, e.message);
-      }
-    }
+    const token = speaker.begin();
+    for (const sentence of splitSentences(text)) speaker.say(token, sentence);
+    await speaker.drain();
+    if (token !== speaker.gen) return; // нас перебили — состояние уже LISTENING
+    beginListening();
   }
 
   // Возврат в режим прослушивания и сброс состояния реплики для следующего хода.
@@ -129,13 +137,27 @@ wss.on("connection", (ws) => {
   function finalizeTurn(text, src) {
     if (turnHandled || state !== "LISTENING" || !text) return;
     turnHandled = true;
+    lastFinalText = text;            // эхо-защита barge-in: не перебиваемся на хвосте этой же реплики
     clearTimeout(endpointTimer);
     endpointTimer = null;
     handleTurn(text, src);
   }
 
+  // Барж-ин: абонент заговорил, пока слово у Евы. Гасим речь и LLM, возвращаемся слушать,
+  // и заводим перебившую реплику как следующий ход (тот же STT-поток уже её распознаёт).
+  function interrupt(partial) {
+    console.log(`[${callId}] ${ts()} BARGE-IN на: "${partial}" — Ева замолкает`);
+    try { currentTurn?.abort(); } catch {}  // прерываем LLM-стрим, если идёт THINKING
+    speaker.abort();                         // стоп-плеер + инвалидация токена — без возобновления
+    beginListening();                        // LISTENING + сброс хода (turnHandled/pendingPartial)
+    pendingPartial = partial;                // перебившая реплика — затравка следующего хода
+    armEndpoint();
+  }
+
   async function handleTurn(text, src) {
     const t0 = Date.now();
+    turnStartedAt = t0;
+    floorAt = t0;                       // «слово» перешло к Еве (THINKING) — отсюда грейс barge-in
     const eouGap = lastVoiceAt ? t0 - lastVoiceAt : 0; // пауза от последней речи до финализации
     const audioRecvSec = (inCount * 0.02).toFixed(1);               // сколько секунд аудио ПРИНЯТО от Voximplant
     const wallSec = inFirstAt ? ((t0 - inFirstAt) / 1000).toFixed(1) : "0"; // сколько прошло по часам
@@ -143,14 +165,16 @@ wss.on("connection", (ws) => {
     history.push({ role: "user", text });
     state = "THINKING";
 
-    // Потоковый LLM: достаём ЗАВЕРШЁННЫЕ предложения по мере генерации и синтезируем их
-    // по очереди (TTS-цепочка), не дожидаясь полного ответа — Ева заговорит раньше.
+    const ac = new AbortController();
+    currentTurn = ac;
+    const token = speaker.begin();
+
+    // Потоковый LLM: достаём ЗАВЕРШЁННЫЕ предложения по мере генерации и озвучиваем их
+    // по очереди через speaker, не дожидаясь полного ответа — Ева заговорит раньше.
     let consumed = 0;          // индекс в raw, уже превращённый в речь
     let raw = "";              // последний накопленный текст модели
-    let firstAt = null;
     let isFirst = true;
     const spoken = [];         // озвученные (очищенные) предложения — для истории/лога
-    let ttsChain = Promise.resolve();
 
     const enqueueSpeak = (sentence) => {
       let cleaned = stripMarkup(sentence).trim();
@@ -162,16 +186,7 @@ wss.on("connection", (ws) => {
       if (!cleaned) return;
       state = "SPEAKING";
       spoken.push(cleaned);
-      ttsChain = ttsChain.then(async () => {
-        try {
-          const pcm = await synthPcm(cleaned);
-          if (!firstAt) {
-            firstAt = Date.now();
-            console.log(`[${callId}] ${ts()} ⏱ от финализации до 1го кадра ${firstAt - t0}ms (стрим)`);
-          }
-          player.enqueue(pcm);
-        } catch (e) { console.error(`[${callId}] TTS пропуск:`, e.message); }
-      });
+      speaker.say(token, cleaned);
     };
 
     const drainComplete = () => {
@@ -181,17 +196,25 @@ wss.on("connection", (ws) => {
     };
 
     try {
-      raw = await askStream(history, (cum) => { raw = cum; drainComplete(); });
+      raw = await askStream(history, (cum) => { raw = cum; drainComplete(); }, { signal: ac.signal });
     } catch (e) {
+      if (ac.signal.aborted) {           // barge-in во время THINKING — тихо выходим
+        if (spoken.length) history.push({ role: "assistant", text: spoken.join(" ") });
+        return;                          // LISTENING уже выставлен interrupt()
+      }
       console.error(`[${callId}] LLM ошибка:`, e.message);
       await speak("Извините, техническая ошибка, повторите пожалуйста.");
-      beginListening();
-      return;
+      return;                            // speak() сам вернул сессию в LISTENING
     }
     drainComplete();                            // добиваем завершённые предложения
     const tail = raw.slice(consumed).trim();
     if (tail) enqueueSpeak(tail);               // последний «хвост» без терминатора
-    await ttsChain;                             // ждём, пока всё синтезировано и поставлено в очередь
+    await speaker.drain();                      // ждём, пока всё синтезировано и поставлено в очередь
+
+    if (ac.signal.aborted) {             // barge-in во время SPEAKING
+      if (spoken.length) history.push({ role: "assistant", text: spoken.join(" ") });
+      return;                            // LISTENING уже выставлен interrupt()
+    }
 
     const reply = spoken.join(" ");
     history.push({ role: "assistant", text: reply });
@@ -205,11 +228,26 @@ wss.on("connection", (ws) => {
       sampleRate, frameMs: 20,
       onIdle: () => console.log(`[${callId}] ${ts()} плеер: очередь пуста (аудио доиграло)`),
     });
+    // Синтез для speaker: сохраняем существующий повтор synthPcm и лог пропуска предложения.
+    const synthForSpeaker = async (text) => {
+      try { return await synthPcm(text); }
+      catch (e) { console.error(`[${callId}] TTS пропуск:`, e.message); throw e; }
+    };
+    speaker = new Speaker(player, synthForSpeaker, {
+      onFirstFrame: () => console.log(`[${callId}] ${ts()} ⏱ до 1го кадра ${Date.now() - turnStartedAt}ms`),
+    });
     stt = openStt({
       sampleRate,
       onPartial: (t) => {
         lastVoiceAt = Date.now();
-        if (state !== "LISTENING") return;
+        // Пока слово у Евы (приветствие/размышление/речь) — проверяем партиал на barge-in.
+        if (state === "SPEAKING" || state === "THINKING") {
+          if (t !== lastFinalText && shouldInterrupt(state, t, Date.now() - floorAt, GRACE_MS)) {
+            interrupt(t);
+          }
+          return;
+        }
+        // LISTENING: обычный эндпойнтинг.
         console.log(`[${callId}] ${ts()} …${t}`);
         // Партиал изменился — речь продолжается, сбрасываем таймер конца фразы.
         // Стабилен ENDPOINT_MS мс — считаем фразу законченной (по стенным часам, не по audio-time).
@@ -227,8 +265,8 @@ wss.on("connection", (ws) => {
       lastInCount = inCount;
       console.log(`[${callId}] ${ts()} вход: ${fps} кадров/с (норма 50; всего ${inCount})`);
     }, 1000);
-    // Приветствие сразу после старта сессии.
-    speak(GREETING).then(() => { beginListening(); });
+    // Приветствие сразу после старта сессии (speak() сам вернёт сессию в LISTENING).
+    speak(GREETING);
   }
 
   ws.on("message", (data, isBinary) => {
