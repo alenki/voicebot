@@ -9,9 +9,12 @@ Market: **Russia**. Target voice: a pleasant female voice (Yandex SpeechKit `ale
 > All three building blocks (voice / hearing / brain) are verified individually and
 > connected through telephony. A full call goes: greet → listen → answer → listen…
 >
-> **Immediate next step:** switch the live-call voice to **Alena**
-> (item 2 of the [Roadmap](#roadmap)). The call currently speaks with Voximplant's
-> free default voice, not yet Alena.
+> **Live call verified** with the Yandex **Alena** voice
+> (`VoiceList.Yandex.Neural.ru_RU_alena`) — Ева greets, answers, and speaks in Alena
+> on a real inbound call (Roadmap items 1–2 done).
+>
+> **Next:** make the bot genuinely useful — knowledge base / FAQ and structured order
+> intake (items 3–4 of the [Roadmap](#roadmap)).
 
 ---
 
@@ -152,7 +155,7 @@ require(Modules.Player);
 
 const BACKEND = "https://<CURRENT-NGROK>.ngrok-free.dev/reply";
 const BACKEND_END = "https://<CURRENT-NGROK>.ngrok-free.dev/end";
-const VOICE = VoiceList.Default.ru_RU_Female; // TODO: switch to a Yandex Alena voice
+const VOICE = VoiceList.Yandex.Neural.ru_RU_alena; // Yandex Alena (neural, premium voice)
 const HEADERS = ["Content-Type: application/json", "ngrok-skip-browser-warning: 1"];
 
 let call;
@@ -229,10 +232,9 @@ async function onDisconnected() {
 
 In priority order:
 
-1. **Test the live call** — final step of the current stage.
-2. **Switch the voice to Alena.** Replace `VoiceList.Default.ru_RU_Female` in the
-   Voximplant scenario with the corresponding Yandex voice (from the
-   `VoiceList.Yandex.` autocomplete), or play audio synthesized by our `synthesize()`.
+1. ~~**Test the live call**~~ — ✅ done; verified on a real inbound call.
+2. ~~**Switch the voice to Alena.**~~ — ✅ done; the `inbound` scenario uses
+   `VoiceList.Yandex.Neural.ru_RU_alena` (the canonical copy below matches).
 3. **Make the bot genuinely useful:**
    - Tune the system prompt (less "I'll pass it to a manager", more concrete answers
      that move toward placing an order).

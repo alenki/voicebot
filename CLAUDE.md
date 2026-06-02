@@ -19,11 +19,13 @@ The Node backend is just the "brain" orchestrator behind `POST /reply`.
 
 ## Current focus
 
-**Switch the live-call voice to Alena** (Roadmap item 2). The Voximplant scenario
-uses `VoiceList.Default.ru_RU_Female` (free Voximplant voice); replace it with the
-Yandex Alena voice from `VoiceList.Yandex.`, or play audio from our `synthesize()`.
-The scenario itself is **not in this repo** — it lives in the Voximplant cloud; its
-canonical source is in `README.md` ("The Voximplant inbound scenario").
+**Make the bot genuinely useful** (Roadmap items 3–4). The live call is verified and
+already uses the Yandex Alena voice (`VoiceList.Yandex.Neural.ru_RU_alena`) — items 1–2
+are done. Next: a knowledge base / FAQ and **structured order intake** (extract the
+order from the dialog, read it back, write it to a CRM / Google Sheets).
+
+The Voximplant scenario itself is **not in this repo** — it lives in the Voximplant
+cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario").
 
 ## Code map
 
