@@ -49,7 +49,7 @@ export async function recognize(audio) {
 // Потоковый мозг: вызывает onChunk(cumulativeText) по мере генерации (YandexGPT отдаёт
 // НАКОПЛЕННЫЙ текст в каждом фрейме, не дельты). Возвращает полный текст. Это позволяет
 // синтезировать первое предложение, пока модель ещё дописывает остальное (меньше задержки).
-export async function askStream(messages, onChunk, model = "yandexgpt-lite") {
+export async function askStream(messages, onChunk, { model = "yandexgpt-lite", signal } = {}) {
   const res = await fetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
     method: "POST",
     headers: {
@@ -62,6 +62,7 @@ export async function askStream(messages, onChunk, model = "yandexgpt-lite") {
       completionOptions: { stream: true, temperature: 0.3, maxTokens: 160 },
       messages,
     }),
+    signal,
   });
   if (!res.ok) throw new Error(`LLM ${res.status}: ${await res.text()}`);
   const reader = res.body.getReader();
