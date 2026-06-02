@@ -2,10 +2,11 @@
 // Пейсинг обязателен: чтобы barge-in мог МГНОВЕННО оборвать речь, нельзя вываливать
 // весь буфер в сокет сразу — иначе уже отправленное доиграется. stop() очищает очередь.
 export class PacedPlayer {
-  constructor(sendFrame, { sampleRate = 8000, frameMs = 20 } = {}) {
+  constructor(sendFrame, { sampleRate = 8000, frameMs = 20, onIdle = null } = {}) {
     this.sendFrame = sendFrame;
     this.frameBytes = Math.round(sampleRate * (frameMs / 1000)) * 2; // 16-бит моно
     this.frameMs = frameMs;
+    this.onIdle = onIdle; // вызывается, когда очередь опустела (диагностика пейсинга)
     this.queue = Buffer.alloc(0);
     this.timer = null;
   }
@@ -21,7 +22,7 @@ export class PacedPlayer {
       this.sendFrame(frame);
     }, this.frameMs);
   }
-  _idle() { clearInterval(this.timer); this.timer = null; }
+  _idle() { clearInterval(this.timer); this.timer = null; this.onIdle?.(); }
   stop() { this.queue = Buffer.alloc(0); this._idle(); }
   get speaking() { return this.timer !== null; }
 }

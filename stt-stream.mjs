@@ -43,6 +43,12 @@ export function openStt({ sampleRate = 8000, onPartial = () => {}, onFinal = () 
         language_restriction: { restriction_type: "WHITELIST", language_code: ["ru-RU"] },
         audio_processing_type: "REAL_TIME",
       },
+      // final приходит только по событию EOU (см. stt.proto). Без классификатора EOU
+      // консервативен — финал ждёт долгую паузу, и Ева «не отвечает». HIGH + короткая
+      // пауза-подсказка ускоряют завершение реплики ⇒ быстрый ход диалога.
+      eou_classifier: {
+        default_classifier: { type: "HIGH", max_pause_between_words_hint_ms: 700 },
+      },
     },
   });
 

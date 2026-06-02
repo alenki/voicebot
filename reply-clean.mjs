@@ -14,6 +14,15 @@ export function stripGreeting(text) {
   return stripped.charAt(0).toUpperCase() + stripped.slice(1);  // восстанавливаем заглавную букву
 }
 
+// Как stripGreeting, но БЕЗ страховки «вернуть оригинал, если осталось пусто». Нужно для
+// потокового пути, где приветствие приходит ОТДЕЛЬНЫМ предложением ("Здравствуйте!"): его
+// нужно превратить в "" и выбросить, а не оставить (иначе Ева здоровается в каждом ответе).
+export function stripLeadingGreeting(text) {
+  const stripped = text.replace(GREETING_RE, "");
+  if (!stripped) return "";
+  return stripped.charAt(0).toUpperCase() + stripped.slice(1);
+}
+
 // YandexGPT-lite иногда «доигрывает» диалог за обе стороны и дописывает фальшивые
 // реплики вида «Пользователь: …» / «Ассистент: …». Реплики по телефону короткие и
 // без переносов строк, поэтому метка роли с новой строки — это почти всегда галлюцинация.
@@ -26,7 +35,21 @@ export function stripRolePlay(text) {
   return text.slice(0, m.index).trimEnd();
 }
 
-// Полная очистка ответа: сначала срезаем фальшивый ролеплей, затем ведущее приветствие.
+// YandexGPT-lite иногда отвечает markdown-разметкой (маркированные списки «* …», жирный
+// «**…**»), хотя промпт это запрещает. TTS прочитал бы звёздочки вслух, поэтому срезаем
+// разметку и превращаем список в связную фразу: убираем эмфазу, маркеры в начале строк,
+// схлопываем переносы строк в пробелы.
+export function stripMarkup(text) {
+  return text
+    .replace(/\*\*|__|`/g, "")               // жирный/код
+    .replace(/^[ \t]*(?:[*\-•]|\d+[.)])[ \t]+/gmu, "") // маркеры/нумерация в начале строк
+    .replace(/[*_]/g, "")                    // одиночные звёздочки/подчёркивания эмфазы
+    .replace(/\s*\n+\s*/g, " ")              // переносы строк → пробел (телефонная речь без строк)
+    .replace(/[ \t]{2,}/g, " ")
+    .trim();
+}
+
+// Полная очистка ответа: разметка → фальшивый ролеплей → ведущее приветствие.
 export function cleanReply(text) {
-  return stripGreeting(stripRolePlay(text));
+  return stripGreeting(stripRolePlay(stripMarkup(text)));
 }
