@@ -81,6 +81,37 @@ test("fresh turn after abort still works", async () => {
   assert.deepStrictEqual(player.enqueued.slice(before).map((b) => b.toString()), ["Новое"]);
 });
 
+test("spokeThisTurn: true when a sentence was voiced", async () => {
+  const player = fakePlayer();
+  const sp = new Speaker(player, async (t) => Buffer.from(t));
+  const g = sp.begin();
+  sp.say(g, "Привет");
+  await sp.drain();
+  assert.strictEqual(sp.spokeThisTurn, true);
+});
+
+test("spokeThisTurn: false when synth fails for every sentence (nothing voiced)", async () => {
+  const player = fakePlayer();
+  const sp = new Speaker(player, async () => { throw new Error("TTS down"); });
+  const g = sp.begin();
+  sp.say(g, "Раз");
+  sp.say(g, "Два");
+  await sp.drain();
+  assert.strictEqual(sp.spokeThisTurn, false);
+  assert.strictEqual(player.enqueued.length, 0);
+});
+
+test("spokeThisTurn: reset to false by begin() for the next turn", async () => {
+  const player = fakePlayer();
+  const sp = new Speaker(player, async (t) => Buffer.from(t));
+  const g1 = sp.begin();
+  sp.say(g1, "Первое");
+  await sp.drain();
+  assert.strictEqual(sp.spokeThisTurn, true);
+  sp.begin();
+  assert.strictEqual(sp.spokeThisTurn, false);
+});
+
 test("onFirstFrame fires once per turn, on the first enqueued sentence", async () => {
   const player = fakePlayer();
   let firsts = 0;

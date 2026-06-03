@@ -1,7 +1,7 @@
 import express from "express";
    import { ask } from "./speech.mjs";
    import { SYSTEM } from "./prompt.mjs";
-   import { cleanReply } from "./reply-clean.mjs";
+   import { cleanReply, enforcePhoneGate } from "./reply-clean.mjs";
 
    const app = express();
    app.use(express.json());
@@ -20,7 +20,9 @@ import express from "express";
        }
        history.push({ role: "user", text });
 
-       const reply = cleanReply(await ask(history));
+       // history уже содержит текущую реплику клиента (но ещё не ответ Евы) — гейт по ней
+       // решает, не пытается ли Ева закрыть заявку без телефона.
+       const reply = enforcePhoneGate(history, cleanReply(await ask(history)));
        history.push({ role: "assistant", text: reply });
 
        console.log(`[${callId}] клиент: ${text}`);

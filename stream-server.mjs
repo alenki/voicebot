@@ -19,6 +19,8 @@ import { openStt } from "./stt-stream.mjs";
 import { stripLeadingGreeting, stripMarkup } from "./reply-clean.mjs";
 import { Speaker } from "./speaker.mjs";
 import { shouldInterrupt, isSubstantive } from "./bargein.mjs";
+import { extractOrder } from "./order-extract.mjs";
+import { deliverLead } from "./lead.mjs";
 
 const PORT = 3001;
 const GREETING = "Здравствуйте! Это типография Альфа Принт, меня зовут Ева. Чем могу помочь?";
@@ -250,6 +252,15 @@ wss.on("connection", (ws) => {
       return;                            // LISTENING уже выставлен interrupt()
     }
 
+    // Ход не перебили, но Ева не произнесла ни звука: синтез упал на всех предложениях (TTS
+    // недоступен) или модель вернула пустой/только-приветственный ответ. Не оставляем «мёртвую
+    // тишину» перед владельцем — коротко извиняемся и снова слушаем.
+    if (!speaker.spokeThisTurn) {
+      console.warn(`[${callId}] ${ts()} ход без озвучки — извиняемся вместо тишины`);
+      await speak("Извините, не расслышала, повторите пожалуйста.");
+      return;                            // speak() сам вернул сессию в LISTENING
+    }
+
     const reply = spoken.join(" ");
     history.push({ role: "assistant", text: reply });
     console.log(`[${callId}] Ева (${reply.length}c): ${reply}`);
@@ -323,6 +334,29 @@ wss.on("connection", (ws) => {
     speak(GREETING);
   }
 
+  // По завершении звонка: извлекаем заявку из всего диалога и шлём менеджеру в Telegram.
+  // Один раз за звонок (stop и close могут прийти оба). Любой сбой — только лог, не бросаем,
+  // чтобы доставка заявки не мешала корректному закрытию сессии.
+  let leadSent = false;
+  async function finalizeLead() {
+    if (leadSent) return;
+    leadSent = true;
+    try {
+      const { hasOrder, fields } = await extractOrder(history);
+      if (!hasOrder) {
+        console.log(`[${callId}] заявка не оформлена — в Telegram не шлём`);
+        return;
+      }
+      const time = new Date().toLocaleString("ru-RU");
+      const r = await deliverLead(fields, { callId, time });
+      console.log(
+        `[${callId}] заявка → Telegram: ${r.ok ? "отправлена" : `не отправлена (${r.error || (r.skipped ? "нет настроек" : "?")})`}`,
+      );
+    } catch (e) {
+      console.error(`[${callId}] ошибка доставки заявки:`, e.message || e);
+    }
+  }
+
   ws.on("message", (data, isBinary) => {
     if (isBinary) return; // Voximplant шлёт media как ТЕКСТ; бинарных кадров не ждём
     let msg;
@@ -341,6 +375,7 @@ wss.on("connection", (ws) => {
       if (stt) stt.write(Buffer.from(msg.media.payload, "base64")); // аудио абонента → STT
     } else if (msg.event === "stop") {
       console.log(`[${callId}] stop`);
+      finalizeLead();
     }
   });
 
@@ -350,6 +385,7 @@ wss.on("connection", (ws) => {
     clearTimeout(endpointTimer);
     if (stt) stt.close();
     if (player) player.stop();
+    finalizeLead();
   });
   ws.on("error", (e) => console.error(`[${callId}] ws ошибка:`, e.message));
 });

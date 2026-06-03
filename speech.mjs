@@ -59,7 +59,7 @@ export async function askStream(messages, onChunk, { model = "yandexgpt-lite", s
     },
     body: JSON.stringify({
       modelUri: `gpt://${FOLDER_ID}/${model}/latest`,
-      completionOptions: { stream: true, temperature: 0.3, maxTokens: 160 },
+      completionOptions: { stream: true, temperature: 0.3, maxTokens: 300 },
       messages,
     }),
     signal,
@@ -87,8 +87,17 @@ export async function askStream(messages, onChunk, { model = "yandexgpt-lite", s
   return full;
 }
 
-// Мозг: история сообщений -> ответ модели (текст)
-export async function ask(messages, model = "yandexgpt-lite") {
+// Достаём текст ответа модели из тела ответа YandexGPT, не падая на нештатных формах
+// (content-filter, тело ошибки, пустые alternatives). Чистая функция — юнит-тестируется.
+export function pickReplyText(data) {
+  const t = data?.result?.alternatives?.[0]?.message?.text;
+  return typeof t === "string" ? t : "";
+}
+
+// Мозг: история сообщений -> ответ модели (текст).
+// Опции: model (по умолчанию yandexgpt-lite), maxTokens (300 — чтобы длинное подтверждение
+// заявки не обрывалось), temperature.
+export async function ask(messages, { model = "yandexgpt-lite", maxTokens = 300, temperature = 0.3 } = {}) {
   const res = await fetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
     method: "POST",
     headers: {
@@ -98,11 +107,10 @@ export async function ask(messages, model = "yandexgpt-lite") {
     },
     body: JSON.stringify({
       modelUri: `gpt://${FOLDER_ID}/${model}/latest`,
-      completionOptions: { stream: false, temperature: 0.3, maxTokens: 160 },
+      completionOptions: { stream: false, temperature, maxTokens },
       messages,
     }),
   });
   if (!res.ok) throw new Error(`LLM ${res.status}: ${await res.text()}`);
-  const data = await res.json();
-  return data.result.alternatives[0].message.text;
+  return pickReplyText(await res.json());
 }

@@ -43,4 +43,9 @@ export class Speaker {
   abort() { this._gen++; this.player.stop(); }
 
   get gen() { return this._gen; }
+
+  // Прозвучало ли в этом ходе хоть одно предложение (true после первого поставленного в
+  // очередь кадра). Если синтез упал на всех предложениях — останется false: вызывающий код
+  // может на это среагировать (извиниться вместо «мёртвой тишины»). Сбрасывается в begin().
+  get spokeThisTurn() { return this._spokeThisTurn; }
 }
