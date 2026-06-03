@@ -22,12 +22,17 @@ import { shouldInterrupt } from "./bargein.mjs";
 
 const PORT = 3001;
 const GREETING = "Здравствуйте! Это типография Альфа Принт, меня зовут Ева. Чем могу помочь?";
+// Стриминг-онли добавка к промпту: в голосовом диалоге длинные ответы тормозят и труднее
+// перебиваются. Просим отвечать очень коротко. Общий prompt.mjs (его делит turn-based
+// сервер) не трогаем — это касается только потокового пути.
+const BREVITY =
+`ВАЖНО для голосового разговора: отвечай очень коротко — одно-два коротких предложения. Не перечисляй услуги списком и не выкладывай всё сразу. Веди диалог по шагам: задай один встречный вопрос и жди ответа.`;
 
 const wss = new WebSocketServer({ port: PORT, path: "/media" });
 
 wss.on("connection", (ws) => {
   const callId = "stream-" + Date.now();
-  const history = [{ role: "system", text: SYSTEM }];
+  const history = [{ role: "system", text: SYSTEM + "\n\n" + BREVITY }];
   let sampleRate = 8000;
   let player = null;
   let stt = null;
@@ -35,8 +40,10 @@ wss.on("connection", (ws) => {
   let currentTurn = null;    // AbortController текущего хода LLM (если идёт THINKING)
   let floorAt = 0;           // когда «слово» перешло к Еве — отсчёт окна прогрева barge-in
   let turnStartedAt = 0;     // старт текущего хода — для лога «время до 1го кадра»
-  let lastFinalText = "";    // последняя финализированная реплика абонента (эхо-защита)
+  let lastFinalText = "";    // последняя финализированная реплика абонента (эхо-защита + дедуп)
+  let lastFinalAt = 0;       // когда её обработали — для дедупа запоздавшего дубля
   const GRACE_MS = 500;      // окно прогрева: первые 500мс речи Евы не перебиваем (хвост абонента)
+  const DEDUP_MS = 7000;     // окно дедупа: Yandex stt-eou повторяет уже обработанную реплику ~5с спустя
   let state = "SPEAKING"; // пока играет приветствие
   let lastVoiceAt = 0;    // время последнего партиала — для замера паузы EOU
   let inCount = 0;        // принято медиа-кадров от Voximplant (по 20мс каждый)
@@ -136,8 +143,16 @@ wss.on("connection", (ws) => {
   // turnHandled защищает от двойного срабатывания (что сработало первым — то и берём).
   function finalizeTurn(text, src) {
     if (turnHandled || state !== "LISTENING" || !text) return;
+    // Дедуп: наш эндпойнт финализирует реплику за ~1с, а Yandex stt-eou той же реплики
+    // приходит на несколько секунд позже (audio-time лаг при сжатой тишине) и иначе
+    // обработался бы как ВТОРОЙ ход — Ева отвечает дважды. Гасим точный повтор в окне.
+    if (text === lastFinalText && Date.now() - lastFinalAt < DEDUP_MS) {
+      console.log(`[${callId}] ${ts()} дубль реплики [${src}] пропущен: ${text}`);
+      return;
+    }
     turnHandled = true;
-    lastFinalText = text;            // эхо-защита barge-in: не перебиваемся на хвосте этой же реплики
+    lastFinalText = text;            // эхо-защита barge-in + дедуп следующего дубля
+    lastFinalAt = Date.now();
     clearTimeout(endpointTimer);
     endpointTimer = null;
     handleTurn(text, src);
