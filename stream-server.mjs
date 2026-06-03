@@ -40,6 +40,7 @@ wss.on("connection", (ws) => {
   let currentTurn = null;    // AbortController текущего хода LLM (если идёт THINKING)
   let floorAt = 0;           // когда «слово» перешло к Еве — отсчёт окна прогрева barge-in
   let turnStartedAt = 0;     // старт текущего хода — для лога «время до 1го кадра»
+  let speakingDoneToken = 0; // токен хода, чьё аудио синтезировано и доигрывается плеером
   let lastFinalText = "";    // последняя финализированная реплика абонента (эхо-защита + дедуп)
   let lastFinalAt = 0;       // когда её обработали — для дедупа запоздавшего дубля
   const GRACE_MS = 500;      // окно прогрева: первые 500мс речи Евы не перебиваем (хвост абонента)
@@ -111,6 +112,24 @@ wss.on("connection", (ws) => {
     for (const sentence of splitSentences(text)) speaker.say(token, sentence);
     await speaker.drain();
     if (token !== speaker.gen) return; // нас перебили — состояние уже LISTENING
+    finishWhenPlayed(token);           // слушаем только когда плеер доиграет очередь
+  }
+
+  // Аудио хода полностью синтезировано и поставлено в очередь, но плеер ещё ПРОИГРЫВАЕТ.
+  // Остаёмся в SPEAKING и ждём, пока очередь доиграет, и ТОЛЬКО потом слушаем — иначе
+  // состояние было бы LISTENING, пока Ева ещё ГОВОРИТ, и barge-in (он только в SPEAKING/
+  // THINKING) не срабатывал бы во время самой речи (а это и есть «перебить Еву»).
+  function finishWhenPlayed(token) {
+    speakingDoneToken = token;
+    if (!player || !player.speaking) finishSpeaking(token); // уже доиграл — слушаем сразу
+    // иначе finishSpeaking вызовется из player.onIdle, когда очередь опустеет
+  }
+
+  // Очередь доиграла — возвращаемся слушать, если этот ход всё ещё актуален (не перебит,
+  // не сменился новым ходом). Вызывается из finishWhenPlayed и из player.onIdle.
+  function finishSpeaking(token) {
+    if (token !== speaker.gen) return;   // ход уже отменён/сменился — игнор
+    if (state !== "SPEAKING") return;    // подстраховка
     beginListening();
   }
 
@@ -234,14 +253,17 @@ wss.on("connection", (ws) => {
     const reply = spoken.join(" ");
     history.push({ role: "assistant", text: reply });
     console.log(`[${callId}] Ева (${reply.length}c): ${reply}`);
-    beginListening();
+    finishWhenPlayed(token);           // остаёмся SPEAKING, пока плеер не доиграет реплику
   }
 
   function startSession() {
     sendStart(); // объявляем формат исходящего аудио до первого media-кадра
     player = new PacedPlayer(sendFrame, {
       sampleRate, frameMs: 20,
-      onIdle: () => console.log(`[${callId}] ${ts()} плеер: очередь пуста (аудио доиграло)`),
+      onIdle: () => {
+        console.log(`[${callId}] ${ts()} плеер: очередь пуста (аудио доиграло)`);
+        finishSpeaking(speakingDoneToken); // доиграли — теперь слушаем (если ход актуален)
+      },
     });
     // Синтез для speaker: сохраняем существующий повтор synthPcm и лог пропуска предложения.
     const synthForSpeaker = async (text) => {
