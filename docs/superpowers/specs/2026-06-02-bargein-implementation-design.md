@@ -196,6 +196,24 @@ LISTENING.
   she answers the new turn; say "угу" while she talks → she keeps going, no `BARGE-IN`.
   (Parent spec M3 pass criteria.)
 
+## Review outcome (2026-06-03)
+
+An adversarial multi-lens review + an independent concurrency/state audit confirmed the core
+invariants CLEAN: no-resume (Speaker token checked before & after synth), no-stuck-state
+(every floor-taking path returns to LISTENING), no-double-listen (abort guards), no-lost-
+utterance (interrupting partial seeded as next turn), and lifecycle (timers, AbortController,
+ws-close). One real bug was found and fixed: `isSubstantive` rated all-backchannel multi-word
+partials ("ну да", "ага угу", "да-да-да") as substantive — now excluded (hyphen-aware).
+
+Two detection-tuning edges were noted and **deferred to the real-call tuning pass** (they do
+not break the contract and changing them blind risks regressions):
+1. The echo guard is exact-match (`t !== lastFinalText`); a verbatim repeat by the caller
+   would not interrupt. Mitigated in practice: partials grow word-by-word, so an interrupt
+   fires on an earlier partial before the full string matches.
+2. `floorAt` (grace start) is set at THINKING start; a slow LLM can consume the 500 ms grace
+   before Ева is audible. Mitigated: finalization implies the caller already paused, so no
+   live trailing speech remains by then.
+
 ## Out of scope
 
 - Streaming TTS (v3 gRPC) — still the post-spike follow-up.
