@@ -18,6 +18,17 @@ test("empty or whitespace is not substantive", () => {
   assert.strictEqual(isSubstantive("  "), false);
 });
 
+test("stacked backchannels do not interrupt (whole utterance is backchannel)", () => {
+  for (const w of ["да да", "ну да", "ага угу", "да-да-да", "угу угу", "ага ага", "ну ну"]) {
+    assert.strictEqual(isSubstantive(w), false, `ожидалось false для "${w}"`);
+  }
+});
+
+test("backchannel followed by real content still interrupts", () => {
+  assert.strictEqual(isSubstantive("да баннер нужен"), true);
+  assert.strictEqual(isSubstantive("нет подождите"), true);
+});
+
 test("shouldInterrupt: fires on substantive speech while Ева has the floor", () => {
   assert.strictEqual(shouldInterrupt("SPEAKING", "нет я хотел баннер", 1000, 500), true);
   assert.strictEqual(shouldInterrupt("THINKING", "подождите сколько стоит", 1000, 500), true);
