@@ -36,7 +36,7 @@ The bot speaks and listens **in turns** (one at a time). All speech recognition 
 synthesis during a call happen **inside Voximplant**; our backend only runs the
 "brain" (`/reply` → YandexGPT).
 
-### Target pipeline (streaming — not built yet)
+### Streaming pipeline (spike — built, offline-tested, parallel to the live path)
 
 ```
 Caller → Voximplant → Backend (Node orchestrator)
@@ -44,9 +44,13 @@ Caller → Voximplant → Backend (Node orchestrator)
    → back through Voximplant → Caller
 ```
 
-Our own STT/TTS functions in `speech.mjs` are written and tested but **not used in
-the live call yet** — they are reserved for the future streaming version with
-barge-in (interrupting the bot) and minimal latency.
+A parallel streaming path is now built: `stream-server.mjs` (WebSocket on port `3001`)
+runs continuous v3 gRPC STT → streaming YandexGPT → sentence-by-sentence TTS over
+Voximplant's media protocol, with **smart barge-in** — the caller can interrupt Ева
+mid-sentence, but short backchannels ("угу", "да-да") don't. It is offline-tested
+(unit tests + replay harness) **and verified live on a real call** — barge-in works; it
+is **not the production path yet** — the turn-based pipeline above is what runs live. Our
+own STT/TTS in `speech.mjs` is used here, not in the live turn-based call.
 
 ## Tech stack (and why)
 
@@ -243,8 +247,11 @@ In priority order:
 4. **Order intake (the key business task):** extract a structured order from the
    conversation (what to print, quantity, format, material, deadline, contact),
    read each field back and confirm it, then write the order to a CRM or Google Sheets.
-5. **Dialogue quality:** barge-in, silence timeouts, lower latency — move to the
-   streaming pipeline using our own STT/TTS instead of the turn-based approach.
+5. **Dialogue quality (streaming spike):** ~~**barge-in**~~ — ✅ implemented and
+   **verified live** on a real call (`bargein.mjs` + `stream-server.mjs`; the caller
+   interrupts Ева, backchannels don't). Remaining: silence timeouts, lower latency, and
+   promoting the streaming pipeline to the production path in place of the turn-based
+   approach.
 6. **Permanent backend:** host on a Yandex Cloud VM instead of ngrok — a stable
    address that runs without a laptop open.
 7. **Real inbound number:** rent a number in Voximplant and move the accounts to a

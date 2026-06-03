@@ -16,8 +16,9 @@ The Node backend is just the "brain" orchestrator behind `POST /reply`.
   Speak/listen alternate.
 - **Spike (streaming):** a parallel path (`stream-server.mjs`, WS port 3001) over
   Voximplant's WebSocket media protocol — our own v3 gRPC STT + YandexGPT + LPCM TTS with
-  **smart barge-in** (caller interrupts Ева; backchannels don't). Offline-tested; live
-  behavior is verified per real call. Not the production path yet (turn-based is live).
+  **smart barge-in** (caller interrupts Ева; backchannels don't). Offline-tested **and
+  verified live** on a real call (barge-in works). Not the production path yet (turn-based
+  is live).
 
 ## Current focus
 
@@ -100,8 +101,9 @@ For a live call: run the backend **and** ngrok together, paste the ngrok URL int
   re-pasted with the current URL or the bot can't reach the backend.
 - **Never commit secrets** — `.env` is gitignored; keep it that way.
 - **Don't claim the live call works** without it actually being tested. The turn-based path
-  is live (Alena voice). The streaming path + barge-in is offline-tested but its live
-  behavior must be confirmed by a real call before claiming it works.
+  is live (Alena voice). The streaming path + barge-in is offline-tested **and** confirmed
+  on a real call (barge-in verified live); it is still not the production path. Keep
+  confirming new streaming/telephony changes with a real call before claiming they work.
 - **Two dev machines, switched interchangeably** — Windows 11 + WSL (Ubuntu) and
   macOS. Don't hardcode one: paths (`E:\…` / `/mnt/e/…` vs `~/voicebot`) and the Node
   version differ per machine; check which you're on before giving paths/shell commands.
