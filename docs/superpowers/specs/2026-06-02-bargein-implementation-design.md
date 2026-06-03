@@ -212,7 +212,22 @@ not break the contract and changing them blind risks regressions):
    fires on an earlier partial before the full string matches.
 2. `floorAt` (grace start) is set at THINKING start; a slow LLM can consume the 500 ms grace
    before Ева is audible. Mitigated: finalization implies the caller already paused, so no
-   live trailing speech remains by then.
+   live trailing speech remains by then. (Re-anchoring grace to the first audible frame was
+   considered and rejected: it would extend the grace window into Ева's actual speech and
+   make her *harder* to interrupt in her first 500 ms — the opposite of responsive barge-in.)
+
+### Update 2026-06-03 — finishable part landed, tuning still gated on a live call
+
+- The echo gate was folded from the `stream-server.mjs` call site into the pure
+  `shouldInterrupt(..., lastFinalText)` policy (behavior-preserving) so the whole decision is
+  unit-tested in one place (`bargein.test.mjs`). No runtime behavior changed.
+- `stream-server.mjs` now logs **suppressed near-interrupts** — a substantive partial that
+  arrived while Ева had the floor but did *not* interrupt — as `barge-in подавлен [грейс …|эхо …]`
+  with the `sinceFloor` timing. These lines are exactly the data the tuning pass needs to
+  choose `GRACE_MS` and judge the echo gate.
+- The two edges above remain **deferred**: both want real-call log values, and changing them
+  blind risks regressions (the agent cannot place a call). Next live call: skim the
+  `barge-in подавлен` lines and tune from observed `sinceFloor` / echo frequencies.
 
 ## Out of scope
 

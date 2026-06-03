@@ -45,3 +45,35 @@ test("shouldInterrupt: suppressed inside the grace window", () => {
 test("shouldInterrupt: backchannels never interrupt", () => {
   assert.strictEqual(shouldInterrupt("SPEAKING", "угу", 1000, 500), false);
 });
+
+// Эхо-гейт сведён в саму политику (5-й аргумент): партиал, дословно равный последней
+// финализированной реплике абонента, — это «хвост» уже завершённого хода в STT, не новое
+// перебивание. Раньше эта проверка жила в call-site stream-server.mjs; теперь — здесь,
+// чтобы вся логика barge-in была в одной тестируемой функции.
+test("shouldInterrupt: echo of the just-finalized utterance does not interrupt", () => {
+  assert.strictEqual(
+    shouldInterrupt("SPEAKING", "нет я хотел баннер", 1000, 500, "нет я хотел баннер"),
+    false,
+  );
+  assert.strictEqual(
+    shouldInterrupt("THINKING", "сколько стоит баннер", 1000, 500, "сколько стоит баннер"),
+    false,
+  );
+});
+
+test("shouldInterrupt: substantive speech different from the last final still interrupts", () => {
+  assert.strictEqual(
+    shouldInterrupt("SPEAKING", "подождите сколько стоит", 1000, 500, "нет я хотел баннер"),
+    true,
+  );
+});
+
+test("shouldInterrupt: omitting lastFinalText leaves the echo guard inert (back-compat)", () => {
+  // 4-аргументная форма — поведение не меняется (эхо-гейт применяется только когда передан).
+  assert.strictEqual(shouldInterrupt("SPEAKING", "нет я хотел баннер", 1000, 500), true);
+});
+
+test("shouldInterrupt: empty lastFinalText does not suppress a substantive partial", () => {
+  // На старте звонка lastFinalText === "" — он не должен глушить реальную речь.
+  assert.strictEqual(shouldInterrupt("SPEAKING", "нет я хотел баннер", 1000, 500, ""), true);
+});

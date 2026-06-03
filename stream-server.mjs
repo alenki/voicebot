@@ -18,7 +18,7 @@ import { PacedPlayer } from "./playback.mjs";
 import { openStt } from "./stt-stream.mjs";
 import { stripLeadingGreeting, stripMarkup } from "./reply-clean.mjs";
 import { Speaker } from "./speaker.mjs";
-import { shouldInterrupt } from "./bargein.mjs";
+import { shouldInterrupt, isSubstantive } from "./bargein.mjs";
 
 const PORT = 3001;
 const GREETING = "Здравствуйте! Это типография Альфа Принт, меня зовут Ева. Чем могу помочь?";
@@ -278,16 +278,26 @@ wss.on("connection", (ws) => {
       onPartial: (t) => {
         lastVoiceAt = Date.now();
         // Пока слово у Евы (приветствие/размышление/речь) — проверяем партиал на barge-in.
-        // Защита от ложного перебивания хвостом собственной реплики абонента: окно прогрева
-        // GRACE_MS (от floorAt) + эхо-гейт (точное равенство последней финализации).
+        // Вся политика — в shouldInterrupt(): слово у Евы + окно прогрева GRACE_MS (от floorAt)
+        // + содержательность + эхо-гейт (партиал ≠ последней финализации lastFinalText).
         // ⚠️ Эвристика «первого приближения», тюнится на реальных звонках (см. spec):
         //   1) эхо-гейт строгий (==): дословный повтор той же фразы абонентом не перебьёт —
         //      на практике редко, т.к. партиалы растут пословно и перебивают раньше полного
         //      совпадения; floorAt задаётся в начале THINKING, и при медленном LLM грейс может
         //      истечь, пока Ева ещё молчит. Уточнить пороги по логам живых звонков.
         if (state === "SPEAKING" || state === "THINKING") {
-          if (t !== lastFinalText && shouldInterrupt(state, t, Date.now() - floorAt, GRACE_MS)) {
+          const sinceFloor = Date.now() - floorAt;
+          if (shouldInterrupt(state, t, sinceFloor, GRACE_MS, lastFinalText)) {
             interrupt(t);
+          } else if (isSubstantive(t)) {
+            // «Почти-перебивание»: содержательная речь, пока слово у Евы, но barge-in не сработал.
+            // Логируем причину и тайминг — ровно те данные, по которым на живых звонках тюнятся
+            // GRACE_MS и эхо-гейт (см. spec, отложенный tuning pass). Только лог, без влияния на
+            // поведение.
+            const why = sinceFloor < GRACE_MS ? `грейс ${sinceFloor}/${GRACE_MS}мс`
+              : t === lastFinalText ? "эхо последней реплики"
+              : "иное";
+            console.log(`[${callId}] ${ts()} barge-in подавлен [${why}] @${state}: "${t}"`);
           }
           return;
         }

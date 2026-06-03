@@ -51,8 +51,10 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
   `abort()` stops the player **and** invalidates queued/in-flight sentences so a barge-in
   can't let Ева resume. Used by `stream-server.mjs`. Unit-tested in `speaker.test.mjs`.
 - `bargein.mjs` — `isSubstantive(text)` (substantive speech vs backchannels) and
-  `shouldInterrupt(state, partial, sinceFloorMs, graceMs)` (the barge-in policy: floor +
-  grace window + substantive). Wired into `stream-server.mjs`, not just a standalone filter.
+  `shouldInterrupt(state, partial, sinceFloorMs, graceMs, lastFinalText)` (the barge-in
+  policy: floor + grace window + substantive + echo-gate against the caller's last
+  finalized utterance). Wired into `stream-server.mjs`, not just a standalone filter; the
+  server also logs suppressed "почти-перебивания" (`barge-in подавлен …`) for live tuning.
 - `stt-stream.mjs` — Yandex SpeechKit v3 gRPC streaming STT wrapper (`openStt(...)`).
 - `playback.mjs` — `PacedPlayer`: emits PCM in fixed 20 ms frames; `stop()` clears the queue
   so barge-in halts audio instantly.
@@ -66,7 +68,7 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
 ## Commands
 
 ```bash
-npm install                            # install express
+npm install                            # install ALL deps (express + ws + @grpc/* for streaming)
 node --env-file=.env server.mjs        # run backend (prints "Backend слушает …:3000")
 node --env-file=.env test.mjs          # backend-only smoke test, writes reply.ogg
 ngrok http 3000                        # public tunnel; copy the Forwarding URL

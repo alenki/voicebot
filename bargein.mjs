@@ -27,8 +27,15 @@ export function isSubstantive(partial) {
 const INTERRUPTIBLE = new Set(["SPEAKING", "THINKING"]);
 
 // Политика барж-ина: перебиваем, только если (1) слово у Евы, (2) прошло окно «прогрева»
-// (защита от хвоста собственной реплики абонента сразу после её финализации) и
-// (3) речь содержательна (а не короткое поддакивание).
-export function shouldInterrupt(state, partial, sinceFloorMs = Infinity, graceMs = 0) {
-  return INTERRUPTIBLE.has(state) && sinceFloorMs >= graceMs && isSubstantive(partial);
+// (защита от хвоста собственной реплики абонента сразу после её финализации), (3) речь
+// содержательна (а не короткое поддакивание) и (4) это не эхо-«хвост» уже завершённого
+// хода — партиал, дословно равный последней финализированной реплике (lastFinalText).
+// Эхо-гейт применяется только если lastFinalText передан (не null); пустая строка в начале
+// звонка реальную речь не глушит. ⚠️ Точное равенство — «первое приближение» (см. spec,
+// «detection-tuning edges»): дословный повтор фразы абонентом тоже совпадёт и не перебьёт.
+// Снять это ограничение нельзя «вслепую» — нужно окно по времени, выверенное на логах
+// живых звонков.
+export function shouldInterrupt(state, partial, sinceFloorMs = Infinity, graceMs = 0, lastFinalText = null) {
+  const isEcho = lastFinalText != null && partial === lastFinalText;
+  return INTERRUPTIBLE.has(state) && sinceFloorMs >= graceMs && !isEcho && isSubstantive(partial);
 }
