@@ -1,0 +1,823 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e5]:
+      - link [ref=e7] [cursor=pointer]:
+        - /url: /docs
+        - img [ref=e8]
+      - generic [ref=e9]:
+        - navigation
+        - navigation [ref=e10]:
+          - button [ref=e12] [cursor=pointer]
+          - generic [ref=e15]:
+            - link "StackOverflow" [ref=e16] [cursor=pointer]:
+              - /url: https://stackoverflow.com/search?q=voximplant
+              - generic [ref=e19]: StackOverflow
+            - link "Help" [ref=e20] [cursor=pointer]:
+              - /url: /help/faq
+              - generic [ref=e22]: Help
+            - link "Log in" [ref=e23] [cursor=pointer]:
+              - /url: https://manage.voximplant.com/auth/
+              - generic [ref=e25]: Log in
+            - link "Sign up" [ref=e26] [cursor=pointer]:
+              - /url: https://manage.voximplant.com/auth/sign_up
+              - generic [ref=e28]: Sign up
+    - main [ref=e29]:
+      - list [ref=e56]:
+        - listitem [ref=e57]:
+          - link "Getting started" [ref=e58] [cursor=pointer]:
+            - /url: /docs/getting-started
+        - listitem [ref=e59]:
+          - link "Guides" [ref=e60] [cursor=pointer]:
+            - /url: /docs/guides
+        - listitem [ref=e61]:
+          - link "Voice AI" [ref=e62] [cursor=pointer]:
+            - /url: /docs/voice-ai
+        - listitem [ref=e63]:
+          - link "References" [ref=e64] [cursor=pointer]:
+            - /url: /docs/references
+          - list [ref=e65]:
+            - listitem [ref=e66]:
+              - link "Avatar API" [ref=e67] [cursor=pointer]:
+                - /url: /docs/references/avatarapi
+            - listitem [ref=e68]:
+              - link "AvatarEngine" [ref=e69] [cursor=pointer]:
+                - /url: /docs/references/avatarengine
+            - listitem [ref=e70]:
+              - link "Web SDK v5" [ref=e71] [cursor=pointer]:
+                - /url: /docs/references/websdk-v5
+            - listitem [ref=e72]:
+              - link "VoxEngine" [ref=e73] [cursor=pointer]:
+                - /url: /docs/references/voxengine
+              - list [ref=e74]:
+                - listitem [ref=e75]:
+                  - link "ACDEvents" [ref=e76] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/acdevents
+                - listitem [ref=e77]:
+                  - link "ASREvents" [ref=e78] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/asrevents
+                - listitem [ref=e79]:
+                  - link "AppEvents" [ref=e80] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/appevents
+                - listitem [ref=e81]:
+                  - link "CallEvents" [ref=e82] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callevents
+                - listitem [ref=e83]:
+                  - link "ConferenceEvents" [ref=e84] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/conferenceevents
+                - listitem [ref=e85]:
+                  - link "PlayerEvents" [ref=e86] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/playerevents
+                - listitem [ref=e87]:
+                  - link "RecorderEvents" [ref=e88] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderevents
+                - listitem [ref=e89]:
+                  - link "SequencePlayerEvents" [ref=e90] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/sequenceplayerevents
+                - listitem [ref=e91]:
+                  - link "SmartQueueEvents" [ref=e92] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/smartqueueevents
+                - listitem [ref=e93]:
+                  - link "StreamingAgentEvents" [ref=e94] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/streamingagentevents
+                - listitem [ref=e95]:
+                  - link "WebSocketEvents" [ref=e96] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/websocketevents
+                - listitem [ref=e97]:
+                  - link "AI" [ref=e98] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ai
+                - listitem [ref=e99]:
+                  - link "AMD" [ref=e100] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/amd
+                - listitem [ref=e101]:
+                  - link "ASRModelList" [ref=e102] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/asrmodellist
+                - listitem [ref=e103]:
+                  - link "ASRProfileList" [ref=e104] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/asrprofilelist
+                - listitem [ref=e105]:
+                  - link "ApplicationStorage" [ref=e106] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/applicationstorage
+                - listitem [ref=e107]:
+                  - link "CCAI" [ref=e108] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ccai
+                - listitem [ref=e109]:
+                  - link "CallList" [ref=e110] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/calllist
+                - listitem [ref=e111]:
+                  - link "Cartesia" [ref=e112] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/cartesia
+                - listitem [ref=e113]:
+                  - link "Crypto" [ref=e114] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/crypto
+                - listitem [ref=e115]:
+                  - link "Deepgram" [ref=e116] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/deepgram
+                - listitem [ref=e117]:
+                  - link "ElevenLabs" [ref=e118] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/elevenlabs
+                - listitem [ref=e119]:
+                  - link "Gemini" [ref=e120] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/gemini
+                - listitem [ref=e121]:
+                  - link "Google" [ref=e122] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/google
+                - listitem [ref=e123]:
+                  - link "Grok" [ref=e124] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/grok
+                - listitem [ref=e125]:
+                  - link "IVR" [ref=e126] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ivr
+                - listitem [ref=e127]:
+                  - link "Inworld" [ref=e128] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/inworld
+                - listitem [ref=e129]:
+                  - link "Logger" [ref=e130] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/logger
+                - listitem [ref=e131]:
+                  - link "MCP" [ref=e132] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/mcp
+                - listitem [ref=e133]:
+                  - link "MeasurementProtocol" [ref=e134] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/measurementprotocol
+                - listitem [ref=e135]:
+                  - link "Net" [ref=e136] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/net
+                - listitem [ref=e137]:
+                  - link "OpenAI" [ref=e138] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/openai
+                - listitem [ref=e139]:
+                  - link "PhoneNumber" [ref=e140] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/phonenumber
+                - listitem [ref=e141]:
+                  - link "Pipecat" [ref=e142] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/pipecat
+                - listitem [ref=e143]:
+                  - link "Silero" [ref=e144] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/silero
+                - listitem [ref=e145]:
+                  - link "Ultravox" [ref=e146] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ultravox
+                - listitem [ref=e147]:
+                  - link "VoiceList" [ref=e148] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/voicelist
+                - listitem [ref=e149]:
+                  - link "VoxEngine" [ref=e150] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/voxengine
+                - listitem [ref=e151]:
+                  - link "VoximplantAPI" [ref=e152] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/voximplantapi
+                - listitem [ref=e153]:
+                  - link "VoximplantAvatar" [ref=e154] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/voximplantavatar
+                - listitem [ref=e155]:
+                  - link "Yandex" [ref=e156] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/yandex
+                - listitem [ref=e157]:
+                  - link "ACDRequest" [ref=e158] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/acdrequest
+                - listitem [ref=e159]:
+                  - link "ASR" [ref=e160] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/asr
+                - listitem [ref=e161]:
+                  - link "ASRModel" [ref=e162] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/asrmodel
+                - listitem [ref=e163]:
+                  - link "ASRProfile" [ref=e164] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/asrprofile
+                - listitem [ref=e165]:
+                  - link "Call" [ref=e166] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/call
+                - listitem [ref=e167]:
+                  - link "Conference" [ref=e168] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/conference
+                - listitem [ref=e169]:
+                  - link "ConferenceRecorder" [ref=e170] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/conferencerecorder
+                - listitem [ref=e171]:
+                  - link "Endpoint" [ref=e172] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/endpoint
+                - listitem [ref=e173]:
+                  - link "IVRState" [ref=e174] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ivrstate
+                - listitem [ref=e175]:
+                  - link "Player" [ref=e176] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/player
+                - listitem [ref=e177]:
+                  - link "Recorder" [ref=e178] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorder
+                - listitem [ref=e179]:
+                  - link "SequencePlayer" [ref=e180] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/sequenceplayer
+                - listitem [ref=e181]:
+                  - link "SmartQueueTask" [ref=e182] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/smartqueuetask
+                - listitem [ref=e183]:
+                  - link "StreamingAgent" [ref=e184] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/streamingagent
+                - listitem [ref=e185]:
+                  - link "Voice" [ref=e186] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/voice
+                - listitem [ref=e187]:
+                  - link "WebSocket" [ref=e188] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/websocket
+                - listitem [ref=e189]:
+                  - link "ACDEnqueueParameters" [ref=e190] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/acdenqueueparameters
+                - listitem [ref=e191]:
+                  - link "ASRParameters" [ref=e192] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/asrparameters
+                - listitem [ref=e193]:
+                  - link "CallAnswerParameters" [ref=e194] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callanswerparameters
+                - listitem [ref=e195]:
+                  - link "CallEnableBeepDetectionParameters" [ref=e196] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callenablebeepdetectionparameters
+                - listitem [ref=e197]:
+                  - link "CallMediaStatistics" [ref=e198] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callmediastatistics
+                - listitem [ref=e199]:
+                  - link "CallMediaStatisticsSample" [ref=e200] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callmediastatisticssample
+                - listitem [ref=e201]:
+                  - link "CallPSTNParameters" [ref=e202] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callpstnparameters
+                - listitem [ref=e203]:
+                  - link "CallRecordParameters" [ref=e204] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callrecordparameters
+                - listitem [ref=e205]:
+                  - link "CallSIPParameters" [ref=e206] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callsipparameters
+                - listitem [ref=e207]:
+                  - link "CallSayParameters" [ref=e208] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callsayparameters
+                - listitem [ref=e209]:
+                  - link "CallUserDirectParameters" [ref=e210] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/calluserdirectparameters
+                - listitem [ref=e211]:
+                  - link "CallUserParameters" [ref=e212] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/calluserparameters
+                - listitem [ref=e213]:
+                  - link "CallWhatsappUserParameters" [ref=e214] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callwhatsappuserparameters
+                - listitem [ref=e215]:
+                  - link "ChannelParameters" [ref=e216] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/channelparameters
+                - listitem [ref=e217]:
+                  - link "ClearMediaBufferParameters" [ref=e218] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/clearmediabufferparameters
+                - listitem [ref=e219]:
+                  - link "ConferenceParameters" [ref=e220] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/conferenceparameters
+                - listitem [ref=e221]:
+                  - link "EndpointParameters" [ref=e222] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/endpointparameters
+                - listitem [ref=e223]:
+                  - link "IVRSettings" [ref=e224] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ivrsettings
+                - listitem [ref=e225]:
+                  - link "MonitorMediaStatisticsParameters" [ref=e226] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/monitormediastatisticsparameters
+                - listitem [ref=e227]:
+                  - link "ParticipantReceiveParameters" [ref=e228] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/participantreceiveparameters
+                - listitem [ref=e229]:
+                  - link "ReceiveParameters" [ref=e230] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/receiveparameters
+                - listitem [ref=e231]:
+                  - link "RecorderDrawArea" [ref=e232] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderdrawarea
+                - listitem [ref=e233]:
+                  - link "RecorderGridDefinition" [ref=e234] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recordergriddefinition
+                - listitem [ref=e235]:
+                  - link "RecorderLabels" [ref=e236] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderlabels
+                - listitem [ref=e237]:
+                  - link "RecorderParameters" [ref=e238] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderparameters
+                - listitem [ref=e239]:
+                  - link "RecorderVad" [ref=e240] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recordervad
+                - listitem [ref=e241]:
+                  - link "RecorderVideoParameters" [ref=e242] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recordervideoparameters
+                - listitem [ref=e243]:
+                  - link "RichContent" [ref=e244] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/richcontent
+                - listitem [ref=e245]:
+                  - link "RichContentButtonAction" [ref=e246] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/richcontentbuttonaction
+                - listitem [ref=e247]:
+                  - link "RichContentButtonItem" [ref=e248] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/richcontentbuttonitem
+                - listitem [ref=e249]:
+                  - link "RichContentButtons" [ref=e250] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/richcontentbuttons
+                - listitem [ref=e251]:
+                  - link "RichContentContact" [ref=e252] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/richcontentcontact
+                - listitem [ref=e253]:
+                  - link "RichContentExternalLink" [ref=e254] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/richcontentexternallink
+                - listitem [ref=e255]:
+                  - link "RichContentFile" [ref=e256] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/richcontentfile
+                - listitem [ref=e257]:
+                  - link "RichContentLocation" [ref=e258] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/richcontentlocation
+                - listitem [ref=e259]:
+                  - link "RichContentMedia" [ref=e260] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/richcontentmedia
+                - listitem [ref=e261]:
+                  - link "SendMediaParameters" [ref=e262] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/sendmediaparameters
+                - listitem [ref=e263]:
+                  - link "SequencePlaybackParameters" [ref=e264] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/sequenceplaybackparameters
+                - listitem [ref=e265]:
+                  - link "SequencePlayerParameters" [ref=e266] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/sequenceplayerparameters
+                - listitem [ref=e267]:
+                  - link "SmartQueueOperatorSettings" [ref=e268] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/smartqueueoperatorsettings
+                - listitem [ref=e269]:
+                  - link "SmartQueueSkill" [ref=e270] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/smartqueueskill
+                - listitem [ref=e271]:
+                  - link "SmartQueueTaskParameters" [ref=e272] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/smartqueuetaskparameters
+                - listitem [ref=e273]:
+                  - link "SmartQueueTaskStatus" [ref=e274] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/smartqueuetaskstatus
+                - listitem [ref=e275]:
+                  - link "StartPlaybackParameters" [ref=e276] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/startplaybackparameters
+                - listitem [ref=e277]:
+                  - link "StorageKey" [ref=e278] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/storagekey
+                - listitem [ref=e279]:
+                  - link "StoragePage" [ref=e280] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/storagepage
+                - listitem [ref=e281]:
+                  - link "StreamingAgentParameters" [ref=e282] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/streamingagentparameters
+                - listitem [ref=e283]:
+                  - link "StreamingAgentTrack" [ref=e284] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/streamingagenttrack
+                - listitem [ref=e285]:
+                  - link "TTSOptions" [ref=e286] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ttsoptions
+                - listitem [ref=e287]:
+                  - link "TTSPlaybackParameters" [ref=e288] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ttsplaybackparameters
+                - listitem [ref=e289]:
+                  - link "TTSPlayerParameters" [ref=e290] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ttsplayerparameters
+                - listitem [ref=e291]:
+                  - link "TTSPlayerSegment" [ref=e292] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ttsplayersegment
+                - listitem [ref=e293]:
+                  - link "TextChannelParameters" [ref=e294] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/textchannelparameters
+                - listitem [ref=e295]:
+                  - link "ToneScriptPlayerParameters" [ref=e296] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/tonescriptplayerparameters
+                - listitem [ref=e297]:
+                  - link "TransferToParameters" [ref=e298] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/transfertoparameters
+                - listitem [ref=e299]:
+                  - link "URLPlaybackParameters" [ref=e300] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/urlplaybackparameters
+                - listitem [ref=e301]:
+                  - link "URLPlayerParameters" [ref=e302] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/urlplayerparameters
+                - listitem [ref=e303]:
+                  - link "URLPlayerRequest" [ref=e304] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/urlplayerrequest
+                - listitem [ref=e305]:
+                  - link "URLPlayerRequestBody" [ref=e306] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/urlplayerrequestbody
+                - listitem [ref=e307]:
+                  - link "URLPlayerRequestHeader" [ref=e308] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/urlplayerrequestheader
+                - listitem [ref=e309]:
+                  - link "URLPlayerSegment" [ref=e310] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/urlplayersegment
+                - listitem [ref=e311]:
+                  - link "UpdateRecorderVideoParameters" [ref=e312] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/updaterecordervideoparameters
+                - listitem [ref=e313]:
+                  - link "VoiceChannelParameters" [ref=e314] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/voicechannelparameters
+                - listitem [ref=e315]:
+                  - link "WebSocketMediaInfo" [ref=e316] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/websocketmediainfo
+                - listitem [ref=e317]:
+                  - link "WebSocketParameters" [ref=e318] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/websocketparameters
+                - listitem [ref=e319]:
+                  - link "base64_decode" [ref=e320] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/base64_decode
+                - listitem [ref=e321]:
+                  - link "base64_encode" [ref=e322] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/base64_encode
+                - listitem [ref=e323]:
+                  - link "bytes2hex" [ref=e324] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/bytes2hex
+                - listitem [ref=e325]:
+                  - link "bytes2str" [ref=e326] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/bytes2str
+                - listitem [ref=e327]:
+                  - link "clearInterval" [ref=e328] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/clearinterval
+                - listitem [ref=e329]:
+                  - link "clearTimeout" [ref=e330] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/cleartimeout
+                - listitem [ref=e331]:
+                  - link "getLocalTime" [ref=e332] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/getlocaltime
+                - listitem [ref=e333]:
+                  - link "hex2bytes" [ref=e334] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/hex2bytes
+                - listitem [ref=e335]:
+                  - link "levenshtein_distance" [ref=e336] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/levenshtein_distance
+                - listitem [ref=e337]:
+                  - link "require" [ref=e338] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/require
+                - listitem [ref=e339]:
+                  - link "setInterval" [ref=e340] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/setinterval
+                - listitem [ref=e341]:
+                  - link "setTimeout" [ref=e342] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/settimeout
+                - listitem [ref=e343]:
+                  - link "str2bytes" [ref=e344] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/str2bytes
+                - listitem [ref=e345]:
+                  - link "trace" [ref=e346] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/trace
+                - listitem [ref=e347]:
+                  - link "uuidgen" [ref=e348] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/uuidgen
+                - listitem [ref=e349]:
+                  - link "ASRDictionary" [ref=e350] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/asrdictionary
+                - listitem [ref=e351]:
+                  - link "ASRLanguage" [ref=e352] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/asrlanguage
+                - listitem [ref=e353]:
+                  - link "CallAudioQuality" [ref=e354] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/callaudioquality
+                - listitem [ref=e355]:
+                  - link "ConferenceDirection" [ref=e356] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/conferencedirection
+                - listitem [ref=e357]:
+                  - link "ConferenceMode" [ref=e358] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/conferencemode
+                - listitem [ref=e359]:
+                  - link "DTMFType" [ref=e360] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/dtmftype
+                - listitem [ref=e361]:
+                  - link "DialogflowLanguage" [ref=e362] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/dialogflowlanguage
+                - listitem [ref=e363]:
+                  - link "DialogflowModel" [ref=e364] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/dialogflowmodel
+                - listitem [ref=e365]:
+                  - link "DialogflowModelVariant" [ref=e366] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/dialogflowmodelvariant
+                - listitem [ref=e367]:
+                  - link "DialogflowSsmlVoiceGender" [ref=e368] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/dialogflowssmlvoicegender
+                - listitem [ref=e369]:
+                  - link "Modules" [ref=e370] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/modules
+                - listitem [ref=e371]:
+                  - link "RecordExpireTime" [ref=e372] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recordexpiretime
+                - listitem [ref=e373]:
+                  - link "RecorderDirection" [ref=e374] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderdirection
+                - listitem [ref=e375]:
+                  - link "RecorderLabelFont" [ref=e376] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderlabelfont
+                - listitem [ref=e377]:
+                  - link "RecorderLabelPosition" [ref=e378] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderlabelposition
+                - listitem [ref=e379]:
+                  - link "RecorderLabelTextAlign" [ref=e380] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderlabeltextalign
+                - listitem [ref=e381]:
+                  - link "RecorderLayout" [ref=e382] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderlayout
+                - listitem [ref=e383]:
+                  - link "RecorderObjectFit" [ref=e384] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderobjectfit
+                - listitem [ref=e385]:
+                  - link "RecorderProfile" [ref=e386] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderprofile
+                - listitem [ref=e387]:
+                  - link "SmartQueueOperatorSettingsMode" [ref=e388] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/smartqueueoperatorsettingsmode
+                - listitem [ref=e389]:
+                  - link "TTSEffectsProfile" [ref=e390] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ttseffectsprofile
+                - listitem [ref=e391]:
+                  - link "TaskWaitingCode" [ref=e392] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/taskwaitingcode
+                - listitem [ref=e393]:
+                  - link "TerminationStatus" [ref=e394] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/terminationstatus
+                - listitem [ref=e395]:
+                  - link "TranscriptionProvider" [ref=e396] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/transcriptionprovider
+                - listitem [ref=e397]:
+                  - link "URLPlayerRequestMethod" [ref=e398] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/urlplayerrequestmethod
+                - listitem [ref=e399]:
+                  - link "WebSocketAudioEncoding" [ref=e400] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/websocketaudioencoding
+                - listitem [ref=e401]:
+                  - link "WebSocketCloseCode" [ref=e402] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/websocketclosecode
+                - listitem [ref=e403]:
+                  - link "WebSocketReadyState" [ref=e404] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/websocketreadystate
+                - listitem [ref=e405]:
+                  - link "IVRPrompt" [ref=e406] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/ivrprompt
+                - listitem [ref=e407]:
+                  - link "PlaybackParameters" [ref=e408] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/playbackparameters
+                - listitem [ref=e409]:
+                  - link "RecorderLayoutPriority" [ref=e410] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/recorderlayoutpriority
+                - listitem [ref=e411]:
+                  - link "SequencePlaybackSegment" [ref=e412] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/sequenceplaybacksegment
+                - listitem [ref=e413]:
+                  - link "SequencePlayerSegment" [ref=e414] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/sequenceplayersegment
+                - listitem [ref=e415]:
+                  - link "SmartQueue" [ref=e416] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/smartqueue
+                - listitem [ref=e417]:
+                  - link "VoxMediaUnit" [ref=e418] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/voxmediaunit
+            - listitem [ref=e419]:
+              - link "Management API" [ref=e420] [cursor=pointer]:
+                - /url: /docs/references/httpapi
+            - listitem [ref=e421]:
+              - link "Web SDK" [ref=e422] [cursor=pointer]:
+                - /url: /docs/references/websdk
+            - listitem [ref=e423]:
+              - link "Android SDK" [ref=e424] [cursor=pointer]:
+                - /url: /docs/references/androidsdk
+            - listitem [ref=e425]:
+              - link "IOS SDK" [ref=e426] [cursor=pointer]:
+                - /url: /docs/references/iossdk
+            - listitem [ref=e427]:
+              - link "React Native SDK" [ref=e428] [cursor=pointer]:
+                - /url: /docs/references/reactnative
+            - listitem [ref=e429]:
+              - link "Flutter SDK" [ref=e430] [cursor=pointer]:
+                - /url: /docs/references/fluttersdk
+            - listitem [ref=e431]:
+              - link "Android SDK v3" [ref=e432] [cursor=pointer]:
+                - /url: /docs/references/androidsdk3
+            - listitem [ref=e433]:
+              - link "iOS SDK v3" [ref=e434] [cursor=pointer]:
+                - /url: /docs/references/ios_v3
+      - generic [ref=e34]:
+        - list [ref=e436]:
+          - listitem [ref=e437]:
+            - link "References" [ref=e438] [cursor=pointer]:
+              - /url: /docs/references
+            - text: /
+          - listitem [ref=e439]:
+            - link "VoxEngine" [ref=e440] [cursor=pointer]:
+              - /url: /docs/references/voxengine
+            - text: /
+          - listitem [ref=e441]:
+            - link "TTSOptions" [ref=e442] [cursor=pointer]:
+              - /url: /docs/references/voxengine/ttsoptions
+        - generic [ref=e36]:
+          - generic [ref=e38]:
+            - generic [ref=e39]: "Rate this page:"
+            - generic [ref=e40]:
+              - img
+              - generic "1" [ref=e42] [cursor=pointer]
+              - generic "2" [ref=e44] [cursor=pointer]
+              - generic "3" [ref=e46] [cursor=pointer]
+              - generic "4" [ref=e48] [cursor=pointer]
+              - generic "5" [ref=e50] [cursor=pointer]
+          - article [ref=e51]:
+            - heading "TTSOptions" [level=1] [ref=e443]
+            - paragraph [ref=e446]:
+              - text: Text-to-speech options. Can be passed via the
+              - link "CallSayParameters.ttsOptions" [ref=e447] [cursor=pointer]:
+                - /url: /docs/references/voxengine/callsayparameters#ttsoptions
+              - text: and
+              - link "TTSPlayerParameters.ttsOptions" [ref=e448] [cursor=pointer]:
+                - /url: /docs/references/voxengine/ttsplayerparameters#ttsoptions
+              - text: parameter. See the details in the
+              - link "official specs" [ref=e449] [cursor=pointer]:
+                - /url: //www.w3.org/TR/speech-synthesis/#S3.2.4
+              - text: .
+              - text: Alternatively, you can pass the speech synthesis parameters to your TTS provider directly in the
+              - link "request" [ref=e450] [cursor=pointer]:
+                - /url: https://voximplant.com/docs/references/voxengine/ttsplayerparameters#request
+              - text: parameter in the JSON format. Read more about passing the parameters directly in the
+              - link "Speech synthesis" [ref=e451] [cursor=pointer]:
+                - /url: https://voximplant.com/docs/guides/speech/tts#passing-parameters-directly-to-the-provider
+              - text: guide.
+            - navigation [ref=e453]:
+              - heading "Reference map" [level=2] [ref=e455]
+              - list [ref=e457]:
+                - listitem [ref=e458]:
+                  - generic [ref=e459]:
+                    - heading "Props" [level=3] [ref=e460]
+                    - generic [ref=e461]: "7"
+                  - list [ref=e462]:
+                    - listitem [ref=e463]:
+                      - link "effectsProfileId" [ref=e465] [cursor=pointer]:
+                        - /url: /docs/references/voxengine/ttsoptions#effectsprofileid
+                    - listitem [ref=e466]:
+                      - link "emotion" [ref=e468] [cursor=pointer]:
+                        - /url: /docs/references/voxengine/ttsoptions#emotion
+                    - listitem [ref=e469]:
+                      - link "pitch" [ref=e471] [cursor=pointer]:
+                        - /url: /docs/references/voxengine/ttsoptions#pitch
+                    - listitem [ref=e472]:
+                      - link "rate" [ref=e474] [cursor=pointer]:
+                        - /url: /docs/references/voxengine/ttsoptions#rate
+                    - listitem [ref=e475]:
+                      - link "speed" [ref=e477] [cursor=pointer]:
+                        - /url: /docs/references/voxengine/ttsoptions#speed
+                    - listitem [ref=e478]:
+                      - link "volume" [ref=e480] [cursor=pointer]:
+                        - /url: /docs/references/voxengine/ttsoptions#volume
+                    - listitem [ref=e481]:
+                      - link "yandexCustomModelName" [ref=e483] [cursor=pointer]:
+                        - /url: /docs/references/voxengine/ttsoptions#yandexcustommodelname
+            - generic [ref=e485]:
+              - heading "Props" [level=2] [ref=e486]
+              - generic [ref=e487]:
+                - generic [ref=e488]:
+                  - generic [ref=e489]:
+                    - generic [ref=e492]: effectsProfileId
+                    - generic [ref=e495]: Optional
+                  - generic [ref=e497] [cursor=pointer]:
+                    - generic: Copy URL
+                - code [ref=e500]:
+                  - text: "effectsProfileId:"
+                  - paragraph [ref=e504]:
+                    - link "TTSEffectsProfile" [ref=e505] [cursor=pointer]:
+                      - /url: /docs/references/voxengine/ttseffectsprofile
+                    - text: "[]"
+                - paragraph [ref=e507]:
+                  - text: Optional. An identifier which selects 'audio effects' profiles that are applied on (post synthesized) text to speech. Effects are applied additionally to each other in the order they are provided.
+                  - emphasis [ref=e508]: "Available for providers: Google."
+              - generic [ref=e509]:
+                - generic [ref=e510]:
+                  - generic [ref=e511]:
+                    - generic [ref=e514]: emotion
+                    - generic [ref=e517]: Optional
+                  - generic [ref=e519] [cursor=pointer]:
+                    - generic: Copy URL
+                - code [ref=e522]:
+                  - text: "emotion:"
+                  - generic [ref=e523]:
+                    - generic [ref=e524]:
+                      - paragraph [ref=e526]: string
+                      - text: "|"
+                    - paragraph [ref=e529]: undefined
+                - paragraph [ref=e531]:
+                  - text: Optional. Voice sentiment. For Yandex voices, works only for
+                  - link "ru_RU voices" [ref=e532] [cursor=pointer]:
+                    - /url: /docs/references/voxengine/voicelist/yandex/neural
+                  - text: .
+                  - emphasis [ref=e533]: "Available for providers: Yandex."
+              - generic [ref=e534]:
+                - generic [ref=e535]:
+                  - generic [ref=e536]:
+                    - generic [ref=e539]: pitch
+                    - generic [ref=e542]: Optional
+                  - generic [ref=e544] [cursor=pointer]:
+                    - generic: Copy URL
+                - code [ref=e547]:
+                  - text: "pitch:"
+                  - generic [ref=e548]:
+                    - generic [ref=e549]:
+                      - paragraph [ref=e551]: string
+                      - text: "|"
+                    - paragraph [ref=e554]: undefined
+                - paragraph [ref=e556]:
+                  - text: "Optional. Voice pitch. Acceptable ranges: 1) the numbers followed by \"Hz\" from 0.5Hz to 2Hz 2) x-low, low, medium, high, x-high, default."
+                  - emphasis [ref=e557]: "Available for providers: Google."
+              - generic [ref=e558]:
+                - generic [ref=e559]:
+                  - generic [ref=e560]:
+                    - generic [ref=e563]: rate
+                    - generic [ref=e566]: Optional
+                  - generic [ref=e568] [cursor=pointer]:
+                    - generic: Copy URL
+                - code [ref=e571]:
+                  - text: "rate:"
+                  - generic [ref=e572]:
+                    - generic [ref=e573]:
+                      - paragraph [ref=e575]: string
+                      - text: "|"
+                    - paragraph [ref=e578]: undefined
+                - paragraph [ref=e580]:
+                  - text: Optional. Speech speed. Possible values are x-slow, slow, medium, fast, x-fast, default.
+                  - emphasis [ref=e581]: "Available for providers: Google, Yandex."
+              - generic [ref=e582]:
+                - generic [ref=e583]:
+                  - generic [ref=e584]:
+                    - generic [ref=e587]: speed
+                    - generic [ref=e590]: Optional
+                  - generic [ref=e592] [cursor=pointer]:
+                    - generic: Copy URL
+                - code [ref=e595]:
+                  - text: "speed:"
+                  - generic [ref=e596]:
+                    - generic [ref=e597]:
+                      - paragraph [ref=e599]: string
+                      - text: "|"
+                    - paragraph [ref=e602]: undefined
+                - paragraph [ref=e604]:
+                  - text: Optional. Speech speed. Possible values are from "0.1" to "3.0".
+                  - emphasis [ref=e605]: "Available for providers: Yandex."
+              - generic [ref=e606]:
+                - generic [ref=e607]:
+                  - generic [ref=e608]:
+                    - generic [ref=e611]: volume
+                    - generic [ref=e614]: Optional
+                  - generic [ref=e616] [cursor=pointer]:
+                    - generic: Copy URL
+                - code [ref=e619]:
+                  - text: "volume:"
+                  - generic [ref=e620]:
+                    - generic [ref=e621]:
+                      - paragraph [ref=e623]: string
+                      - text: "|"
+                    - paragraph [ref=e626]: undefined
+                - paragraph [ref=e628]:
+                  - text: Optional. Speech volume. Possible values are silent, x-soft, soft, medium, loud, x-loud, default.
+                  - emphasis [ref=e629]: "Available for providers: Google."
+              - generic [ref=e630]:
+                - generic [ref=e631]:
+                  - generic [ref=e632]:
+                    - generic [ref=e635]: yandexCustomModelName
+                    - generic [ref=e638]: Optional
+                  - generic [ref=e640] [cursor=pointer]:
+                    - generic: Copy URL
+                - code [ref=e643]:
+                  - text: "yandexCustomModelName:"
+                  - generic [ref=e644]:
+                    - generic [ref=e645]:
+                      - paragraph [ref=e647]: string
+                      - text: "|"
+                    - paragraph [ref=e650]: undefined
+                - paragraph [ref=e652]:
+                  - text: Optional. If you have a custom Yandex engine voice, specify it in this field. Please contact support to activate this feature for your account.
+                  - emphasis [ref=e653]: "Available for providers: Yandex."
+          - generic [ref=e655]:
+            - generic [ref=e656]: "Rate this page:"
+            - generic [ref=e657]:
+              - img
+              - generic "1" [ref=e659] [cursor=pointer]
+              - generic "2" [ref=e661] [cursor=pointer]
+              - generic "3" [ref=e663] [cursor=pointer]
+              - generic "4" [ref=e665] [cursor=pointer]
+              - generic "5" [ref=e667] [cursor=pointer]
+          - generic [ref=e668]:
+            - generic [ref=e669]:
+              - heading "Need some help?" [level=3] [ref=e672]
+              - paragraph [ref=e673]:
+                - text: Feel free to reach our
+                - link "support team" [ref=e674] [cursor=pointer]:
+                  - /url: /help/support
+                - text: with any questions, or search for the
+                - link "Voximplant tag" [ref=e675] [cursor=pointer]:
+                  - /url: https://stackoverflow.com/search?q=voximplant
+                - text: on Stack Overflow for common questions and answers.
+            - navigation
+            - navigation
+            - paragraph [ref=e676]:
+              - text: © 2026 Voximplant® All rights reserved.
+              - text: 150 West 25th Street, RM 403 New York City, NY 10001, United States of America
+  - generic [ref=e678]:
+    - generic [ref=e680]:
+      - text: We use cookies to offer you a better browsing experience, analyze site traffic, personalize content, and serve targeted advertisements. If you continue to use this site, you consent to our
+      - link "Privacy Policy" [ref=e681] [cursor=pointer]:
+        - /url: https://voximplant.com/legal/privacy
+      - text: "&"
+      - link "Cookies Policy" [ref=e682] [cursor=pointer]:
+        - /url: https://voximplant.com/legal/cookies
+    - generic [ref=e683]:
+      - generic [ref=e684] [cursor=pointer]: Parameters
+      - button "Accept required" [ref=e685] [cursor=pointer]
+      - button "Accept all" [ref=e686] [cursor=pointer]

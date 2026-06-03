@@ -1,10 +1,27 @@
 const API_KEY = process.env.YANDEX_API_KEY;
 const FOLDER_ID = process.env.YANDEX_FOLDER_ID;
 
+// Голос и просодия Евы. Подтверждено по докам SpeechKit v1/v3 (yandex-cloud/docs):
+// alena — нейронный голос, у него РОВНО две роли: neutral (по умолчанию) и good
+// («доброжелательная»). evil у alena нет — отдаст ошибку. good = тёплый тон под продажи.
+const VOICE = "alena";
+const EMOTION = "good"; // допустимо только neutral|good для alena
+// Темп: диапазон 0.1–3.0, 1.0 = средняя человеческая речь. Чуть ниже единицы (0.95)
+// звучит спокойнее и теплее на узкополосном 8кГц-телефоне, не скатываясь в «вялость»
+// (≤0.85 уже звучит снисходительно для уверенного «закрывающего»). Это настройка НА СЛУХ:
+// подтверждать реальным звонком; безопасный откат — "1.0". Числа/цены лучше замедлять
+// локально отдельной репликой, а не глобально.
+const SPEED = "0.95";
+// ВАЖНО: т.к. обе функции шлют поле `text` (а не `ssml`), доступна текстовая TTS-разметка
+// v1 БЕЗ изменений API: пауза `sil<[мс]>` (макс 7000), ударение `+` перед гласной для
+// омографов (за́мок/замо́к), контекст-пауза `<[medium]>`, акцент `**слово**`. Паузы в самом
+// начале/конце фразы игнорируются, и «только разметка» не синтезируется. SSML <break> здесь
+// НЕ работает — он только в режиме `ssml` (тогда текстовая разметка отключается).
+
 // Синтез речи: текст -> аудио (Buffer, формат oggopus)
-export async function synthesize(text, voice = "alena") {
+export async function synthesize(text, voice = VOICE) {
   const body = new URLSearchParams({
-    text, lang: "ru-RU", voice, emotion: "good", speed: "1.0",
+    text, lang: "ru-RU", voice, emotion: EMOTION, speed: SPEED,
     format: "oggopus", folderId: FOLDER_ID,
   });
   const res = await fetch("https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize", {
@@ -18,9 +35,9 @@ export async function synthesize(text, voice = "alena") {
 
 // Синтез в сыром PCM (LINEAR16) для стриминга обратно в Voximplant без перекодирования.
 // Yandex TTS v1 поддерживает format=lpcm с sampleRateHertz 8000/16000/48000.
-export async function synthesizePcm(text, sampleRateHertz = 8000, voice = "alena") {
+export async function synthesizePcm(text, sampleRateHertz = 8000, voice = VOICE) {
   const body = new URLSearchParams({
-    text, lang: "ru-RU", voice, emotion: "good", speed: "1.0",
+    text, lang: "ru-RU", voice, emotion: EMOTION, speed: SPEED,
     format: "lpcm", sampleRateHertz: String(sampleRateHertz), folderId: FOLDER_ID,
   });
   const res = await fetch("https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize", {

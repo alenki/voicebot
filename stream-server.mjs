@@ -61,7 +61,8 @@ wss.on("connection", (ws) => {
   let endpointTimer = null;
   let turnHandled = false;      // реплика уже финализирована (защита от двойного срабатывания)
   const recentFrames = [];      // метки времени недавних входящих кадров (VAD-гейт эндпойнта)
-  let outSeq = 0;   // sequenceNumber — как у Voximplant, с 1
+  let outSeq = 0;   // sequenceNumber — как у Voximplant, с 1; заодно счётчик отданных кадров
+  let lastOutSeq = 0; // для замера частоты ИСХОДЯЩИХ кадров (норма 50/с в речи Евы)
   let outChunk = 0; // media.chunk — как у Voximplant, с 0
   let outTs = 0;    // media.timestamp В СЭМПЛАХ — растёт на длину кадра
   const tConn = Date.now();
@@ -328,7 +329,9 @@ wss.on("connection", (ws) => {
     hb = setInterval(() => {
       const fps = inCount - lastInCount;
       lastInCount = inCount;
-      console.log(`[${callId}] ${ts()} вход: ${fps} кадров/с (норма 50; всего ${inCount})`);
+      const outFps = outSeq - lastOutSeq; // отданных кадров/с — в речи Евы должно быть ≈50
+      lastOutSeq = outSeq;
+      console.log(`[${callId}] ${ts()} вход: ${fps} | выход: ${outFps} кадров/с (норма 50; всего вход ${inCount}, выход ${outSeq})`);
     }, 1000);
     // Приветствие сразу после старта сессии (speak() сам вернёт сессию в LISTENING).
     speak(GREETING);

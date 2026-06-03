@@ -160,6 +160,11 @@ require(Modules.Player);
 const BACKEND = "https://<CURRENT-NGROK>.ngrok-free.dev/reply";
 const BACKEND_END = "https://<CURRENT-NGROK>.ngrok-free.dev/end";
 const VOICE = VoiceList.Yandex.Neural.ru_RU_alena; // Yandex Alena (neural, premium voice)
+// Просодия Евы. Без ttsOptions Voximplant синтезирует alena с НЕЙТРАЛЬНОЙ ролью и темпом
+// по умолчанию. Для Yandex ru_RU поддерживаются emotion (neutral|good — у alena только эти
+// две) и speed ("0.1".."3.0"); pitch/volume в Voximplant доступны ТОЛЬКО для Google — не
+// задаём. good = тёплый тон, 0.95 = чуть спокойнее на телефоне. Совпадает с speech.mjs.
+const TTS_OPTIONS = { emotion: "good", speed: "0.95" };
 const HEADERS = ["Content-Type: application/json", "ngrok-skip-browser-warning: 1"];
 
 let call;
@@ -177,7 +182,11 @@ function onConnected() {
 }
 
 function say(text, done) {
-  const player = VoxEngine.createTTSPlayer(text, { language: VOICE, progressivePlayback: true });
+  const player = VoxEngine.createTTSPlayer(text, {
+    language: VOICE,
+    progressivePlayback: true,
+    ttsOptions: TTS_OPTIONS, // тёплая роль good + темп 0.95 для alena
+  });
   player.sendMediaTo(call);
   player.addEventListener(PlayerEvents.PlaybackFinished, () => { if (done) done(); });
 }
