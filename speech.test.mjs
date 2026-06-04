@@ -3,7 +3,28 @@
 // (без обращения к сети — fetch проверяет signal.aborted до запроса).
 import { test } from "node:test";
 import assert from "node:assert";
-import { askStream, pickReplyText } from "./speech.mjs";
+import { askStream, pickReplyText, withTimeout } from "./speech.mjs";
+
+test("withTimeout: сигнал прерывается по истечении таймаута", async () => {
+  const sig = withTimeout(20);
+  assert.equal(sig.aborted, false);
+  await new Promise((r) => setTimeout(r, 60));
+  assert.equal(sig.aborted, true);
+});
+
+test("withTimeout: уже прерванный сигнал вызывающего → комбинированный прерван сразу", () => {
+  const ac = new AbortController();
+  ac.abort();
+  assert.equal(withTimeout(10000, ac.signal).aborted, true);
+});
+
+test("withTimeout: прерывание вызывающего прерывает комбинированный сигнал", () => {
+  const ac = new AbortController();
+  const sig = withTimeout(10000, ac.signal);
+  assert.equal(sig.aborted, false);
+  ac.abort();
+  assert.equal(sig.aborted, true);
+});
 
 test("askStream rejects when the signal is already aborted", async () => {
   const ac = new AbortController();

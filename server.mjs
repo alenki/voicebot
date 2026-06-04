@@ -2,9 +2,16 @@ import express from "express";
    import { ask } from "./speech.mjs";
    import { SYSTEM } from "./prompt.mjs";
    import { cleanReply, enforcePhoneGate } from "./reply-clean.mjs";
+   import { assertEnv } from "./env.mjs";
+
+   // Fail-fast: без ключей Yandex /reply падает безликим «fetch failed» в середине звонка.
+   assertEnv(process.env, ["YANDEX_API_KEY", "YANDEX_FOLDER_ID"], "Yandex");
 
    const app = express();
    app.use(express.json());
+
+   // Health-проба: убедиться, что бэкенд жив, перед вставкой ngrok-URL в сценарий Voximplant.
+   app.get("/health", (_req, res) => res.json({ status: "ok" }));
 
    const dialogs = new Map(); // callId -> история диалога
 

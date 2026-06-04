@@ -1,6 +1,22 @@
 const API_KEY = process.env.YANDEX_API_KEY;
 const FOLDER_ID = process.env.YANDEX_FOLDER_ID;
 
+// Таймауты на сетевые вызовы Yandex: без них зависший fetch держит звонок вечно (Ева
+// умолкает посреди фразы, barge-in и speaker.drain() блокируются). Комбинируем таймаут с
+// сигналом вызывающего — barge-in отменяет askStream через свой signal, он должен работать.
+export function withTimeout(ms, signal) {
+  const timeout = AbortSignal.timeout(ms);
+  return signal ? AbortSignal.any([signal, timeout]) : timeout;
+}
+
+// Бюджеты времени на вызовы (мс). Реплики короткие (maxTokens 300 + BREVITY), так что
+// потоковый ответ укладывается в секунды; таймаут ловит зависание, а не штатную речь.
+// Можно переопределить через .env, дефолты безопасны для 8кГц-телефона.
+const TTS_TIMEOUT_MS = Number(process.env.TTS_TIMEOUT_MS) || 8000;
+const STT_TIMEOUT_MS = Number(process.env.STT_TIMEOUT_MS) || 10000;
+const LLM_TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_MS) || 15000;
+const LLM_STREAM_TIMEOUT_MS = Number(process.env.LLM_STREAM_TIMEOUT_MS) || 20000;
+
 // Голос и просодия Евы. Подтверждено по докам SpeechKit v1/v3 (yandex-cloud/docs):
 // alena — нейронный голос, у него РОВНО две роли: neutral (по умолчанию) и good
 // («доброжелательная»). evil у alena нет — отдаст ошибку. good = тёплый тон под продажи.
@@ -28,6 +44,7 @@ export async function synthesize(text, voice = VOICE) {
     method: "POST",
     headers: { Authorization: `Api-Key ${API_KEY}` },
     body,
+    signal: withTimeout(TTS_TIMEOUT_MS),
   });
   if (!res.ok) throw new Error(`TTS ${res.status}: ${await res.text()}`);
   return Buffer.from(await res.arrayBuffer());
@@ -44,6 +61,7 @@ export async function synthesizePcm(text, sampleRateHertz = 8000, voice = VOICE)
     method: "POST",
     headers: { Authorization: `Api-Key ${API_KEY}` },
     body,
+    signal: withTimeout(TTS_TIMEOUT_MS),
   });
   if (!res.ok) throw new Error(`TTS ${res.status}: ${await res.text()}`);
   return Buffer.from(await res.arrayBuffer());
@@ -57,6 +75,7 @@ export async function recognize(audio) {
     method: "POST",
     headers: { Authorization: `Api-Key ${API_KEY}` },
     body: audio,
+    signal: withTimeout(STT_TIMEOUT_MS),
   });
   if (!res.ok) throw new Error(`STT ${res.status}: ${await res.text()}`);
   const data = await res.json();
@@ -79,7 +98,7 @@ export async function askStream(messages, onChunk, { model = "yandexgpt-lite", s
       completionOptions: { stream: true, temperature: 0.3, maxTokens: 300 },
       messages,
     }),
-    signal,
+    signal: withTimeout(LLM_STREAM_TIMEOUT_MS, signal),
   });
   if (!res.ok) throw new Error(`LLM ${res.status}: ${await res.text()}`);
   const reader = res.body.getReader();
@@ -127,6 +146,7 @@ export async function ask(messages, { model = "yandexgpt-lite", maxTokens = 300,
       completionOptions: { stream: false, temperature, maxTokens },
       messages,
     }),
+    signal: withTimeout(LLM_TIMEOUT_MS),
   });
   if (!res.ok) throw new Error(`LLM ${res.status}: ${await res.text()}`);
   return pickReplyText(await res.json());

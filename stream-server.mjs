@@ -10,6 +10,7 @@
 //
 // Стриминговый сервер. Сессия на звонок: STT → YandexGPT → TTS по предложениям → плеер.
 // Запуск: node --env-file=.env stream-server.mjs
+import http from "node:http";
 import { WebSocketServer } from "ws";
 import { askStream, synthesizePcm } from "./speech.mjs";
 import { SYSTEM } from "./prompt.mjs";
@@ -21,6 +22,17 @@ import { Speaker } from "./speaker.mjs";
 import { shouldInterrupt, isSubstantive } from "./bargein.mjs";
 import { extractOrder } from "./order-extract.mjs";
 import { deliverLead } from "./lead.mjs";
+import { assertEnv, missingKeys } from "./env.mjs";
+import { isAuthorized, healthHandler, drainSessions } from "./stream-guard.mjs";
+import { realpathSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+
+// Общий секрет для гейта /media (ngrok публичен — без гейта любой жжёт квоту Yandex).
+// Не задан → пускаем всех, но громко предупреждаем на старте (в start()).
+const STREAM_SECRET = process.env.STREAM_SECRET || "";
+// Реальные зависимости сессии. В тестах подменяются фейками через runSession(ws, deps),
+// чтобы прогонять оркестрацию звонка без сети Yandex.
+const DEFAULT_DEPS = { askStream, synthesizePcm, openStt, extractOrder, deliverLead };
 
 const PORT = 3001;
 const GREETING = "Здравствуйте! Это типография Альфа Принт, меня зовут Ева. Чем могу помочь?";
@@ -30,9 +42,33 @@ const GREETING = "Здравствуйте! Это типография Альф
 const BREVITY =
 `ВАЖНО для голосового разговора: отвечай очень коротко — одно-два коротких предложения. Не перечисляй услуги списком и не выкладывай всё сразу. Веди диалог по шагам: задай один встречный вопрос и жди ответа.`;
 
-const wss = new WebSocketServer({ port: PORT, path: "/media" });
+// Активные сессии звонков — для грейсфул-дренажа заявок при остановке сервера.
+const sessions = new Set();
 
-wss.on("connection", (ws) => {
+// HTTP-сервер: health-проба (убедиться, что бэкенд жив перед вставкой ngrok-URL в сценарий)
+// + апгрейд до WS только на /media и только с верным token.
+const server = http.createServer((req, res) => {
+  if (healthHandler(req, res)) return;
+  res.writeHead(404);
+  res.end();
+});
+const wss = new WebSocketServer({ noServer: true });
+server.on("upgrade", (req, socket, head) => {
+  let pathname = "/";
+  try { pathname = new URL(req.url, "http://x").pathname; } catch {}
+  if (pathname !== "/media") { socket.destroy(); return; }
+  if (!isAuthorized(req.url, STREAM_SECRET)) {
+    console.warn(`WS отклонён (нет/неверный token) от ${req.socket.remoteAddress}`);
+    socket.write("HTTP/1.1 401 Unauthorized\r\n\r\n");
+    socket.destroy();
+    return;
+  }
+  wss.handleUpgrade(req, socket, head, (ws) => wss.emit("connection", ws, req));
+});
+
+wss.on("connection", (ws) => runSession(ws));
+
+export function runSession(ws, deps = DEFAULT_DEPS) {
   const callId = "stream-" + Date.now();
   const history = [{ role: "system", text: SYSTEM + "\n\n" + BREVITY }];
   let sampleRate = 8000;
@@ -47,6 +83,7 @@ wss.on("connection", (ws) => {
   let lastFinalAt = 0;       // когда её обработали — для дедупа запоздавшего дубля
   const GRACE_MS = 500;      // окно прогрева: первые 500мс речи Евы не перебиваем (хвост абонента)
   const DEDUP_MS = 7000;     // окно дедупа: Yandex stt-eou повторяет уже обработанную реплику ~5с спустя
+  let closed = false;        // звонок завершён (ws close): запрещаем новые ходы и обрываем текущий
   let state = "SPEAKING"; // пока играет приветствие
   let lastVoiceAt = 0;    // время последнего партиала — для замера паузы EOU
   let inCount = 0;        // принято медиа-кадров от Voximplant (по 20мс каждый)
@@ -98,7 +135,7 @@ wss.on("connection", (ws) => {
   // и Ева «проглатывает» кусок реплики.
   async function synthPcm(text) {
     for (let i = 0; ; i++) {
-      try { return await synthesizePcm(text, sampleRate); }
+      try { return await deps.synthesizePcm(text, sampleRate); }
       catch (e) { if (i >= 1) throw e; }
     }
   }
@@ -164,6 +201,7 @@ wss.on("connection", (ws) => {
   // Единая точка финализации реплики абонента: и наш эндпойнтинг, и EOU Yandex идут сюда.
   // turnHandled защищает от двойного срабатывания (что сработало первым — то и берём).
   function finalizeTurn(text, src) {
+    if (closed) return;                       // звонок завершён — не заводим новый ход
     if (turnHandled || state !== "LISTENING" || !text) return;
     // Дедуп: наш эндпойнт финализирует реплику за ~1с, а Yandex stt-eou той же реплики
     // приходит на несколько секунд позже (audio-time лаг при сжатой тишине) и иначе
@@ -192,6 +230,7 @@ wss.on("connection", (ws) => {
   }
 
   async function handleTurn(text, src) {
+    if (closed) return;                       // звонок завершился между финализацией и ходом
     const t0 = Date.now();
     turnStartedAt = t0;
     floorAt = t0;                       // «слово» перешло к Еве (THINKING) — отсюда грейс barge-in
@@ -233,7 +272,7 @@ wss.on("connection", (ws) => {
     };
 
     try {
-      raw = await askStream(history, (cum) => { raw = cum; drainComplete(); }, { signal: ac.signal });
+      raw = await deps.askStream(history, (cum) => { raw = cum; drainComplete(); }, { signal: ac.signal });
     } catch (e) {
       if (ac.signal.aborted) {           // barge-in во время THINKING — тихо выходим
         if (spoken.length) history.push({ role: "assistant", text: spoken.join(" ") });
@@ -285,9 +324,10 @@ wss.on("connection", (ws) => {
     speaker = new Speaker(player, synthForSpeaker, {
       onFirstFrame: () => console.log(`[${callId}] ${ts()} ⏱ до 1го кадра ${Date.now() - turnStartedAt}ms`),
     });
-    stt = openStt({
+    stt = deps.openStt({
       sampleRate,
       onPartial: (t) => {
+        if (closed) return;                   // запоздавший партиал после трубки — игнор
         lastVoiceAt = Date.now();
         // Пока слово у Евы (приветствие/размышление/речь) — проверяем партиал на barge-in.
         // Вся политика — в shouldInterrupt(): слово у Евы + окно прогрева GRACE_MS (от floorAt)
@@ -345,13 +385,13 @@ wss.on("connection", (ws) => {
     if (leadSent) return;
     leadSent = true;
     try {
-      const { hasOrder, fields } = await extractOrder(history);
+      const { hasOrder, fields } = await deps.extractOrder(history);
       if (!hasOrder) {
         console.log(`[${callId}] заявка не оформлена — в Telegram не шлём`);
         return;
       }
       const time = new Date().toLocaleString("ru-RU");
-      const r = await deliverLead(fields, { callId, time });
+      const r = await deps.deliverLead(fields, { callId, time });
       console.log(
         `[${callId}] заявка → Telegram: ${r.ok ? "отправлена" : `не отправлена (${r.error || (r.skipped ? "нет настроек" : "?")})`}`,
       );
@@ -359,6 +399,10 @@ wss.on("connection", (ws) => {
       console.error(`[${callId}] ошибка доставки заявки:`, e.message || e);
     }
   }
+
+  // Регистрируем сессию, чтобы грейсфул-шатдаун успел до-оформить её заявку перед выходом.
+  const session = { callId, finalizeLead };
+  sessions.add(session);
 
   ws.on("message", (data, isBinary) => {
     if (isBinary) return; // Voximplant шлёт media как ТЕКСТ; бинарных кадров не ждём
@@ -384,13 +428,50 @@ wss.on("connection", (ws) => {
 
   ws.on("close", () => {
     console.log(`[${callId}] отключился`);
+    closed = true;                            // блокируем новые ходы (finalizeTurn/handleTurn/onPartial)
+    try { currentTurn?.abort(); } catch {}    // и обрываем ход LLM, если он сейчас «в полёте»
     if (hb) clearInterval(hb);
     clearTimeout(endpointTimer);
     if (stt) stt.close();
     if (player) player.stop();
     finalizeLead();
+    sessions.delete(session);
   });
   ws.on("error", (e) => console.error(`[${callId}] ws ошибка:`, e.message));
-});
+}
 
-console.log(`Стриминговый сервер слушает ws://localhost:${PORT}/media`);
+// Грейсфул-шатдаун: перестаём принимать соединения, закрываем активные WS и даём их
+// сессиям до-оформить заявку (finalizeLead), затем выходим. Иначе перезапуск теряет лид.
+let shuttingDown = false;
+async function shutdown(sig) {
+  if (shuttingDown) return;
+  shuttingDown = true;
+  console.log(`${sig}: останавливаюсь, дренирую ${sessions.size} активных сессий…`);
+  server.close();
+  for (const ws of wss.clients) { try { ws.close(1001, "server shutdown"); } catch {} }
+  try { await drainSessions(sessions); } catch {}
+  process.exit(0);
+}
+
+// Старт сервера — только когда файл запущен напрямую (а не импортирован тестом, который берёт
+// runSession). Здесь же fail-fast по ключам Yandex, чтобы импорт модуля в тестах не падал.
+function start() {
+  assertEnv(process.env, ["YANDEX_API_KEY", "YANDEX_FOLDER_ID"], "Yandex");
+  if (missingKeys(process.env, ["TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"]).length) {
+    console.warn("⚠ TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID не заданы — заявки НЕ уйдут в Telegram");
+  }
+  server.listen(PORT, () => {
+    console.log(`Стриминговый сервер слушает ws://localhost:${PORT}/media (health: http://localhost:${PORT}/health)`);
+    if (!STREAM_SECRET) {
+      console.warn("⚠ STREAM_SECRET не задан — /media открыт без авторизации. Для беты задайте секрет в .env и добавьте ?token=… в URL сценария Voximplant.");
+    }
+  });
+  process.on("SIGTERM", () => shutdown("SIGTERM"));
+  process.on("SIGINT", () => shutdown("SIGINT"));
+}
+
+const isMain = (() => {
+  try { return !!process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url); }
+  catch { return false; }
+})();
+if (isMain) start();

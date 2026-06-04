@@ -74,13 +74,24 @@ node --env-file=.env test.mjs          # backend-only smoke test, writes reply.o
 ngrok http 3000                        # public tunnel; copy the Forwarding URL
 
 # streaming spike (parallel path, roadmap item 5):
-node --env-file=.env stream-server.mjs # streaming backend (WS /media, port 3001)
-node --test speaker.test.mjs bargein.test.mjs sentences.test.mjs playback.test.mjs speech.test.mjs  # offline unit tests
+node --env-file=.env stream-server.mjs # streaming backend (WS /media:3001, health GET /health)
+node --test *.test.mjs                 # offline unit tests (or: npm test)
 ngrok http 3001                        # tunnel the streaming WS (WebSockets work over ngrok)
 ```
 
 For a live call: run the backend **and** ngrok together, paste the ngrok URL into
 `BACKEND`/`BACKEND_END` in the Voximplant scenario, then call via phone.voximplant.com.
+Verify the backend is up first with `GET /health` (both servers expose it).
+
+**Beta hardening (env knobs, all optional):** both servers now **fail fast on
+startup** if `YANDEX_API_KEY`/`YANDEX_FOLDER_ID` are missing (clear error instead of a
+mid-call `fetch failed`); `stream-server.mjs` also warns if the Telegram vars are unset.
+Set `STREAM_SECRET` to gate the WS `/media` endpoint (it's public over ngrok) — when set,
+the Voximplant scenario's WS URL **must** append `?token=<STREAM_SECRET>` or the upgrade is
+rejected 401; unset = open + a loud boot warning. All Yandex `fetch` calls now have
+timeouts (`TTS_TIMEOUT_MS` 8000 / `STT_TIMEOUT_MS` 10000 / `LLM_TIMEOUT_MS` 15000 /
+`LLM_STREAM_TIMEOUT_MS` 20000, overridable in `.env`). `SIGTERM`/`SIGINT` drains active
+sessions (flushes each call's Telegram lead) before exit.
 
 ## Conventions & constraints
 
