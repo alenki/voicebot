@@ -1,7 +1,7 @@
 // node --test bargein.test.mjs
 import { test } from "node:test";
 import assert from "node:assert";
-import { isSubstantive, shouldInterrupt } from "./bargein.mjs";
+import { isSubstantive, shouldInterrupt, isEchoOf } from "./bargein.mjs";
 
 test("backchannels do not count as interruption", () => {
   for (const w of ["угу", "ага", "да", "да-да", "мгм", "Ага."]) {
@@ -76,4 +76,46 @@ test("shouldInterrupt: omitting lastFinalText leaves the echo guard inert (back-
 test("shouldInterrupt: empty lastFinalText does not suppress a substantive partial", () => {
   // На старте звонка lastFinalText === "" — он не должен глушить реальную речь.
   assert.strictEqual(shouldInterrupt("SPEAKING", "нет я хотел баннер", 1000, 500, ""), true);
+});
+
+// Эхо собственной речи Евы: на громкой связи её голос возвращается с микрофона абонента,
+// STT его распознаёт, и без гейта Ева «перебивала бы сама себя» (живой симптом: на любом
+// нестабильном/громком звонке речь обрывается без причины). Эхо = партиал, почти целиком
+// собранный из слов, которые Ева произносит в текущем ходе.
+test("isEchoOf: партиал из слов Евы — эхо", () => {
+  const self = "Здравствуйте! Это типография Альфа Принт, меня зовут Ева. Чем могу помочь?";
+  assert.strictEqual(isEchoOf("чем могу помочь", self), true);
+  assert.strictEqual(isEchoOf("это типография альфа принт", self), true);
+});
+
+test("isEchoOf: реальная речь абонента — не эхо", () => {
+  const self = "Здравствуйте! Это типография Альфа Принт, меня зовут Ева. Чем могу помочь?";
+  assert.strictEqual(isEchoOf("мне нужны визитки", self), false);
+  assert.strictEqual(isEchoOf("здравствуйте мне нужны сто визиток", self), false);
+});
+
+test("isEchoOf: одно слово эхом не считается (короткие ответы абонента не глушим)", () => {
+  // «визитки» в ответ на «вам визитки или баннеры?» — это ответ, а не эхо.
+  assert.strictEqual(isEchoOf("визитки", "вам визитки или баннеры"), false);
+});
+
+test("isEchoOf: пустой selfText — не эхо", () => {
+  assert.strictEqual(isEchoOf("чем могу помочь", ""), false);
+  assert.strictEqual(isEchoOf("чем могу помочь", null), false);
+});
+
+test("shouldInterrupt: эхо текущей речи Евы не перебивает", () => {
+  const self = "Визитки стоят от тысячи рублей за сто штук";
+  assert.strictEqual(
+    shouldInterrupt("SPEAKING", "стоят от тысячи рублей", 1000, 500, "", self),
+    false,
+  );
+});
+
+test("shouldInterrupt: настоящая речь поверх речи Евы перебивает", () => {
+  const self = "Визитки стоят от тысячи рублей за сто штук";
+  assert.strictEqual(
+    shouldInterrupt("SPEAKING", "подождите мне нужен баннер", 1000, 500, "", self),
+    true,
+  );
 });

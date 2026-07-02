@@ -18,8 +18,9 @@ import { splitSentences } from "./sentences.mjs";
 import { PacedPlayer } from "./playback.mjs";
 import { openStt } from "./stt-stream.mjs";
 import { stripLeadingGreeting, stripMarkup } from "./reply-clean.mjs";
+import { windowForLlm } from "./history.mjs";
 import { Speaker } from "./speaker.mjs";
-import { shouldInterrupt, isSubstantive } from "./bargein.mjs";
+import { shouldInterrupt, isSubstantive, isEchoOf } from "./bargein.mjs";
 import { extractOrder } from "./order-extract.mjs";
 import { deliverLead } from "./lead.mjs";
 import { assertEnv, missingKeys } from "./env.mjs";
@@ -32,10 +33,57 @@ import { fileURLToPath } from "node:url";
 const STREAM_SECRET = process.env.STREAM_SECRET || "";
 // Реальные зависимости сессии. В тестах подменяются фейками через runSession(ws, deps),
 // чтобы прогонять оркестрацию звонка без сети Yandex.
-const DEFAULT_DEPS = { askStream, synthesizePcm, openStt, extractOrder, deliverLead };
+// pcmCache: общий на процесс кэш синтеза (ключ `${rate}:${text}`) — константные фразы
+// (приветствие, извинения, филлеры) и повторяющиеся короткие реплики не платят HTTPS-TTS
+// на каждом звонке. Прогревается на старте сервера (prewarmPcmCache).
+const DEFAULT_DEPS = { askStream, synthesizePcm, openStt, extractOrder, deliverLead, pcmCache: new Map() };
+const PCM_CACHE_MAX = 200; // потолок кэша: уникальные реплики диалога не раздувают память
 
 const PORT = 3001;
 const GREETING = "Здравствуйте! Это типография Альфа Принт, меня зовут Ева. Чем могу помочь?";
+// Константные фразы вне LLM — кандидаты на прогрев PCM-кэша при старте сервера.
+const APOLOGY_ERROR = "Извините, техническая ошибка, повторите пожалуйста.";
+const APOLOGY_UNHEARD = "Извините, не расслышала, повторите пожалуйста.";
+// Числовой env-параметр с дефолтом. НЕ `Number(env) || dflt`: оно молча превращало
+// явный "0" обратно в дефолт — документированное «FILLER_MS=0 отключает» не работало.
+const envNum = (name, dflt) => {
+  const raw = process.env[name];
+  const v = Number(raw);
+  return raw != null && raw !== "" && Number.isFinite(v) ? v : dflt;
+};
+// Филлеры «думания»: если через FILLER_MS после старта хода настоящего аудио ещё нет,
+// абонент слышит короткую связку вместо мёртвой тишины (классика телефонных ботов —
+// тишина >1с читается как обрыв связи). Играются ТОЛЬКО из прогретого PCM-кэша: живой
+// синтез филлера отнял бы сеть у первого настоящего предложения ровно на медленном ходе.
+export const FILLER_TEXTS = ["Секундочку…", "Так, сейчас подскажу…"];
+// 1200мс: филлер — только для ДЕЙСТВИТЕЛЬНО медленных ходов. Прежний дефолт 350мс был
+// меньше типичного времени первого предложения LLM, и связка звучала почти на каждом
+// ходе (живой фидбэк: «says filler words way too much»). От «впритык к ответу» защищает
+// гейт spoken.length: если ответ уже в синтезе, филлер пропускается.
+const FILLER_MS_DEFAULT = envNum("FILLER_MS", 1200);
+// Кулдаун между филлерами: даже на череде медленных ходов Ева не «секундочкает» каждый
+// раз подряд — внутри окна филлер пропускается (медленный ход остаётся тихим, как у
+// живого оператора, который просто думает).
+const FILLER_COOLDOWN_MS_DEFAULT = envNum("FILLER_COOLDOWN_MS", 10_000);
+const FILLER_PAUSE_MS = 250; // тишина после связки — чтобы не склеивалась с ответом встык
+// Окно тишины эндпойнта (мс): ни новых партиалов, ни речевых кадров столько — реплика
+// закончена. Это главная постоянная цена каждого хода («абонент замолчал → Ева думает»).
+// Дефолт 1200 — по живому фидбэку «отвечай, только когда абонент реально замолчал»;
+// тюнить на живых звонках через .env.
+const ENDPOINT_MS_DEFAULT = envNum("ENDPOINT_MS", 1200);
+// Sustain-гейт barge-in: перебиваем, только если содержательная речь ДЕРЖИТСЯ столько мс
+// (второй+ партиал той же попытки). Одиночный всплеск (шум линии, обрывок чужого
+// разговора, глюк STT) Еву больше не глушит — живой симптом «любая помеха её ломает».
+const BARGE_SUSTAIN_MS_DEFAULT = envNum("BARGE_SUSTAIN_MS", 300);
+// Пауза между содержательными партиалами, после которой попытка перебивания считается
+// новой (одиночный всплеск десятисекундной давности не «доращивает» свежую попытку).
+const BARGE_RETRY_RESET_MS = 1000;
+// Окно хвостового эха: реплика, начавшаяся в первые столько мс после конца речи Евы и
+// почти целиком состоящая из её же слов, — это эхо её голоса с громкой связи, не абонент.
+const ECHO_TAIL_MS_DEFAULT = 1500;
+// Ре-чек VAD-отсрочки: если эндпойнт отложен из-за идущих кадров, проверяем тишину снова
+// через столько мс (а не через полное окно заново — это стоило до +1000мс тишины).
+const VAD_RECHECK_MS_DEFAULT = 250;
 // Стриминг-онли добавка к промпту: в голосовом диалоге длинные ответы тормозят и труднее
 // перебиваются. Просим отвечать очень коротко. Общий prompt.mjs (его делит turn-based
 // сервер) не трогаем — это касается только потокового пути.
@@ -81,6 +129,11 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
   let speakingDoneToken = 0; // токен хода, чьё аудио синтезировано и доигрывается плеером
   let lastFinalText = "";    // последняя финализированная реплика абонента (эхо-защита + дедуп)
   let lastFinalAt = 0;       // когда её обработали — для дедупа запоздавшего дубля
+  let evaSpokenText = "";    // что Ева говорит в текущем/последнем ходе (эхо-гейты)
+  let speechEndAt = 0;       // когда Ева закончила говорить — окно хвостового эха
+  let lastFillerAt = 0;      // когда филлер звучал в последний раз (кулдаун)
+  let bargeFirstAt = 0;      // начало текущей попытки перебивания (sustain-гейт)
+  let bargeLastAt = 0;       // последний содержательный партиал попытки (сброс по паузе)
   const GRACE_MS = 500;      // окно прогрева: первые 500мс речи Евы не перебиваем (хвост абонента)
   const DEDUP_MS = 7000;     // окно дедупа: Yandex stt-eou повторяет уже обработанную реплику ~5с спустя
   let closed = false;        // звонок завершён (ws close): запрещаем новые ходы и обрываем текущий
@@ -93,8 +146,17 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
   // Эндпойнтинг по стенным часам: тишина абонента приходит сжато (DTX/silence-suppression),
   // поэтому EOU-классификатор Yandex (audio-time) ждёт паузу 6-8с реального времени.
   // Завершаем реплику сами: если партиал не меняется ENDPOINT_MS мс — это конец фразы.
-  const ENDPOINT_MS = 1000;     // тишина после последнего изменения партиала → конец фразы
+  // Тайминги переопределяются через deps (тесты) и .env (живой тюнинг, см. константы выше).
+  const ENDPOINT_MS = deps.endpointMs ?? ENDPOINT_MS_DEFAULT;
+  const VAD_RECHECK_MS = deps.vadRecheckMs ?? VAD_RECHECK_MS_DEFAULT;
+  const FILLER_MS = deps.fillerMs ?? FILLER_MS_DEFAULT;
+  const FILLER_COOLDOWN_MS = deps.fillerCooldownMs ?? FILLER_COOLDOWN_MS_DEFAULT;
+  const BARGE_SUSTAIN_MS = deps.bargeSustainMs ?? BARGE_SUSTAIN_MS_DEFAULT;
+  const ECHO_TAIL_MS = deps.echoTailMs ?? ECHO_TAIL_MS_DEFAULT;
+  let fillerIdx = 0; // ротация филлеров, чтобы Ева не «секундочкала» одинаково подряд
   let pendingPartial = "";      // последний партиал текущей реплики абонента
+  let segments = [];            // stt-eou финалы ТЕКУЩЕЙ реплики: копятся до тишины эндпойнта
+  let turnVoiceFirstAt = 0;     // первый партиал/финал текущей реплики (окно хвостового эха)
   let endpointTimer = null;
   let turnHandled = false;      // реплика уже финализирована (защита от двойного срабатывания)
   const recentFrames = [];      // метки времени недавних входящих кадров (VAD-гейт эндпойнта)
@@ -132,10 +194,20 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
   }
 
   // TTS с одним повтором: сетевые сбои (fetch failed) иначе роняют целое предложение,
-  // и Ева «проглатывает» кусок реплики.
+  // и Ева «проглатывает» кусок реплики. Перед сетью — PCM-кэш (см. DEFAULT_DEPS.pcmCache).
   async function synthPcm(text) {
+    const cache = deps.pcmCache;
+    const key = `${sampleRate}:${text}`;
+    if (cache?.has(key)) return cache.get(key);
     for (let i = 0; ; i++) {
-      try { return await deps.synthesizePcm(text, sampleRate); }
+      try {
+        const pcm = await deps.synthesizePcm(text, sampleRate);
+        if (cache) {
+          cache.set(key, pcm);
+          if (cache.size > PCM_CACHE_MAX) cache.delete(cache.keys().next().value); // самый старый
+        }
+        return pcm;
+      }
       catch (e) { if (i >= 1) throw e; }
     }
   }
@@ -147,6 +219,7 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
     turnStartedAt = Date.now();
     floorAt = Date.now();
     currentTurn = null;               // не из LLM — отменять нечего
+    evaSpokenText = text;             // эхо-гейты сверяются с тем, что она сейчас произносит
     state = "SPEAKING";
     const token = speaker.begin();
     for (const sentence of splitSentences(text)) speaker.say(token, sentence);
@@ -176,45 +249,83 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
   // Возврат в режим прослушивания и сброс состояния реплики для следующего хода.
   function beginListening() {
     state = "LISTENING";
+    speechEndAt = Date.now(); // сюда приходим только после речи Евы — отсчёт окна эха
     turnHandled = false;
+    bargeFirstAt = 0;
+    bargeLastAt = 0;
+    resetUtterance();
+  }
+
+  // Сброс накопленной реплики абонента (партиал + сегменты + таймер эндпойнта).
+  function resetUtterance() {
     pendingPartial = "";
+    segments = [];
+    turnVoiceFirstAt = 0;
     clearTimeout(endpointTimer);
     endpointTimer = null;
   }
+
+  // Полный текст текущей реплики: завершённые Yandex'ом сегменты + растущий партиал.
+  const turnText = () => [...segments, pendingPartial].filter(Boolean).join(" ").trim();
+
+  // Нормализация для дедупа: запоздавший stt-eou дубль может отличаться от уже
+  // финализированного текста регистром/пунктуацией нормализации Yandex.
+  const sameText = (a, b) => {
+    const norm = (s) => (s || "").toLowerCase().replace(/ё/g, "е")
+      .replace(/[^\p{L}\p{N}\s]/gu, "").replace(/\s+/g, " ").trim();
+    return norm(a) === norm(b);
+  };
 
   function armEndpoint() {
     clearTimeout(endpointTimer);
     endpointTimer = setTimeout(onEndpointFire, ENDPOINT_MS);
   }
 
-  // VAD-гейт: партиал не менялся ENDPOINT_MS, но если кадры всё ещё идут с речевой частотой —
-  // абонент просто сделал паузу внутри фразы, не обрываем; ждём реальной тишины.
+  // Гейты эндпойнта: окно ENDPOINT_MS выдержано от ПОСЛЕДНЕЙ смены партиала, но реплику
+  // завершаем только при настоящей тишине — иначе короткий ре-чек.
+  //  • голос-гейт: партиалы STT приходили недавно (пусть и с тем же текстом) — абонент
+  //    ещё говорит; раньше застывший партиал финализировался на полуслове;
+  //  • VAD-гейт: кадры идут с речевой частотой — пауза внутри фразы, не конец.
   function onEndpointFire() {
     const now = Date.now();
     const recent = recentFrames.filter((t) => t >= now - 300).length; // кадров за 300мс
     // Активная речь ≈ 50 кадров/с (≈15 за 300мс). Затухающий «хвост» после речи ≈ 5-7.
     // Порог 11 (≈37 кадров/с): откладываем финал только при ЯВНОЙ речи, хвост не задерживаем.
-    if (recent >= 11) { armEndpoint(); return; }
-    finalizeTurn(pendingPartial, `endpoint ${ENDPOINT_MS}мс`);
+    // Отсрочка — коротким ре-чеком, не полным окном: пауза уже выдержана, осталось лишь
+    // дождаться, когда кадры высохнут. Изменившийся партиал всё равно перевзведёт полное окно.
+    if (recent >= 11 || (lastVoiceAt && now - lastVoiceAt < ENDPOINT_MS)) {
+      clearTimeout(endpointTimer);
+      endpointTimer = setTimeout(onEndpointFire, VAD_RECHECK_MS);
+      return;
+    }
+    finalizeTurn(turnText(), `endpoint ${ENDPOINT_MS}мс`);
   }
 
-  // Единая точка финализации реплики абонента: и наш эндпойнтинг, и EOU Yandex идут сюда.
-  // turnHandled защищает от двойного срабатывания (что сработало первым — то и берём).
+  // Единая точка финализации реплики абонента (наш эндпойнтинг по тишине).
+  // turnHandled защищает от двойного срабатывания.
   function finalizeTurn(text, src) {
     if (closed) return;                       // звонок завершён — не заводим новый ход
     if (turnHandled || state !== "LISTENING" || !text) return;
     // Дедуп: наш эндпойнт финализирует реплику за ~1с, а Yandex stt-eou той же реплики
     // приходит на несколько секунд позже (audio-time лаг при сжатой тишине) и иначе
-    // обработался бы как ВТОРОЙ ход — Ева отвечает дважды. Гасим точный повтор в окне.
-    if (text === lastFinalText && Date.now() - lastFinalAt < DEDUP_MS) {
+    // обработался бы как ВТОРОЙ ход — Ева отвечает дважды. Гасим повтор в окне.
+    if (sameText(text, lastFinalText) && Date.now() - lastFinalAt < DEDUP_MS) {
       console.log(`[${callId}] ${ts()} дубль реплики [${src}] пропущен: ${text}`);
+      resetUtterance();
+      return;
+    }
+    // Хвостовое эхо: реплика началась сразу после конца речи Евы и почти целиком состоит
+    // из её же слов — это её голос вернулся с громкой связи, а не обращение абонента.
+    // Без гейта Ева отвечала бы сама себе (живой симптом «ломается без причины»).
+    if (turnVoiceFirstAt && turnVoiceFirstAt - speechEndAt < ECHO_TAIL_MS && isEchoOf(text, evaSpokenText)) {
+      console.log(`[${callId}] ${ts()} эхо-хвост речи Евы отброшен [${src}]: ${text}`);
+      resetUtterance();
       return;
     }
     turnHandled = true;
     lastFinalText = text;            // эхо-защита barge-in + дедуп следующего дубля
     lastFinalAt = Date.now();
-    clearTimeout(endpointTimer);
-    endpointTimer = null;
+    resetUtterance();                // реплика поглощена ходом
     handleTurn(text, src);
   }
 
@@ -240,6 +351,7 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
     console.log(`[${callId}] ${ts()} клиент [${src}]: ${text}  ⏱пауза≈${eouGap}ms | аудио принято ${audioRecvSec}s за ${wallSec}s`);
     history.push({ role: "user", text });
     state = "THINKING";
+    evaSpokenText = ""; // наполнится тем, что Ева скажет в этом ходе (эхо-гейты)
 
     const ac = new AbortController();
     currentTurn = ac;
@@ -252,40 +364,79 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
     let isFirst = true;
     const spoken = [];         // озвученные (очищенные) предложения — для истории/лога
 
+    // Филлер: через FILLER_MS, если настоящего аудио ещё нет, играем готовый PCM из кэша
+    // + хвост тишины (не встык с ответом). Гейты: ход жив (не barge-in/close), токен
+    // актуален (sayPcm проверит), кулдаун выдержан (Ева не «секундочкает» каждый ход)
+    // и — важно — ни одно предложение ещё НЕ в синтезе (spoken.length): если ответ уже
+    // варится в TTS, он в сотнях мс, филлер прозвучал бы вплотную и только оттянул бы его.
+    // spokeThisTurn остаётся false — «ход без озвучки» при упавшем TTS всё ещё сработает.
+    let fillerTimer = null;
+    if (FILLER_MS > 0) {
+      const fillerText = FILLER_TEXTS[fillerIdx++ % FILLER_TEXTS.length];
+      const fillerPcm = deps.pcmCache?.get(`${sampleRate}:${fillerText}`);
+      if (fillerPcm) {
+        const pause = Buffer.alloc(Math.round(sampleRate * (FILLER_PAUSE_MS / 1000)) * 2);
+        fillerTimer = setTimeout(() => {
+          if (closed || ac.signal.aborted || speaker.spokeThisTurn || spoken.length) return;
+          if (Date.now() - lastFillerAt < FILLER_COOLDOWN_MS) {
+            console.log(`[${callId}] ${ts()} филлер пропущен (кулдаун ${FILLER_COOLDOWN_MS}мс)`);
+            return;
+          }
+          lastFillerAt = Date.now();
+          evaSpokenText += " " + fillerText; // филлер — тоже её голос: эхо-гейт должен его знать
+          console.log(`[${callId}] ${ts()} филлер «${fillerText}» (ответ дольше ${FILLER_MS}мс)`);
+          speaker.sayPcm(token, Buffer.concat([fillerPcm, pause]));
+        }, FILLER_MS);
+      }
+    }
+
     const enqueueSpeak = (sentence) => {
       let cleaned = stripMarkup(sentence).trim();
       if (isFirst) {
         cleaned = stripLeadingGreeting(cleaned).trim();
-        if (!cleaned) return;   // предложение было только приветствием — выбрасываем, isFirst оставляем
+        if (!cleaned) {
+          // Предложение было только приветствием — выбрасываем, isFirst оставляем. Лог
+          // обязателен: иначе «⏱ до 1го кадра» молча растёт на целое предложение, и по
+          // логам это неотличимо от медленного LLM.
+          console.log(`[${callId}] ${ts()} первое предложение — только приветствие, выброшено: "${sentence.trim()}"`);
+          return;
+        }
         isFirst = false;
       }
       if (!cleaned) return;
       state = "SPEAKING";
       spoken.push(cleaned);
+      evaSpokenText += " " + cleaned; // эхо-гейты сверяются с тем, что она сейчас произносит
       speaker.say(token, cleaned);
     };
 
     const drainComplete = () => {
-      const matches = raw.slice(consumed).match(/[^.!?…]*[.!?…]+/gu); // только завершённые предложения
+      // Завершённые куски: до знака конца предложения ИЛИ до переноса строки. Без \n
+      // ответ-список («* Визитки\n* Баннеры») не содержит [.!?…] и молчал бы до конца
+      // стрима; stripMarkup в enqueueSpeak потом срежет маркеры и схлопнет переносы.
+      const matches = raw.slice(consumed).match(/[^.!?…\n]*(?:[.!?…]+|\n+)/gu);
       if (!matches) return;
       for (const m of matches) { consumed += m.length; enqueueSpeak(m.trim()); }
     };
 
     try {
-      raw = await deps.askStream(history, (cum) => { raw = cum; drainComplete(); }, { signal: ac.signal });
+      // В модель — окно истории (см. history.mjs); полная history остаётся для extractOrder.
+      raw = await deps.askStream(windowForLlm(history), (cum) => { raw = cum; drainComplete(); }, { signal: ac.signal });
     } catch (e) {
+      clearTimeout(fillerTimer);
       if (ac.signal.aborted) {           // barge-in во время THINKING — тихо выходим
         if (spoken.length) history.push({ role: "assistant", text: spoken.join(" ") });
         return;                          // LISTENING уже выставлен interrupt()
       }
       console.error(`[${callId}] LLM ошибка:`, e.message);
-      await speak("Извините, техническая ошибка, повторите пожалуйста.");
+      await speak(APOLOGY_ERROR);
       return;                            // speak() сам вернул сессию в LISTENING
     }
     drainComplete();                            // добиваем завершённые предложения
     const tail = raw.slice(consumed).trim();
     if (tail) enqueueSpeak(tail);               // последний «хвост» без терминатора
     await speaker.drain();                      // ждём, пока всё синтезировано и поставлено в очередь
+    clearTimeout(fillerTimer);                  // дальше маскировать нечего (гейты прикрыли бы и так)
 
     if (ac.signal.aborted) {             // barge-in во время SPEAKING
       if (spoken.length) history.push({ role: "assistant", text: spoken.join(" ") });
@@ -297,7 +448,7 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
     // тишину» перед владельцем — коротко извиняемся и снова слушаем.
     if (!speaker.spokeThisTurn) {
       console.warn(`[${callId}] ${ts()} ход без озвучки — извиняемся вместо тишины`);
-      await speak("Извините, не расслышала, повторите пожалуйста.");
+      await speak(APOLOGY_UNHEARD);
       return;                            // speak() сам вернул сессию в LISTENING
     }
 
@@ -330,24 +481,35 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
         if (closed) return;                   // запоздавший партиал после трубки — игнор
         lastVoiceAt = Date.now();
         // Пока слово у Евы (приветствие/размышление/речь) — проверяем партиал на barge-in.
-        // Вся политика — в shouldInterrupt(): слово у Евы + окно прогрева GRACE_MS (от floorAt)
-        // + содержательность + эхо-гейт (партиал ≠ последней финализации lastFinalText).
+        // Политика — в shouldInterrupt(): слово у Евы + окно прогрева GRACE_MS (от floorAt)
+        // + содержательность + эхо-гейты (≠ последней финализации lastFinalText и не эхо
+        // собственной речи Евы evaSpokenText). Поверх политики — sustain-гейт: перебиваем
+        // только УСТОЙЧИВУЮ речь (потребуется второй+ партиал той же попытки спустя
+        // BARGE_SUSTAIN_MS) — одиночный всплеск шума/чужого разговора Еву не глушит.
         // ⚠️ Эвристика «первого приближения», тюнится на реальных звонках (см. spec):
         //   1) эхо-гейт строгий (==): дословный повтор той же фразы абонентом не перебьёт —
         //      на практике редко, т.к. партиалы растут пословно и перебивают раньше полного
         //      совпадения; floorAt задаётся в начале THINKING, и при медленном LLM грейс может
         //      истечь, пока Ева ещё молчит. Уточнить пороги по логам живых звонков.
         if (state === "SPEAKING" || state === "THINKING") {
-          const sinceFloor = Date.now() - floorAt;
-          if (shouldInterrupt(state, t, sinceFloor, GRACE_MS, lastFinalText)) {
-            interrupt(t);
+          const now = Date.now();
+          const sinceFloor = now - floorAt;
+          if (shouldInterrupt(state, t, sinceFloor, GRACE_MS, lastFinalText, evaSpokenText)) {
+            if (!bargeFirstAt || now - bargeLastAt > BARGE_RETRY_RESET_MS) bargeFirstAt = now;
+            bargeLastAt = now;
+            if (now - bargeFirstAt >= BARGE_SUSTAIN_MS) {
+              interrupt(t);
+            } else {
+              console.log(`[${callId}] ${ts()} barge-in кандидат (${now - bargeFirstAt}/${BARGE_SUSTAIN_MS}мс): "${t}"`);
+            }
           } else if (isSubstantive(t)) {
             // «Почти-перебивание»: содержательная речь, пока слово у Евы, но barge-in не сработал.
             // Логируем причину и тайминг — ровно те данные, по которым на живых звонках тюнятся
-            // GRACE_MS и эхо-гейт (см. spec, отложенный tuning pass). Только лог, без влияния на
+            // GRACE_MS и эхо-гейты (см. spec, отложенный tuning pass). Только лог, без влияния на
             // поведение.
             const why = sinceFloor < GRACE_MS ? `грейс ${sinceFloor}/${GRACE_MS}мс`
               : t === lastFinalText ? "эхо последней реплики"
+              : isEchoOf(t, evaSpokenText) ? "эхо речи Евы"
               : "иное";
             console.log(`[${callId}] ${ts()} barge-in подавлен [${why}] @${state}: "${t}"`);
           }
@@ -355,15 +517,35 @@ export function runSession(ws, deps = DEFAULT_DEPS) {
         }
         // LISTENING: обычный эндпойнтинг.
         console.log(`[${callId}] ${ts()} …${t}`);
-        // Партиал изменился — речь продолжается, сбрасываем таймер конца фразы.
-        // Стабилен ENDPOINT_MS мс — считаем фразу законченной (по стенным часам, не по audio-time).
+        // Партиал изменился — речь продолжается, сбрасываем таймер конца фразы. Реплика
+        // завершается, когда ни партиалов, ни речевых кадров нет ENDPOINT_MS подряд
+        // (по стенным часам, не по audio-time) — см. гейты в onEndpointFire.
         if (t && t !== pendingPartial) {
+          if (!turnVoiceFirstAt) turnVoiceFirstAt = Date.now();
           pendingPartial = t;
           armEndpoint();
         }
       },
-      onFinal: (t) => finalizeTurn(t, "stt-eou"),
+      // Финал Yandex (stt-eou) НЕ запускает ход немедленно: Yandex режет реплику по своим
+      // коротким паузам (и по «дырам» нестабильной сети), и Ева отвечала на полуфразе.
+      // Финалы копятся сегментами; ход стартует только по нашей тишине ENDPOINT_MS.
+      onFinal: (t) => {
+        if (closed) return;
+        if (state !== "LISTENING") return;    // финал, пока слово у Евы (поддакивание/эхо) — игнор
+        // Дедуп запоздавшего повтора: Yandex stt-eou дублирует уже обработанную реплику
+        // спустя ~5с (audio-time лаг) — не даём дублю стать сегментом следующего хода.
+        if (sameText(t, lastFinalText) && Date.now() - lastFinalAt < DEDUP_MS) {
+          console.log(`[${callId}] ${ts()} дубль сегмента [stt-eou] пропущен: ${t}`);
+          return;
+        }
+        if (segments.length && sameText(segments[segments.length - 1], t)) return; // повтор подряд
+        if (!turnVoiceFirstAt) turnVoiceFirstAt = Date.now();
+        segments.push(t);
+        pendingPartial = "";                  // партиал поглощён финалом
+        armEndpoint();
+      },
       onError: (e) => console.error(`[${callId}] STT ошибка:`, e.message || e),
+      onReconnect: (n) => console.warn(`[${callId}] ${ts()} STT-поток переподключён (попытка ${n})`),
     });
     // Диагностика транспорта: частота входящих кадров (норма = 50/с при 20мс).
     hb = setInterval(() => {
@@ -453,6 +635,38 @@ async function shutdown(sig) {
   process.exit(0);
 }
 
+// Прогрев PCM-кэша константными фразами (8кГц — телефонный формат Voximplant): первый
+// звонок снимает трубку мгновенно, а не после трёх HTTPS-вызовов TTS. Заодно прогревается
+// keep-alive-соединение к tts.api. Сбой РЕТРАИТСЯ (живой случай: таймаут TTS на старте):
+// приветствие/извинения кэш добрал бы лениво по ходу звонков, но филлеры играются ТОЛЬКО
+// из кэша — без ретрая один неудачный прогрев оставил бы весь процесс без филлеров.
+// Параметры инжектируются ради тестов; боевой вызов — без аргументов.
+export async function prewarmPcmCache({
+  synth = synthesizePcm,
+  cache = DEFAULT_DEPS.pcmCache,
+  attempts = 3,
+  retryDelayMs = 10_000,
+} = {}) {
+  const texts = [GREETING, APOLOGY_ERROR, APOLOGY_UNHEARD, ...FILLER_TEXTS].flatMap(splitSentences);
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      for (const text of texts) {
+        const key = `8000:${text}`;
+        if (cache.has(key)) continue;
+        cache.set(key, await synth(text, 8000));
+      }
+      console.log(`TTS-кэш прогрет: ${texts.length} фраз`);
+      return;
+    } catch (e) {
+      const last = attempt === attempts;
+      console.warn(`⚠ прогрев TTS-кэша не удался (${e.message})${last
+        ? " — попытки исчерпаны, синтез пойдёт лениво (филлеры будут недоступны)"
+        : ` — повтор через ${retryDelayMs / 1000}с`}`);
+      if (!last) await new Promise((r) => setTimeout(r, retryDelayMs));
+    }
+  }
+}
+
 // Старт сервера — только когда файл запущен напрямую (а не импортирован тестом, который берёт
 // runSession). Здесь же fail-fast по ключам Yandex, чтобы импорт модуля в тестах не падал.
 function start() {
@@ -460,6 +674,7 @@ function start() {
   if (missingKeys(process.env, ["TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"]).length) {
     console.warn("⚠ TELEGRAM_BOT_TOKEN/TELEGRAM_CHAT_ID не заданы — заявки НЕ уйдут в Telegram");
   }
+  prewarmPcmCache(); // не ждём: сервер слушает сразу, кэш догревается в фоне
   server.listen(PORT, () => {
     console.log(`Стриминговый сервер слушает ws://localhost:${PORT}/media (health: http://localhost:${PORT}/health)`);
     if (!STREAM_SECRET) {

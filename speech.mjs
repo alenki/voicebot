@@ -1,5 +1,16 @@
+import { fetch as httpFetch, Agent } from "undici";
+
 const API_KEY = process.env.YANDEX_API_KEY;
 const FOLDER_ID = process.env.YANDEX_FOLDER_ID;
+
+// Keep-alive к Yandex: дефолтный undici-агент закрывает простаивающее соединение через
+// ~4с — меньше паузы между ходами диалога, поэтому почти каждый ход заново платил
+// TCP+TLS-рукопожатие (~60-250мс) к llm/tts. Держим соединения 60с. Импортируем fetch
+// из npm-undici (а не глобальный): агент и fetch из одной сборки, без version-skew.
+const keepAlive = new Agent({ keepAliveTimeout: 60_000, keepAliveMaxTimeout: 600_000 });
+let dispatcher = keepAlive;
+// Тестовый/проксирующий шов: подменить диспетчер (MockAgent в тестах), null — вернуть боевой.
+export function setHttpDispatcher(d) { dispatcher = d ?? keepAlive; }
 
 // Таймауты на сетевые вызовы Yandex: без них зависший fetch держит звонок вечно (Ева
 // умолкает посреди фразы, barge-in и speaker.drain() блокируются). Комбинируем таймаут с
@@ -16,6 +27,12 @@ const TTS_TIMEOUT_MS = Number(process.env.TTS_TIMEOUT_MS) || 8000;
 const STT_TIMEOUT_MS = Number(process.env.STT_TIMEOUT_MS) || 10000;
 const LLM_TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_MS) || 15000;
 const LLM_STREAM_TIMEOUT_MS = Number(process.env.LLM_STREAM_TIMEOUT_MS) || 20000;
+
+// Потолок генерации диалоговой реплики. Штатный ответ Евы — 1-2 фразы (~20-60 токенов);
+// 300 было нужно только «понесло»-ответам, которые reply-clean потом всё равно режет, а
+// turn-based путь ждал их генерацию целиком (~3-6с лишних). 120 покрывает самое длинное
+// зачитывание заявки с запасом; extractOrder задаёт свой maxTokens явно (400).
+const MAX_TOKENS = Number(process.env.LLM_MAX_TOKENS) || 120;
 
 // Голос и просодия Евы. Подтверждено по докам SpeechKit v1/v3 (yandex-cloud/docs):
 // alena — нейронный голос, у него РОВНО две роли: neutral (по умолчанию) и good
@@ -40,11 +57,12 @@ export async function synthesize(text, voice = VOICE) {
     text, lang: "ru-RU", voice, emotion: EMOTION, speed: SPEED,
     format: "oggopus", folderId: FOLDER_ID,
   });
-  const res = await fetch("https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize", {
+  const res = await httpFetch("https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize", {
     method: "POST",
     headers: { Authorization: `Api-Key ${API_KEY}` },
     body,
     signal: withTimeout(TTS_TIMEOUT_MS),
+    dispatcher,
   });
   if (!res.ok) throw new Error(`TTS ${res.status}: ${await res.text()}`);
   return Buffer.from(await res.arrayBuffer());
@@ -57,11 +75,12 @@ export async function synthesizePcm(text, sampleRateHertz = 8000, voice = VOICE)
     text, lang: "ru-RU", voice, emotion: EMOTION, speed: SPEED,
     format: "lpcm", sampleRateHertz: String(sampleRateHertz), folderId: FOLDER_ID,
   });
-  const res = await fetch("https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize", {
+  const res = await httpFetch("https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize", {
     method: "POST",
     headers: { Authorization: `Api-Key ${API_KEY}` },
     body,
     signal: withTimeout(TTS_TIMEOUT_MS),
+    dispatcher,
   });
   if (!res.ok) throw new Error(`TTS ${res.status}: ${await res.text()}`);
   return Buffer.from(await res.arrayBuffer());
@@ -71,11 +90,12 @@ export async function synthesizePcm(text, sampleRateHertz = 8000, voice = VOICE)
 export async function recognize(audio) {
   const url = "https://stt.api.cloud.yandex.net/speech/v1/stt:recognize"
     + `?topic=general&lang=ru-RU&format=oggopus&folderId=${FOLDER_ID}`;
-  const res = await fetch(url, {
+  const res = await httpFetch(url, {
     method: "POST",
     headers: { Authorization: `Api-Key ${API_KEY}` },
     body: audio,
     signal: withTimeout(STT_TIMEOUT_MS),
+    dispatcher,
   });
   if (!res.ok) throw new Error(`STT ${res.status}: ${await res.text()}`);
   const data = await res.json();
@@ -85,8 +105,8 @@ export async function recognize(audio) {
 // Потоковый мозг: вызывает onChunk(cumulativeText) по мере генерации (YandexGPT отдаёт
 // НАКОПЛЕННЫЙ текст в каждом фрейме, не дельты). Возвращает полный текст. Это позволяет
 // синтезировать первое предложение, пока модель ещё дописывает остальное (меньше задержки).
-export async function askStream(messages, onChunk, { model = "yandexgpt-lite", signal } = {}) {
-  const res = await fetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
+export async function askStream(messages, onChunk, { model = "yandexgpt-lite", maxTokens = MAX_TOKENS, signal } = {}) {
+  const res = await httpFetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
     method: "POST",
     headers: {
       Authorization: `Api-Key ${API_KEY}`,
@@ -95,10 +115,11 @@ export async function askStream(messages, onChunk, { model = "yandexgpt-lite", s
     },
     body: JSON.stringify({
       modelUri: `gpt://${FOLDER_ID}/${model}/latest`,
-      completionOptions: { stream: true, temperature: 0.3, maxTokens: 300 },
+      completionOptions: { stream: true, temperature: 0.3, maxTokens },
       messages,
     }),
     signal: withTimeout(LLM_STREAM_TIMEOUT_MS, signal),
+    dispatcher,
   });
   if (!res.ok) throw new Error(`LLM ${res.status}: ${await res.text()}`);
   const reader = res.body.getReader();
@@ -131,10 +152,9 @@ export function pickReplyText(data) {
 }
 
 // Мозг: история сообщений -> ответ модели (текст).
-// Опции: model (по умолчанию yandexgpt-lite), maxTokens (300 — чтобы длинное подтверждение
-// заявки не обрывалось), temperature.
-export async function ask(messages, { model = "yandexgpt-lite", maxTokens = 300, temperature = 0.3 } = {}) {
-  const res = await fetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
+// Опции: model (по умолчанию yandexgpt-lite), maxTokens, temperature.
+export async function ask(messages, { model = "yandexgpt-lite", maxTokens = MAX_TOKENS, temperature = 0.3 } = {}) {
+  const res = await httpFetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
     method: "POST",
     headers: {
       Authorization: `Api-Key ${API_KEY}`,
@@ -147,6 +167,7 @@ export async function ask(messages, { model = "yandexgpt-lite", maxTokens = 300,
       messages,
     }),
     signal: withTimeout(LLM_TIMEOUT_MS),
+    dispatcher,
   });
   if (!res.ok) throw new Error(`LLM ${res.status}: ${await res.text()}`);
   return pickReplyText(await res.json());

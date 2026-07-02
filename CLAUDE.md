@@ -34,11 +34,16 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
 
 - `speech.mjs` — `synthesize(text, voice="alena")` (TTS, oggopus, emotion `good`),
   `recognize(audio)` (STT, oggopus, ru-RU), `ask(messages, model="yandexgpt-lite")`
-  (YandexGPT, `temperature 0.3`, `maxTokens 300`). Standalone async functions that
-  call the Yandex Cloud HTTP APIs (and read the env keys); ES modules.
+  (YandexGPT, `temperature 0.3`, `maxTokens 120` — env `LLM_MAX_TOKENS`; replies are
+  1-2 phone-style phrases, 300 only fed runaway ramble generation). All Yandex HTTP
+  calls go through one **undici keep-alive Agent** (60 s; default fetch dropped idle
+  connections after ~4 s, re-paying TLS every turn) — test seam: `setHttpDispatcher()`.
 - `server.mjs` — Express on port `3000`. `POST /reply {callId, text} → {reply}` with
   per-`callId` history in an in-memory `Map`; `POST /end {callId}`. Holds the Russian
   `SYSTEM` prompt that defines the assistant persona.
+- `history.mjs` — `windowForLlm(history)`: sliding window (system + last ~16 messages)
+  sent to the LLM by both servers; the **full** history object stays intact for
+  `enforcePhoneGate` and `extractOrder`.
 - `test.mjs` — local round-trip smoke test (ask → synthesize → `reply.ogg` → recognize).
 
 ### Streaming path (roadmap item 5 — spike, parallel to the turn-based stack)
@@ -46,16 +51,38 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
 - `stream-server.mjs` — WebSocket server on port `3001` (`/media`). One per-call session runs
   a LISTENING ⇄ THINKING/SPEAKING loop over Voximplant's JSON+base64 media protocol:
   continuous v3 STT → streaming YandexGPT → sentence-by-sentence TTS → paced playback, plus
-  **barge-in** (`onPartial` → `interrupt()`).
+  **barge-in** (`onPartial` → `interrupt()`). Latency features: per-process **PCM cache**
+  (greeting/apologies/fillers prewarmed at boot, capped at 200 entries), **thinking-gap
+  filler** («Секундочку…» from the cache if no real audio after `FILLER_MS`, default 1200 ms
+  so only genuinely slow turns get one, plus a `FILLER_COOLDOWN_MS` (default 10 s) so it
+  never plays on back-to-back turns; skipped when the first reply sentence is already in
+  TTS, and padded with 250 ms of silence so it never butts into the answer),
+  wall-clock endpointing tunable via `ENDPOINT_MS` (default 1200) with a 250 ms VAD re-check,
+  and newline-as-sentence-boundary so list-shaped LLM replies stream instead of stalling.
+  **Turn finalization is silence-driven:** Yandex stt-eou finals do NOT start a turn — they
+  accumulate as segments, and the turn fires only after `ENDPOINT_MS` of real silence (no
+  partials — even unchanged-text ones — and no speech-rate frames). So Ева answers only when
+  the caller actually stopped talking; mid-thought pauses and network-chopped utterances
+  stay one turn. A **tail-echo gate** drops a "turn" that begins right after Ева stops
+  speaking and is mostly her own words (speakerphone echo of her voice).
 - `speaker.mjs` — voices a reply sentence-by-sentence under a per-call cancellation token;
   `abort()` stops the player **and** invalidates queued/in-flight sentences so a barge-in
-  can't let Ева resume. Used by `stream-server.mjs`. Unit-tested in `speaker.test.mjs`.
-- `bargein.mjs` — `isSubstantive(text)` (substantive speech vs backchannels) and
-  `shouldInterrupt(state, partial, sinceFloorMs, graceMs, lastFinalText)` (the barge-in
-  policy: floor + grace window + substantive + echo-gate against the caller's last
-  finalized utterance). Wired into `stream-server.mjs`, not just a standalone filter; the
-  server also logs suppressed "почти-перебивания" (`barge-in подавлен …`) for live tuning.
+  can't let Ева resume. `sayPcm(token, buf)` plays pre-synthesized PCM (fillers) bypassing
+  the synth chain — it does NOT set `spokeThisTurn`. Unit-tested in `speaker.test.mjs`.
+- `bargein.mjs` — `isSubstantive(text)` (substantive speech vs backchannels),
+  `isEchoOf(partial, selfText)` (≥80 % of the partial's words are in Ева's current reply →
+  it's her own voice echoing back, not the caller) and
+  `shouldInterrupt(state, partial, sinceFloorMs, graceMs, lastFinalText, selfText)` (the
+  barge-in policy: floor + grace window + substantive + echo-gates against the caller's
+  last finalized utterance AND Ева's own speech). On top of the policy the server applies a
+  **sustain gate** (`BARGE_SUSTAIN_MS`, default 300): an interrupt fires only when
+  substantive speech persists across partials — a single STT blip (line noise, a snatch of
+  side conversation) no longer silences her. The server logs suppressed
+  "почти-перебивания" (`barge-in подавлен …`) and pre-sustain candidates for live tuning.
 - `stt-stream.mjs` — Yandex SpeechKit v3 gRPC streaming STT wrapper (`openStt(...)`).
+  **Auto-reconnects** on gRPC error or silent stream end (exponential backoff 300 ms → 5 s,
+  test seam: `connect` factory + `reconnectDelayMs`) — previously one network blip left Ева
+  deaf for the rest of the call. Frames sent during the gap are knowingly dropped.
 - `playback.mjs` — `PacedPlayer`: emits PCM in fixed 20 ms frames; `stop()` clears the queue
   so barge-in halts audio instantly.
 - `sentences.mjs` — `splitSentences(text)` for incremental synthesis.
@@ -68,7 +95,7 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
 ## Commands
 
 ```bash
-npm install                            # install ALL deps (express + ws + @grpc/* for streaming)
+npm install                            # install ALL deps (express + ws + undici + @grpc/* for streaming)
 node --env-file=.env server.mjs        # run backend (prints "Backend слушает …:3000")
 node --env-file=.env test.mjs          # backend-only smoke test, writes reply.ogg
 ngrok http 3000                        # public tunnel; copy the Forwarding URL
@@ -92,6 +119,18 @@ rejected 401; unset = open + a loud boot warning. All Yandex `fetch` calls now h
 timeouts (`TTS_TIMEOUT_MS` 8000 / `STT_TIMEOUT_MS` 10000 / `LLM_TIMEOUT_MS` 15000 /
 `LLM_STREAM_TIMEOUT_MS` 20000, overridable in `.env`). `SIGTERM`/`SIGINT` drains active
 sessions (flushes each call's Telegram lead) before exit.
+
+**Latency/turn-taking knobs (env, all optional):** `ENDPOINT_MS` (default 1200) — streaming
+end-of-utterance silence window, the dominant per-turn cost. Deliberately conservative per
+owner feedback ("answer only when the caller has really stopped talking"); lowering it
+trades politeness for speed — verify **on live calls only**. `FILLER_MS` (default 1200,
+`0` disables) — delay before the cached «Секундочку…» filler masks a slow LLM+TTS turn
+(skipped if the reply is already in TTS). `FILLER_COOLDOWN_MS` (default 10000) — minimum
+gap between fillers so consecutive slow turns don't all get one. `BARGE_SUSTAIN_MS`
+(default 300) — how long substantive caller speech must persist before it interrupts Ева;
+raise if side conversations still cut her off, lower if real interruptions feel sluggish.
+`LLM_MAX_TOKENS` (default 120) — dialog reply generation cap (order extraction passes its
+own 400 explicitly).
 
 ## Conventions & constraints
 

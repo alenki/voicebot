@@ -112,6 +112,40 @@ test("spokeThisTurn: reset to false by begin() for the next turn", async () => {
   assert.strictEqual(sp.spokeThisTurn, false);
 });
 
+// sayPcm — мгновенная озвучка ГОТОВОГО PCM (филлер «Секундочку…» из кэша). Идёт мимо
+// цепочки синтеза: филлер маскирует паузу размышления и не должен ждать, пока доварится
+// первое настоящее предложение. Токен-гейт сохраняется (barge-in убивает и филлер).
+test("sayPcm: enqueues immediately, ahead of an in-flight synth", async () => {
+  const player = fakePlayer();
+  const { synth, pending } = controllableSynth();
+  const sp = new Speaker(player, synth);
+  const g = sp.begin();
+  sp.say(g, "Настоящее предложение");      // синтез завис «в полёте»
+  await flush();
+  sp.sayPcm(g, Buffer.from("ФИЛЛЕР"));
+  assert.deepStrictEqual(player.enqueued.map((b) => b.toString()), ["ФИЛЛЕР"]);
+  pending[0].resolve(Buffer.from("Настоящее"));
+  await flush();
+  assert.deepStrictEqual(player.enqueued.map((b) => b.toString()), ["ФИЛЛЕР", "Настоящее"]);
+});
+
+test("sayPcm: stale token enqueues nothing (barge-in already invalidated the turn)", () => {
+  const player = fakePlayer();
+  const sp = new Speaker(player, async (t) => Buffer.from(t));
+  const g = sp.begin();
+  sp.abort();
+  sp.sayPcm(g, Buffer.from("ФИЛЛЕР"));
+  assert.strictEqual(player.enqueued.length, 0);
+});
+
+test("sayPcm: does NOT count as spokeThisTurn (apology logic still sees a silent turn)", () => {
+  const player = fakePlayer();
+  const sp = new Speaker(player, async (t) => Buffer.from(t));
+  const g = sp.begin();
+  sp.sayPcm(g, Buffer.from("ФИЛЛЕР"));
+  assert.strictEqual(sp.spokeThisTurn, false);
+});
+
 test("onFirstFrame fires once per turn, on the first enqueued sentence", async () => {
   const player = fakePlayer();
   let firsts = 0;

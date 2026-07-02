@@ -2,6 +2,7 @@ import express from "express";
    import { ask } from "./speech.mjs";
    import { SYSTEM } from "./prompt.mjs";
    import { cleanReply, enforcePhoneGate } from "./reply-clean.mjs";
+   import { windowForLlm } from "./history.mjs";
    import { assertEnv } from "./env.mjs";
 
    // Fail-fast: без ключей Yandex /reply падает безликим «fetch failed» в середине звонка.
@@ -28,8 +29,9 @@ import express from "express";
        history.push({ role: "user", text });
 
        // history уже содержит текущую реплику клиента (но ещё не ответ Евы) — гейт по ней
-       // решает, не пытается ли Ева закрыть заявку без телефона.
-       const reply = enforcePhoneGate(history, cleanReply(await ask(history)));
+       // решает, не пытается ли Ева закрыть заявку без телефона. В модель идёт окно
+       // (windowForLlm), гейту и extractOrder нужна ПОЛНАЯ история — её не трогаем.
+       const reply = enforcePhoneGate(history, cleanReply(await ask(windowForLlm(history))));
        history.push({ role: "assistant", text: reply });
 
        console.log(`[${callId}] клиент: ${text}`);
