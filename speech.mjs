@@ -20,7 +20,7 @@ export function withTimeout(ms, signal) {
   return signal ? AbortSignal.any([signal, timeout]) : timeout;
 }
 
-// Бюджеты времени на вызовы (мс). Реплики короткие (maxTokens 300 + BREVITY), так что
+// Бюджеты времени на вызовы (мс). Реплики короткие (maxTokens 120 + BREVITY), так что
 // потоковый ответ укладывается в секунды; таймаут ловит зависание, а не штатную речь.
 // Можно переопределить через .env, дефолты безопасны для 8кГц-телефона.
 const TTS_TIMEOUT_MS = Number(process.env.TTS_TIMEOUT_MS) || 8000;
@@ -28,11 +28,30 @@ const STT_TIMEOUT_MS = Number(process.env.STT_TIMEOUT_MS) || 10000;
 const LLM_TIMEOUT_MS = Number(process.env.LLM_TIMEOUT_MS) || 15000;
 const LLM_STREAM_TIMEOUT_MS = Number(process.env.LLM_STREAM_TIMEOUT_MS) || 20000;
 
+// Числовой env-параметр с дефолтом (НЕ `Number(env) || dflt` — оно ломало явный "0").
+const envNum = (name, dflt) => {
+  const raw = process.env[name];
+  const v = Number(raw);
+  return raw != null && raw !== "" && Number.isFinite(v) ? v : dflt;
+};
+
 // Потолок генерации диалоговой реплики. Штатный ответ Евы — 1-2 фразы (~20-60 токенов);
 // 300 было нужно только «понесло»-ответам, которые reply-clean потом всё равно режет, а
 // turn-based путь ждал их генерацию целиком (~3-6с лишних). 120 покрывает самое длинное
 // зачитывание заявки с запасом; extractOrder задаёт свой maxTokens явно (400).
-const MAX_TOKENS = Number(process.env.LLM_MAX_TOKENS) || 120;
+const MAX_TOKENS = envNum("LLM_MAX_TOKENS", 120);
+
+// Мозг диалога. По умолчанию ПОЛНЫЙ yandexgpt (не -lite): на живых прогонах lite ломал
+// персону — читал имя клиента по буквам «как номер», задавал двойные вопросы, дословно
+// повторял одну и ту же фразу, прощался, не взяв телефон. Половина reply-clean.mjs —
+// заплатки на его слабости; pro-модель этих ошибок почти не делает. Откат/эксперименты —
+// через .env: LLM_MODEL=yandexgpt-lite (дешевле и чуть быстрее, но заметно глупее).
+const DIALOG_MODEL = process.env.LLM_MODEL || "yandexgpt";
+// Температура диалога. 0.3 напрямую воевала с требованием промпта «каждый раз варьируй
+// формулировки»: от звонка к звонку первый ответ на «мне нужны визитки» выходил почти
+// дословно одинаковым — владелец, тестирующий бота повторными звонками, слышал «скрипт».
+// 0.4 — умеренная вариативность без потери управляемости; extractOrder задаёт свой 0 явно.
+const TEMPERATURE = envNum("LLM_TEMPERATURE", 0.4);
 
 // Голос и просодия Евы. Подтверждено по докам SpeechKit v1/v3 (yandex-cloud/docs):
 // alena — нейронный голос, у него РОВНО две роли: neutral (по умолчанию) и good
@@ -105,7 +124,7 @@ export async function recognize(audio) {
 // Потоковый мозг: вызывает onChunk(cumulativeText) по мере генерации (YandexGPT отдаёт
 // НАКОПЛЕННЫЙ текст в каждом фрейме, не дельты). Возвращает полный текст. Это позволяет
 // синтезировать первое предложение, пока модель ещё дописывает остальное (меньше задержки).
-export async function askStream(messages, onChunk, { model = "yandexgpt-lite", maxTokens = MAX_TOKENS, signal } = {}) {
+export async function askStream(messages, onChunk, { model = DIALOG_MODEL, maxTokens = MAX_TOKENS, temperature = TEMPERATURE, signal } = {}) {
   const res = await httpFetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
     method: "POST",
     headers: {
@@ -115,7 +134,7 @@ export async function askStream(messages, onChunk, { model = "yandexgpt-lite", m
     },
     body: JSON.stringify({
       modelUri: `gpt://${FOLDER_ID}/${model}/latest`,
-      completionOptions: { stream: true, temperature: 0.3, maxTokens },
+      completionOptions: { stream: true, temperature, maxTokens },
       messages,
     }),
     signal: withTimeout(LLM_STREAM_TIMEOUT_MS, signal),
@@ -152,8 +171,8 @@ export function pickReplyText(data) {
 }
 
 // Мозг: история сообщений -> ответ модели (текст).
-// Опции: model (по умолчанию yandexgpt-lite), maxTokens, temperature.
-export async function ask(messages, { model = "yandexgpt-lite", maxTokens = MAX_TOKENS, temperature = 0.3 } = {}) {
+// Опции: model (по умолчанию DIALOG_MODEL — полный yandexgpt), maxTokens, temperature.
+export async function ask(messages, { model = DIALOG_MODEL, maxTokens = MAX_TOKENS, temperature = TEMPERATURE } = {}) {
   const res = await httpFetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
     method: "POST",
     headers: {

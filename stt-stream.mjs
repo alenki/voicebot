@@ -59,11 +59,13 @@ export function openStt({
   connect = null,          // тестовый шов: фабрика дуплекс-потока вместо живого gRPC
   reconnectDelayMs = 300,  // базовая задержка переподключения (растёт экспоненциально до 5с)
 } = {}) {
+  let ownClient = null; // созданный нами gRPC-клиент — его канал надо закрыть в close()
   if (!connect) {
     const client = new Recognizer(
       "stt.api.cloud.yandex.net:443",
       grpc.credentials.createSsl(),
     );
+    ownClient = client;
     const metadata = new grpc.Metadata();
     metadata.add("authorization", `Api-Key ${API_KEY}`);
     connect = () => client.RecognizeStreaming(metadata);
@@ -131,6 +133,9 @@ export function openStt({
       timer = null;
       try { stream?.end(); } catch {}
       stream = null;
+      // Клиент создаётся на каждый звонок — без close() TLS-канал и его таймеры
+      // копились бы процессом на каждый принятый звонок.
+      try { ownClient?.close(); } catch {}
     },
   };
 }

@@ -31,15 +31,18 @@ test("formatLead показывает пустые поля как —", () => {
   assert.match(msg, /Аслан/);
 });
 
-test("deliverLead без env-переменных не шлёт и не бросает", async () => {
+test("deliverLead без env-переменных не шлёт, не бросает — и пишет заявку в журнал", async () => {
   const savedToken = process.env.TELEGRAM_BOT_TOKEN;
   const savedChat = process.env.TELEGRAM_CHAT_ID;
   delete process.env.TELEGRAM_BOT_TOKEN;
   delete process.env.TELEGRAM_CHAT_ID;
+  const persisted = [];
   try {
-    const r = await deliverLead(FULL, { callId: "x" });
+    const r = await deliverLead(FULL, { callId: "x" }, { persist: (f, m, reason) => persisted.push(reason) });
     assert.equal(r.ok, false);
     assert.equal(r.skipped, true);
+    // недоставленный лид не исчезает: он уходит в локальный журнал
+    assert.deepEqual(persisted, ["skipped"]);
   } finally {
     if (savedToken !== undefined) process.env.TELEGRAM_BOT_TOKEN = savedToken;
     if (savedChat !== undefined) process.env.TELEGRAM_CHAT_ID = savedChat;

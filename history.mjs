@@ -4,7 +4,10 @@
 // она нужна enforcePhoneGate (поиск телефона по всем репликам) и extractOrder в конце
 // звонка. Окно начинаем с реплики клиента: срез, начавшийся с assistant, ломает
 // чередование ролей после system.
-export function windowForLlm(history, max = 16) {
+// max=24: у полного диалога заявки (7+ ходов) окно в 16 сообщений выталкивало начало
+// заказа до финального подтверждения — Ева «забывала», что клиент заказывал. 24 держит
+// весь типовой звонок; на телефонных длинах это дёшево.
+export function windowForLlm(history, max = 24) {
   if (history.length <= max + 1) return history;
   const tail = history.slice(-max);
   if (tail[0]?.role === "assistant") tail.shift();

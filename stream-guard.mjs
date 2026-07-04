@@ -1,9 +1,11 @@
 // Хардненинг стримингового сервера для живой беты: авторизация WS-подключения, health-проба
 // и грейсфул-дренаж сессий при остановке. Изолированные функции — юнит-тестируются без сети.
+import { timingSafeEqual } from "node:crypto";
 
 // Авторизация WS-подключения по общему секрету. Секрет НЕ задан → гейт выключен (пускаем
 // всех; stream-server предупреждает об этом на старте). Задан → требуем ?token=<secret> в URL.
-// Кривой/пустой URL при заданном секрете → отказ (а не падение).
+// Кривой/пустой URL при заданном секрете → отказ (а не падение). Сравнение — за
+// постоянное время: обычный === на публичном ngrok-URL подбираем посимвольно по таймингу.
 export function isAuthorized(reqUrl, secret) {
   if (!secret) return true;
   let token = null;
@@ -12,7 +14,9 @@ export function isAuthorized(reqUrl, secret) {
   } catch {
     return false;
   }
-  return token === secret;
+  const a = Buffer.from(String(token ?? ""));
+  const b = Buffer.from(secret);
+  return a.length === b.length && timingSafeEqual(a, b);
 }
 
 // Ответ на health-пробу. Возвращает true, если запрос обработан (GET /health|/healthz) —

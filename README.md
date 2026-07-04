@@ -27,7 +27,7 @@ Caller
   → Voximplant (answers the call)
   → Voximplant built-in ASR  (Google ru-RU profile)   speech → text
   → POST /reply  →  our Node backend
-                      → YandexGPT (yandexgpt-lite)     text → reply
+                      → YandexGPT (yandexgpt, pro)     text → reply
   → Voximplant TTS player speaks the reply             text → speech
   → listen again …
 ```
@@ -58,7 +58,7 @@ own STT/TTS in `speech.mjs` is used here, not in the live turn-based call.
 |---|---|---|
 | Telephony | **Voximplant** — JS (VoxEngine) scenarios in the cloud | Programmable telephony that fits our JS/Node stack |
 | STT + TTS | **Yandex Cloud SpeechKit** | One account, one bill, low latency, no certificate hassle |
-| LLM ("brain") | **YandexGPT** (`yandexgpt-lite`) | Same Yandex account as speech; low latency |
+| LLM ("brain") | **YandexGPT** (`yandexgpt` pro by default; `LLM_MODEL=yandexgpt-lite` to downgrade) | Same Yandex account as speech; lite proved too weak for the persona (spelled names letter-by-letter, double questions, verbatim repeats) |
 | Voice | Yandex SpeechKit **`alena`** (emotion `good`) | Pleasant Russian female voice |
 | Backend | **Node.js + Express**, local, exposed via **ngrok** | Simple orchestrator; ngrok gives a public URL for Voximplant |
 
@@ -70,7 +70,9 @@ own STT/TTS in `speech.mjs` is used here, not in the live turn-based call.
 | Path | What it is |
 |---|---|
 | `speech.mjs` | Core library: `synthesize()` (TTS), `recognize()` (STT), `ask()` (YandexGPT). Tested; **not yet used in live calls.** |
-| `server.mjs` | Express service on port `3000`. `POST /reply` (per-call dialog memory) and `POST /end`. Holds the system prompt. |
+| `server.mjs` | Express service on port `3000`. `POST /reply` (per-call dialog memory) and `POST /end` (extracts the order and **delivers the lead to Telegram**). Optional `REPLY_SECRET` gate (header `X-Backend-Token`). |
+| `dialog-store.mjs` | Per-call history store for `server.mjs`: TTL sweep for calls whose `/end` never arrived, lead finalization (extractOrder → Telegram) on end/TTL/shutdown. |
+| `leads.ndjson` | Local fallback journal: every lead that could NOT be delivered to Telegram is appended here (gitignored). |
 | `test.mjs` | Local smoke test: `ask` → `synthesize` → write `reply.ogg` → `recognize` (full round trip). |
 | `reply.ogg` | Generated audio artifact from `test.mjs` (a synthesized sample). |
 | `.env` | `YANDEX_API_KEY`, `YANDEX_FOLDER_ID`. **Secrets — gitignored, never commit.** |
@@ -142,7 +144,7 @@ curl -s -X POST http://localhost:3000/reply \
 | Method & path | Body | Response | Notes |
 |---|---|---|---|
 | `POST /reply` | `{ "callId": string, "text": string }` | `{ "reply": string }` | Keeps per-`callId` dialog history in memory; `400` if `callId`/`text` missing. |
-| `POST /end` | `{ "callId": string }` | `{ "ok": true }` | Drops that call's history from memory. |
+| `POST /end` | `{ "callId": string }` | `{ "ok": true }` | Finalizes the call: extracts the order from the dialog (YandexGPT) and sends the lead to the owner's Telegram, then drops the history. Calls that never get `/end` are finalized by a TTL sweep (`DIALOG_TTL_MS`, default 30 min). |
 
 Dialog memory lives in an in-process `Map` — it is **lost on restart** and not
 shared across processes.
@@ -159,6 +161,9 @@ require(Modules.Player);
 
 const BACKEND = "https://<CURRENT-NGROK>.ngrok-free.dev/reply";
 const BACKEND_END = "https://<CURRENT-NGROK>.ngrok-free.dev/end";
+// Общий секрет с бэкендом (REPLY_SECRET в .env). Пусто = без авторизации (бэкенд
+// предупредит об этом на старте). ngrok-URL публичен — для беты секрет обязателен.
+const BACKEND_TOKEN = "";
 const VOICE = VoiceList.Yandex.Neural.ru_RU_alena; // Yandex Alena (neural, premium voice)
 // Просодия Евы. Без ttsOptions Voximplant синтезирует alena с НЕЙТРАЛЬНОЙ ролью и темпом
 // по умолчанию. Для Yandex ru_RU поддерживаются emotion (neutral|good — у alena только эти
@@ -166,8 +171,16 @@ const VOICE = VoiceList.Yandex.Neural.ru_RU_alena; // Yandex Alena (neural, prem
 // задаём. good = тёплый тон, 0.95 = чуть спокойнее на телефоне. Совпадает с speech.mjs.
 const TTS_OPTIONS = { emotion: "good", speed: "0.95" };
 const HEADERS = ["Content-Type: application/json", "ngrok-skip-browser-warning: 1"];
+if (BACKEND_TOKEN) HEADERS.push("X-Backend-Token: " + BACKEND_TOKEN);
+// Молчание абонента: ASR с singleUtterance может вообще не прислать Result — без
+// таймера звонок висел в мёртвой тишине бесконечно.
+const ASR_TIMEOUT_MS = 12000;
+// Фолбэк при лежащем бэкенде: живой номер, чтобы звонок не пропал зря.
+const FALLBACK_PHONE = "плюс семь, девятьсот шестьдесят семь, четыреста двадцать пять, семьдесят девять, семьдесят девять";
 
 let call;
+let silentRounds = 0; // подряд «ничего не расслышали»
+let failRounds = 0;   // подряд ошибок бэкенда
 const callId = "vox-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
 
 VoxEngine.addEventListener(AppEvents.CallAlerting, (e) => {
@@ -188,41 +201,84 @@ function say(text, done) {
     ttsOptions: TTS_OPTIONS, // тёплая роль good + темп 0.95 для alena
   });
   player.sendMediaTo(call);
-  player.addEventListener(PlayerEvents.PlaybackFinished, () => { if (done) done(); });
+  let called = false;
+  const finish = () => { if (called) return; called = true; clearTimeout(guard); if (done) done(); };
+  // Страховка: если TTS упал и PlaybackFinished не пришёл — не зависаем навсегда.
+  const guard = setTimeout(finish, 4000 + text.length * 120);
+  player.addEventListener(PlayerEvents.PlaybackFinished, finish);
 }
 
 function listen() {
   const asr = VoxEngine.createASR({ profile: ASRProfileList.Google.ru_RU, singleUtterance: true });
-  call.sendMediaTo(asr);
-  asr.addEventListener(ASREvents.Result, async (e) => {
+  let finished = false;
+  const finish = (text) => {
+    if (finished) return;
+    finished = true;
+    clearTimeout(timer);
     call.stopMediaTo(asr);
-    const text = (e.text || "").trim();
-    Logger.write("Клиент сказал: " + text);
-    if (!text) { say("Извините, я вас не расслышал. Повторите, пожалуйста.", listen); return; }
+    onHeard(text);
+  };
+  const timer = setTimeout(() => finish(""), ASR_TIMEOUT_MS); // молчание — Result может не прийти
+  call.sendMediaTo(asr);
+  asr.addEventListener(ASREvents.Result, (e) => finish((e.text || "").trim()));
+}
+
+async function onHeard(text) {
+  Logger.write("Клиент сказал: " + text);
+  if (!text) {
+    silentRounds++;
+    if (silentRounds >= 3) { hangup("Плохо вас слышно, к сожалению. Наберите нас ещё раз, хорошо? Всего доброго!"); return; }
+    say(silentRounds === 1 ? "Алло, вы меня слышите?" : "Простите, вас совсем не слышно. Повторите, пожалуйста.", listen);
+    return;
+  }
+  silentRounds = 0;
+  const reply = await askBackend(text);
+  if (reply === null) {
+    failRounds++;
+    if (failRounds >= 2) {
+      hangup("Простите, у нас неполадки со связью. Запишите, пожалуйста, номер: " + FALLBACK_PHONE + ". Позвоните или напишите в ВотсАп — всё посчитаем. Всего доброго!");
+      return;
+    }
+    say("Извините, я на секунду отвлеклась. Повторите, пожалуйста.", listen);
+    return;
+  }
+  failRounds = 0;
+  Logger.write("Бот отвечает: " + reply);
+  say(reply, listen);
+}
+
+// Один быстрый повтор на транзиентные 5xx/обрывы ngrok; null = бэкенд недоступен.
+async function askBackend(text) {
+  for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       const res = await Net.httpRequestAsync(BACKEND, {
         method: "POST", headers: HEADERS,
         postData: JSON.stringify({ callId, text }),
       });
-      if (res.code === 200) {
-        const reply = JSON.parse(res.text).reply;
-        Logger.write("Бот отвечает: " + reply);
-        say(reply, listen);
-      } else {
-        Logger.write("Backend error " + res.code + ": " + res.text);
-        say("Извините, техническая ошибка. Попробуйте ещё раз.", listen);
-      }
+      if (res.code === 200) return JSON.parse(res.text).reply;
+      Logger.write("Backend error " + res.code + " (attempt " + attempt + "): " + res.text);
     } catch (err) {
-      Logger.write("Request failed: " + err);
-      say("Извините, связь прервалась. Повторите, пожалуйста.", listen);
+      Logger.write("Request failed (attempt " + attempt + "): " + err);
     }
+  }
+  return null;
+}
+
+function hangup(text) {
+  say(text, async () => {
+    await postEnd();
+    VoxEngine.terminate();
   });
 }
 
-async function onDisconnected() {
+async function postEnd() {
   try {
     await Net.httpRequestAsync(BACKEND_END, { method: "POST", headers: HEADERS, postData: JSON.stringify({ callId }) });
   } catch (e) {}
+}
+
+async function onDisconnected() {
+  await postEnd(); // бэкенд по /end извлекает заявку и шлёт её менеджеру в Telegram
   VoxEngine.terminate();
 }
 ```
@@ -248,14 +304,14 @@ In priority order:
 1. ~~**Test the live call**~~ — ✅ done; verified on a real inbound call.
 2. ~~**Switch the voice to Alena.**~~ — ✅ done; the `inbound` scenario uses
    `VoiceList.Yandex.Neural.ru_RU_alena` (the canonical copy below matches).
-3. **Make the bot genuinely useful:**
-   - Tune the system prompt (less "I'll pass it to a manager", more concrete answers
-     that move toward placing an order).
-   - Knowledge base / FAQ via RAG so it answers with real services, timelines, and
-     ballpark prices instead of deferring to a manager.
-4. **Order intake (the key business task):** extract a structured order from the
-   conversation (what to print, quantity, format, material, deadline, contact),
-   read each field back and confirm it, then write the order to a CRM or Google Sheets.
+3. **Make the bot genuinely useful:** largely done — the persona prompt drives to a
+   captured lead, answers address/hours/payment directly from FACTS, never invents
+   prices; the dialog brain is full `yandexgpt` (pro). Remaining: richer FAQ facts
+   from the owner (materials, typical формats) as they arrive.
+4. **Order intake (the key business task):** ✅ done for Telegram — BOTH paths now
+   extract a structured order after the call (what/qty/format/material/deadline/
+   name/phone, phone normalized to digits) and deliver it to the owner's Telegram,
+   with a local `leads.ndjson` fallback journal. CRM / Google Sheets — later.
 5. **Dialogue quality (streaming spike):** ~~**barge-in**~~ — ✅ implemented and
    **verified live** on a real call (`bargein.mjs` + `stream-server.mjs`; the caller
    interrupts Ева, backchannels don't). Remaining: silence timeouts, lower latency, and

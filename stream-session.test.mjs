@@ -6,7 +6,8 @@
 import { test } from "node:test";
 import assert from "node:assert";
 import { EventEmitter } from "node:events";
-import { runSession, FILLER_TEXTS, prewarmPcmCache } from "./stream-server.mjs";
+import { runSession, FILLER_TEXTS, IDLE_PROMPTS, prewarmPcmCache, evictOverflow } from "./stream-server.mjs";
+import { PHONE_ASKS } from "./reply-clean.mjs";
 
 class FakeWs extends EventEmitter {
   constructor() { super(); this.OPEN = 1; this.readyState = 1; this.sent = []; }
@@ -366,6 +367,122 @@ test("филлер не повторяется на каждом медленн�
       .filter((b) => b === fillerByte).length;
     assert.ok(fillers > 0, "первый медленный ход — с филлером");
     assert.equal(fillers, 1, "второй медленный ход внутри кулдауна — без филлера");
+  } finally { ws.emit("close"); }
+});
+
+// Гигиена стримингового пути (паритет с turn-based cleanReply): женский род, срез
+// ролеплея ещё в стриме, серверный гейт телефона. Раньше «Понял» и «Клиент: …»
+// уходили в TTS как есть — мгновенный слуховой признак бота.
+test("стриминг: женский род чинится пофразово («Понял» → «Поняла»)", async () => {
+  const ws = new FakeWs();
+  const { deps, cap } = makeDeps();
+  deps.askStream = async (_m, onChunk) => {
+    cap.askCalls++;
+    onChunk("Понял, записал вашу заявку.");
+    return "Понял, записал вашу заявку.";
+  };
+  runSession(ws, deps);
+  try {
+    ws.emit("message", startFrame());
+    await startTurn(cap);
+    await sleep(100);
+    assert.ok(cap.synthed.includes("Поняла, записала вашу заявку."),
+      `ожидалась феминизированная фраза, синтезировано: ${JSON.stringify(cap.synthed)}`);
+  } finally { ws.emit("close"); }
+});
+
+test("стриминг: фальшивый ролеплей обрезается ещё в стриме и не озвучивается", async () => {
+  const ws = new FakeWs();
+  const { deps, cap } = makeDeps();
+  deps.askStream = async (_m, onChunk) => {
+    cap.askCalls++;
+    const full = "Тираж какой думаете? Клиент: штук триста. Ева: Отлично, записала.";
+    onChunk(full);
+    return full;
+  };
+  runSession(ws, deps);
+  try {
+    ws.emit("message", startFrame());
+    await startTurn(cap);
+    await sleep(100);
+    assert.ok(cap.synthed.includes("Тираж какой думаете?"), "настоящая реплика звучит");
+    assert.ok(!cap.synthed.some((t) => /штук триста|Отлично, записала/.test(t)),
+      `выдуманный диалог за клиента не должен звучать: ${JSON.stringify(cap.synthed)}`);
+  } finally { ws.emit("close"); }
+});
+
+test("стриминг: обещание звонка без номера подменяется просьбой телефона", async () => {
+  const ws = new FakeWs();
+  const { deps, cap } = makeDeps();
+  deps.askStream = async (_m, onChunk) => {
+    cap.askCalls++;
+    const full = "Отлично, менеджер перезвонит с расчётом. Хорошего дня!";
+    onChunk(full);
+    return full;
+  };
+  runSession(ws, deps);
+  try {
+    ws.emit("message", startFrame());
+    await startTurn(cap); // в истории нет телефона
+    await sleep(100);
+    assert.ok(cap.synthed.some((t) => /продиктуйте/i.test(t)),
+      `ожидалась просьба номера, синтезировано: ${JSON.stringify(cap.synthed)}`);
+    assert.ok(!cap.synthed.some((t) => /Хорошего дня/.test(t)),
+      "прощание после подмены не должно звучать");
+  } finally { ws.emit("close"); }
+});
+
+// Лукахед гейта: если просьба номера уже есть дальше в сгенерированном ответе,
+// валидную связку «обещание → просьба» НЕ клоббим канонической фразой.
+test("стриминг: «перезвонит + на какой номер записать?» проходит без подмены", async () => {
+  const ws = new FakeWs();
+  const { deps, cap } = makeDeps();
+  deps.askStream = async (_m, onChunk) => {
+    cap.askCalls++;
+    const full = "Менеджер перезвонит с расчётом. На какой номер записать?";
+    onChunk(full);
+    return full;
+  };
+  runSession(ws, deps);
+  try {
+    ws.emit("message", startFrame());
+    await startTurn(cap);
+    await sleep(100);
+    assert.ok(cap.synthed.includes("Менеджер перезвонит с расчётом."), "обещание звучит как есть");
+    assert.ok(cap.synthed.includes("На какой номер записать?"), "своя просьба номера сохранена");
+    assert.ok(!cap.synthed.some((t) => /продиктуйте|Остался только телефон/i.test(t)),
+      "каноническая подмена не должна была сработать");
+  } finally { ws.emit("close"); }
+});
+
+// Вымещение кэша щадит закреплённые (прогретые) записи: раньше FIFO выкидывал
+// приветствие и филлеры первыми, и после ~200 уникальных реплик филлеры умирали
+// до рестарта процесса.
+test("evictOverflow: закреплённые записи переживают переполнение кэша", () => {
+  const cache = new Map();
+  const pinned = new Set(["8000:греетинг", "8000:филлер"]);
+  cache.set("8000:греетинг", Buffer.alloc(1));
+  cache.set("8000:филлер", Buffer.alloc(1));
+  for (let i = 0; i < 10; i++) cache.set(`8000:реплика-${i}`, Buffer.alloc(1));
+  evictOverflow(cache, 5, pinned);
+  assert.equal(cache.size, 5);
+  assert.ok(cache.has("8000:греетинг") && cache.has("8000:филлер"), "прогретое не вымещается");
+  assert.ok(!cache.has("8000:реплика-0"), "вымещается самая старая НЕзакреплённая");
+});
+
+// Молчание абонента: вместо бесконечной мёртвой тишины Ева переспрашивает «алло?» —
+// максимум два раза, дальше молчит (не изводит абонента).
+test("тишина в LISTENING → переспрос «алло?», не больше двух", async () => {
+  const ws = new FakeWs();
+  const { deps, cap } = makeDeps();
+  deps.idlePromptMs = 60;
+  runSession(ws, deps);
+  try {
+    ws.emit("message", startFrame());
+    await sleep(700); // приветствие доиграло, дальше тишина — оба переспроса успевают
+    const prompts = cap.synthed.filter((t) => IDLE_PROMPTS.includes(t));
+    assert.ok(prompts.length >= 1, "первый переспрос должен прозвучать");
+    assert.ok(prompts.length <= 2, `не больше двух переспросов, было: ${prompts.length}`);
   } finally { ws.emit("close"); }
 });
 

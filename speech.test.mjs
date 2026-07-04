@@ -36,6 +36,9 @@ test("ask: stream:false, maxTokens 120 по умолчанию, Api-Key — и �
     assert.equal(cap.body.completionOptions.stream, false);
     assert.equal(cap.body.completionOptions.maxTokens, 120);
     assert.match(cap.headers.authorization, /^Api-Key /);
+    // Мозг диалога по умолчанию — ПОЛНЫЙ yandexgpt (lite ломал персону), температура 0.4
+    assert.match(cap.body.modelUri, /\/yandexgpt\/latest$/);
+    assert.equal(cap.body.completionOptions.temperature, 0.4);
   } finally {
     setHttpDispatcher(null); // вернуть боевой keep-alive агент
   }
@@ -53,6 +56,8 @@ test("askStream: stream:true, maxTokens 120 — onChunk получает нак�
     assert.deepStrictEqual(chunks, ["Привет.", "Привет. Как дела?"]);
     assert.equal(cap.body.completionOptions.stream, true);
     assert.equal(cap.body.completionOptions.maxTokens, 120);
+    assert.match(cap.body.modelUri, /\/yandexgpt\/latest$/);
+    assert.equal(cap.body.completionOptions.temperature, 0.4);
   } finally {
     setHttpDispatcher(null);
   }

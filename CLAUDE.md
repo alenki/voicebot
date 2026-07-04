@@ -22,10 +22,14 @@ The Node backend is just the "brain" orchestrator behind `POST /reply`.
 
 ## Current focus
 
-**Make the bot genuinely useful** (Roadmap items 3–4). The live call is verified and
-already uses the Yandex Alena voice (`VoiceList.Yandex.Neural.ru_RU_alena`) — items 1–2
-are done. Next: a knowledge base / FAQ and **structured order intake** (extract the
-order from the dialog, read it back, write it to a CRM / Google Sheets).
+**Polish pass shipped (2026-07-04), needs a live-call verification.** The dialog brain
+defaults to full `yandexgpt` (pro) — lite was behind most of the "works really bad"
+symptoms; the persona prompt was reworked (phone captured early, no copyable digits/dates
+in examples, facts answered directly, «мне просто цену узнать» handled); BOTH paths now
+share the deterministic reply gates; and **both paths deliver the lead to Telegram**
+(turn-based via `dialog-store.mjs` on `/end`/TTL/shutdown — before, the live path threw
+every lead away). Next: owner places a real call (turn-based + streaming), then tune from
+its logs; later a richer FAQ and CRM/Sheets export.
 
 The Voximplant scenario itself is **not in this repo** — it lives in the Voximplant
 cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario").
@@ -33,18 +37,45 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
 ## Code map
 
 - `speech.mjs` — `synthesize(text, voice="alena")` (TTS, oggopus, emotion `good`),
-  `recognize(audio)` (STT, oggopus, ru-RU), `ask(messages, model="yandexgpt-lite")`
-  (YandexGPT, `temperature 0.3`, `maxTokens 120` — env `LLM_MAX_TOKENS`; replies are
-  1-2 phone-style phrases, 300 only fed runaway ramble generation). All Yandex HTTP
-  calls go through one **undici keep-alive Agent** (60 s; default fetch dropped idle
-  connections after ~4 s, re-paying TLS every turn) — test seam: `setHttpDispatcher()`.
-- `server.mjs` — Express on port `3000`. `POST /reply {callId, text} → {reply}` with
-  per-`callId` history in an in-memory `Map`; `POST /end {callId}`. Holds the Russian
-  `SYSTEM` prompt that defines the assistant persona.
-- `history.mjs` — `windowForLlm(history)`: sliding window (system + last ~16 messages)
+  `recognize(audio)` (STT, oggopus, ru-RU), `ask(messages)` (YandexGPT — **default
+  model is full `yandexgpt` (pro)**, env `LLM_MODEL` to downgrade to `yandexgpt-lite`;
+  `temperature 0.4` — env `LLM_TEMPERATURE`; `maxTokens 120` — env `LLM_MAX_TOKENS`).
+  lite was the root cause of "the AI works really bad": it spelled the caller's NAME
+  letter-by-letter like a phone number, asked double questions, repeated canned lines
+  verbatim and said goodbye without taking the phone. All Yandex HTTP calls go through
+  one **undici keep-alive Agent** (60 s) — test seam: `setHttpDispatcher()`.
+- `server.mjs` — Express on port `3000`. `POST /reply {callId, text} → {reply}`;
+  `POST /end {callId}` now **finalizes the lead** (extractOrder → Telegram) — before,
+  the LIVE path silently threw every lead away (Telegram delivery existed only in the
+  streaming spike). Optional `REPLY_SECRET` (header `X-Backend-Token`) gates both
+  endpoints; empty LLM replies get a spoken fallback instead of dead air; 500s return
+  a generic error (no internals); SIGTERM/SIGINT drains leads with a 20 s deadline.
+- `dialog-store.mjs` — per-call history store for `server.mjs`: TTL sweep
+  (`DIALOG_TTL_MS`, default 30 min) finalizes calls whose `/end` never arrived —
+  no memory leak, no silently lost lead. Unit-tested with injected deps.
+- `history.mjs` — `windowForLlm(history)`: sliding window (system + last ~24 messages)
   sent to the LLM by both servers; the **full** history object stays intact for
   `enforcePhoneGate` and `extractOrder`.
+- `reply-clean.mjs` — deterministic gates backing the prompt up (the prompt alone
+  doesn't hold the model): greeting/markup/quote strip, `stripRolePlay` (now also
+  inline «Ева:»/«Менеджер:» labels and label-prefixed replies), `feminize` (with
+  subject guards — «заказ будет готов» stays masculine), `spellOutPhoneRuns` (7+ digit
+  runs → «восемь, девять…» so alena doesn't read one giant number), `hasBotLeak`/
+  `BOT_DEFLECT` («как языковая модель…» → Ева's stock deflection), `hasPhone`
+  (contiguous digit runs — scattered «90 на 50, тираж 1000» no longer counts as a
+  phone; numbers split across two turns DO), `enforcePhoneGate` with widened
+  callback-promise verbs («свяжемся», «позвоним», «наберет», «соединю»), tightened
+  ask-detection, rotation of 3 `PHONE_ASKS` variants, and a two-refusal stand-down
+  (after the caller refuses twice, the gate stops pushing).
+- `order-extract.mjs` — post-call order extraction (full `yandexgpt`, temp 0, one
+  retry); `normalizePhone` converts dictated number-words to digits; `hasOrder`
+  parses strictly (string "false" ≠ true).
+- `lead.mjs` — Telegram delivery with a 10 s timeout (env `TELEGRAM_TIMEOUT_MS`), one
+  retry, and a **local fallback journal** `leads.ndjson` (env `LEADS_FILE`, gitignored):
+  a lead that can't reach Telegram is appended there instead of vanishing.
 - `test.mjs` — local round-trip smoke test (ask → synthesize → `reply.ogg` → recognize).
+- `eva-eval.mjs` — scripted multi-turn dialogs through a running `/reply`; writes
+  `eva-eval-output.json` for a persona/guardrail review. Run it after any prompt change.
 
 ### Streaming path (roadmap item 5 — spike, parallel to the turn-based stack)
 
@@ -52,23 +83,35 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
   a LISTENING ⇄ THINKING/SPEAKING loop over Voximplant's JSON+base64 media protocol:
   continuous v3 STT → streaming YandexGPT → sentence-by-sentence TTS → paced playback, plus
   **barge-in** (`onPartial` → `interrupt()`). Latency features: per-process **PCM cache**
-  (greeting/apologies/fillers prewarmed at boot, capped at 200 entries), **thinking-gap
-  filler** («Секундочку…» from the cache if no real audio after `FILLER_MS`, default 1200 ms
-  so only genuinely slow turns get one, plus a `FILLER_COOLDOWN_MS` (default 10 s) so it
-  never plays on back-to-back turns; skipped when the first reply sentence is already in
-  TTS, and padded with 250 ms of silence so it never butts into the answer),
-  wall-clock endpointing tunable via `ENDPOINT_MS` (default 1200) with a 250 ms VAD re-check,
-  and newline-as-sentence-boundary so list-shaped LLM replies stream instead of stalling.
+  (greeting/apologies/fillers/idle-prompts/phone-asks prewarmed at boot, capped at 200
+  entries; **prewarmed keys are pinned** — dialog phrases can't evict them — and hits are
+  LRU-refreshed), **thinking-gap filler** (4 rotating clips from the cache if no real audio
+  after `FILLER_MS`, default 1200 ms, plus `FILLER_COOLDOWN_MS` default 10 s; skipped when
+  the first reply sentence is already in TTS, padded with 250 ms of silence),
+  wall-clock endpointing tunable via `ENDPOINT_MS` (default 1200) with a 250 ms VAD re-check
+  (frame-based deferrals are budgeted — max ~3 s — so a no-DTX line with constant
+  comfort-noise frames can't mute Ева forever), and newline-as-sentence-boundary so
+  list-shaped LLM replies stream instead of stalling.
   **Turn finalization is silence-driven:** Yandex stt-eou finals do NOT start a turn — they
-  accumulate as segments, and the turn fires only after `ENDPOINT_MS` of real silence (no
-  partials — even unchanged-text ones — and no speech-rate frames). So Ева answers only when
-  the caller actually stopped talking; mid-thought pauses and network-chopped utterances
-  stay one turn. A **tail-echo gate** drops a "turn" that begins right after Ева stops
-  speaking and is mostly her own words (speakerphone echo of her voice).
+  accumulate as segments, and the turn fires only after `ENDPOINT_MS` of real silence. The
+  late-duplicate dedup now has a **fresh-voice exemption**: a caller legitimately answering
+  «да» to two consecutive questions is a new turn (has fresh partials/frames), while a late
+  stt-eou replay (silence in the line) is still dropped. A **tail-echo gate** drops a "turn"
+  that begins right after Ева stops speaking and is mostly her own words. **Reply hygiene
+  now matches the turn-based path**: per-sentence `feminize` + quote-strip +
+  `spellOutPhoneRuns`, roleplay labels are clipped mid-stream, `hasBotLeak` swaps in the
+  stock deflection, and the **phone gate** replaces a callback-promise-without-number
+  sentence with a `PHONE_ASKS` variant (rest of that turn's stream is muted). **Idle
+  re-prompt**: after `IDLE_PROMPT_MS` (default 15 s, `0` off) of caller silence in
+  LISTENING Ева asks «Алло, вы меня слышите?» — max 2 in a row. On ws close the Speaker is
+  aborted (queued sentences stop burning TTS calls) and the session stays in the drain set
+  until its lead delivery settles; a duplicate `start` frame is ignored; WS `maxPayload`
+  is 1 MiB. Lead is sent when the extraction says `hasOrder` **or a phone was captured**.
 - `speaker.mjs` — voices a reply sentence-by-sentence under a per-call cancellation token;
-  `abort()` stops the player **and** invalidates queued/in-flight sentences so a barge-in
-  can't let Ева resume. `sayPcm(token, buf)` plays pre-synthesized PCM (fillers) bypassing
-  the synth chain — it does NOT set `spokeThisTurn`. Unit-tested in `speaker.test.mjs`.
+  `abort()` stops the player, invalidates queued/in-flight sentences **and resets the synth
+  chain** (the next turn no longer queues behind a stalled TTS call of the cancelled turn).
+  `sayPcm(token, buf)` plays pre-synthesized PCM (fillers) bypassing the synth chain — it
+  does NOT set `spokeThisTurn`. Unit-tested in `speaker.test.mjs`.
 - `bargein.mjs` — `isSubstantive(text)` (substantive speech vs backchannels),
   `isEchoOf(partial, selfText)` (≥80 % of the partial's words are in Ева's current reply →
   it's her own voice echoing back, not the caller) and
@@ -83,6 +126,10 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
   **Auto-reconnects** on gRPC error or silent stream end (exponential backoff 300 ms → 5 s,
   test seam: `connect` factory + `reconnectDelayMs`) — previously one network blip left Ева
   deaf for the rest of the call. Frames sent during the gap are knowingly dropped.
+  `close()` also closes the per-call gRPC client channel (they used to accumulate).
+- `sentences.mjs` — `splitSentences` no longer breaks after abbreviations («г.», «ул.» —
+  the FACTS address used to be spoken as fragments); `chunkForTts` splits >240-char
+  sentences so SpeechKit v1's ~250-char limit can't silently swallow one.
 - `playback.mjs` — `PacedPlayer`: emits PCM in fixed 20 ms frames; `stop()` clears the queue
   so barge-in halts audio instantly.
 - `sentences.mjs` — `splitSentences(text)` for incremental synthesis.
@@ -124,13 +171,19 @@ sessions (flushes each call's Telegram lead) before exit.
 end-of-utterance silence window, the dominant per-turn cost. Deliberately conservative per
 owner feedback ("answer only when the caller has really stopped talking"); lowering it
 trades politeness for speed — verify **on live calls only**. `FILLER_MS` (default 1200,
-`0` disables) — delay before the cached «Секундочку…» filler masks a slow LLM+TTS turn
-(skipped if the reply is already in TTS). `FILLER_COOLDOWN_MS` (default 10000) — minimum
-gap between fillers so consecutive slow turns don't all get one. `BARGE_SUSTAIN_MS`
-(default 300) — how long substantive caller speech must persist before it interrupts Ева;
-raise if side conversations still cut her off, lower if real interruptions feel sluggish.
-`LLM_MAX_TOKENS` (default 120) — dialog reply generation cap (order extraction passes its
-own 400 explicitly).
+`0` disables) — delay before the cached filler masks a slow LLM+TTS turn (skipped if the
+reply is already in TTS). `FILLER_COOLDOWN_MS` (default 10000) — minimum gap between
+fillers. `BARGE_SUSTAIN_MS` (default 300) — how long substantive caller speech must persist
+before it interrupts Ева. `IDLE_PROMPT_MS` (default 15000, `0` off) — caller-silence window
+before Ева asks «алло?» (max 2 in a row).
+
+**Brain knobs (env):** `LLM_MODEL` (default `yandexgpt` — full pro model; set
+`yandexgpt-lite` to save money at a real quality cost), `LLM_TEMPERATURE` (default 0.4),
+`LLM_MAX_TOKENS` (default 120; order extraction passes its own 400 explicitly).
+`REPLY_SECRET` — gates `/reply`+`/end` via `X-Backend-Token` (set the same value in the
+Voximplant scenario's `BACKEND_TOKEN`). `DIALOG_TTL_MS` (default 30 min) — turn-based
+dialog sweep. `TELEGRAM_TIMEOUT_MS` (default 10000), `LEADS_FILE` (default `leads.ndjson`,
+empty string disables the fallback lead journal).
 
 ## Conventions & constraints
 
@@ -166,5 +219,8 @@ own 400 explicitly).
 
 - Backend change → run `node --env-file=.env test.mjs` (or curl `/reply`) and show
   the actual output.
+- Prompt/persona change → run `node --env-file=.env server.mjs` + `node eva-eval.mjs`
+  and read the transcripts in `eva-eval-output.json` against the guardrails (price/срок
+  leaks, double questions, lost phone, bot tells).
 - Scenario/telephony change → it can only be truly verified with a real call through
   phone.voximplant.com; say so rather than asserting it works.

@@ -66,6 +66,32 @@ test("abort mid-turn: player stopped and NOTHING more is enqueued (no resume)", 
   assert.strictEqual(pending.length, 2); // до синтеза «Третьего» дело не дошло
 });
 
+// abort() рвёт цепочку синтеза: раньше первое предложение СЛЕДУЮЩЕГО хода вставало в
+// очередь позади зависшего TTS отменённого хода (до ~8с таймаута) — после barge-in Ева
+// молчала лишние секунды. Теперь новый ход стартует немедленно, старый синтез — в никуда.
+test("abort рвёт цепочку: новый ход не ждёт зависший синтез отменённого", async () => {
+  const player = fakePlayer();
+  const { synth, pending } = controllableSynth();
+  const sp = new Speaker(player, synth);
+  const g1 = sp.begin();
+  sp.say(g1, "Зависшее");           // синтез «в полёте», промис не резолвится
+  await flush();
+  sp.abort();                        // barge-in
+
+  const g2 = sp.begin();
+  sp.say(g2, "Новое");
+  await flush();
+  // Новый синтез стартовал, НЕ дожидаясь зависшего: pending уже содержит «Новое».
+  assert.deepStrictEqual(pending.map((p) => p.text), ["Зависшее", "Новое"]);
+  pending[1].resolve(Buffer.from("Новое"));
+  await sp.drain();
+  assert.deepStrictEqual(player.enqueued.map((b) => b.toString()), ["Новое"]);
+  // Старый синтез вернулся позже — токен-гейт не пускает его в плеер.
+  pending[0].resolve(Buffer.from("Зависшее"));
+  await flush();
+  assert.deepStrictEqual(player.enqueued.map((b) => b.toString()), ["Новое"]);
+});
+
 test("fresh turn after abort still works", async () => {
   const player = fakePlayer();
   const sp = new Speaker(player, async (t) => Buffer.from(t));
