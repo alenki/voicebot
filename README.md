@@ -27,7 +27,7 @@ Caller
   → Voximplant (answers the call)
   → Voximplant built-in ASR  (Google ru-RU profile)   speech → text
   → POST /reply  →  our Node backend
-                      → YandexGPT (yandexgpt, pro)     text → reply
+                      → Alice AI LLM (aliceai-llm)     text → reply
   → Voximplant TTS player speaks the reply             text → speech
   → listen again …
 ```
@@ -58,8 +58,8 @@ own STT/TTS in `speech.mjs` is used here, not in the live turn-based call.
 |---|---|---|
 | Telephony | **Voximplant** — JS (VoxEngine) scenarios in the cloud | Programmable telephony that fits our JS/Node stack |
 | STT + TTS | **Yandex Cloud SpeechKit** | One account, one bill, low latency, no certificate hassle |
-| LLM ("brain") | **YandexGPT** (`yandexgpt` pro by default; `LLM_MODEL=yandexgpt-lite` to downgrade) | Same Yandex account as speech; lite proved too weak for the persona (spelled names letter-by-letter, double questions, verbatim repeats) |
-| Voice | Yandex SpeechKit **`alena`** (emotion `good`) | Pleasant Russian female voice |
+| LLM ("brain") | **Alice AI LLM** (`aliceai-llm` by default; `LLM_MODEL=yandexgpt` to roll back) | Same Yandex account/API as speech; benchmarked 2026-07-05 (`bench-llm.mjs`): smarter than `yandexgpt` pro AND ~250-400 ms faster to first token (~610-770 ms vs ~850-1180 ms). Earlier, lite proved too weak for the persona (spelled names letter-by-letter, double questions, verbatim repeats) |
+| Voice | Yandex SpeechKit **`marina`** (role `friendly`; ex-`alena`) | Yandex's newest-gen premium Russian female voice that still works over the v1 REST path |
 | Backend | **Node.js + Express**, local, exposed via **ngrok** | Simple orchestrator; ngrok gives a public URL for Voximplant |
 
 > GigaChat was the original plan for the brain, but its developer portal was down
@@ -164,12 +164,16 @@ const BACKEND_END = "https://<CURRENT-NGROK>.ngrok-free.dev/end";
 // Общий секрет с бэкендом (REPLY_SECRET в .env). Пусто = без авторизации (бэкенд
 // предупредит об этом на старте). ngrok-URL публичен — для беты секрет обязателен.
 const BACKEND_TOKEN = "";
-const VOICE = VoiceList.Yandex.Neural.ru_RU_alena; // Yandex Alena (neural, premium voice)
-// Просодия Евы. Без ttsOptions Voximplant синтезирует alena с НЕЙТРАЛЬНОЙ ролью и темпом
-// по умолчанию. Для Yandex ru_RU поддерживаются emotion (neutral|good — у alena только эти
-// две) и speed ("0.1".."3.0"); pitch/volume в Voximplant доступны ТОЛЬКО для Google — не
-// задаём. good = тёплый тон, 0.95 = чуть спокойнее на телефоне. Совпадает с speech.mjs.
-const TTS_OPTIONS = { emotion: "good", speed: "0.95" };
+const VOICE = VoiceList.Yandex.Neural.ru_RU_marina; // Yandex Marina (premium, новее alena)
+// Просодия Евы. Без ttsOptions Voximplant синтезирует с НЕЙТРАЛЬНОЙ ролью и темпом
+// по умолчанию. Для Yandex ru_RU поддерживаются emotion и speed ("0.1".."3.0");
+// pitch/volume в Voximplant доступны ТОЛЬКО для Google — не задаём. Роли marina:
+// neutral|whisper|friendly (good у неё НЕТ). friendly = тёплый тон, 0.95 = чуть
+// спокойнее на телефоне. Совпадает с speech.mjs. НЕ ПРОВЕРЕНО живым звонком: если
+// Voximplant отвергнет emotion:"friendly" (тишина/ошибка TTS в логе сценария) —
+// убрать поле emotion (marina по умолчанию neutral) или откатить голос на
+// VoiceList.Yandex.Neural.ru_RU_alena + emotion:"good".
+const TTS_OPTIONS = { emotion: "friendly", speed: "0.95" };
 const HEADERS = ["Content-Type: application/json", "ngrok-skip-browser-warning: 1"];
 if (BACKEND_TOKEN) HEADERS.push("X-Backend-Token: " + BACKEND_TOKEN);
 // Молчание абонента: ASR с singleUtterance может вообще не прислать Result — без
@@ -198,7 +202,7 @@ function say(text, done) {
   const player = VoxEngine.createTTSPlayer(text, {
     language: VOICE,
     progressivePlayback: true,
-    ttsOptions: TTS_OPTIONS, // тёплая роль good + темп 0.95 для alena
+    ttsOptions: TTS_OPTIONS, // тёплая роль friendly + темп 0.95 для marina
   });
   player.sendMediaTo(call);
   let called = false;
@@ -306,7 +310,8 @@ In priority order:
    `VoiceList.Yandex.Neural.ru_RU_alena` (the canonical copy below matches).
 3. **Make the bot genuinely useful:** largely done — the persona prompt drives to a
    captured lead, answers address/hours/payment directly from FACTS, never invents
-   prices; the dialog brain is full `yandexgpt` (pro). Remaining: richer FAQ facts
+   prices; the dialog brain is `aliceai-llm` (Yandex's newest flagship — smarter and
+   faster than `yandexgpt` pro, measured 2026-07-05). Remaining: richer FAQ facts
    from the owner (materials, typical формats) as they arrive.
 4. **Order intake (the key business task):** ✅ done for Telegram — BOTH paths now
    extract a structured order after the call (what/qty/format/material/deadline/

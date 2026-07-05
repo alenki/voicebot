@@ -23,7 +23,9 @@ The Node backend is just the "brain" orchestrator behind `POST /reply`.
 ## Current focus
 
 **Polish pass shipped (2026-07-04), needs a live-call verification.** The dialog brain
-defaults to full `yandexgpt` (pro) — lite was behind most of the "works really bad"
+defaults to `aliceai-llm` since 2026-07-05 (smarter + ~250-400 ms faster TTFT than the
+`yandexgpt` pro it replaced; eva-eval clean, live call still owed) — before that, lite
+was behind most of the "works really bad"
 symptoms; the persona prompt was reworked (phone captured early, no copyable digits/dates
 in examples, facts answered directly, «мне просто цену узнать» handled); BOTH paths now
 share the deterministic reply gates; and **both paths deliver the lead to Telegram**
@@ -36,14 +38,35 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
 
 ## Code map
 
-- `speech.mjs` — `synthesize(text, voice="alena")` (TTS, oggopus, emotion `good`),
-  `recognize(audio)` (STT, oggopus, ru-RU), `ask(messages)` (YandexGPT — **default
-  model is full `yandexgpt` (pro)**, env `LLM_MODEL` to downgrade to `yandexgpt-lite`;
-  `temperature 0.4` — env `LLM_TEMPERATURE`; `maxTokens 120` — env `LLM_MAX_TOKENS`).
+- `speech.mjs` — `synthesize(text, voice="marina")` (TTS, oggopus, role `friendly`;
+  marina is the only new-gen Yandex voice that works over v1 REST — dasha/lera/masha
+  are v3-only; rollback: alena+good),
+  `recognize(audio)` (STT, oggopus, ru-RU), `ask(messages)` — **default dialog model
+  is `aliceai-llm`** (Yandex's Alice AI flagship, 2026): benchmarked 2026-07-05
+  (`bench-llm.mjs`, same native endpoint) it's smarter than `yandexgpt` pro AND
+  ~250-400 ms faster to first token (~610-770 ms vs ~850-1180 ms); eva-eval passed
+  clean. Rollback: `LLM_MODEL=yandexgpt`. `aliceai-llm-flash` is faster still
+  (~510-570 ms TTFT, `bench-llm-openai.mjs`) but only speaks the OpenAI-compatible
+  API — would need its own branch in ask/askStream. `temperature 0.4` — env
+  `LLM_TEMPERATURE`; `maxTokens 120` — env `LLM_MAX_TOKENS`.
   lite was the root cause of "the AI works really bad": it spelled the caller's NAME
   letter-by-letter like a phone number, asked double questions, repeated canned lines
   verbatim and said goodbye without taking the phone. All Yandex HTTP calls go through
   one **undici keep-alive Agent** (60 s) — test seam: `setHttpDispatcher()`.
+  `ask`/`askStream` **retry once on transient network errors** (ECONNRESET/`fetch
+  failed`: the aliceai backend resets ~5% of connections — measured 2026-07-05, fresh
+  connections too; yandexgpt also blips). askStream retries only before the first
+  chunk; timeouts and caller aborts are never retried. Verified ~190 turns, 0 errors.
+  `synthesizePcm` dispatches on `TTS_PROVIDER` (`yandex` default | `elevenlabs`);
+  STT and `synthesize()` (oggopus) stay Yandex always.
+- `tts-elevenlabs.mjs` — ElevenLabs PCM synthesis for the streaming path (voice
+  Victoria via `ELEVENLABS_VOICE_ID`, model `eleven_flash_v2_5`, ~280 ms to first
+  pcm_8000 chunk, no VPN needed). **Requires a paid ElevenLabs plan** — Voice Library
+  voices over the API return 402 on free (verified 2026-07-05; integration is wired and
+  tested up to that paywall, flip `TTS_PROVIDER=elevenlabs` once subscribed). Own
+  keep-alive agent; test seam `setElevenFetch()`. Unit-tested offline. Note: with this
+  provider the boot-time PCM-cache prewarm (~18 phrases) spends ElevenLabs credits on
+  every stream-server restart.
 - `server.mjs` — Express on port `3000`. `POST /reply {callId, text} → {reply}`;
   `POST /end {callId}` now **finalizes the lead** (extractOrder → Telegram) — before,
   the LIVE path silently threw every lead away (Telegram delivery existed only in the
@@ -177,8 +200,15 @@ fillers. `BARGE_SUSTAIN_MS` (default 300) — how long substantive caller speech
 before it interrupts Ева. `IDLE_PROMPT_MS` (default 15000, `0` off) — caller-silence window
 before Ева asks «алло?» (max 2 in a row).
 
-**Brain knobs (env):** `LLM_MODEL` (default `yandexgpt` — full pro model; set
-`yandexgpt-lite` to save money at a real quality cost), `LLM_TEMPERATURE` (default 0.4),
+**Voice knobs (env):** `TTS_PROVIDER` (`yandex` default | `elevenlabs` — bad value =
+fail-fast at boot), `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` (Victoria:
+`D5RRIJYa9pFwxiSpbGbR`; Elena Gromova backup: `0ArNnoIAWKlT4WweaVMY`),
+`ELEVENLABS_MODEL` (default `eleven_flash_v2_5` — the only latency tier fit for live
+calls). Yandex voice/role live in `speech.mjs` (`marina`/`friendly` since 2026-07-05).
+
+**Brain knobs (env):** `LLM_MODEL` (default `aliceai-llm` — Yandex flagship, fastest
+smart model in the catalog; `yandexgpt` = previous prod and the safe rollback;
+`yandexgpt-lite` saves money at a real quality cost), `LLM_TEMPERATURE` (default 0.4),
 `LLM_MAX_TOKENS` (default 120; order extraction passes its own 400 explicitly).
 `REPLY_SECRET` — gates `/reply`+`/end` via `X-Backend-Token` (set the same value in the
 Voximplant scenario's `BACKEND_TOKEN`). `DIALOG_TTL_MS` (default 30 min) — turn-based
@@ -206,7 +236,10 @@ empty string disables the fallback lead journal).
   re-pasted with the current URL or the bot can't reach the backend.
 - **Never commit secrets** — `.env` is gitignored; keep it that way.
 - **Don't claim the live call works** without it actually being tested. The turn-based path
-  is live (Alena voice). The streaming path + barge-in is offline-tested **and** confirmed
+  is live (voice: README's canonical scenario switched to Marina+friendly on 2026-07-05,
+  but the Voximplant cloud copy speaks whatever was last pasted — re-paste and live-call
+  verify; previously Alena+good). The streaming path + barge-in is
+  offline-tested **and** confirmed
   on a real call (barge-in verified live); it is still not the production path. Keep
   confirming new streaming/telephony changes with a real call before claiming they work.
 - **Two dev machines, switched interchangeably** — Windows 11 + WSL (Ubuntu) and

@@ -36,8 +36,8 @@ test("ask: stream:false, maxTokens 120 по умолчанию, Api-Key — и �
     assert.equal(cap.body.completionOptions.stream, false);
     assert.equal(cap.body.completionOptions.maxTokens, 120);
     assert.match(cap.headers.authorization, /^Api-Key /);
-    // Мозг диалога по умолчанию — ПОЛНЫЙ yandexgpt (lite ломал персону), температура 0.4
-    assert.match(cap.body.modelUri, /\/yandexgpt\/latest$/);
+    // Мозг диалога по умолчанию — aliceai-llm (быстрее и умнее yandexgpt, замер 2026-07-05)
+    assert.match(cap.body.modelUri, /\/aliceai-llm\/latest$/);
     assert.equal(cap.body.completionOptions.temperature, 0.4);
   } finally {
     setHttpDispatcher(null); // вернуть боевой keep-alive агент
@@ -56,8 +56,54 @@ test("askStream: stream:true, maxTokens 120 — onChunk получает нак�
     assert.deepStrictEqual(chunks, ["Привет.", "Привет. Как дела?"]);
     assert.equal(cap.body.completionOptions.stream, true);
     assert.equal(cap.body.completionOptions.maxTokens, 120);
-    assert.match(cap.body.modelUri, /\/yandexgpt\/latest$/);
+    assert.match(cap.body.modelUri, /\/aliceai-llm\/latest$/);
     assert.equal(cap.body.completionOptions.temperature, 0.4);
+  } finally {
+    setHttpDispatcher(null);
+  }
+});
+
+// Бэкенд LLM изредка сбрасывает соединение (ECONNRESET, ~5% у aliceai — замер 2026-07-05);
+// ask/askStream обязаны молча повторить один раз, а не ронять ход диалога в 500.
+test("ask: один повтор после транзиентной сетевой ошибки", async () => {
+  const agent = new MockAgent();
+  agent.disableNetConnect();
+  const pool = agent.get(LLM_ORIGIN);
+  pool.intercept({ path: LLM_PATH, method: "POST" }).replyWithError(new Error("read ECONNRESET"));
+  pool.intercept({ path: LLM_PATH, method: "POST" })
+    .reply(200, { result: { alternatives: [{ message: { text: "Ответ со второй попытки" } }] } });
+  setHttpDispatcher(agent);
+  try {
+    assert.equal(await ask([{ role: "user", text: "x" }]), "Ответ со второй попытки");
+  } finally {
+    setHttpDispatcher(null);
+  }
+});
+
+test("ask: HTTP-ошибка НЕ повторяется (одна попытка, наружу LLM 500)", async () => {
+  const agent = new MockAgent();
+  agent.disableNetConnect();
+  agent.get(LLM_ORIGIN).intercept({ path: LLM_PATH, method: "POST" }).reply(500, "boom");
+  setHttpDispatcher(agent);
+  try {
+    await assert.rejects(() => ask([{ role: "user", text: "x" }]), /LLM 500/);
+  } finally {
+    setHttpDispatcher(null);
+  }
+});
+
+test("askStream: один повтор после транзиентной сетевой ошибки до начала потока", async () => {
+  const agent = new MockAgent();
+  agent.disableNetConnect();
+  const pool = agent.get(LLM_ORIGIN);
+  pool.intercept({ path: LLM_PATH, method: "POST" }).replyWithError(new Error("read ECONNRESET"));
+  pool.intercept({ path: LLM_PATH, method: "POST" })
+    .reply(200, JSON.stringify({ result: { alternatives: [{ message: { text: "Привет." } }] } }) + "\n");
+  setHttpDispatcher(agent);
+  try {
+    const chunks = [];
+    assert.equal(await askStream([{ role: "user", text: "x" }], (t) => chunks.push(t)), "Привет.");
+    assert.deepStrictEqual(chunks, ["Привет."]);
   } finally {
     setHttpDispatcher(null);
   }

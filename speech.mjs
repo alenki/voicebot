@@ -1,7 +1,18 @@
 import { fetch as httpFetch, Agent } from "undici";
+import { synthesizePcmEleven, assertElevenConfigured } from "./tts-elevenlabs.mjs";
 
 const API_KEY = process.env.YANDEX_API_KEY;
 const FOLDER_ID = process.env.YANDEX_FOLDER_ID;
+
+// Провайдер TTS для стримингового пути (synthesizePcm). yandex — дефолт (marina);
+// elevenlabs — голос Victoria по ELEVENLABS_VOICE_ID (нужен платный тариф 11labs, см.
+// tts-elevenlabs.mjs). STT и synthesize() (oggopus для test.mjs) всегда остаются Yandex.
+// Валидируем на импорте: опечатка в значении не должна молча откатывать на Yandex.
+const TTS_PROVIDER = (process.env.TTS_PROVIDER || "yandex").toLowerCase();
+if (!["yandex", "elevenlabs"].includes(TTS_PROVIDER)) {
+  throw new Error(`Неизвестный TTS_PROVIDER="${TTS_PROVIDER}" — допустимо yandex | elevenlabs`);
+}
+if (TTS_PROVIDER === "elevenlabs") assertElevenConfigured();
 
 // Keep-alive к Yandex: дефолтный undici-агент закрывает простаивающее соединение через
 // ~4с — меньше паузы между ходами диалога, поэтому почти каждый ход заново платил
@@ -41,23 +52,30 @@ const envNum = (name, dflt) => {
 // зачитывание заявки с запасом; extractOrder задаёт свой maxTokens явно (400).
 const MAX_TOKENS = envNum("LLM_MAX_TOKENS", 120);
 
-// Мозг диалога. По умолчанию ПОЛНЫЙ yandexgpt (не -lite): на живых прогонах lite ломал
-// персону — читал имя клиента по буквам «как номер», задавал двойные вопросы, дословно
-// повторял одну и ту же фразу, прощался, не взяв телефон. Половина reply-clean.mjs —
-// заплатки на его слабости; pro-модель этих ошибок почти не делает. Откат/эксперименты —
-// через .env: LLM_MODEL=yandexgpt-lite (дешевле и чуть быстрее, но заметно глупее).
-const DIALOG_MODEL = process.env.LLM_MODEL || "yandexgpt";
+// Мозг диалога. По умолчанию aliceai-llm — флагман Яндекса (семейство Алисы, 2026),
+// лучший русский из каталога И быстрее yandexgpt: на бенче 2026-07-05 (bench-llm.mjs,
+// этот же нативный endpoint) TTFT ~610-770мс против ~850-1180мс у yandexgpt; eva-eval
+// прошёл чисто (телефонный гейт, зачитка номера, дефлекция «вы робот?»). Дешевле pro
+// на входных токенах. Откат: LLM_MODEL=yandexgpt (прежний прод) — историю про lite см.
+// ниже: lite ломал персону (имя по буквам, двойные вопросы, прощание без телефона),
+// половина reply-clean.mjs — заплатки на его слабости; не возвращаться на lite.
+// aliceai-llm-flash ЕЩЁ быстрее (~510-570мс TTFT), но доступен только через
+// OpenAI-совместимый API (bench-llm-openai.mjs) — потребует отдельной ветки в ask/askStream.
+const DIALOG_MODEL = process.env.LLM_MODEL || "aliceai-llm";
 // Температура диалога. 0.3 напрямую воевала с требованием промпта «каждый раз варьируй
 // формулировки»: от звонка к звонку первый ответ на «мне нужны визитки» выходил почти
 // дословно одинаковым — владелец, тестирующий бота повторными звонками, слышал «скрипт».
 // 0.4 — умеренная вариативность без потери управляемости; extractOrder задаёт свой 0 явно.
 const TEMPERATURE = envNum("LLM_TEMPERATURE", 0.4);
 
-// Голос и просодия Евы. Подтверждено по докам SpeechKit v1/v3 (yandex-cloud/docs):
-// alena — нейронный голос, у него РОВНО две роли: neutral (по умолчанию) и good
-// («доброжелательная»). evil у alena нет — отдаст ошибку. good = тёплый тон под продажи.
-const VOICE = "alena";
-const EMOTION = "good"; // допустимо только neutral|good для alena
+// Голос и просодия Евы. marina — премиум-голос новее alena, дефолтный голос самого
+// Яндекса с апреля 2024 (v1 и v3). Единственный из новой линейки (dasha/julia/lera/
+// masha — v3-only, v1 отдаёт «Unsupported voice»), который работает через наш v1 REST.
+// Роли marina: neutral (по умолчанию) | whisper | friendly. Проверено вживую на v1
+// (voice-compare.mjs, 2026-07-05): все три роли синтезируются, аудио разное. good у
+// marina НЕТ — отдаст ошибку. Откат: VOICE="alena" + EMOTION="good".
+const VOICE = "marina";
+const EMOTION = "friendly"; // допустимо только neutral|whisper|friendly для marina
 // Темп: диапазон 0.1–3.0, 1.0 = средняя человеческая речь. Чуть ниже единицы (0.95)
 // звучит спокойнее и теплее на узкополосном 8кГц-телефоне, не скатываясь в «вялость»
 // (≤0.85 уже звучит снисходительно для уверенного «закрывающего»). Это настройка НА СЛУХ:
@@ -89,7 +107,10 @@ export async function synthesize(text, voice = VOICE) {
 
 // Синтез в сыром PCM (LINEAR16) для стриминга обратно в Voximplant без перекодирования.
 // Yandex TTS v1 поддерживает format=lpcm с sampleRateHertz 8000/16000/48000.
+// При TTS_PROVIDER=elevenlabs уходит в 11labs (Victoria) — формат на выходе тот же
+// (сырой s16le той же частоты), остальной конвейер не замечает разницы.
 export async function synthesizePcm(text, sampleRateHertz = 8000, voice = VOICE) {
+  if (TTS_PROVIDER === "elevenlabs") return synthesizePcmEleven(text, sampleRateHertz);
   const body = new URLSearchParams({
     text, lang: "ru-RU", voice, emotion: EMOTION, speed: SPEED,
     format: "lpcm", sampleRateHertz: String(sampleRateHertz), folderId: FOLDER_ID,
@@ -121,11 +142,34 @@ export async function recognize(audio) {
   return data.result;
 }
 
+// Транзиентная сетевая ошибка (ECONNRESET, обрыв TLS до ответа) — не HTTP-ошибка и не
+// отмена. Бэкенд aliceai сбрасывает ~5% соединений (замерено 2026-07-05, воспроизводится
+// и на свежих соединениях без keep-alive), у yandexgpt тоже случалось. Без повтора это
+// мёртвый ход диалога: 500 наружу и дежурная фраза-заглушка вместо ответа.
+const isTransientNetError = (e) =>
+  e?.name !== "AbortError" &&
+  /fetch failed|ECONNRESET|ECONNREFUSED|ETIMEDOUT|EPIPE|socket|other side closed/i
+    .test(String(e?.cause?.message || e?.message || e));
+
+// Один мгновенный повтор запроса при транзиентной сетевой ошибке. Безопасно только пока
+// ответ не начали потреблять (completion идемпотентен, наружу ничего не ушло); таймауты и
+// отмена звонящего приходят AbortError-ом и НЕ повторяются.
+async function retryOnce(attempt) {
+  try {
+    return await attempt();
+  } catch (e) {
+    if (!isTransientNetError(e)) throw e;
+    return attempt();
+  }
+}
+
 // Потоковый мозг: вызывает onChunk(cumulativeText) по мере генерации (YandexGPT отдаёт
 // НАКОПЛЕННЫЙ текст в каждом фрейме, не дельты). Возвращает полный текст. Это позволяет
 // синтезировать первое предложение, пока модель ещё дописывает остальное (меньше задержки).
 export async function askStream(messages, onChunk, { model = DIALOG_MODEL, maxTokens = MAX_TOKENS, temperature = TEMPERATURE, signal } = {}) {
-  const res = await httpFetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
+  // Повтор — только вокруг установления запроса; обрыв ПОСЛЕ первых чанков не повторяем
+  // (иначе Ева начнёт фразу заново поверх уже озвученного). Свежий таймаут на каждую попытку.
+  const res = await retryOnce(() => httpFetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
     method: "POST",
     headers: {
       Authorization: `Api-Key ${API_KEY}`,
@@ -139,7 +183,7 @@ export async function askStream(messages, onChunk, { model = DIALOG_MODEL, maxTo
     }),
     signal: withTimeout(LLM_STREAM_TIMEOUT_MS, signal),
     dispatcher,
-  });
+  }));
   if (!res.ok) throw new Error(`LLM ${res.status}: ${await res.text()}`);
   const reader = res.body.getReader();
   const decoder = new TextDecoder();
@@ -171,23 +215,26 @@ export function pickReplyText(data) {
 }
 
 // Мозг: история сообщений -> ответ модели (текст).
-// Опции: model (по умолчанию DIALOG_MODEL — полный yandexgpt), maxTokens, temperature.
+// Опции: model (по умолчанию DIALOG_MODEL — aliceai-llm), maxTokens, temperature.
 export async function ask(messages, { model = DIALOG_MODEL, maxTokens = MAX_TOKENS, temperature = TEMPERATURE } = {}) {
-  const res = await httpFetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
-    method: "POST",
-    headers: {
-      Authorization: `Api-Key ${API_KEY}`,
-      "Content-Type": "application/json",
-      "x-folder-id": FOLDER_ID,
-    },
-    body: JSON.stringify({
-      modelUri: `gpt://${FOLDER_ID}/${model}/latest`,
-      completionOptions: { stream: false, temperature, maxTokens },
-      messages,
-    }),
-    signal: withTimeout(LLM_TIMEOUT_MS),
-    dispatcher,
+  // Не-потоковый запрос идемпотентен целиком: повтор покрывает и обрыв при скачивании тела.
+  return retryOnce(async () => {
+    const res = await httpFetch("https://llm.api.cloud.yandex.net/foundationModels/v1/completion", {
+      method: "POST",
+      headers: {
+        Authorization: `Api-Key ${API_KEY}`,
+        "Content-Type": "application/json",
+        "x-folder-id": FOLDER_ID,
+      },
+      body: JSON.stringify({
+        modelUri: `gpt://${FOLDER_ID}/${model}/latest`,
+        completionOptions: { stream: false, temperature, maxTokens },
+        messages,
+      }),
+      signal: withTimeout(LLM_TIMEOUT_MS),
+      dispatcher,
+    });
+    if (!res.ok) throw new Error(`LLM ${res.status}: ${await res.text()}`);
+    return pickReplyText(await res.json());
   });
-  if (!res.ok) throw new Error(`LLM ${res.status}: ${await res.text()}`);
-  return pickReplyText(await res.json());
 }

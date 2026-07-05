@@ -1,0 +1,40 @@
+- generic [ref=f6e3]:
+  - generic [ref=f6e5]:
+    - link [ref=f6e7] [cursor=pointer]:
+      - /url: /docs
+      - img [ref=f6e8]
+    - generic [ref=f6e9]:
+      - navigation
+      - navigation [ref=f6e10]:
+        - button [ref=f6e12] [cursor=pointer]
+        - generic [ref=f6e15]:
+          - link "StackOverflow" [ref=f6e16] [cursor=pointer]:
+            - /url: https://stackoverflow.com/search?q=voximplant
+            - generic [ref=f6e19]: StackOverflow
+          - link "Help" [ref=f6e20] [cursor=pointer]:
+            - /url: /help/faq
+            - generic [ref=f6e22]: Help
+          - link "Log in" [ref=f6e23] [cursor=pointer]:
+            - /url: https://manage.voximplant.com/auth/
+            - generic [ref=f6e25]: Log in
+          - link "Sign up" [ref=f6e26] [cursor=pointer]:
+            - /url: https://manage.voximplant.com/auth/sign_up
+            - generic [ref=f6e28]: Sign up
+  - main [ref=f6e29]:
+    - generic [ref=f6e32]:
+      - list
+    - generic [ref=f6e34]:
+      - generic [ref=f6e35]:
+        - generic:
+          - list
+      - generic [ref=f6e36]:
+        - generic [ref=f6e38]:
+          - generic [ref=f6e39]: "Rate this page:"
+          - generic [ref=f6e40]:
+            - img
+            - generic "1" [ref=f6e42] [cursor=pointer]
+            - generic "2" [ref=f6e44] [cursor=pointer]
+            - generic "3" [ref=f6e46] [cursor=pointer]
+            - generic "4" [ref=f6e48] [cursor=pointer]
+            - generic "5" [ref=f6e50] [cursor=pointer]
+        - article [ref=f6e51]

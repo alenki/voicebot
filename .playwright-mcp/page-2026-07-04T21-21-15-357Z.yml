@@ -1,0 +1,973 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e6]:
+    - navigation [ref=e11]:
+      - generic [ref=e12]:
+        - link "Иконка лого" [ref=e14] [cursor=pointer]:
+          - /url: /
+          - img "Иконка лого" [ref=e16]
+        - generic [ref=e18]:
+          - list [ref=e21]:
+            - listitem [ref=e22] [cursor=pointer]:
+              - button "Платформа" [ref=e23]:
+                - generic [ref=e24]: Платформа
+                - img [ref=e25]:
+                  - img [ref=e26]
+            - listitem [ref=e28] [cursor=pointer]:
+              - button "Бизнесу" [ref=e29]:
+                - generic [ref=e30]: Бизнесу
+                - img [ref=e31]:
+                  - img [ref=e32]
+            - listitem [ref=e34] [cursor=pointer]:
+              - button "Почему AI Studio" [ref=e35]:
+                - generic [ref=e36]: Почему AI Studio
+                - img [ref=e37]:
+                  - img [ref=e38]
+            - listitem [ref=e40] [cursor=pointer]:
+              - link "Разработчикам" [ref=e41]:
+                - /url: /developers
+                - generic [ref=e42]: Разработчикам
+            - listitem [ref=e43] [cursor=pointer]:
+              - link "Документация" [ref=e44]:
+                - /url: /docs
+                - generic [ref=e45]: Документация
+            - listitem [ref=e46] [cursor=pointer]:
+              - link "Тарифы" [ref=e47]:
+                - /url: /docs/ru/ai-studio/pricing
+                - generic [ref=e48]: Тарифы
+            - listitem [ref=e49] [cursor=pointer]:
+              - button "Ресурсы" [ref=e50]:
+                - generic [ref=e51]: Ресурсы
+                - img [ref=e52]:
+                  - img [ref=e53]
+          - button "Следующий" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]:
+              - img [ref=e57]
+        - generic [ref=e59]:
+          - generic:
+            - generic:
+              - button "Следующий":
+                - img [ref=e60] [cursor=pointer]:
+                  - img [ref=e61]
+          - list [ref=e63]:
+            - listitem [ref=e64] [cursor=pointer]:
+              - combobox "Поиск" [ref=e68]
+            - listitem [ref=e70] [cursor=pointer]:
+              - button "Язык" [ref=e71]:
+                - img [ref=e73]
+                - generic [ref=e74]: Язык
+                - img [ref=e75]:
+                  - img [ref=e76]
+            - listitem [ref=e78] [cursor=pointer]:
+              - link "Связаться с нами" [ref=e79]:
+                - /url: /ru#contact-form
+                - generic [ref=e82]: Связаться с нами
+            - listitem [ref=e83] [cursor=pointer]:
+              - link "Войти" [ref=e84]:
+                - /url: /platform
+                - generic [ref=e87]: Войти
+    - main [ref=e88]:
+      - generic [ref=e97]:
+        - navigation [ref=e99]:
+          - link "Документация AI Studio" [ref=e101] [cursor=pointer]:
+            - /url: ru/
+            - generic [ref=e102]: Документация AI Studio
+          - list "Документация AI Studio" [ref=e104]:
+            - listitem [ref=e105] [cursor=pointer]:
+              - link "Начало работы" [ref=e106]:
+                - /url: ru/ai-studio/quickstart/
+                - generic [ref=e108]: Начало работы
+            - listitem [ref=e109] [cursor=pointer]:
+              - button "AI Studio" [ref=e110]:
+                - generic [ref=e111]: AI Studio
+              - list "Документация AI Studio" [ref=e112]:
+                - listitem [ref=e113]:
+                  - link "О сервисе AI Studio" [ref=e114]:
+                    - /url: ru/ai-studio/concepts/
+                    - generic [ref=e116]: О сервисе AI Studio
+                - listitem [ref=e117]:
+                  - button "Выпадающий список Model Gallery" [ref=e118]:
+                    - img [ref=e119]
+                    - generic [ref=e121]: Model Gallery
+                - listitem [ref=e122]:
+                  - button "Выпадающий список Agent Atelier" [ref=e123]:
+                    - img [ref=e124]
+                    - generic [ref=e126]: Agent Atelier
+                - listitem [ref=e127]:
+                  - button "Выпадающий список MCP Hub" [ref=e128]:
+                    - img [ref=e129]
+                    - generic [ref=e131]: MCP Hub
+                - listitem [ref=e132]:
+                  - button "Выпадающий список AI Search" [ref=e133]:
+                    - img [ref=e134]
+                    - generic [ref=e136]: AI Search
+                - listitem [ref=e137]:
+                  - button "Выпадающий список Пошаговые инструкции" [ref=e138]:
+                    - img [ref=e139]
+                    - generic [ref=e141]: Пошаговые инструкции
+                - listitem [ref=e142]:
+                  - button "Выпадающий список Справочники API" [ref=e143]:
+                    - img [ref=e144]
+                    - generic [ref=e146]: Справочники API
+                - listitem [ref=e147]:
+                  - button "Выпадающий список Yandex AI Studio SDK" [ref=e148]:
+                    - img [ref=e149]
+                    - generic [ref=e151]: Yandex AI Studio SDK
+                - listitem [ref=e152]:
+                  - link "Публичные материалы" [ref=e153]:
+                    - /url: ru/ai-studio/public-talks
+                    - generic [ref=e155]: Публичные материалы
+                - listitem [ref=e156]:
+                  - link "Термины и определения" [ref=e157]:
+                    - /url: ru/ai-studio/concepts/glossary
+                    - generic [ref=e159]: Термины и определения
+                - listitem [ref=e160]:
+                  - link "Вопросы и ответы" [ref=e161]:
+                    - /url: ru/ai-studio/qa/
+                    - generic [ref=e163]: Вопросы и ответы
+                - listitem [ref=e164]:
+                  - button "Выпадающий список Решение проблем" [ref=e165]:
+                    - img [ref=e166]
+                    - generic [ref=e168]: Решение проблем
+            - listitem [ref=e169] [cursor=pointer]:
+              - button "SpeechKit" [ref=e170]:
+                - generic [ref=e171]: SpeechKit
+              - list "Документация AI Studio" [ref=e172]:
+                - listitem [ref=e173]:
+                  - link "Обзор технологий SpeechKit" [ref=e174]:
+                    - /url: ru/speechkit/overview
+                    - generic [ref=e176]: Обзор технологий SpeechKit
+                - listitem [ref=e177]:
+                  - button "Выпадающий список Начало работы с сервисом SpeechKit" [ref=e178]:
+                    - img [ref=e179]
+                    - generic [ref=e181]: Начало работы с сервисом SpeechKit
+                - listitem [ref=e182]:
+                  - button "Выпадающий список Распознавание речи" [ref=e183]:
+                    - img [ref=e184]
+                    - generic [ref=e186]: Распознавание речи
+                - listitem [ref=e187]:
+                  - button "Выпадающий список Синтез речи" [ref=e188]:
+                    - img [ref=e189]
+                    - generic [ref=e191]: Синтез речи
+                - listitem [ref=e192]:
+                  - button "Выпадающий список Пошаговые инструкции" [ref=e193]:
+                    - img [ref=e194]
+                    - generic [ref=e196]: Пошаговые инструкции
+                - listitem [ref=e197]:
+                  - button "Выпадающий список SpeechKit Hybrid" [ref=e198]:
+                    - img [ref=e199]
+                    - generic [ref=e201]: SpeechKit Hybrid
+                - listitem [ref=e202]:
+                  - button "Выпадающий список Справочники API" [ref=e203]:
+                    - img [ref=e204]
+                    - generic [ref=e206]: Справочники API
+                - listitem [ref=e207]:
+                  - link "Поддерживаемые форматы аудио" [ref=e208]:
+                    - /url: ru/speechkit/formats
+                    - generic [ref=e210]: Поддерживаемые форматы аудио
+                - listitem [ref=e211]:
+                  - link "Интеграция телефонии" [ref=e212]:
+                    - /url: ru/speechkit/concepts/ivr-integration
+                    - generic [ref=e214]: Интеграция телефонии
+                - listitem [ref=e215]:
+                  - button "Выпадающий список Решение проблем" [ref=e216]:
+                    - img [ref=e217]
+                    - generic [ref=e219]: Решение проблем
+            - listitem [ref=e220] [cursor=pointer]:
+              - button "Yandex Search API" [ref=e221]:
+                - generic [ref=e222]: Yandex Search API
+              - list "Документация AI Studio" [ref=e223]:
+                - listitem [ref=e224]:
+                  - link "О сервисе Yandex Search API" [ref=e225]:
+                    - /url: ru/search-api/concepts/
+                    - generic [ref=e227]: О сервисе Yandex Search API
+                - listitem [ref=e228]:
+                  - link "Начало работы" [ref=e229]:
+                    - /url: ru/search-api/quickstart/
+                    - generic [ref=e231]: Начало работы
+                - listitem [ref=e232]:
+                  - button "Выпадающий список Концепции" [ref=e233]:
+                    - img [ref=e234]
+                    - generic [ref=e236]: Концепции
+                - listitem [ref=e237]:
+                  - button "Выпадающий список Пошаговые инструкции" [ref=e238]:
+                    - img [ref=e239]
+                    - generic [ref=e241]: Пошаговые инструкции
+                - listitem [ref=e242]:
+                  - button "Выпадающий список Справочник API" [ref=e243]:
+                    - img [ref=e244]
+                    - generic [ref=e246]: Справочник API
+                - listitem [ref=e247]:
+                  - button "Выпадающий список Приложения" [ref=e248]:
+                    - img [ref=e249]
+                    - generic [ref=e251]: Приложения
+            - listitem [ref=e252] [cursor=pointer]:
+              - button "Vision OCR" [ref=e253]:
+                - generic [ref=e254]: Vision OCR
+              - list "Документация AI Studio" [ref=e255]:
+                - listitem [ref=e256]:
+                  - link "О сервисе Vision OCR" [ref=e257]:
+                    - /url: ru/vision/concepts/ocr/
+                    - generic [ref=e259]: О сервисе Vision OCR
+                - listitem [ref=e260]:
+                  - link "Начало работы" [ref=e261]:
+                    - /url: ru/vision/quickstart
+                    - generic [ref=e263]: Начало работы
+                - listitem [ref=e264]:
+                  - button "Выпадающий список Концепции" [ref=e265]:
+                    - img [ref=e266]
+                    - generic [ref=e268]: Концепции
+                - listitem [ref=e269]:
+                  - button "Выпадающий список Пошаговые инструкции" [ref=e270]:
+                    - img [ref=e271]
+                    - generic [ref=e273]: Пошаговые инструкции
+                - listitem [ref=e274]:
+                  - button "Выпадающий список Справочники API" [ref=e275]:
+                    - img [ref=e276]
+                    - generic [ref=e278]: Справочники API
+                - listitem [ref=e279]:
+                  - button "Выпадающий список Решение проблем" [ref=e280]:
+                    - img [ref=e281]
+                    - generic [ref=e283]: Решение проблем
+                - listitem [ref=e284]:
+                  - link "Вопросы и ответы" [ref=e285]:
+                    - /url: ru/vision/qa/
+                    - generic [ref=e287]: Вопросы и ответы
+            - listitem [ref=e288] [cursor=pointer]:
+              - button "Translate" [ref=e289]:
+                - generic [ref=e290]: Translate
+              - list "Документация AI Studio" [ref=e291]:
+                - listitem [ref=e292]:
+                  - link "О сервисе Translate" [ref=e293]:
+                    - /url: ru/translate/concepts/
+                    - generic [ref=e295]: О сервисе Translate
+                - listitem [ref=e296]:
+                  - link "Начало работы" [ref=e297]:
+                    - /url: ru/translate/quickstart
+                    - generic [ref=e299]: Начало работы
+                - listitem [ref=e300]:
+                  - button "Выпадающий список Концепции" [ref=e301]:
+                    - img [ref=e302]
+                    - generic [ref=e304]: Концепции
+                - listitem [ref=e305]:
+                  - button "Выпадающий список Пошаговые инструкции" [ref=e306]:
+                    - img [ref=e307]
+                    - generic [ref=e309]: Пошаговые инструкции
+                - listitem [ref=e310]:
+                  - button "Выпадающий список Справочник API" [ref=e311]:
+                    - img [ref=e312]
+                    - generic [ref=e314]: Справочник API
+                - listitem [ref=e315]:
+                  - button "Выпадающий список Решение проблем" [ref=e316]:
+                    - img [ref=e317]
+                    - generic [ref=e319]: Решение проблем
+            - listitem [ref=e320] [cursor=pointer]:
+              - button "Безопасность" [ref=e321]:
+                - generic [ref=e322]: Безопасность
+              - list "Документация AI Studio" [ref=e323]:
+                - listitem [ref=e324]:
+                  - link "Получить API-ключ" [ref=e325]:
+                    - /url: ru/ai-studio/operations/get-api-key
+                    - generic [ref=e327]: Получить API-ключ
+                - listitem [ref=e328]:
+                  - link "Отключить логирование запросов" [ref=e329]:
+                    - /url: ru/ai-studio/operations/disable-logging
+                    - generic [ref=e331]: Отключить логирование запросов
+                - listitem [ref=e332]:
+                  - button "Выпадающий список Правила модерации" [ref=e333]:
+                    - img [ref=e334]
+                    - generic [ref=e336]: Правила модерации
+                - listitem [ref=e337]:
+                  - button "Выпадающий список Управление доступом" [ref=e338]:
+                    - img [ref=e339]
+                    - generic [ref=e341]: Управление доступом
+                - listitem [ref=e342]:
+                  - button "Выпадающий список Аудитные логи Audit Trails" [ref=e343]:
+                    - img [ref=e344]
+                    - generic [ref=e346]: Аудитные логи Audit Trails
+                - listitem [ref=e347]:
+                  - button "Выпадающий список Метрики Monitoring" [ref=e348]:
+                    - img [ref=e349]
+                    - generic [ref=e351]: Метрики Monitoring
+            - listitem [ref=e352] [cursor=pointer]:
+              - button "Квоты и лимиты" [ref=e353]:
+                - generic [ref=e354]: Квоты и лимиты
+              - list "Документация AI Studio" [ref=e355]:
+                - listitem [ref=e356]:
+                  - link "AI Studio" [ref=e357]:
+                    - /url: ru/ai-studio/concepts/limits
+                    - generic [ref=e359]: AI Studio
+                - listitem [ref=e360]:
+                  - link "SpeechKit" [ref=e361]:
+                    - /url: ru/speechkit/concepts/limits
+                    - generic [ref=e363]: SpeechKit
+                - listitem [ref=e364]:
+                  - link "Yandex Search API" [ref=e365]:
+                    - /url: ru/search-api/concepts/limits
+                    - generic [ref=e367]: Yandex Search API
+                - listitem [ref=e368]:
+                  - link "Vision OCR" [ref=e369]:
+                    - /url: ru/vision/concepts/limits
+                    - generic [ref=e371]: Vision OCR
+                - listitem [ref=e372]:
+                  - link "Translate" [ref=e373]:
+                    - /url: ru/translate/concepts/limits
+                    - generic [ref=e375]: Translate
+            - listitem [ref=e376] [cursor=pointer]:
+              - button "Правила тарификации" [ref=e377]:
+                - generic [ref=e378]: Правила тарификации
+              - list "Документация AI Studio" [ref=e379]:
+                - listitem [ref=e380]:
+                  - link "AI Studio" [ref=e381]:
+                    - /url: ru/ai-studio/pricing
+                    - generic [ref=e383]: AI Studio
+                - listitem [ref=e384]:
+                  - link "SpeechKit" [ref=e385]:
+                    - /url: ru/speechkit/pricing
+                    - generic [ref=e387]: SpeechKit
+                - listitem [ref=e388]:
+                  - link "Yandex Search API" [ref=e389]:
+                    - /url: ru/search-api/pricing
+                    - generic [ref=e391]: Yandex Search API
+                - listitem [ref=e392]:
+                  - link "Vision OCR" [ref=e393]:
+                    - /url: ru/vision/pricing
+                    - generic [ref=e395]: Vision OCR
+                - listitem [ref=e396]:
+                  - link "Translate" [ref=e397]:
+                    - /url: ru/translate/pricing
+                    - generic [ref=e399]: Translate
+            - listitem [ref=e400] [cursor=pointer]:
+              - button "История изменений" [ref=e401]:
+                - generic [ref=e402]: История изменений
+              - list "Документация AI Studio" [ref=e403]:
+                - listitem [ref=e404]:
+                  - link "AI Studio" [ref=e405]:
+                    - /url: ru/ai-studio/release-notes/
+                    - generic [ref=e407]: AI Studio
+                - listitem [ref=e408]:
+                  - 'link "SpeechKit: распознавание" [ref=e409]':
+                    - /url: ru/speechkit/release-notes-stt
+                    - generic [ref=e411]: "SpeechKit: распознавание"
+                - listitem [ref=e412]:
+                  - 'link "SpeechKit: синтез" [ref=e413]':
+                    - /url: ru/speechkit/release-notes-tts
+                    - generic [ref=e415]: "SpeechKit: синтез"
+                - listitem [ref=e416]:
+                  - link "Yandex Search API" [ref=e417]:
+                    - /url: ru/search-api/release-notes/
+                    - generic [ref=e419]: Yandex Search API
+                - listitem [ref=e420]:
+                  - link "Vision OCR" [ref=e421]:
+                    - /url: ru/vision/release-notes
+                    - generic [ref=e423]: Vision OCR
+        - navigation "Навигация по статье" [ref=e428]:
+          - heading "В этой статье:" [level=2] [ref=e429]
+          - list "Содержание текущей статьи" [ref=e430]:
+            - listitem [ref=e431]:
+              - link "Из чего складывается стоимость использования синтеза речи" [ref=e432] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#rules-tts
+            - listitem [ref=e433]:
+              - link "API v1" [ref=e434] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#api-v1
+            - listitem [ref=e435]:
+              - link "API v3" [ref=e436] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#api-v3
+            - listitem [ref=e437]:
+              - link "Пустой запрос" [ref=e438] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#tts-empty-request
+            - listitem [ref=e439]:
+              - link "Внутренние ошибки сервера" [ref=e440] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#tts-error-request
+            - listitem [ref=e441]:
+              - link "Цены на синтез речи" [ref=e442] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#prices-tts
+            - listitem [ref=e443]:
+              - link "SpeechKit Brand Voice" [ref=e444] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#brand-voice
+            - listitem [ref=e445]:
+              - link "Из чего складывается стоимость использования распознавания речи" [ref=e446] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#rules-stt
+            - listitem [ref=e447]:
+              - link "Потоковый режим распознавания" [ref=e448] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#rules-stt-streaming
+            - listitem [ref=e449]:
+              - link "Синхронное распознавание" [ref=e450] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#rules-stt-short
+            - listitem [ref=e451]:
+              - link "Асинхронное распознавание" [ref=e452] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#rules-stt-long
+            - listitem [ref=e453]:
+              - link "Пустой запрос" [ref=e454] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#stt-empty-request
+            - listitem [ref=e455]:
+              - link "Внутренние ошибки сервера" [ref=e456] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#stt-error-request
+            - listitem [ref=e457]:
+              - link "Цены на распознавание речи" [ref=e458] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#prices-stt
+            - listitem [ref=e459]:
+              - link "Примеры расчета стоимости" [ref=e460] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#price-example
+            - listitem [ref=e461]:
+              - link "Синтез речи с использованием API v1" [ref=e462] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#price-example-tts-v1
+            - listitem [ref=e463]:
+              - link "Синтез речи с использованием API v3" [ref=e464] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#price-example-tts-v3
+            - listitem [ref=e465]:
+              - link "Распознавание речи в потоковом режиме" [ref=e466] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#price-example-stt-streaming
+            - listitem [ref=e467]:
+              - link "Распознавание речи в синхронном режиме" [ref=e468] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#price-example-stt-short
+            - listitem [ref=e469]:
+              - link "Распознавание речи в асинхронном режиме" [ref=e470] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#price-example-stt-long
+            - listitem [ref=e471]:
+              - link "Распознавание речи в асинхронном отложенном режиме" [ref=e472] [cursor=pointer]:
+                - /url: ru/speechkit/pricing#price-example-stt-long-deferred
+        - generic [ref=e473]:
+          - generic [ref=e474]:
+            - button "Режим чтения" [ref=e475] [cursor=pointer]:
+              - img [ref=e478]
+            - button "Настройки" [ref=e480] [cursor=pointer]:
+              - img [ref=e483]
+            - button "Язык" [ref=e485] [cursor=pointer]:
+              - img [ref=e488]
+            - button "Статья полезна" [ref=e490] [cursor=pointer]:
+              - img [ref=e493]
+            - button "Статья не полезна" [ref=e495] [cursor=pointer]:
+              - img [ref=e498]
+          - generic [ref=e500]:
+            - main [ref=e501]:
+              - heading "Правила тарификации для SpeechKit" [level=1] [ref=e502]:
+                - generic [ref=e503]: Правила тарификации для SpeechKit
+              - generic [ref=e504]:
+                - paragraph [ref=e505]: Все цены в рублях и тенге указаны с НДС, все цены в долларах — без НДС.
+                - heading "Из чего складывается стоимость использования синтеза речи" [level=2] [ref=e506]:
+                  - link [ref=e507] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#rules-tts
+                    - text: "#"
+                    - generic [ref=e508]: Из чего складывается стоимость использования синтеза речи
+                  - text: Из чего складывается стоимость использования синтеза речи
+                - paragraph [ref=e509]: Стоимость использования SpeechKit для синтеза речи зависит от версии используемого API.
+                - heading "API v1" [level=3] [ref=e510]:
+                  - link [ref=e511] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#api-v1
+                    - text: "#"
+                    - generic [ref=e512]: API v1
+                  - text: API v1
+                - paragraph [ref=e513]:
+                  - text: Для
+                  - link "API v1" [ref=e514] [cursor=pointer]:
+                    - /url: ru/speechkit/tts/request
+                  - text: стоимость рассчитывается исходя из суммарного количества символов, которые были отправлены для генерации речи из текста за календарный месяц (
+                  - link "Отчетный период" [ref=e515] [cursor=pointer]:
+                    - /url: https://yandex.cloud/ru/docs/billing/concepts/glossary
+                  - text: ).
+                - heading "API v3" [level=3] [ref=e516]:
+                  - link [ref=e517] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#api-v3
+                    - text: "#"
+                    - generic [ref=e518]: API v3
+                  - text: API v3
+                - paragraph [ref=e519]:
+                  - text: Стоимость использования
+                  - link "API v3" [ref=e520] [cursor=pointer]:
+                    - /url: ru/speechkit/tts-v3/api-ref/grpc/
+                  - text: зависит от количества отправленных запросов на синтез. Стоимость рассчитывается за календарный месяц (
+                  - link "Отчетный период" [ref=e521] [cursor=pointer]:
+                    - /url: https://yandex.cloud/ru/docs/billing/concepts/glossary
+                  - text: ).
+                - paragraph [ref=e522]:
+                  - text: По умолчанию запросы на синтез речи имеют ограничения — 250 символов и 24 секунды. Для синтеза более длинных фраз можно использовать
+                  - button "unsafe_mode" [ref=e523]
+                  - text: или
+                  - link "потоковый режим" [ref=e524] [cursor=pointer]:
+                    - /url: ru/speechkit/tts/#streaming
+                  - text: ". Тогда тарифицироваться будут каждые 250 символов, например:"
+                - list [ref=e525]:
+                  - listitem [ref=e526]: Запрос меньше 250 символов — одна единица тарификации.
+                  - listitem [ref=e527]: Запрос от 250 до 500 символов — две единицы тарификации.
+                  - listitem [ref=e528]: Запрос от 500 до 750 символов — три единицы тарификации.
+                - heading "Пустой запрос" [level=3] [ref=e529]:
+                  - link [ref=e530] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#tts-empty-request
+                    - text: "#"
+                    - generic [ref=e531]: Пустой запрос
+                  - text: Пустой запрос
+                - paragraph [ref=e532]: "Количество символов в запросе определяется с учетом пробелов и служебных символов. Стоимость пустого запроса зависит от версии API:"
+                - list [ref=e533]:
+                  - listitem [ref=e534]: Пустой запрос к API v1 тарифицируется как один символ.
+                  - listitem [ref=e535]: Пустой запрос к API v3 тарифицируется как одна единица тарификации.
+                - heading "Внутренние ошибки сервера" [level=3] [ref=e536]:
+                  - link [ref=e537] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#tts-error-request
+                    - text: "#"
+                    - generic [ref=e538]: Внутренние ошибки сервера
+                  - text: Внутренние ошибки сервера
+                - paragraph [ref=e539]: Если в процессе выполнения запроса произошла внутренняя ошибка сервера, запрос не тарифицируется.
+                - heading "Цены на синтез речи" [level=2] [ref=e540]:
+                  - link [ref=e541] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#prices-tts
+                    - text: "#"
+                    - generic [ref=e542]: Цены на синтез речи
+                  - text: Цены на синтез речи
+                - generic [ref=e543]:
+                  - tablist [ref=e544]:
+                    - tab "Цены в рублях" [ref=e545] [cursor=pointer]
+                    - tab "Цены в тенге" [ref=e546] [cursor=pointer]
+                    - tab "Цены в долларах" [ref=e547] [cursor=pointer]
+                  - tabpanel [ref=e548]:
+                    - table [ref=e549]:
+                      - rowgroup [ref=e550]:
+                        - row "Услуга Цена за единицу тарификации, вкл. НДС" [ref=e551]:
+                          - columnheader "Услуга" [ref=e552]
+                          - columnheader "Цена за единицу тарификации, вкл. НДС" [ref=e553]
+                      - rowgroup [ref=e554]:
+                        - row "Синтез с использованием API v1, за 1 млн символов 1 342 ₽" [ref=e555]:
+                          - cell "Синтез с использованием API v1, за 1 млн символов" [ref=e556]
+                          - cell "1 342 ₽" [ref=e557]
+                        - row "Синтез с использованием API v3, за запрос 0,1626 ₽" [ref=e558]:
+                          - cell "Синтез с использованием API v3, за запрос" [ref=e559]
+                          - cell "0,1626 ₽" [ref=e560]
+                - heading "SpeechKit Brand Voice" [level=3] [ref=e561]:
+                  - link [ref=e562] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#brand-voice
+                    - text: "#"
+                    - generic [ref=e563]: SpeechKit Brand Voice
+                  - text: SpeechKit Brand Voice
+                - generic [ref=e564]:
+                  - tablist [ref=e565]:
+                    - tab "Цены в рублях" [ref=e566] [cursor=pointer]
+                    - tab "Цены в тенге" [ref=e567] [cursor=pointer]
+                    - tab "Цены в долларах" [ref=e568] [cursor=pointer]
+                  - tabpanel [ref=e569]:
+                    - table [ref=e570]:
+                      - rowgroup [ref=e571]:
+                        - row "Услуга Цена за единицу тарификации, вкл. НДС" [ref=e572]:
+                          - columnheader "Услуга" [ref=e573]
+                          - columnheader "Цена за единицу тарификации, вкл. НДС" [ref=e574]
+                      - rowgroup [ref=e575]:
+                        - row "SpeechKit Brand Voice Call Center" [ref=e576]:
+                          - cell "SpeechKit Brand Voice Call Center" [ref=e577]:
+                            - strong [ref=e578]: SpeechKit Brand Voice Call Center
+                          - cell [ref=e579]
+                        - row "Запрос 0,1626 ₽" [ref=e580]:
+                          - cell "Запрос" [ref=e581]
+                          - cell "0,1626 ₽" [ref=e582]
+                        - row "SpeechKit Brand Voice Lite" [ref=e583]:
+                          - cell "SpeechKit Brand Voice Lite" [ref=e584]:
+                            - strong [ref=e585]: SpeechKit Brand Voice Lite
+                          - cell [ref=e586]
+                        - row "Разовый платеж за создание одного голоса 9 150 ₽" [ref=e587]:
+                          - cell "Разовый платеж за создание одного голоса" [ref=e588]
+                          - cell "9 150 ₽" [ref=e589]
+                        - row "Хостинг, первые семь дней 1 Не тарифицируется" [ref=e590]:
+                          - cell "Хостинг, первые семь дней 1" [ref=e591]:
+                            - text: Хостинг, первые семь дней
+                            - superscript [ref=e592]: "1"
+                          - cell "Не тарифицируется" [ref=e593]
+                        - row "Хостинг, один голос, за месяц 101 666 ₽" [ref=e594]:
+                          - cell "Хостинг, один голос, за месяц" [ref=e595]
+                          - cell "101 666 ₽" [ref=e596]
+                        - row "Хостинг, второй голос, за месяц 91 500 ₽" [ref=e597]:
+                          - cell "Хостинг, второй голос, за месяц" [ref=e598]
+                          - cell "91 500 ₽" [ref=e599]
+                        - row "Хостинг, третий голос, за месяц 81 333 ₽" [ref=e600]:
+                          - cell "Хостинг, третий голос, за месяц" [ref=e601]
+                          - cell "81 333 ₽" [ref=e602]
+                        - row "Хостинг, четвертый голос, за месяц 71 166 ₽" [ref=e603]:
+                          - cell "Хостинг, четвертый голос, за месяц" [ref=e604]
+                          - cell "71 166 ₽" [ref=e605]
+                        - row "Хостинг, пятый голос, за месяц 61 000 ₽" [ref=e606]:
+                          - cell "Хостинг, пятый голос, за месяц" [ref=e607]
+                          - cell "61 000 ₽" [ref=e608]
+                        - row "Хостинг, шестой и последующие голоса, за месяц 50 833 ₽" [ref=e609]:
+                          - cell "Хостинг, шестой и последующие голоса, за месяц" [ref=e610]
+                          - cell "50 833 ₽" [ref=e611]
+                        - row "Запрос 0,1626 ₽" [ref=e612]:
+                          - cell "Запрос" [ref=e613]
+                          - cell "0,1626 ₽" [ref=e614]
+                        - row "SpeechKit Brand Voice Premium" [ref=e615]:
+                          - cell "SpeechKit Brand Voice Premium" [ref=e616]:
+                            - strong [ref=e617]: SpeechKit Brand Voice Premium
+                          - cell [ref=e618]
+                        - row "Хостинг, за месяц По запросу" [ref=e619]:
+                          - cell "Хостинг, за месяц" [ref=e620]
+                          - cell "По запросу" [ref=e621]
+                        - row "Запрос 0,1626 ₽" [ref=e622]:
+                          - cell "Запрос" [ref=e623]
+                          - cell "0,1626 ₽" [ref=e624]
+                    - paragraph [ref=e625]:
+                      - superscript [ref=e626]: "1"
+                      - text: Хостинг модели Brand Voice Lite не тарифицируется первые семь дней после создания голоса, чтобы пользователь мог ее протестировать, оценить эффективность и согласовать результаты. Далее оплата производится по указанному тарифу.
+                - heading "Из чего складывается стоимость использования распознавания речи" [level=2] [ref=e627]:
+                  - link [ref=e628] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#rules-stt
+                    - text: "#"
+                    - generic [ref=e629]: Из чего складывается стоимость использования распознавания речи
+                  - text: Из чего складывается стоимость использования распознавания речи
+                - paragraph [ref=e630]:
+                  - text: Стоимость использования SpeechKit для распознавания речи зависит от типа распознавания и длительности распознанного аудио. Стоимость рассчитывается за календарный месяц (
+                  - link "Отчетный период" [ref=e631] [cursor=pointer]:
+                    - /url: https://yandex.cloud/ru/docs/billing/concepts/glossary
+                  - text: ).
+                - heading "Потоковый режим распознавания" [level=3] [ref=e632]:
+                  - link [ref=e633] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#rules-stt-streaming
+                    - text: "#"
+                    - generic [ref=e634]: Потоковый режим распознавания
+                  - text: Потоковый режим распознавания
+                - paragraph [ref=e635]:
+                  - text: Стоимость использования SpeechKit в режиме потокового распознавания рассчитывается по
+                  - link "правилам тарификации синхронного распознавания" [ref=e636] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#rules-stt-short
+                  - text: .
+                - heading "Синхронное распознавание" [level=3] [ref=e637]:
+                  - link [ref=e638] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#rules-stt-short
+                    - text: "#"
+                    - generic [ref=e639]: Синхронное распознавание
+                  - text: Синхронное распознавание
+                - paragraph [ref=e640]:
+                  - text: Эти правила действуют при использовании
+                  - link "синхронного распознавания" [ref=e641] [cursor=pointer]:
+                    - /url: ru/speechkit/stt/request
+                  - text: и распознавания
+                  - link "в потоковом режиме" [ref=e642] [cursor=pointer]:
+                    - /url: ru/speechkit/stt/streaming
+                  - text: при использовании API v2 и API v3.
+                - paragraph [ref=e643]: Единица тарификации — отрезок одноканального аудио длительностью 15 секунд. Отрезки меньшей длительности округляются в большую сторону (1 секунда превращается в 15 секунд).
+                - generic [ref=e644]:
+                  - paragraph [ref=e645]: Важно
+                  - paragraph [ref=e647]:
+                    - text: В
+                    - link "потоковом режиме" [ref=e648] [cursor=pointer]:
+                      - /url: ru/speechkit/stt/streaming
+                    - text: тарификация начинается с отправки
+                    - link "сообщения с настройками распознавания" [ref=e649] [cursor=pointer]:
+                      - /url: ru/speechkit/stt/streaming#specification-msg
+                    - text: . Если вы не отправляли аудио после этого сообщения, оно будет считаться как использованная единица тарификации.
+                - blockquote [ref=e650]:
+                  - paragraph [ref=e651]:
+                    - strong [ref=e652]: Примеры
+                    - text: ":"
+                  - list [ref=e653]:
+                    - listitem [ref=e654]:
+                      - paragraph [ref=e655]: 1 аудиофрагмент 37 секунд тарифицируется как 45 секунд.
+                      - paragraph [ref=e656]:
+                        - strong [ref=e657]: Объяснение
+                        - text: ": аудио разбивается на 2 отрезка по 15 секунд и один отрезок 7 секунд. Длительность последнего отрезка будет округлена до 15 секунд. Итого, 3 отрезка по 15 секунд."
+                    - listitem [ref=e658]:
+                      - paragraph [ref=e659]: 2 аудиофрагмента по 5 и 8 секунд тарифицируются как 30 секунд.
+                      - paragraph [ref=e660]:
+                        - strong [ref=e661]: Объяснение
+                        - text: ": длительность каждого аудио будет округлена до 15 секунд. Итого, 2 отрезка по 15 секунд."
+                - heading "Асинхронное распознавание" [level=3] [ref=e662]:
+                  - link [ref=e663] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#rules-stt-long
+                    - text: "#"
+                    - generic [ref=e664]: Асинхронное распознавание
+                  - text: Асинхронное распознавание
+                - paragraph [ref=e665]:
+                  - text: Эти правила действуют при использовании
+                  - link "асинхронного распознавания" [ref=e666] [cursor=pointer]:
+                    - /url: ru/speechkit/stt/transcribation
+                  - text: .
+                - paragraph [ref=e667]: Единица тарификации — 1 секунда двухканального аудио. Отрезки меньшей длительности округляются в большую сторону. Количество каналов округляется до четного числа.
+                - paragraph [ref=e668]: Минимум начисляется 15 секунд за каждые два канала. Аудио меньшей длительности тарифицируется, как 15 секунд.
+                - paragraph [ref=e669]:
+                  - strong [ref=e670]: Примеры с округлением длительности аудио
+                  - text: ":"
+                - table [ref=e671]:
+                  - rowgroup [ref=e672]:
+                    - row "Длительность Количество каналов Начислено секунд" [ref=e673]:
+                      - columnheader "Длительность" [ref=e674]
+                      - columnheader "Количество каналов" [ref=e675]
+                      - columnheader "Начислено секунд" [ref=e676]
+                  - rowgroup [ref=e677]:
+                    - row "1 секунда 1 15" [ref=e678]:
+                      - cell "1 секунда" [ref=e679]
+                      - cell "1" [ref=e680]
+                      - cell "15" [ref=e681]
+                    - row "1 секунда 2 15" [ref=e682]:
+                      - cell "1 секунда" [ref=e683]
+                      - cell "2" [ref=e684]
+                      - cell "15" [ref=e685]
+                    - row "1 секунда 3 30" [ref=e686]:
+                      - cell "1 секунда" [ref=e687]
+                      - cell "3" [ref=e688]
+                      - cell "30" [ref=e689]
+                    - row "15.5 секунд 2 16" [ref=e690]:
+                      - cell "15.5 секунд" [ref=e691]
+                      - cell "2" [ref=e692]
+                      - cell "16" [ref=e693]
+                    - row "15.5 секунд 4 32" [ref=e694]:
+                      - cell "15.5 секунд" [ref=e695]
+                      - cell "4" [ref=e696]
+                      - cell "32" [ref=e697]
+                - heading "Пустой запрос" [level=3] [ref=e698]:
+                  - link [ref=e699] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#stt-empty-request
+                    - text: "#"
+                    - generic [ref=e700]: Пустой запрос
+                  - text: Пустой запрос
+                - paragraph [ref=e701]: Пустой запрос к любому типу распознавания равен стоимости одной единицы тарификации.
+                - heading "Внутренние ошибки сервера" [level=3] [ref=e702]:
+                  - link [ref=e703] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#stt-error-request
+                    - text: "#"
+                    - generic [ref=e704]: Внутренние ошибки сервера
+                  - text: Внутренние ошибки сервера
+                - paragraph [ref=e705]: Если в процессе выполнения запроса произошла внутренняя ошибка сервера, запрос не тарифицируется.
+                - heading "Цены на распознавание речи" [level=2] [ref=e706]:
+                  - link [ref=e707] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#prices-stt
+                    - text: "#"
+                    - generic [ref=e708]: Цены на распознавание речи
+                  - text: Цены на распознавание речи
+                - generic [ref=e709]:
+                  - tablist [ref=e710]:
+                    - tab "Цены в рублях" [ref=e711] [cursor=pointer]
+                    - tab "Цены в тенге" [ref=e712] [cursor=pointer]
+                    - tab "Цены в долларах" [ref=e713] [cursor=pointer]
+                  - tabpanel [ref=e714]:
+                    - table [ref=e715]:
+                      - rowgroup [ref=e716]:
+                        - row "Услуга Цена за 15 секунд аудио, вкл. НДС" [ref=e717]:
+                          - columnheader "Услуга" [ref=e718]
+                          - columnheader "Цена за 15 секунд аудио, вкл. НДС" [ref=e719]
+                      - rowgroup [ref=e720]:
+                        - row "Потоковое распознавание 0,1626 ₽" [ref=e721]:
+                          - cell "Потоковое распознавание" [ref=e722]
+                          - cell "0,1626 ₽" [ref=e723]
+                        - row "Синхронное распознавание файлов 0,1626 ₽" [ref=e724]:
+                          - cell "Синхронное распознавание файлов" [ref=e725]
+                          - cell "0,1626 ₽" [ref=e726]
+                        - row "Асинхронное распознавание файлов* 0,1515 ₽" [ref=e727]:
+                          - cell "Асинхронное распознавание файлов*" [ref=e728]:
+                            - text: Асинхронное распознавание файлов
+                            - superscript [ref=e729]: "*"
+                          - cell "0,1515 ₽" [ref=e730]
+                        - row "Асинхронное распознавание файлов, отложенный режим* 0,0381 ₽" [ref=e731]:
+                          - cell "Асинхронное распознавание файлов, отложенный режим*" [ref=e732]:
+                            - text: Асинхронное распознавание файлов, отложенный режим
+                            - superscript [ref=e733]: "*"
+                          - cell "0,0381 ₽" [ref=e734]
+                    - paragraph [ref=e735]:
+                      - superscript [ref=e736]: "*"
+                      - text: Посекундная тарификация с 16 секунды.
+                - heading "Примеры расчета стоимости" [level=2] [ref=e737]:
+                  - link [ref=e738] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#price-example
+                    - text: "#"
+                    - generic [ref=e739]: Примеры расчета стоимости
+                  - text: Примеры расчета стоимости
+                - heading "Синтез речи с использованием API v1" [level=3] [ref=e740]:
+                  - link [ref=e741] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#price-example-tts-v1
+                    - text: "#"
+                    - generic [ref=e742]: Синтез речи с использованием API v1
+                  - text: Синтез речи с использованием API v1
+                - paragraph [ref=e743]: "Стоимость использования SpeechKit для синтеза речи с использованием API v1 со следующими параметрами:"
+                - list [ref=e744]:
+                  - listitem [ref=e745]:
+                    - strong [ref=e746]: Количество символов, отправленных за месяц
+                    - text: ": 2023."
+                - generic [ref=e747]:
+                  - tablist [ref=e748]:
+                    - tab "Расчет в рублях" [ref=e749] [cursor=pointer]
+                    - tab "Расчет в тенге" [ref=e750] [cursor=pointer]
+                  - tabpanel [ref=e751]:
+                    - blockquote [ref=e752]:
+                      - paragraph [ref=e753]: 2023 × (1 342 ₽ / 1 000 000) = 2,71 ₽
+                      - paragraph [ref=e754]: "Итого: 2,71 ₽."
+                    - paragraph [ref=e755]: "Где:"
+                    - list [ref=e756]:
+                      - listitem [ref=e757]: 1 342 ₽ — стоимость за 1 млн символов.
+                      - listitem [ref=e758]: 1 342 ₽ / 1 000 000 — стоимость за 1 символ.
+                - heading "Синтез речи с использованием API v3" [level=3] [ref=e759]:
+                  - link [ref=e760] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#price-example-tts-v3
+                    - text: "#"
+                    - generic [ref=e761]: Синтез речи с использованием API v3
+                  - text: Синтез речи с использованием API v3
+                - paragraph [ref=e762]: "Стоимость использования SpeechKit для синтеза речи с использованием API v3 со следующими параметрами:"
+                - list [ref=e763]:
+                  - listitem [ref=e764]:
+                    - strong [ref=e765]: Количество отправленных запросов
+                    - text: ": 3."
+                  - listitem [ref=e766]:
+                    - strong [ref=e767]: Количество символов в запросах
+                    - text: ": 150, 300, 600."
+                - generic [ref=e768]:
+                  - tablist [ref=e769]:
+                    - tab "Расчет в рублях" [ref=e770] [cursor=pointer]
+                    - tab "Расчет в тенге" [ref=e771] [cursor=pointer]
+                  - tabpanel [ref=e772]:
+                    - blockquote [ref=e773]:
+                      - paragraph [ref=e774]: (1 + 2 + 3) × 0,1626 ₽ = 0,9756 ₽
+                      - paragraph [ref=e775]: "Итого: 0,9756 ₽."
+                    - paragraph [ref=e776]: "Где:"
+                    - list [ref=e777]:
+                      - listitem [ref=e778]: 1 — количество единиц тарификации за первый запрос, содержащий 150 символов.
+                      - listitem [ref=e779]:
+                        - text: 2 — количество единиц тарификации за второй запрос, содержащий 300 символов, с использованием режима
+                        - button "unsafe_mode" [ref=e780]
+                        - text: .
+                      - listitem [ref=e781]:
+                        - text: 3 — количество единиц тарификации за третий запрос, содержащий 600 символов, с использованием режима
+                        - button "unsafe_mode" [ref=e782]
+                        - text: .
+                      - listitem [ref=e783]: 0,1626 ₽ — стоимость единицы тарификации.
+                - heading "Распознавание речи в потоковом режиме" [level=3] [ref=e784]:
+                  - link [ref=e785] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#price-example-stt-streaming
+                    - text: "#"
+                    - generic [ref=e786]: Распознавание речи в потоковом режиме
+                  - text: Распознавание речи в потоковом режиме
+                - paragraph [ref=e787]: "Стоимость использования SpeechKit для распознавания речи в потоковом режиме со следующими параметрами:"
+                - list [ref=e788]:
+                  - listitem [ref=e789]:
+                    - strong [ref=e790]: Количество аудиофрагментов
+                    - text: ": 2."
+                  - listitem [ref=e791]:
+                    - strong [ref=e792]: Длительность аудиофрагментов
+                    - text: ": 5 секунд, 37 секунд."
+                - generic [ref=e793]:
+                  - tablist [ref=e794]:
+                    - tab "Расчет в рублях" [ref=e795] [cursor=pointer]
+                    - tab "Расчет в тенге" [ref=e796] [cursor=pointer]
+                  - tabpanel [ref=e797]:
+                    - blockquote [ref=e798]:
+                      - paragraph [ref=e799]: (1 + 3) × 0,1626 ₽ = 0,6504 ₽
+                      - paragraph [ref=e800]: "Итого: 0,6504 ₽."
+                    - paragraph [ref=e801]: "Где:"
+                    - list [ref=e802]:
+                      - listitem [ref=e803]: 1 — количество единиц тарификации за первый аудиофрагмент длительностью 5 секунд, с округлением до 15 секунд.
+                      - listitem [ref=e804]: 3 — количество единиц тарификации за второй аудиофрагмент длительностью 37 секунд, с округлением до 45 секунд.
+                      - listitem [ref=e805]: 0,1626 ₽ — стоимость единицы тарификации.
+                - heading "Распознавание речи в синхронном режиме" [level=3] [ref=e806]:
+                  - link [ref=e807] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#price-example-stt-short
+                    - text: "#"
+                    - generic [ref=e808]: Распознавание речи в синхронном режиме
+                  - text: Распознавание речи в синхронном режиме
+                - paragraph [ref=e809]: "Стоимость использования SpeechKit для распознавания речи в синхронном режиме со следующими параметрами:"
+                - list [ref=e810]:
+                  - listitem [ref=e811]:
+                    - strong [ref=e812]: Количество аудиофрагментов
+                    - text: ": 2."
+                  - listitem [ref=e813]:
+                    - strong [ref=e814]: Длительность аудиофрагментов
+                    - text: ": 5 секунд, 37 секунд."
+                - generic [ref=e815]:
+                  - tablist [ref=e816]:
+                    - tab "Расчет в рублях" [ref=e817] [cursor=pointer]
+                    - tab "Расчет в тенге" [ref=e818] [cursor=pointer]
+                  - tabpanel [ref=e819]:
+                    - blockquote [ref=e820]:
+                      - paragraph [ref=e821]: (1 + 3) × 0,1626 ₽ = 0,6504 ₽
+                      - paragraph [ref=e822]: "Итого: 0,6504 ₽."
+                    - paragraph [ref=e823]: "Где:"
+                    - list [ref=e824]:
+                      - listitem [ref=e825]: 1 — количество единиц тарификации за первый аудиофрагмент длительностью 5 секунд, с округлением до 15 секунд.
+                      - listitem [ref=e826]: 3 — количество единиц тарификации за второй аудиофрагмент длительностью 37 секунд, с округлением до 45 секунд.
+                      - listitem [ref=e827]: 0,1626 ₽ — стоимость единицы тарификации.
+                - heading "Распознавание речи в асинхронном режиме" [level=3] [ref=e828]:
+                  - link [ref=e829] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#price-example-stt-long
+                    - text: "#"
+                    - generic [ref=e830]: Распознавание речи в асинхронном режиме
+                  - text: Распознавание речи в асинхронном режиме
+                - paragraph [ref=e831]: "Стоимость использования SpeechKit для распознавания речи в асинхронном режиме со следующими параметрами:"
+                - list [ref=e832]:
+                  - listitem [ref=e833]:
+                    - strong [ref=e834]: Количество аудиофрагментов
+                    - text: ": 4."
+                  - listitem [ref=e835]:
+                    - strong [ref=e836]: Длительность аудиофрагментов
+                    - text: ": 5 секунд, 5 секунд, 15.5 секунд, 15.5 секунд."
+                  - listitem [ref=e837]:
+                    - strong [ref=e838]: Количество каналов в аудиофрагментах
+                    - text: ": 1, 3, 2, 4."
+                - generic [ref=e839]:
+                  - tablist [ref=e840]:
+                    - tab "Расчет в рублях" [ref=e841] [cursor=pointer]
+                    - tab "Расчет в тенге" [ref=e842] [cursor=pointer]
+                  - tabpanel [ref=e843]:
+                    - blockquote [ref=e844]:
+                      - paragraph [ref=e845]: (15 + 30 + 16 + 32) × 0,0101 ₽ = 0,9393 ₽
+                      - paragraph [ref=e846]: "Итого: 0,9393 ₽."
+                    - paragraph [ref=e847]: "Где:"
+                    - list [ref=e848]:
+                      - listitem [ref=e849]: 15 — количество единиц тарификации за первый 1-канальный аудиофрагмент длительностью 5 секунд, с округлением до двух каналов и 15 секунд.
+                      - listitem [ref=e850]: 30 — количество единиц тарификации за второй 3-канальный аудиофрагмент длительностью 5 секунд, с округлением до четырех каналов и 15 секунд.
+                      - listitem [ref=e851]: 16 — количество единиц тарификации за третий 2-канальный аудиофрагмент длительностью 15.5 секунд, с округлением до 16 секунд.
+                      - listitem [ref=e852]: 32 — количество единиц тарификации за четвертый 4-канальный аудиофрагмент длительностью 15.5 секунд, с округлением до 16 секунд.
+                      - listitem [ref=e853]: 0,0101 ₽ — стоимость единицы тарификации.
+                - heading "Распознавание речи в асинхронном отложенном режиме" [level=3] [ref=e854]:
+                  - link [ref=e855] [cursor=pointer]:
+                    - /url: ru/speechkit/pricing#price-example-stt-long-deferred
+                    - text: "#"
+                    - generic [ref=e856]: Распознавание речи в асинхронном отложенном режиме
+                  - text: Распознавание речи в асинхронном отложенном режиме
+                - paragraph [ref=e857]: "Стоимость использования SpeechKit для распознавания речи в асинхронном отложенном режиме со следующими параметрами:"
+                - list [ref=e858]:
+                  - listitem [ref=e859]:
+                    - strong [ref=e860]: Количество аудиофрагментов
+                    - text: ": 3."
+                  - listitem [ref=e861]:
+                    - strong [ref=e862]: Длительность аудиофрагментов
+                    - text: ": 2 секунды, 14 секунд, 19.5 секунд."
+                  - listitem [ref=e863]:
+                    - strong [ref=e864]: Количество каналов в аудиофрагментах
+                    - text: ": 2, 3, 4."
+                - generic [ref=e865]:
+                  - tablist [ref=e866]:
+                    - tab "Расчет в рублях" [ref=e867] [cursor=pointer]
+                    - tab "Расчет в тенге" [ref=e868] [cursor=pointer]
+                  - tabpanel [ref=e869]:
+                    - blockquote [ref=e870]:
+                      - paragraph [ref=e871]: (15 + 30 + 40) × 0,00254 ₽ = 0,22 ₽
+                      - paragraph [ref=e872]: "Итого: 0,22 ₽."
+                    - paragraph [ref=e873]: "Где:"
+                    - list [ref=e874]:
+                      - listitem [ref=e875]: 15 — количество единиц тарификации за первый 2-канальный аудиофрагмент длительностью 2 секунды, с округлением до 15 секунд.
+                      - listitem [ref=e876]: 30 — количество единиц тарификации за второй 3-канальный аудиофрагмент длительностью 14 секунд, с округлением до четырех каналов и 15 секунд.
+                      - listitem [ref=e877]: 40 — количество единиц тарификации за третий 4-канальный аудиофрагмент длительностью 19.5 секунд, с округлением до 20 секунд.
+                      - listitem [ref=e878]: 0,00254 ₽ — стоимость единицы тарификации.
+              - generic [ref=e881]:
+                - heading "Была ли статья полезна?" [level=3] [ref=e882]
+                - generic [ref=e883]:
+                  - button "Да" [ref=e884] [cursor=pointer]:
+                    - img [ref=e887]
+                    - generic [ref=e889]: Да
+                  - button "Нет" [ref=e890] [cursor=pointer]:
+                    - img [ref=e893]
+                    - generic [ref=e895]: Нет
+            - generic [ref=e897]:
+              - generic [ref=e898]:
+                - generic [ref=e899]: Предыдущая
+                - link "AI Studio" [ref=e901] [cursor=pointer]:
+                  - /url: ru/ai-studio/pricing
+                  - img [ref=e902]
+                  - generic [ref=e904]: AI Studio
+              - generic [ref=e905]:
+                - generic [ref=e906]: Следующая
+                - link "Yandex Search API" [ref=e908] [cursor=pointer]:
+                  - /url: ru/search-api/pricing
+                  - generic [ref=e909]: Yandex Search API
+                  - img [ref=e910]
+  - alert "Yandex uses cookies" [ref=e912]:
+    - generic [ref=e913]:
+      - heading "Yandex uses cookies" [level=1] [ref=e914]
+      - generic [ref=e915]:
+        - text: They ensure the smooth operation of all Yandex sites and services. For more information, please read our
+        - link "Cookie Policy" [ref=e916] [cursor=pointer]:
+          - /url: https://yandex.com/legal/cookies_policy_eng/
+      - generic [ref=e917]:
+        - button "Allow all" [ref=e918] [cursor=pointer]
+        - button "Allow essential cookies" [ref=e919] [cursor=pointer]
+        - button "Settings" [ref=e920] [cursor=pointer]

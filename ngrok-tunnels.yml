@@ -1,0 +1,13 @@
+# ngrok free = ОДИН публичный URL (закреплённый домен аккаунта). Туннелируем один
+# сервер за раз. Переключение: закомментируй один блок, раскомментируй другой,
+# перезапусти: ngrok start --all --config <ngrok.yml аккаунта> --config ngrok-tunnels.yml
+version: "2"
+tunnels:
+  streaming:
+    proto: http
+    addr: 3001
+    domain: hardness-papyrus-shrug.ngrok-free.dev
+  # turnbased:
+  #   proto: http
+  #   addr: 3000
+  #   domain: hardness-papyrus-shrug.ngrok-free.dev

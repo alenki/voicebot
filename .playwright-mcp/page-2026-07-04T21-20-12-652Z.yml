@@ -1,0 +1,878 @@
+- generic [ref=e6]:
+  - navigation [ref=e11]:
+    - generic [ref=e12]:
+      - link "Иконка лого" [ref=e14] [cursor=pointer]:
+        - /url: /
+        - img "Иконка лого" [ref=e16]
+      - generic [ref=e18]:
+        - list [ref=e21]:
+          - listitem [ref=e22] [cursor=pointer]:
+            - button "Платформа" [ref=e23]:
+              - generic [ref=e24]: Платформа
+              - img [ref=e25]:
+                - img [ref=e26]
+          - listitem [ref=e28] [cursor=pointer]:
+            - button "Бизнесу" [ref=e29]:
+              - generic [ref=e30]: Бизнесу
+              - img [ref=e31]:
+                - img [ref=e32]
+          - listitem [ref=e34] [cursor=pointer]:
+            - button "Почему AI Studio" [ref=e35]:
+              - generic [ref=e36]: Почему AI Studio
+              - img [ref=e37]:
+                - img [ref=e38]
+          - listitem [ref=e40] [cursor=pointer]:
+            - link "Разработчикам" [ref=e41]:
+              - /url: /developers
+              - generic [ref=e42]: Разработчикам
+          - listitem [ref=e43] [cursor=pointer]:
+            - link "Документация" [ref=e44]:
+              - /url: /docs
+              - generic [ref=e45]: Документация
+          - listitem [ref=e46] [cursor=pointer]:
+            - link "Тарифы" [ref=e47]:
+              - /url: /docs/ru/ai-studio/pricing
+              - generic [ref=e48]: Тарифы
+          - listitem [ref=e49] [cursor=pointer]:
+            - button "Ресурсы" [ref=e50]:
+              - generic [ref=e51]: Ресурсы
+              - img [ref=e52]:
+                - img [ref=e53]
+        - button "Следующий" [ref=e55] [cursor=pointer]:
+          - img [ref=e56]:
+            - img [ref=e57]
+      - generic [ref=e59]:
+        - generic:
+          - generic:
+            - button "Следующий":
+              - img [ref=e60] [cursor=pointer]:
+                - img [ref=e61]
+        - list [ref=e63]:
+          - listitem [ref=e64] [cursor=pointer]:
+            - combobox "Поиск" [ref=e68]
+          - listitem [ref=e70] [cursor=pointer]:
+            - button "Язык" [ref=e71]:
+              - img [ref=e73]
+              - generic [ref=e74]: Язык
+              - img [ref=e75]:
+                - img [ref=e76]
+          - listitem [ref=e78] [cursor=pointer]:
+            - link "Связаться с нами" [ref=e79]:
+              - /url: /ru#contact-form
+              - generic [ref=e82]: Связаться с нами
+          - listitem [ref=e83] [cursor=pointer]:
+            - link "Войти" [ref=e84]:
+              - /url: /platform
+              - generic [ref=e87]: Войти
+  - main [ref=e88]:
+    - generic [ref=e97]:
+      - navigation [ref=e99]:
+        - link "Документация AI Studio" [ref=e101] [cursor=pointer]:
+          - /url: ru/
+          - generic [ref=e102]: Документация AI Studio
+        - list "Документация AI Studio" [ref=e104]:
+          - listitem [ref=e105] [cursor=pointer]:
+            - link "Начало работы" [ref=e106]:
+              - /url: ru/ai-studio/quickstart/
+              - generic [ref=e108]: Начало работы
+          - listitem [ref=e109] [cursor=pointer]:
+            - button "AI Studio" [ref=e110]:
+              - generic [ref=e111]: AI Studio
+            - list "Документация AI Studio" [ref=e112]:
+              - listitem [ref=e113]:
+                - link "О сервисе AI Studio" [ref=e114]:
+                  - /url: ru/ai-studio/concepts/
+                  - generic [ref=e116]: О сервисе AI Studio
+              - listitem [ref=e117]:
+                - button "Выпадающий список Model Gallery" [ref=e118]:
+                  - img [ref=e119]
+                  - generic [ref=e121]: Model Gallery
+              - listitem [ref=e122]:
+                - button "Выпадающий список Agent Atelier" [ref=e123]:
+                  - img [ref=e124]
+                  - generic [ref=e126]: Agent Atelier
+              - listitem [ref=e127]:
+                - button "Выпадающий список MCP Hub" [ref=e128]:
+                  - img [ref=e129]
+                  - generic [ref=e131]: MCP Hub
+              - listitem [ref=e132]:
+                - button "Выпадающий список AI Search" [ref=e133]:
+                  - img [ref=e134]
+                  - generic [ref=e136]: AI Search
+              - listitem [ref=e137]:
+                - button "Выпадающий список Пошаговые инструкции" [ref=e138]:
+                  - img [ref=e139]
+                  - generic [ref=e141]: Пошаговые инструкции
+              - listitem [ref=e142]:
+                - button "Выпадающий список Справочники API" [ref=e143]:
+                  - img [ref=e144]
+                  - generic [ref=e146]: Справочники API
+              - listitem [ref=e147]:
+                - button "Выпадающий список Yandex AI Studio SDK" [ref=e148]:
+                  - img [ref=e149]
+                  - generic [ref=e151]: Yandex AI Studio SDK
+              - listitem [ref=e152]:
+                - link "Публичные материалы" [ref=e153]:
+                  - /url: ru/ai-studio/public-talks
+                  - generic [ref=e155]: Публичные материалы
+              - listitem [ref=e156]:
+                - link "Термины и определения" [ref=e157]:
+                  - /url: ru/ai-studio/concepts/glossary
+                  - generic [ref=e159]: Термины и определения
+              - listitem [ref=e160]:
+                - link "Вопросы и ответы" [ref=e161]:
+                  - /url: ru/ai-studio/qa/
+                  - generic [ref=e163]: Вопросы и ответы
+              - listitem [ref=e164]:
+                - button "Выпадающий список Решение проблем" [ref=e165]:
+                  - img [ref=e166]
+                  - generic [ref=e168]: Решение проблем
+          - listitem [ref=e169] [cursor=pointer]:
+            - button "SpeechKit" [ref=e170]:
+              - generic [ref=e171]: SpeechKit
+            - list "Документация AI Studio" [ref=e172]:
+              - listitem [ref=e173]:
+                - link "Обзор технологий SpeechKit" [ref=e174]:
+                  - /url: ru/speechkit/overview
+                  - generic [ref=e176]: Обзор технологий SpeechKit
+              - listitem [ref=e177]:
+                - button "Выпадающий список Начало работы с сервисом SpeechKit" [ref=e178]:
+                  - img [ref=e179]
+                  - generic [ref=e181]: Начало работы с сервисом SpeechKit
+              - listitem [ref=e182]:
+                - button "Выпадающий список Распознавание речи" [ref=e183]:
+                  - img [ref=e184]
+                  - generic [ref=e186]: Распознавание речи
+              - listitem [ref=e187]:
+                - button "Выпадающий список Синтез речи" [expanded] [ref=e188]:
+                  - img [ref=e189]
+                  - generic [ref=e191]: Синтез речи
+                - list "Документация AI Studio" [ref=e192]:
+                  - listitem [ref=e193]:
+                    - link "О технологии" [ref=e194]:
+                      - /url: ru/speechkit/tts/
+                      - generic [ref=e196]: О технологии
+                  - listitem [ref=e197]:
+                    - link "Список голосов" [ref=e198]:
+                      - /url: ru/speechkit/tts/voices
+                      - generic [ref=e200]: Список голосов
+                  - listitem [ref=e201]:
+                    - button "Выпадающий список Разметка текста" [ref=e202]:
+                      - img [ref=e203]
+                      - generic [ref=e205]: Разметка текста
+                  - listitem [ref=e206]:
+                    - button "Выпадающий список SpeechKit Brand Voice" [ref=e207]:
+                      - img [ref=e208]
+                      - generic [ref=e210]: SpeechKit Brand Voice
+              - listitem [ref=e211]:
+                - button "Выпадающий список Пошаговые инструкции" [ref=e212]:
+                  - img [ref=e213]
+                  - generic [ref=e215]: Пошаговые инструкции
+              - listitem [ref=e216]:
+                - button "Выпадающий список SpeechKit Hybrid" [ref=e217]:
+                  - img [ref=e218]
+                  - generic [ref=e220]: SpeechKit Hybrid
+              - listitem [ref=e221]:
+                - button "Выпадающий список Справочники API" [ref=e222]:
+                  - img [ref=e223]
+                  - generic [ref=e225]: Справочники API
+              - listitem [ref=e226]:
+                - link "Поддерживаемые форматы аудио" [ref=e227]:
+                  - /url: ru/speechkit/formats
+                  - generic [ref=e229]: Поддерживаемые форматы аудио
+              - listitem [ref=e230]:
+                - link "Интеграция телефонии" [ref=e231]:
+                  - /url: ru/speechkit/concepts/ivr-integration
+                  - generic [ref=e233]: Интеграция телефонии
+              - listitem [ref=e234]:
+                - button "Выпадающий список Решение проблем" [ref=e235]:
+                  - img [ref=e236]
+                  - generic [ref=e238]: Решение проблем
+          - listitem [ref=e239] [cursor=pointer]:
+            - button "Yandex Search API" [ref=e240]:
+              - generic [ref=e241]: Yandex Search API
+            - list "Документация AI Studio" [ref=e242]:
+              - listitem [ref=e243]:
+                - link "О сервисе Yandex Search API" [ref=e244]:
+                  - /url: ru/search-api/concepts/
+                  - generic [ref=e246]: О сервисе Yandex Search API
+              - listitem [ref=e247]:
+                - link "Начало работы" [ref=e248]:
+                  - /url: ru/search-api/quickstart/
+                  - generic [ref=e250]: Начало работы
+              - listitem [ref=e251]:
+                - button "Выпадающий список Концепции" [ref=e252]:
+                  - img [ref=e253]
+                  - generic [ref=e255]: Концепции
+              - listitem [ref=e256]:
+                - button "Выпадающий список Пошаговые инструкции" [ref=e257]:
+                  - img [ref=e258]
+                  - generic [ref=e260]: Пошаговые инструкции
+              - listitem [ref=e261]:
+                - button "Выпадающий список Справочник API" [ref=e262]:
+                  - img [ref=e263]
+                  - generic [ref=e265]: Справочник API
+              - listitem [ref=e266]:
+                - button "Выпадающий список Приложения" [ref=e267]:
+                  - img [ref=e268]
+                  - generic [ref=e270]: Приложения
+          - listitem [ref=e271] [cursor=pointer]:
+            - button "Vision OCR" [ref=e272]:
+              - generic [ref=e273]: Vision OCR
+            - list "Документация AI Studio" [ref=e274]:
+              - listitem [ref=e275]:
+                - link "О сервисе Vision OCR" [ref=e276]:
+                  - /url: ru/vision/concepts/ocr/
+                  - generic [ref=e278]: О сервисе Vision OCR
+              - listitem [ref=e279]:
+                - link "Начало работы" [ref=e280]:
+                  - /url: ru/vision/quickstart
+                  - generic [ref=e282]: Начало работы
+              - listitem [ref=e283]:
+                - button "Выпадающий список Концепции" [ref=e284]:
+                  - img [ref=e285]
+                  - generic [ref=e287]: Концепции
+              - listitem [ref=e288]:
+                - button "Выпадающий список Пошаговые инструкции" [ref=e289]:
+                  - img [ref=e290]
+                  - generic [ref=e292]: Пошаговые инструкции
+              - listitem [ref=e293]:
+                - button "Выпадающий список Справочники API" [ref=e294]:
+                  - img [ref=e295]
+                  - generic [ref=e297]: Справочники API
+              - listitem [ref=e298]:
+                - button "Выпадающий список Решение проблем" [ref=e299]:
+                  - img [ref=e300]
+                  - generic [ref=e302]: Решение проблем
+              - listitem [ref=e303]:
+                - link "Вопросы и ответы" [ref=e304]:
+                  - /url: ru/vision/qa/
+                  - generic [ref=e306]: Вопросы и ответы
+          - listitem [ref=e307] [cursor=pointer]:
+            - button "Translate" [ref=e308]:
+              - generic [ref=e309]: Translate
+            - list "Документация AI Studio" [ref=e310]:
+              - listitem [ref=e311]:
+                - link "О сервисе Translate" [ref=e312]:
+                  - /url: ru/translate/concepts/
+                  - generic [ref=e314]: О сервисе Translate
+              - listitem [ref=e315]:
+                - link "Начало работы" [ref=e316]:
+                  - /url: ru/translate/quickstart
+                  - generic [ref=e318]: Начало работы
+              - listitem [ref=e319]:
+                - button "Выпадающий список Концепции" [ref=e320]:
+                  - img [ref=e321]
+                  - generic [ref=e323]: Концепции
+              - listitem [ref=e324]:
+                - button "Выпадающий список Пошаговые инструкции" [ref=e325]:
+                  - img [ref=e326]
+                  - generic [ref=e328]: Пошаговые инструкции
+              - listitem [ref=e329]:
+                - button "Выпадающий список Справочник API" [ref=e330]:
+                  - img [ref=e331]
+                  - generic [ref=e333]: Справочник API
+              - listitem [ref=e334]:
+                - button "Выпадающий список Решение проблем" [ref=e335]:
+                  - img [ref=e336]
+                  - generic [ref=e338]: Решение проблем
+          - listitem [ref=e339] [cursor=pointer]:
+            - button "Безопасность" [ref=e340]:
+              - generic [ref=e341]: Безопасность
+            - list "Документация AI Studio" [ref=e342]:
+              - listitem [ref=e343]:
+                - link "Получить API-ключ" [ref=e344]:
+                  - /url: ru/ai-studio/operations/get-api-key
+                  - generic [ref=e346]: Получить API-ключ
+              - listitem [ref=e347]:
+                - link "Отключить логирование запросов" [ref=e348]:
+                  - /url: ru/ai-studio/operations/disable-logging
+                  - generic [ref=e350]: Отключить логирование запросов
+              - listitem [ref=e351]:
+                - button "Выпадающий список Правила модерации" [ref=e352]:
+                  - img [ref=e353]
+                  - generic [ref=e355]: Правила модерации
+              - listitem [ref=e356]:
+                - button "Выпадающий список Управление доступом" [ref=e357]:
+                  - img [ref=e358]
+                  - generic [ref=e360]: Управление доступом
+              - listitem [ref=e361]:
+                - button "Выпадающий список Аудитные логи Audit Trails" [ref=e362]:
+                  - img [ref=e363]
+                  - generic [ref=e365]: Аудитные логи Audit Trails
+              - listitem [ref=e366]:
+                - button "Выпадающий список Метрики Monitoring" [ref=e367]:
+                  - img [ref=e368]
+                  - generic [ref=e370]: Метрики Monitoring
+          - listitem [ref=e371] [cursor=pointer]:
+            - button "Квоты и лимиты" [ref=e372]:
+              - generic [ref=e373]: Квоты и лимиты
+            - list "Документация AI Studio" [ref=e374]:
+              - listitem [ref=e375]:
+                - link "AI Studio" [ref=e376]:
+                  - /url: ru/ai-studio/concepts/limits
+                  - generic [ref=e378]: AI Studio
+              - listitem [ref=e379]:
+                - link "SpeechKit" [ref=e380]:
+                  - /url: ru/speechkit/concepts/limits
+                  - generic [ref=e382]: SpeechKit
+              - listitem [ref=e383]:
+                - link "Yandex Search API" [ref=e384]:
+                  - /url: ru/search-api/concepts/limits
+                  - generic [ref=e386]: Yandex Search API
+              - listitem [ref=e387]:
+                - link "Vision OCR" [ref=e388]:
+                  - /url: ru/vision/concepts/limits
+                  - generic [ref=e390]: Vision OCR
+              - listitem [ref=e391]:
+                - link "Translate" [ref=e392]:
+                  - /url: ru/translate/concepts/limits
+                  - generic [ref=e394]: Translate
+          - listitem [ref=e395] [cursor=pointer]:
+            - button "Правила тарификации" [ref=e396]:
+              - generic [ref=e397]: Правила тарификации
+            - list "Документация AI Studio" [ref=e398]:
+              - listitem [ref=e399]:
+                - link "AI Studio" [ref=e400]:
+                  - /url: ru/ai-studio/pricing
+                  - generic [ref=e402]: AI Studio
+              - listitem [ref=e403]:
+                - link "SpeechKit" [ref=e404]:
+                  - /url: ru/speechkit/pricing
+                  - generic [ref=e406]: SpeechKit
+              - listitem [ref=e407]:
+                - link "Yandex Search API" [ref=e408]:
+                  - /url: ru/search-api/pricing
+                  - generic [ref=e410]: Yandex Search API
+              - listitem [ref=e411]:
+                - link "Vision OCR" [ref=e412]:
+                  - /url: ru/vision/pricing
+                  - generic [ref=e414]: Vision OCR
+              - listitem [ref=e415]:
+                - link "Translate" [ref=e416]:
+                  - /url: ru/translate/pricing
+                  - generic [ref=e418]: Translate
+          - listitem [ref=e419] [cursor=pointer]:
+            - button "История изменений" [ref=e420]:
+              - generic [ref=e421]: История изменений
+            - list "Документация AI Studio" [ref=e422]:
+              - listitem [ref=e423]:
+                - link "AI Studio" [ref=e424]:
+                  - /url: ru/ai-studio/release-notes/
+                  - generic [ref=e426]: AI Studio
+              - listitem [ref=e427]:
+                - 'link "SpeechKit: распознавание" [ref=e428]':
+                  - /url: ru/speechkit/release-notes-stt
+                  - generic [ref=e430]: "SpeechKit: распознавание"
+              - listitem [ref=e431]:
+                - 'link "SpeechKit: синтез" [ref=e432]':
+                  - /url: ru/speechkit/release-notes-tts
+                  - generic [ref=e434]: "SpeechKit: синтез"
+              - listitem [ref=e435]:
+                - link "Yandex Search API" [ref=e436]:
+                  - /url: ru/search-api/release-notes/
+                  - generic [ref=e438]: Yandex Search API
+              - listitem [ref=e439]:
+                - link "Vision OCR" [ref=e440]:
+                  - /url: ru/vision/release-notes
+                  - generic [ref=e442]: Vision OCR
+      - navigation "Навигация по статье" [ref=e447]:
+        - heading "В этой статье:" [level=2] [ref=e448]
+        - list "Содержание текущей статьи" [ref=e449]:
+          - listitem [ref=e450]:
+            - link "Поддерживаемые голоса" [ref=e451] [cursor=pointer]:
+              - /url: ru/speechkit/tts/voices#premium
+          - listitem [ref=e452]:
+            - link "Примеры использования" [ref=e453] [cursor=pointer]:
+              - /url: ru/speechkit/tts/voices#examples
+      - generic [ref=e454]:
+        - generic [ref=e455]:
+          - button "Режим чтения" [ref=e456] [cursor=pointer]:
+            - img [ref=e459]
+          - button "Настройки" [ref=e461] [cursor=pointer]:
+            - img [ref=e464]
+          - button "Язык" [ref=e466] [cursor=pointer]:
+            - img [ref=e469]
+          - button "Статья полезна" [ref=e471] [cursor=pointer]:
+            - img [ref=e474]
+          - button "Статья не полезна" [ref=e476] [cursor=pointer]:
+            - img [ref=e479]
+        - generic [ref=e481]:
+          - main [ref=e482]:
+            - heading "Список голосов" [level=1] [ref=e483]:
+              - generic [ref=e484]: Список голосов
+            - generic [ref=e485]:
+              - paragraph [ref=e486]: "В этом разделе представлен список доступных голосов в сервисе и характеристики этого голоса:"
+              - list [ref=e487]:
+                - listitem [ref=e488]: Основной язык, для которого голос создан. На этом языке разговаривал диктор при создании этого голоса.
+                - listitem [ref=e489]: "Пол, которому соответствует голос: мужской или женский."
+                - listitem [ref=e490]:
+                  - text: Доступные
+                  - link "амплуа" [ref=e491] [cursor=pointer]:
+                    - /url: ru/speechkit/tts/#role
+                  - text: голоса.
+                - listitem [ref=e492]: Поддерживаемая версия API.
+              - paragraph [ref=e493]: Все голоса совместимы с Realtime API для создания голосовых агентов в сервисе Yandex AI Studio.
+              - heading "Поддерживаемые голоса" [level=2] [ref=e494]:
+                - link [ref=e495] [cursor=pointer]:
+                  - /url: ru/speechkit/tts/voices#premium
+                  - text: "#"
+                  - generic [ref=e496]: Поддерживаемые голоса
+                - text: Поддерживаемые голоса
+              - paragraph [ref=e497]: В таблице приведены характеристики поддерживаемых голосов, использующих глубокие нейронные сети для синтеза речи.
+              - table [ref=e498]:
+                - rowgroup [ref=e499]:
+                  - row "Код языка Язык Голос Пол Амплуа Версия API" [ref=e500]:
+                    - columnheader "Код языка" [ref=e501]
+                    - columnheader "Язык" [ref=e502]
+                    - columnheader "Голос" [ref=e503]
+                    - columnheader "Пол" [ref=e504]
+                    - columnheader "Амплуа" [ref=e505]
+                    - columnheader "Версия API" [ref=e506]
+                - rowgroup [ref=e507]:
+                  - row "de-DE немецкий lea Ж — v1, v3" [ref=e508]:
+                    - cell "de-DE" [ref=e509]:
+                      - button "de-DE" [ref=e510]
+                    - cell "немецкий" [ref=e511]
+                    - cell "lea" [ref=e512]:
+                      - button "lea" [ref=e513]
+                    - cell "Ж" [ref=e514]
+                    - cell "—" [ref=e515]
+                    - cell "v1, v3" [ref=e516]
+                  - row "en-US английский john М — v1, v3" [ref=e517]:
+                    - cell "en-US" [ref=e518]:
+                      - button "en-US" [ref=e519]
+                    - cell "английский" [ref=e520]
+                    - cell "john" [ref=e521]:
+                      - button "john" [ref=e522]
+                    - cell "М" [ref=e523]
+                    - cell "—" [ref=e524]
+                    - cell "v1, v3" [ref=e525]
+                  - row "he-IL иврит naomi Ж (по умолчанию) современный — modern классический — classic v3" [ref=e526]:
+                    - cell "he-IL" [ref=e527]:
+                      - button "he-IL" [ref=e528]
+                    - cell "иврит" [ref=e529]
+                    - cell "naomi" [ref=e530]:
+                      - button "naomi" [ref=e531]
+                    - cell "Ж" [ref=e532]
+                    - cell "(по умолчанию) современный — modern классический — classic" [ref=e533]:
+                      - text: (по умолчанию) современный —
+                      - button "modern" [ref=e534]
+                      - text: классический —
+                      - button "classic" [ref=e535]
+                    - cell "v3" [ref=e536]
+                  - row "kk-KK или kk-KZ казахский amira Ж — v1, v3" [ref=e537]:
+                    - cell "kk-KK или kk-KZ" [ref=e538]:
+                      - button "kk-KK" [ref=e539]
+                      - text: или
+                      - button "kk-KZ" [ref=e540]
+                    - cell "казахский" [ref=e541]
+                    - cell "amira" [ref=e542]:
+                      - button "amira" [ref=e543]
+                    - cell "Ж" [ref=e544]
+                    - cell "—" [ref=e545]
+                    - cell "v1, v3" [ref=e546]
+                  - row "kk-KK или kk-KZ казахский madi М — v1, v3" [ref=e547]:
+                    - cell "kk-KK или kk-KZ" [ref=e548]:
+                      - button "kk-KK" [ref=e549]
+                      - text: или
+                      - button "kk-KZ" [ref=e550]
+                    - cell "казахский" [ref=e551]
+                    - cell "madi" [ref=e552]:
+                      - button "madi" [ref=e553]
+                    - cell "М" [ref=e554]
+                    - cell "—" [ref=e555]
+                    - cell "v1, v3" [ref=e556]
+                  - row "kk-KK или kk-KZ казахский saule Ж (по умолчанию) нейтральный — neutral строгая — strict v3" [ref=e557]:
+                    - cell "kk-KK или kk-KZ" [ref=e558]:
+                      - button "kk-KK" [ref=e559]
+                      - text: или
+                      - button "kk-KZ" [ref=e560]
+                    - cell "казахский" [ref=e561]
+                    - cell "saule" [ref=e562]:
+                      - button "saule" [ref=e563]
+                    - cell "Ж" [ref=e564]
+                    - cell "(по умолчанию) нейтральный — neutral строгая — strict" [ref=e565]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e566]
+                      - text: строгая —
+                      - button "strict" [ref=e567]
+                    - cell "v3" [ref=e568]
+                  - row "kk-KK или kk-KZ казахский zhanar Ж (по умолчанию) нейтральный — neutral дружелюбная — friendly v3" [ref=e569]:
+                    - cell "kk-KK или kk-KZ" [ref=e570]:
+                      - button "kk-KK" [ref=e571]
+                      - text: или
+                      - button "kk-KZ" [ref=e572]
+                    - cell "казахский" [ref=e573]
+                    - cell "zhanar" [ref=e574]:
+                      - button "zhanar" [ref=e575]
+                    - cell "Ж" [ref=e576]
+                    - cell "(по умолчанию) нейтральный — neutral дружелюбная — friendly" [ref=e577]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e578]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e579]
+                    - cell "v3" [ref=e580]
+                  - row "ru-RU русский alena Ж (по умолчанию) нейтральная — neutral радостная — good v1, v3" [ref=e581]:
+                    - cell "ru-RU" [ref=e582]:
+                      - button "ru-RU" [ref=e583]
+                    - cell "русский" [ref=e584]
+                    - cell "alena" [ref=e585]:
+                      - button "alena" [ref=e586]
+                    - cell "Ж" [ref=e587]
+                    - cell "(по умолчанию) нейтральная — neutral радостная — good" [ref=e588]:
+                      - text: (по умолчанию) нейтральная —
+                      - button "neutral" [ref=e589]
+                      - text: радостная —
+                      - button "good" [ref=e590]
+                    - cell "v1, v3" [ref=e591]
+                  - row "ru-RU русский filipp M — v1, v3" [ref=e592]:
+                    - cell "ru-RU" [ref=e593]:
+                      - button "ru-RU" [ref=e594]
+                    - cell "русский" [ref=e595]
+                    - cell "filipp" [ref=e596]:
+                      - button "filipp" [ref=e597]
+                    - cell "M" [ref=e598]
+                    - cell "—" [ref=e599]
+                    - cell "v1, v3" [ref=e600]
+                  - row "ru-RU русский ermil M (по умолчанию) нейтральный — neutral радостный — good v1, v3" [ref=e601]:
+                    - cell "ru-RU" [ref=e602]:
+                      - button "ru-RU" [ref=e603]
+                    - cell "русский" [ref=e604]
+                    - cell "ermil" [ref=e605]:
+                      - button "ermil" [ref=e606]
+                    - cell "M" [ref=e607]
+                    - cell "(по умолчанию) нейтральный — neutral радостный — good" [ref=e608]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e609]
+                      - text: радостный —
+                      - button "good" [ref=e610]
+                    - cell "v1, v3" [ref=e611]
+                  - row "ru-RU русский jane Ж (по умолчанию) нейтральная — neutral радостная — good раздраженная — evil v1, v3" [ref=e612]:
+                    - cell "ru-RU" [ref=e613]:
+                      - button "ru-RU" [ref=e614]
+                    - cell "русский" [ref=e615]
+                    - cell "jane" [ref=e616]:
+                      - button "jane" [ref=e617]
+                    - cell "Ж" [ref=e618]
+                    - cell "(по умолчанию) нейтральная — neutral радостная — good раздраженная — evil" [ref=e619]:
+                      - text: (по умолчанию) нейтральная —
+                      - button "neutral" [ref=e620]
+                      - text: радостная —
+                      - button "good" [ref=e621]
+                      - text: раздраженная —
+                      - button "evil" [ref=e622]
+                    - cell "v1, v3" [ref=e623]
+                  - row "ru-RU русский omazh Ж (по умолчанию) нейтральная — neutral раздраженная — evil v1, v3" [ref=e624]:
+                    - cell "ru-RU" [ref=e625]:
+                      - button "ru-RU" [ref=e626]
+                    - cell "русский" [ref=e627]
+                    - cell "omazh" [ref=e628]:
+                      - button "omazh" [ref=e629]
+                    - cell "Ж" [ref=e630]
+                    - cell "(по умолчанию) нейтральная — neutral раздраженная — evil" [ref=e631]:
+                      - text: (по умолчанию) нейтральная —
+                      - button "neutral" [ref=e632]
+                      - text: раздраженная —
+                      - button "evil" [ref=e633]
+                    - cell "v1, v3" [ref=e634]
+                  - row "ru-RU русский zahar M (по умолчанию) нейтральный — neutral радостный — good v1, v3" [ref=e635]:
+                    - cell "ru-RU" [ref=e636]:
+                      - button "ru-RU" [ref=e637]
+                    - cell "русский" [ref=e638]
+                    - cell "zahar" [ref=e639]:
+                      - button "zahar" [ref=e640]
+                    - cell "M" [ref=e641]
+                    - cell "(по умолчанию) нейтральный — neutral радостный — good" [ref=e642]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e643]
+                      - text: радостный —
+                      - button "good" [ref=e644]
+                    - cell "v1, v3" [ref=e645]
+                  - row "ru-RU русский dasha Ж (по умолчанию) нейтральная — neutral радостная — good дружелюбная — friendly v3" [ref=e646]:
+                    - cell "ru-RU" [ref=e647]:
+                      - button "ru-RU" [ref=e648]
+                    - cell "русский" [ref=e649]
+                    - cell "dasha" [ref=e650]:
+                      - button "dasha" [ref=e651]
+                    - cell "Ж" [ref=e652]
+                    - cell "(по умолчанию) нейтральная — neutral радостная — good дружелюбная — friendly" [ref=e653]:
+                      - text: (по умолчанию) нейтральная —
+                      - button "neutral" [ref=e654]
+                      - text: радостная —
+                      - button "good" [ref=e655]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e656]
+                    - cell "v3" [ref=e657]
+                  - row "ru-RU русский julia Ж (по умолчанию) нейтральная — neutral строгая — strict v3" [ref=e658]:
+                    - cell "ru-RU" [ref=e659]:
+                      - button "ru-RU" [ref=e660]
+                    - cell "русский" [ref=e661]
+                    - cell "julia" [ref=e662]:
+                      - button "julia" [ref=e663]
+                    - cell "Ж" [ref=e664]
+                    - cell "(по умолчанию) нейтральная — neutral строгая — strict" [ref=e665]:
+                      - text: (по умолчанию) нейтральная —
+                      - button "neutral" [ref=e666]
+                      - text: строгая —
+                      - button "strict" [ref=e667]
+                    - cell "v3" [ref=e668]
+                  - row "ru-RU русский lera Ж (по умолчанию) нейтральная — neutral дружелюбная — friendly v3" [ref=e669]:
+                    - cell "ru-RU" [ref=e670]:
+                      - button "ru-RU" [ref=e671]
+                    - cell "русский" [ref=e672]
+                    - cell "lera" [ref=e673]:
+                      - button "lera" [ref=e674]
+                    - cell "Ж" [ref=e675]
+                    - cell "(по умолчанию) нейтральная — neutral дружелюбная — friendly" [ref=e676]:
+                      - text: (по умолчанию) нейтральная —
+                      - button "neutral" [ref=e677]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e678]
+                    - cell "v3" [ref=e679]
+                  - row "ru-RU русский masha Ж (по умолчанию) радостная — good строгая — strict дружелюбная — friendly v3" [ref=e680]:
+                    - cell "ru-RU" [ref=e681]:
+                      - button "ru-RU" [ref=e682]
+                    - cell "русский" [ref=e683]
+                    - cell "masha" [ref=e684]:
+                      - button "masha" [ref=e685]
+                    - cell "Ж" [ref=e686]
+                    - cell "(по умолчанию) радостная — good строгая — strict дружелюбная — friendly" [ref=e687]:
+                      - text: (по умолчанию) радостная —
+                      - button "good" [ref=e688]
+                      - text: строгая —
+                      - button "strict" [ref=e689]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e690]
+                    - cell "v3" [ref=e691]
+                  - row "ru-RU русский marina (по умолчанию) Ж (по умолчанию) нейтральная — neutral шепот — whisper дружелюбная — friendly v1, v3" [ref=e692]:
+                    - cell "ru-RU" [ref=e693]:
+                      - button "ru-RU" [ref=e694]
+                    - cell "русский" [ref=e695]
+                    - cell "marina (по умолчанию)" [ref=e696]:
+                      - button "marina" [ref=e697]
+                      - text: (по умолчанию)
+                    - cell "Ж" [ref=e698]
+                    - cell "(по умолчанию) нейтральная — neutral шепот — whisper дружелюбная — friendly" [ref=e699]:
+                      - text: (по умолчанию) нейтральная —
+                      - button "neutral" [ref=e700]
+                      - text: шепот —
+                      - button "whisper" [ref=e701]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e702]
+                    - cell "v1, v3" [ref=e703]
+                  - row "ru-RU русский alexander M (по умолчанию) нейтральный — neutral радостный — good v3" [ref=e704]:
+                    - cell "ru-RU" [ref=e705]:
+                      - button "ru-RU" [ref=e706]
+                    - cell "русский" [ref=e707]
+                    - cell "alexander" [ref=e708]:
+                      - button "alexander" [ref=e709]
+                    - cell "M" [ref=e710]
+                    - cell "(по умолчанию) нейтральный — neutral радостный — good" [ref=e711]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e712]
+                      - text: радостный —
+                      - button "good" [ref=e713]
+                    - cell "v3" [ref=e714]
+                  - row "ru-RU русский kirill M (по умолчанию) нейтральный — neutral строгий — strict радостный — good v3" [ref=e715]:
+                    - cell "ru-RU" [ref=e716]:
+                      - button "ru-RU" [ref=e717]
+                    - cell "русский" [ref=e718]
+                    - cell "kirill" [ref=e719]:
+                      - button "kirill" [ref=e720]
+                    - cell "M" [ref=e721]
+                    - cell "(по умолчанию) нейтральный — neutral строгий — strict радостный — good" [ref=e722]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e723]
+                      - text: строгий —
+                      - button "strict" [ref=e724]
+                      - text: радостный —
+                      - button "good" [ref=e725]
+                    - cell "v3" [ref=e726]
+                  - row "ru-RU русский anton M (по умолчанию) нейтральный — neutral радостный — good v3" [ref=e727]:
+                    - cell "ru-RU" [ref=e728]:
+                      - button "ru-RU" [ref=e729]
+                    - cell "русский" [ref=e730]
+                    - cell "anton" [ref=e731]:
+                      - button "anton" [ref=e732]
+                    - cell "M" [ref=e733]
+                    - cell "(по умолчанию) нейтральный — neutral радостный — good" [ref=e734]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e735]
+                      - text: радостный —
+                      - button "good" [ref=e736]
+                    - cell "v3" [ref=e737]
+                  - row "ru-RU русский madi_ru M — v1, v3" [ref=e738]:
+                    - cell "ru-RU" [ref=e739]:
+                      - button "ru-RU" [ref=e740]
+                    - cell "русский" [ref=e741]
+                    - cell "madi_ru" [ref=e742]:
+                      - button "madi_ru" [ref=e743]
+                    - cell "M" [ref=e744]
+                    - cell "—" [ref=e745]
+                    - cell "v1, v3" [ref=e746]
+                  - row "ru-RU русский saule_ru Ж (по умолчанию) нейтральный — neutral строгая — strict шепот — whisper v3" [ref=e747]:
+                    - cell "ru-RU" [ref=e748]:
+                      - button "ru-RU" [ref=e749]
+                    - cell "русский" [ref=e750]
+                    - cell "saule_ru" [ref=e751]:
+                      - button "saule_ru" [ref=e752]
+                    - cell "Ж" [ref=e753]
+                    - cell "(по умолчанию) нейтральный — neutral строгая — strict шепот — whisper" [ref=e754]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e755]
+                      - text: строгая —
+                      - button "strict" [ref=e756]
+                      - text: шепот —
+                      - button "whisper" [ref=e757]
+                    - cell "v3" [ref=e758]
+                  - row "ru-RU русский zamira_ru Ж (по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly v3" [ref=e759]:
+                    - cell "ru-RU" [ref=e760]:
+                      - button "ru-RU" [ref=e761]
+                    - cell "русский" [ref=e762]
+                    - cell "zamira_ru" [ref=e763]:
+                      - button "zamira_ru" [ref=e764]
+                    - cell "Ж" [ref=e765]
+                    - cell "(по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly" [ref=e766]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e767]
+                      - text: строгая —
+                      - button "strict" [ref=e768]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e769]
+                    - cell "v3" [ref=e770]
+                  - row "ru-RU русский zhanar_ru Ж (по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly v3" [ref=e771]:
+                    - cell "ru-RU" [ref=e772]:
+                      - button "ru-RU" [ref=e773]
+                    - cell "русский" [ref=e774]
+                    - cell "zhanar_ru" [ref=e775]:
+                      - button "zhanar_ru" [ref=e776]
+                    - cell "Ж" [ref=e777]
+                    - cell "(по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly" [ref=e778]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e779]
+                      - text: строгая —
+                      - button "strict" [ref=e780]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e781]
+                    - cell "v3" [ref=e782]
+                  - row "ru-RU русский yulduz_ru Ж (по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly шепот — whisper v3" [ref=e783]:
+                    - cell "ru-RU" [ref=e784]:
+                      - button "ru-RU" [ref=e785]
+                    - cell "русский" [ref=e786]
+                    - cell "yulduz_ru" [ref=e787]:
+                      - button "yulduz_ru" [ref=e788]
+                    - cell "Ж" [ref=e789]
+                    - cell "(по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly шепот — whisper" [ref=e790]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e791]
+                      - text: строгая —
+                      - button "strict" [ref=e792]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e793]
+                      - text: шепот —
+                      - button "whisper" [ref=e794]
+                    - cell "v3" [ref=e795]
+                  - row "uz-UZ узбекский nigora Ж — v1, v3" [ref=e796]:
+                    - cell "uz-UZ" [ref=e797]:
+                      - button "uz-UZ" [ref=e798]
+                    - cell "узбекский" [ref=e799]
+                    - cell "nigora" [ref=e800]:
+                      - button "nigora" [ref=e801]
+                    - cell "Ж" [ref=e802]
+                    - cell "—" [ref=e803]
+                    - cell "v1, v3" [ref=e804]
+                  - row "uz-UZ узбекский zamira Ж (по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly v3" [ref=e805]:
+                    - cell "uz-UZ" [ref=e806]:
+                      - button "uz-UZ" [ref=e807]
+                    - cell "узбекский" [ref=e808]
+                    - cell "zamira" [ref=e809]:
+                      - button "zamira" [ref=e810]
+                    - cell "Ж" [ref=e811]
+                    - cell "(по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly" [ref=e812]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e813]
+                      - text: строгая —
+                      - button "strict" [ref=e814]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e815]
+                    - cell "v3" [ref=e816]
+                  - row "uz-UZ узбекский yulduz Ж (по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly шепот — whisper v3" [ref=e817]:
+                    - cell "uz-UZ" [ref=e818]:
+                      - button "uz-UZ" [ref=e819]
+                    - cell "узбекский" [ref=e820]
+                    - cell "yulduz" [ref=e821]:
+                      - button "yulduz" [ref=e822]
+                    - cell "Ж" [ref=e823]
+                    - cell "(по умолчанию) нейтральный — neutral строгая — strict дружелюбная — friendly шепот — whisper" [ref=e824]:
+                      - text: (по умолчанию) нейтральный —
+                      - button "neutral" [ref=e825]
+                      - text: строгая —
+                      - button "strict" [ref=e826]
+                      - text: дружелюбная —
+                      - button "friendly" [ref=e827]
+                      - text: шепот —
+                      - button "whisper" [ref=e828]
+                    - cell "v3" [ref=e829]
+              - paragraph [ref=e830]:
+                - text: Голоса
+                - button "oksana" [ref=e831]
+                - text: и
+                - button "alena" [ref=e832]
+                - text: созданы на основе записей одного диктора. Голос
+                - button "oksana" [ref=e833]
+                - text: больше не представлен в списке поддерживаемых голосов, вместо него используйте голос
+                - button "alena" [ref=e834]
+                - text: в амплуа
+                - button "good" [ref=e835]
+                - text: . Для старых проектов поддержка
+                - button "oksana" [ref=e836]
+                - text: сохраняется.
+              - generic [ref=e837]:
+                - paragraph [ref=e838]: Совет
+                - paragraph [ref=e840]:
+                  - text: Если существующие голоса не подходят для вашего проекта, SpeechKit может создать голос специально для вас. Подробнее о создании уникальных голосов читайте в разделе
+                  - link "Yandex SpeechKit Brand Voice" [ref=e841] [cursor=pointer]:
+                    - /url: ru/speechkit/tts/brand-voice/
+                  - text: .
+              - heading "Примеры использования" [level=2] [ref=e842]:
+                - link [ref=e843] [cursor=pointer]:
+                  - /url: ru/speechkit/tts/voices#examples
+                  - text: "#"
+                  - generic [ref=e844]: Примеры использования
+                - text: Примеры использования
+              - list [ref=e845]:
+                - listitem [ref=e846]:
+                  - link "Синтез речи в API v3" [ref=e847] [cursor=pointer]:
+                    - /url: ru/speechkit/tts/api/tts-examples-v3
+                - listitem [ref=e848]:
+                  - link "Синтез речи в API v3 REST" [ref=e849] [cursor=pointer]:
+                    - /url: ru/speechkit/tts/api/tts-v3-rest
+                - listitem [ref=e850]:
+                  - link "Синтез речи в формате WAV с помощью API v1" [ref=e851] [cursor=pointer]:
+                    - /url: ru/speechkit/tts/api/tts-wav
+                - listitem [ref=e852]:
+                  - link "Синтез речи в формате OggOpus с помощью API v1" [ref=e853] [cursor=pointer]:
+                    - /url: ru/speechkit/tts/api/tts-ogg
+            - generic [ref=e856]:
+              - heading "Была ли статья полезна?" [level=3] [ref=e857]
+              - generic [ref=e858]:
+                - button "Да" [ref=e859] [cursor=pointer]:
+                  - img [ref=e862]
+                  - generic [ref=e864]: Да
+                - button "Нет" [ref=e865] [cursor=pointer]:
+                  - img [ref=e868]
+                  - generic [ref=e870]: Нет
+          - generic [ref=e872]:
+            - generic [ref=e873]:
+              - generic [ref=e874]: Предыдущая
+              - link "О технологии" [ref=e876] [cursor=pointer]:
+                - /url: ru/speechkit/tts/
+                - img [ref=e877]
+                - generic [ref=e879]: О технологии
+            - generic [ref=e880]:
+              - generic [ref=e881]: Следующая
+              - link "Обзор" [ref=e883] [cursor=pointer]:
+                - /url: ru/speechkit/tts/markup/
+                - generic [ref=e884]: Обзор
+                - img [ref=e885]
