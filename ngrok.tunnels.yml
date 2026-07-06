@@ -1,0 +1,8 @@
+version: "2"
+# Один туннель на прокси-роутер (proxy.mjs, :3100): бесплатный план ngrok даёт
+# только один публичный домен, роутер делит его по пути (/media → :3001, остальное → :3000).
+tunnels:
+  app:
+    addr: 3100
+    proto: http
+    domain: hardness-papyrus-shrug.ngrok-free.dev

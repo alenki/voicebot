@@ -1,0 +1,157 @@
+- generic [ref=f12e3]:
+  - banner:
+    - generic:
+      - generic:
+        - generic:
+          - link "Яндекс":
+            - /url: /company
+            - generic: Яндекс
+      - generic:
+        - navigation [ref=f12e6]:
+          - list [ref=f12e7]:
+            - listitem [ref=f12e8]:
+              - link "Новости" [ref=f12e9] [cursor=pointer]:
+                - /url: /company/news
+            - listitem [ref=f12e10]:
+              - link "Вакансии" [ref=f12e11] [cursor=pointer]:
+                - /url: https://yandex.ru/jobs?utm_source=company_header&utm_medium=web
+            - listitem [ref=f12e12]:
+              - link "Инвесторам" [ref=f12e13] [cursor=pointer]:
+                - /url: https://ir.yandex.ru/
+            - listitem [ref=f12e14]:
+              - link "Рекламодателям" [ref=f12e15] [cursor=pointer]:
+                - /url: https://yandex.ru/adv
+            - listitem [ref=f12e16]:
+              - link "О компании" [ref=f12e17] [cursor=pointer]:
+                - /url: /company/about
+            - listitem [ref=f12e18]:
+              - link "Контакты" [ref=f12e19] [cursor=pointer]:
+                - /url: /company/contacts
+        - generic [ref=f12e20]:
+          - button "поиск" [ref=f12e22] [cursor=pointer]:
+            - generic [ref=f12e23]: поиск
+          - button "меню" [ref=f12e25] [cursor=pointer]:
+            - generic [ref=f12e26]: меню
+  - main [ref=f12e28]:
+    - generic [ref=f12e30]:
+      - link "Новости" [ref=f12e33] [cursor=pointer]:
+        - /url: /company/news
+        - img [ref=f12e36]
+        - text: Новости
+      - heading "Яндекс запустил быструю нейросеть для бизнеса Alice AI LLM Flash" [level=1] [ref=f12e38]
+      - article [ref=f12e40]:
+        - generic [ref=f12e42]: 28 мая 2026
+        - img [ref=f12e43]
+        - generic [ref=f12e44]:
+          - paragraph [ref=f12e45]: Яндекс представил новую нейросеть Alice AI LLM Flash — это быстрая языковая модель, которая оптимизирована под наиболее популярные задачи бизнеса. Она хорошо работает с текстами и документами — а это почти 60% от всех b2b-запросов к моделям Яндекса. С помощью новой модели компании смогут решать эти задачи быстрее и почти в 5 раз дешевле, чем ранее. Новая модель уже доступна бизнесу в Yandex AI Studio.
+          - paragraph [ref=f12e46]: Alice AI LLM Flash эффективна в задачах, которые требуют качественного ответа при высокой скорости отклика — например, в диалогах или при обработке большого количества данных. Она подойдёт для модерации контента на сайте, классификации обращений в техподдержку или диалога с клиентом. Новая модель позволит малому бизнесу использовать нейросети с минимальными финансовыми затратами, а крупным компаниям — сэкономить на обработке массовых запросов, сохранив хорошее качество и высокую скорость ответов. Она будет востребована у банков, ритейлеров, телеком-операторов и других компаний с большим объёмом однотипных задач, в которых критически важна скорость ответа.
+          - paragraph [ref=f12e47]: "По результатам слепого попарного сравнения Alice AI LLM Flash в 56% случаев превосходит нейросеть GPT-5.4 mini по качеству решения бизнес‑задач. При этом она сохраняет все преимущества флагманской модели Alice AI LLM: она превосходит GPT-5.4 mini в диалоговых сценариях (лучше в 73% случаев), обобщении и структуризации текста (66%) и в поиске данных по файлам и базам знаний (61%)."
+          - generic [ref=f12e48]:
+            - paragraph [ref=f12e51]:
+              - strong [ref=f12e52]: Артур Самигуллин
+              - text: ","
+              - text: руководитель платформы Yandex AI Studio
+            - paragraph
+            - paragraph [ref=f12e53]: Яндекс выходит на новый для себя рынок моделей, созданных специально под запросы бизнеса. Alice AI LLM Flash поможет российским компаниям перейти на российские нейросети для автоматизации работы с огромными объёмами данных. Новая модель — это собственная разработка, прошедшая полный цикл обучения на данных Яндекса. Она сопоставима по стоимости с ближайшим аналогом GPT-5.4 mini, при этом мы обеспечиваем безопасность обрабатываемых данных и стабильную работу в России.
+          - paragraph [ref=f12e54]: Также на платформе был открыт доступ к опенсорсной модели DeepSeek V4 Flash. Это первая в России доступная в облаке модель с контекстным окном в 1 млн токенов. Её можно использовать для разработки корпоративных ИИ-агентов, анализа больших документов и решения сложных многоэтапных задач. При этом она в полтора раза дешевле предыдущей версии DeepSeek V3.2.
+        - generic [ref=f12e55]:
+          - heading "Теги" [level=4] [ref=f12e57]
+          - list [ref=f12e59]:
+            - listitem [ref=f12e60]:
+              - link "Alice AI" [ref=f12e61] [cursor=pointer]:
+                - /url: /company/news?tag=alice%20ai
+        - generic [ref=f12e62]:
+          - heading "Контакты" [level=4] [ref=f12e64]
+          - paragraph [ref=f12e67]:
+            - text: Пресс-служба компании «Яндекс»
+            - text: Владислав Скобелев
+            - text: "Тел.: +7 495 739-70-00"
+            - text: "Электронная почта:"
+            - link "pr@yandex-team.ru" [ref=f12e68] [cursor=pointer]:
+              - /url: mailto:pr@yandex-team.ru
+        - generic [ref=f12e69]:
+          - heading "Поделиться" [level=4] [ref=f12e71]
+          - list [ref=f12e76]:
+            - listitem [ref=f12e77]:
+              - link "Я.Мессенджер" [ref=f12e78] [cursor=pointer]:
+                - /url: https://yandex.ru/chat?text=%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D0%BB%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%83%D1%8E%20%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D1%8C%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0%20Alice%20AI%20LLM%20Flash%0Ahttps%3A%2F%2Fyandex.ru%2Fcompany%2Fnews%2F28-05-2026-03&utm_source=share2#/forward
+            - listitem [ref=f12e81]:
+              - link "ВКонтакте" [ref=f12e82] [cursor=pointer]:
+                - /url: https://vk.com/share.php?url=https%3A%2F%2Fyandex.ru%2Fcompany%2Fnews%2F28-05-2026-03&title=%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D0%BB%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%83%D1%8E%20%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D1%8C%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0%20Alice%20AI%20LLM%20Flash&utm_source=share2
+            - listitem [ref=f12e85]:
+              - link "Одноклассники" [ref=f12e86] [cursor=pointer]:
+                - /url: https://connect.ok.ru/offer?url=https%3A%2F%2Fyandex.ru%2Fcompany%2Fnews%2F28-05-2026-03&title=%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D0%BB%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%83%D1%8E%20%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D1%8C%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0%20Alice%20AI%20LLM%20Flash&utm_source=share2
+            - listitem [ref=f12e89]:
+              - link "Telegram" [ref=f12e90] [cursor=pointer]:
+                - /url: https://t.me/share/url?url=https%3A%2F%2Fyandex.ru%2Fcompany%2Fnews%2F28-05-2026-03&text=%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D0%BB%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%83%D1%8E%20%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D1%8C%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0%20Alice%20AI%20LLM%20Flash&utm_source=share2
+            - listitem [ref=f12e93]:
+              - link "X" [ref=f12e94] [cursor=pointer]:
+                - /url: https://twitter.com/intent/tweet?text=%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%20%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D1%82%D0%B8%D0%BB%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%83%D1%8E%20%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D1%8C%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%B0%20Alice%20AI%20LLM%20Flash&url=https%3A%2F%2Fyandex.ru%2Fcompany%2Fnews%2F28-05-2026-03&utm_source=share2
+  - contentinfo [ref=f12e98]:
+    - generic [ref=f12e100]:
+      - link "Яндекс" [ref=f12e103] [cursor=pointer]:
+        - /url: /company
+        - generic [ref=f12e105]: Яндекс
+      - navigation [ref=f12e107]:
+        - list [ref=f12e108]:
+          - listitem [ref=f12e109]:
+            - link "Новости" [ref=f12e110] [cursor=pointer]:
+              - /url: /company/news
+          - listitem [ref=f12e111]:
+            - link "Вакансии" [ref=f12e112] [cursor=pointer]:
+              - /url: https://yandex.ru/jobs?utm_source=company_footer&utm_medium=web
+          - listitem [ref=f12e113]:
+            - link "Инвесторам" [ref=f12e114] [cursor=pointer]:
+              - /url: https://ir.yandex.ru/
+          - listitem [ref=f12e115]:
+            - link "Рекламодателям" [ref=f12e116] [cursor=pointer]:
+              - /url: https://yandex.ru/adv
+          - listitem [ref=f12e117]:
+            - link "О компании" [ref=f12e118] [cursor=pointer]:
+              - /url: /company/about
+          - listitem [ref=f12e119]:
+            - link "Контакты" [ref=f12e120] [cursor=pointer]:
+              - /url: /company/contacts
+      - list [ref=f12e122]:
+        - listitem [ref=f12e123]:
+          - link "telegram" [ref=f12e124] [cursor=pointer]:
+            - /url: https://t.me/yandex
+            - generic [ref=f12e125]: telegram
+        - listitem [ref=f12e126]:
+          - link "vkontakte" [ref=f12e127] [cursor=pointer]:
+            - /url: https://vk.com/yandex
+            - generic [ref=f12e128]: vkontakte
+        - listitem [ref=f12e129]:
+          - link "youtube" [ref=f12e130] [cursor=pointer]:
+            - /url: https://www.youtube.com/@yandex
+            - generic [ref=f12e131]: youtube
+      - list [ref=f12e132]:
+        - listitem [ref=f12e133]:
+          - link "Правовые документы" [ref=f12e134] [cursor=pointer]:
+            - /url: https://yandex.ru/legal/
+      - generic [ref=f12e135]:
+        - text: © 1997 — 2026
+        - link "Яндекс" [ref=f12e136] [cursor=pointer]:
+          - /url: https://ya.ru/
+    - list [ref=f12e139]:
+      - listitem [ref=f12e140]:
+        - link "Правообладателям" [ref=f12e141] [cursor=pointer]:
+          - /url: https://yandex.ru/rightsholders
+      - listitem [ref=f12e142]:
+        - link "Инвесторам" [ref=f12e143] [cursor=pointer]:
+          - /url: https://ir.yandex.ru
+      - listitem [ref=f12e144]:
+        - link "Консультативный совет" [ref=f12e145] [cursor=pointer]:
+          - /url: /company/advisory-board
+      - listitem [ref=f12e146]:
+        - link "Правила корпоративной этики" [ref=f12e147] [cursor=pointer]:
+          - /url: /company/rules/code/
+      - listitem [ref=f12e148]:
+        - link "Сувенирка" [ref=f12e149] [cursor=pointer]:
+          - /url: https://market.yandex.ru/business--yandex/891400
+      - listitem [ref=f12e150]:
+        - link "Поставщикам" [ref=f12e151] [cursor=pointer]:
+          - /url: /company/procurement
+      - listitem [ref=f12e152]:
+        - link "Аккредитованные IT-компании Яндекса" [ref=f12e153] [cursor=pointer]:
+          - /url: https://yandex.ru/info

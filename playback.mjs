@@ -39,6 +39,22 @@ export class PacedPlayer {
     const horizon = Date.now() + this.lookaheadMs;
     // Отдаём все «дозревшие» кадры (догоняем после стопора event loop) до горизонта.
     while (this.queue.length > 0 && this.nextDue <= horizon) {
+      if (this.queue.length < this.frameBytes) {
+        // Хвост короче кадра: конец предложения ИЛИ недобор потокового синтеза (чанки TTS
+        // теперь текут в очередь по мере генерации). Берём только ЧЁТНУЮ часть — нечётный
+        // срез PCM16 сместил бы все последующие сэмплы (остаток фразы играл бы шумом), —
+        // и добиваем тишиной до полного кадра: исходящий кадр всегда 20мс, timestamp
+        // остаётся целым в сэмплах. Нечётный остаток (полсэмпла на границе HTTP-чанка)
+        // дождётся следующего чанка; полный поток предложения всегда чётный.
+        const take = this.queue.length & ~1;
+        if (take === 0) break; // одинокий нечётный байт — ждём вторую половину сэмпла
+        const padded = Buffer.alloc(this.frameBytes);
+        this.queue.subarray(0, take).copy(padded);
+        this.queue = this.queue.subarray(take);
+        this.sendFrame(padded);
+        this.nextDue += this.frameMs;
+        continue;
+      }
       const frame = this.queue.subarray(0, this.frameBytes);
       this.queue = this.queue.subarray(frame.length);
       this.sendFrame(frame);

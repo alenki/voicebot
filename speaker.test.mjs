@@ -172,6 +172,57 @@ test("sayPcm: does NOT count as spokeThisTurn (apology logic still sees a silent
   assert.strictEqual(sp.spokeThisTurn, false);
 });
 
+// ── Потоковый синтез: synth отдаёт PCM чанками через emit(chunk) ────────────────────────
+// Первый звук уходит в плеер ДО конца синтеза предложения; порядок чанков сохраняется;
+// барж-ин посреди стрима гасит оставшиеся чанки токен-гейтом.
+test("streaming synth: чанки уходят в плеер по мере прихода, без двойного проигрывания", async () => {
+  const player = fakePlayer();
+  const sp = new Speaker(player, async (t, emit) => {
+    emit(Buffer.from(t + "-1"));
+    emit(Buffer.from(t + "-2"));
+    return Buffer.from(t + "-full"); // полный буфер (для кэша) НЕ должен играться второй раз
+  });
+  const g = sp.begin();
+  sp.say(g, "Раз");
+  await sp.drain();
+  assert.deepStrictEqual(player.enqueued.map((b) => b.toString()), ["Раз-1", "Раз-2"]);
+  assert.strictEqual(sp.spokeThisTurn, true);
+});
+
+test("streaming synth: abort посреди стрима — дальнейшие чанки отброшены", async () => {
+  const player = fakePlayer();
+  let releaseTail;
+  const tail = new Promise((r) => { releaseTail = r; });
+  const sp = new Speaker(player, async (t, emit) => {
+    emit(Buffer.from("до"));
+    await tail;               // barge-in происходит здесь
+    emit(Buffer.from("после"));
+    return null;
+  });
+  const g = sp.begin();
+  const done = sp.say(g, "Фраза");
+  await flush();
+  assert.deepStrictEqual(player.enqueued.map((b) => b.toString()), ["до"]);
+  sp.abort();
+  releaseTail();
+  await done;
+  assert.deepStrictEqual(player.enqueued.map((b) => b.toString()), ["до"], "чанк после abort не играет");
+});
+
+test("streaming synth: onFirstFrame срабатывает на ПЕРВОМ чанке", async () => {
+  const player = fakePlayer();
+  let firstAtChunks = -1;
+  const sp = new Speaker(player, async (t, emit) => {
+    emit(Buffer.from("a"));
+    emit(Buffer.from("b"));
+    return null;
+  }, { onFirstFrame: () => { firstAtChunks = player.enqueued.length; } });
+  const g = sp.begin();
+  sp.say(g, "Фраза");
+  await sp.drain();
+  assert.strictEqual(firstAtChunks, 0, "onFirstFrame должен сработать до первого enqueue");
+});
+
 test("onFirstFrame fires once per turn, on the first enqueued sentence", async () => {
   const player = fakePlayer();
   let firsts = 0;

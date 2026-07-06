@@ -2,8 +2,14 @@
 // плеер останавливается И инвалидируется токен — поэтому ни одно уже запущенное или
 // очередное предложение не превращается в звук. Ева замолкает и НЕ возобновляет речь.
 //
-// Зависит только от player ({ enqueue, stop }) и async synth(text) -> PCM Buffer.
+// Зависит только от player ({ enqueue, stop }) и async synth(text, emit?) -> PCM Buffer.
 // Никакого знания о WebSocket / STT / LLM — поэтому юнит тестируется фейками.
+//
+// Потоковый синтез: synth может отдавать PCM ЧАНКАМИ через emit(chunk) по мере прихода
+// от TTS-провайдера — первый звук уходит в плеер за сотни мс до конца синтеза предложения
+// (раньше ждали весь буфер: у ElevenLabs это +0.3-1.4с на первое предложение каждого
+// хода). synth без второго аргумента (старые фейки в тестах, кэш-хиты, Yandex без
+// стриминга) работает как раньше — целым буфером.
 export class Speaker {
   constructor(player, synth, { onFirstFrame = null } = {}) {
     this.player = player;
@@ -21,19 +27,32 @@ export class Speaker {
   }
 
   // Поставить предложение в очередь синтеза+проигрывания, но только пока ход актуален.
-  // Токен проверяется и ДО синтеза, и ПОСЛЕ (синтез асинхронный: барж-ин может прийти
-  // во время него, и уже синтезированный звук играть нельзя).
+  // Токен проверяется и ДО синтеза, и НА КАЖДОМ чанке/ПОСЛЕ (синтез асинхронный: барж-ин
+  // может прийти во время него, и уже синтезированный звук играть нельзя).
   say(token, text) {
     this._chain = this._chain.then(async () => {
       if (token !== this._gen) return;            // ход отменён до синтеза
+      let streamed = false;                        // synth отдал звук чанками через emit
+      const emit = (chunk) => {
+        if (token !== this._gen) return;          // барж-ин посреди стрима — чанк в никуда
+        streamed = true;
+        this._voiced();
+        this.player.enqueue(chunk);
+      };
       let pcm;
-      try { pcm = await this.synth(text); }
+      try { pcm = await this.synth(text, emit); }
       catch { return; }                            // синтез упал — пропускаем предложение
+      if (streamed) return;                        // звук уже ушёл в плеер по мере синтеза
       if (token !== this._gen) return;            // ход отменён во время синтеза — НЕ играем
-      if (!this._spokeThisTurn) { this._spokeThisTurn = true; this.onFirstFrame?.(); }
+      if (!pcm) return;                            // синтез без результата (стрим-провайдер)
+      this._voiced();
       this.player.enqueue(pcm);
     });
     return this._chain;
+  }
+
+  _voiced() {
+    if (!this._spokeThisTurn) { this._spokeThisTurn = true; this.onFirstFrame?.(); }
   }
 
   // Мгновенно озвучить ГОТОВЫЙ PCM (филлер из кэша, маскирующий паузу размышления).

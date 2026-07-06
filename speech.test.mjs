@@ -28,15 +28,15 @@ function mockLlm(replyBody) {
   return { agent, cap };
 }
 
-test("ask: stream:false, maxTokens 120 по умолчанию, Api-Key — и разбор ответа", async () => {
+// Нативный API (yandexgpt/aliceai-llm): форма тела, авторизация, разбор NDJSON-потока.
+test("ask(aliceai-llm): stream:false, maxTokens 120, Api-Key — и разбор ответа", async () => {
   const { cap } = mockLlm({ result: { alternatives: [{ message: { text: "Привет" } }] } });
   try {
-    const reply = await ask([{ role: "user", text: "x" }]);
+    const reply = await ask([{ role: "user", text: "x" }], { model: "aliceai-llm" });
     assert.equal(reply, "Привет");
     assert.equal(cap.body.completionOptions.stream, false);
     assert.equal(cap.body.completionOptions.maxTokens, 120);
     assert.match(cap.headers.authorization, /^Api-Key /);
-    // Мозг диалога по умолчанию — aliceai-llm (быстрее и умнее yandexgpt, замер 2026-07-05)
     assert.match(cap.body.modelUri, /\/aliceai-llm\/latest$/);
     assert.equal(cap.body.completionOptions.temperature, 0.4);
   } finally {
@@ -44,14 +44,14 @@ test("ask: stream:false, maxTokens 120 по умолчанию, Api-Key — и �
   }
 });
 
-test("askStream: stream:true, maxTokens 120 — onChunk получает накопленный текст", async () => {
+test("askStream(aliceai-llm): stream:true, maxTokens 120 — onChunk получает накопленный текст", async () => {
   const ndjson =
     JSON.stringify({ result: { alternatives: [{ message: { text: "Привет." } }] } }) + "\n" +
     JSON.stringify({ result: { alternatives: [{ message: { text: "Привет. Как дела?" } }] } }) + "\n";
   const { cap } = mockLlm(ndjson);
   try {
     const chunks = [];
-    const full = await askStream([{ role: "user", text: "x" }], (t) => chunks.push(t));
+    const full = await askStream([{ role: "user", text: "x" }], (t) => chunks.push(t), { model: "aliceai-llm" });
     assert.equal(full, "Привет. Как дела?");
     assert.deepStrictEqual(chunks, ["Привет.", "Привет. Как дела?"]);
     assert.equal(cap.body.completionOptions.stream, true);
@@ -74,7 +74,7 @@ test("ask: один повтор после транзиентной сетев�
     .reply(200, { result: { alternatives: [{ message: { text: "Ответ со второй попытки" } }] } });
   setHttpDispatcher(agent);
   try {
-    assert.equal(await ask([{ role: "user", text: "x" }]), "Ответ со второй попытки");
+    assert.equal(await ask([{ role: "user", text: "x" }], { model: "aliceai-llm" }), "Ответ со второй попытки");
   } finally {
     setHttpDispatcher(null);
   }
@@ -86,7 +86,7 @@ test("ask: HTTP-ошибка НЕ повторяется (одна попытк�
   agent.get(LLM_ORIGIN).intercept({ path: LLM_PATH, method: "POST" }).reply(500, "boom");
   setHttpDispatcher(agent);
   try {
-    await assert.rejects(() => ask([{ role: "user", text: "x" }]), /LLM 500/);
+    await assert.rejects(() => ask([{ role: "user", text: "x" }], { model: "aliceai-llm" }), /LLM 500/);
   } finally {
     setHttpDispatcher(null);
   }
@@ -102,8 +102,108 @@ test("askStream: один повтор после транзиентной се�
   setHttpDispatcher(agent);
   try {
     const chunks = [];
-    assert.equal(await askStream([{ role: "user", text: "x" }], (t) => chunks.push(t)), "Привет.");
+    assert.equal(
+      await askStream([{ role: "user", text: "x" }], (t) => chunks.push(t), { model: "aliceai-llm" }),
+      "Привет.",
+    );
     assert.deepStrictEqual(chunks, ["Привет."]);
+  } finally {
+    setHttpDispatcher(null);
+  }
+});
+
+// ── OpenAI-совместимая ветка (aliceai-llm-flash доступен ТОЛЬКО через неё) ──────────────
+const OPENAI_ORIGIN = "https://ai.api.cloud.yandex.net";
+const OPENAI_PATH = "/v1/chat/completions";
+
+function mockOpenai(replyBody) {
+  const agent = new MockAgent();
+  agent.disableNetConnect();
+  const cap = { body: null, headers: null };
+  agent
+    .get(OPENAI_ORIGIN)
+    .intercept({
+      path: OPENAI_PATH,
+      method: "POST",
+      body: (b) => { cap.body = JSON.parse(b); return true; },
+      headers: (h) => { cap.headers = h; return true; },
+    })
+    .reply(200, replyBody);
+  setHttpDispatcher(agent);
+  return { agent, cap };
+}
+
+const sse = (deltas) =>
+  deltas.map((d) => `data: ${JSON.stringify({ choices: [{ delta: { content: d } }] })}\n\n`).join("") +
+  "data: [DONE]\n\n";
+
+// Мозг диалога по умолчанию — aliceai-llm-flash (самый быстрый TTFT, eva-eval чистый,
+// замер 2026-07-05); он живёт ТОЛЬКО на OpenAI-совместимом endpoint.
+test("дефолтная модель: aliceai-llm-flash через OpenAI endpoint", async () => {
+  const { cap } = mockOpenai({ choices: [{ message: { content: "Ок" } }] });
+  try {
+    assert.equal(await ask([{ role: "user", text: "x" }]), "Ок");
+    assert.match(cap.body.model, /^gpt:\/\/.+\/aliceai-llm-flash$/);
+  } finally {
+    setHttpDispatcher(null);
+  }
+});
+
+test("askStream(aliceai-llm-flash): OpenAI endpoint, SSE-дельты копятся, onChunk — накопленный текст", async () => {
+  const { cap } = mockOpenai(sse(["Привет.", " Как дела?"]));
+  try {
+    const chunks = [];
+    const full = await askStream([{ role: "user", text: "x" }], (t) => chunks.push(t), { model: "aliceai-llm-flash" });
+    assert.equal(full, "Привет. Как дела?");
+    assert.deepStrictEqual(chunks, ["Привет.", "Привет. Как дела?"]);
+    assert.equal(cap.body.stream, true);
+    // Модель БЕЗ /latest (для alice-моделей версионные URI в доках не значатся),
+    // max_completion_tokens (max_tokens в схеме deprecated), сообщения в формате content.
+    assert.match(cap.body.model, /\/aliceai-llm-flash$/);
+    assert.equal(cap.body.max_completion_tokens, 120);
+    assert.equal(cap.body.messages[0].content, "x");
+    assert.match(cap.headers.authorization, /^Api-Key /);
+  } finally {
+    setHttpDispatcher(null);
+  }
+});
+
+test("ask(aliceai-llm-flash): не-потоковый ответ через OpenAI endpoint", async () => {
+  const { cap } = mockOpenai({ choices: [{ message: { content: "Ответ" } }] });
+  try {
+    assert.equal(await ask([{ role: "user", text: "x" }], { model: "aliceai-llm-flash" }), "Ответ");
+    assert.equal(cap.body.stream, false);
+    assert.match(cap.body.model, /\/aliceai-llm-flash$/);
+  } finally {
+    setHttpDispatcher(null);
+  }
+});
+
+test("askStream(aliceai-llm-flash): незавершённая последняя SSE-строка не теряется", async () => {
+  const body =
+    'data: {"choices":[{"delta":{"content":"Привет."}}]}\n\n' +
+    'data: {"choices":[{"delta":{"content":" Хвост."}}]}'; // обрыв без \n
+  const { } = mockOpenai(body);
+  try {
+    const full = await askStream([{ role: "user", text: "x" }], () => {}, { model: "aliceai-llm-flash" });
+    assert.equal(full, "Привет. Хвост.");
+  } finally {
+    setHttpDispatcher(null);
+  }
+});
+
+test("askStream(aliceai-llm-flash): один повтор после транзиентной сетевой ошибки", async () => {
+  const agent = new MockAgent();
+  agent.disableNetConnect();
+  const pool = agent.get(OPENAI_ORIGIN);
+  pool.intercept({ path: OPENAI_PATH, method: "POST" }).replyWithError(new Error("read ECONNRESET"));
+  pool.intercept({ path: OPENAI_PATH, method: "POST" }).reply(200, sse(["Привет."]));
+  setHttpDispatcher(agent);
+  try {
+    assert.equal(
+      await askStream([{ role: "user", text: "x" }], () => {}, { model: "aliceai-llm-flash" }),
+      "Привет.",
+    );
   } finally {
     setHttpDispatcher(null);
   }

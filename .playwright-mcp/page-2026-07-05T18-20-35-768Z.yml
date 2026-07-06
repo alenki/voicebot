@@ -1,0 +1,1582 @@
+- generic [active] [ref=f14e1]:
+  - generic [ref=f14e6]:
+    - navigation [ref=f14e11]:
+      - generic [ref=f14e12]:
+        - link "Logo icon" [ref=f14e14] [cursor=pointer]:
+          - /url: /
+          - img "Logo icon" [ref=f14e16]
+        - list [ref=f14e21]:
+          - listitem [ref=f14e22] [cursor=pointer]:
+            - button "Platform" [ref=f14e23]:
+              - generic [ref=f14e24]: Platform
+              - img [ref=f14e25]:
+                - img [ref=f14e26]
+          - listitem [ref=f14e28] [cursor=pointer]:
+            - button "Businesses" [ref=f14e29]:
+              - generic [ref=f14e30]: Businesses
+              - img [ref=f14e31]:
+                - img [ref=f14e32]
+          - listitem [ref=f14e34] [cursor=pointer]:
+            - link "Developers" [ref=f14e35]:
+              - /url: /developers
+              - generic [ref=f14e36]: Developers
+          - listitem [ref=f14e37] [cursor=pointer]:
+            - link "Documentation" [ref=f14e38]:
+              - /url: /docs/en/
+              - generic [ref=f14e39]: Documentation
+          - listitem [ref=f14e40] [cursor=pointer]:
+            - link "Pricing" [ref=f14e41]:
+              - /url: /docs/en/ai-studio/pricing
+              - generic [ref=f14e42]: Pricing
+        - list [ref=f14e44]:
+          - listitem [ref=f14e45] [cursor=pointer]:
+            - combobox "Search" [ref=f14e49]
+          - listitem [ref=f14e51] [cursor=pointer]:
+            - button "Language" [ref=f14e52]:
+              - img [ref=f14e54]
+              - generic [ref=f14e55]: Language
+              - img [ref=f14e56]:
+                - img [ref=f14e57]
+          - listitem [ref=f14e59] [cursor=pointer]:
+            - link "Contact us" [ref=f14e60]:
+              - /url: /en#contact-form
+              - generic [ref=f14e63]: Contact us
+          - listitem [ref=f14e64] [cursor=pointer]:
+            - link "Log in" [ref=f14e65]:
+              - /url: /platform
+              - generic [ref=f14e68]: Log in
+    - main [ref=f14e69]:
+      - generic [ref=f14e78]:
+        - navigation [ref=f14e80]:
+          - link "AI Studio documentation" [ref=f14e82] [cursor=pointer]:
+            - /url: en/
+            - generic [ref=f14e83]: AI Studio documentation
+          - list "AI Studio documentation" [ref=f14e85]:
+            - listitem [ref=f14e86] [cursor=pointer]:
+              - link "Getting started" [ref=f14e87]:
+                - /url: en/ai-studio/quickstart/
+                - generic [ref=f14e89]: Getting started
+            - listitem [ref=f14e90] [cursor=pointer]:
+              - button "AI Studio" [ref=f14e91]:
+                - generic [ref=f14e92]: AI Studio
+              - list "AI Studio documentation" [ref=f14e93]:
+                - listitem [ref=f14e94]:
+                  - link "About AI Studio" [ref=f14e95]:
+                    - /url: en/ai-studio/concepts/
+                    - generic [ref=f14e97]: About AI Studio
+                - listitem [ref=f14e98]:
+                  - button "Drop-down list Model Gallery" [ref=f14e99]:
+                    - img [ref=f14e100]
+                    - generic [ref=f14e102]: Model Gallery
+                - listitem [ref=f14e103]:
+                  - button "Drop-down list Agent Atelier" [ref=f14e104]:
+                    - img [ref=f14e105]
+                    - generic [ref=f14e107]: Agent Atelier
+                - listitem [ref=f14e108]:
+                  - button "Drop-down list MCP Hub" [ref=f14e109]:
+                    - img [ref=f14e110]
+                    - generic [ref=f14e112]: MCP Hub
+                - listitem [ref=f14e113]:
+                  - button "Drop-down list AI Search" [ref=f14e114]:
+                    - img [ref=f14e115]
+                    - generic [ref=f14e117]: AI Search
+                - listitem [ref=f14e118]:
+                  - button "Drop-down list Step-by-step guides" [ref=f14e119]:
+                    - img [ref=f14e120]
+                    - generic [ref=f14e122]: Step-by-step guides
+                - listitem [ref=f14e123]:
+                  - button "Drop-down list API references" [expanded] [ref=f14e124]:
+                    - img [ref=f14e125]
+                    - generic [ref=f14e127]: API references
+                  - list "AI Studio documentation" [ref=f14e128]:
+                    - listitem [ref=f14e129]:
+                      - link "Overview" [ref=f14e130]:
+                        - /url: en/ai-studio/concepts/api
+                        - generic [ref=f14e132]: Overview
+                    - listitem [ref=f14e133]:
+                      - link "API authentication" [ref=f14e134]:
+                        - /url: en/ai-studio/api-ref/authentication
+                        - generic [ref=f14e136]: API authentication
+                    - listitem [ref=f14e137]:
+                      - button "Drop-down list OpenAI-compatible APIs" [ref=f14e138]:
+                        - img [ref=f14e139]
+                        - generic [ref=f14e141]: OpenAI-compatible APIs
+                    - listitem [ref=f14e142]:
+                      - button "Drop-down list Text Generation API" [expanded] [ref=f14e143]:
+                        - img [ref=f14e144]
+                        - generic [ref=f14e146]: Text Generation API
+                      - list "AI Studio documentation" [ref=f14e147]:
+                        - listitem [ref=f14e148]:
+                          - button "Drop-down list REST" [expanded] [ref=f14e149]:
+                            - img [ref=f14e150]
+                            - generic [ref=f14e152]: REST
+                          - list "AI Studio documentation" [ref=f14e153]:
+                            - listitem [ref=f14e154]:
+                              - link "Overview" [ref=f14e155]:
+                                - /url: en/ai-studio/text-generation/api-ref/
+                                - generic [ref=f14e157]: Overview
+                            - listitem [ref=f14e158]:
+                              - button "Drop-down list Operation" [ref=f14e159]:
+                                - img [ref=f14e160]
+                                - generic [ref=f14e162]: Operation
+                            - listitem [ref=f14e163]:
+                              - button "Drop-down list TextGenerationAsync" [ref=f14e164]:
+                                - img [ref=f14e165]
+                                - generic [ref=f14e167]: TextGenerationAsync
+                            - listitem [ref=f14e168]:
+                              - button "Drop-down list TextGenerationBatch" [ref=f14e169]:
+                                - img [ref=f14e170]
+                                - generic [ref=f14e172]: TextGenerationBatch
+                            - listitem [ref=f14e173]:
+                              - button "Drop-down list TextGeneration" [expanded] [ref=f14e174]:
+                                - img [ref=f14e175]
+                                - generic [ref=f14e177]: TextGeneration
+                              - list "AI Studio documentation" [ref=f14e178]:
+                                - listitem [ref=f14e179]:
+                                  - link "Overview" [ref=f14e180]:
+                                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/
+                                    - generic [ref=f14e182]: Overview
+                                - listitem [ref=f14e183]:
+                                  - link "Completion" [ref=f14e184]:
+                                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion
+                                    - generic [ref=f14e186]: Completion
+                            - listitem [ref=f14e187]:
+                              - button "Drop-down list Tokenizer" [ref=f14e188]:
+                                - img [ref=f14e189]
+                                - generic [ref=f14e191]: Tokenizer
+                        - listitem [ref=f14e192]:
+                          - button "Drop-down list gRPC" [ref=f14e193]:
+                            - img [ref=f14e194]
+                            - generic [ref=f14e196]: gRPC
+                    - listitem [ref=f14e197]:
+                      - button "Drop-down list Image Generation API" [ref=f14e198]:
+                        - img [ref=f14e199]
+                        - generic [ref=f14e201]: Image Generation API
+                    - listitem [ref=f14e202]:
+                      - button "Drop-down list Batch Inference API" [ref=f14e203]:
+                        - img [ref=f14e204]
+                        - generic [ref=f14e206]: Batch Inference API
+                    - listitem [ref=f14e207]:
+                      - button "Drop-down list Text Classification API" [ref=f14e208]:
+                        - img [ref=f14e209]
+                        - generic [ref=f14e211]: Text Classification API
+                    - listitem [ref=f14e212]:
+                      - button "Drop-down list Embeddings API" [ref=f14e213]:
+                        - img [ref=f14e214]
+                        - generic [ref=f14e216]: Embeddings API
+                    - listitem [ref=f14e217]:
+                      - button "Drop-down list Files API" [ref=f14e218]:
+                        - img [ref=f14e219]
+                        - generic [ref=f14e221]: Files API
+                    - listitem [ref=f14e222]:
+                      - button "Drop-down list Dataset API" [ref=f14e223]:
+                        - img [ref=f14e224]
+                        - generic [ref=f14e226]: Dataset API
+                    - listitem [ref=f14e227]:
+                      - button "Drop-down list Tuning API" [ref=f14e228]:
+                        - img [ref=f14e229]
+                        - generic [ref=f14e231]: Tuning API
+                    - listitem [ref=f14e232]:
+                      - button "Drop-down list MCP Gateway API" [ref=f14e233]:
+                        - img [ref=f14e234]
+                        - generic [ref=f14e236]: MCP Gateway API
+                - listitem [ref=f14e237]:
+                  - button "Drop-down list Yandex Cloud ML SDK" [ref=f14e238]:
+                    - img [ref=f14e239]
+                    - generic [ref=f14e241]: Yandex Cloud ML SDK
+                - listitem [ref=f14e242]:
+                  - link "Public materials" [ref=f14e243]:
+                    - /url: en/ai-studio/public-talks
+                    - generic [ref=f14e245]: Public materials
+                - listitem [ref=f14e246]:
+                  - link "Terms and definitions" [ref=f14e247]:
+                    - /url: en/ai-studio/concepts/glossary
+                    - generic [ref=f14e249]: Terms and definitions
+                - listitem [ref=f14e250]:
+                  - link "FAQ" [ref=f14e251]:
+                    - /url: en/ai-studio/qa/
+                    - generic [ref=f14e253]: FAQ
+                - listitem [ref=f14e254]:
+                  - button "Drop-down list Troubleshooting" [ref=f14e255]:
+                    - img [ref=f14e256]
+                    - generic [ref=f14e258]: Troubleshooting
+            - listitem [ref=f14e259] [cursor=pointer]:
+              - button "SpeechKit" [ref=f14e260]:
+                - generic [ref=f14e261]: SpeechKit
+              - list "AI Studio documentation" [ref=f14e262]:
+                - listitem [ref=f14e263]:
+                  - link "SpeechKit technology overview" [ref=f14e264]:
+                    - /url: en/speechkit/overview
+                    - generic [ref=f14e266]: SpeechKit technology overview
+                - listitem [ref=f14e267]:
+                  - button "Drop-down list Getting started with SpeechKit" [ref=f14e268]:
+                    - img [ref=f14e269]
+                    - generic [ref=f14e271]: Getting started with SpeechKit
+                - listitem [ref=f14e272]:
+                  - button "Drop-down list Speech recognition" [ref=f14e273]:
+                    - img [ref=f14e274]
+                    - generic [ref=f14e276]: Speech recognition
+                - listitem [ref=f14e277]:
+                  - button "Drop-down list Speech synthesis" [ref=f14e278]:
+                    - img [ref=f14e279]
+                    - generic [ref=f14e281]: Speech synthesis
+                - listitem [ref=f14e282]:
+                  - button "Drop-down list Step-by-step guides" [ref=f14e283]:
+                    - img [ref=f14e284]
+                    - generic [ref=f14e286]: Step-by-step guides
+                - listitem [ref=f14e287]:
+                  - button "Drop-down list SpeechKit Hybrid" [ref=f14e288]:
+                    - img [ref=f14e289]
+                    - generic [ref=f14e291]: SpeechKit Hybrid
+                - listitem [ref=f14e292]:
+                  - button "Drop-down list API references" [ref=f14e293]:
+                    - img [ref=f14e294]
+                    - generic [ref=f14e296]: API references
+                - listitem [ref=f14e297]:
+                  - link "Supported audio formats" [ref=f14e298]:
+                    - /url: en/speechkit/formats
+                    - generic [ref=f14e300]: Supported audio formats
+                - listitem [ref=f14e301]:
+                  - link "IVR integration" [ref=f14e302]:
+                    - /url: en/speechkit/concepts/ivr-integration
+                    - generic [ref=f14e304]: IVR integration
+                - listitem [ref=f14e305]:
+                  - button "Drop-down list Troubleshooting" [ref=f14e306]:
+                    - img [ref=f14e307]
+                    - generic [ref=f14e309]: Troubleshooting
+            - listitem [ref=f14e310] [cursor=pointer]:
+              - button "Yandex Search API" [ref=f14e311]:
+                - generic [ref=f14e312]: Yandex Search API
+              - list "AI Studio documentation" [ref=f14e313]:
+                - listitem [ref=f14e314]:
+                  - link "About Yandex Search API" [ref=f14e315]:
+                    - /url: en/search-api/concepts/
+                    - generic [ref=f14e317]: About Yandex Search API
+                - listitem [ref=f14e318]:
+                  - link "Getting started" [ref=f14e319]:
+                    - /url: en/search-api/quickstart/
+                    - generic [ref=f14e321]: Getting started
+                - listitem [ref=f14e322]:
+                  - button "Drop-down list Concepts" [ref=f14e323]:
+                    - img [ref=f14e324]
+                    - generic [ref=f14e326]: Concepts
+                - listitem [ref=f14e327]:
+                  - button "Drop-down list Step-by-step guides" [ref=f14e328]:
+                    - img [ref=f14e329]
+                    - generic [ref=f14e331]: Step-by-step guides
+                - listitem [ref=f14e332]:
+                  - button "Drop-down list API reference" [ref=f14e333]:
+                    - img [ref=f14e334]
+                    - generic [ref=f14e336]: API reference
+                - listitem [ref=f14e337]:
+                  - button "Drop-down list Apps" [ref=f14e338]:
+                    - img [ref=f14e339]
+                    - generic [ref=f14e341]: Apps
+            - listitem [ref=f14e342] [cursor=pointer]:
+              - button "Vision OCR" [ref=f14e343]:
+                - generic [ref=f14e344]: Vision OCR
+              - list "AI Studio documentation" [ref=f14e345]:
+                - listitem [ref=f14e346]:
+                  - link "About Vision OCR" [ref=f14e347]:
+                    - /url: en/vision/concepts/ocr/
+                    - generic [ref=f14e349]: About Vision OCR
+                - listitem [ref=f14e350]:
+                  - link "Getting started" [ref=f14e351]:
+                    - /url: en/vision/quickstart
+                    - generic [ref=f14e353]: Getting started
+                - listitem [ref=f14e354]:
+                  - button "Drop-down list Concepts" [ref=f14e355]:
+                    - img [ref=f14e356]
+                    - generic [ref=f14e358]: Concepts
+                - listitem [ref=f14e359]:
+                  - button "Drop-down list Step-by-step guides" [ref=f14e360]:
+                    - img [ref=f14e361]
+                    - generic [ref=f14e363]: Step-by-step guides
+                - listitem [ref=f14e364]:
+                  - button "Drop-down list API references" [ref=f14e365]:
+                    - img [ref=f14e366]
+                    - generic [ref=f14e368]: API references
+                - listitem [ref=f14e369]:
+                  - button "Drop-down list Troubleshooting" [ref=f14e370]:
+                    - img [ref=f14e371]
+                    - generic [ref=f14e373]: Troubleshooting
+                - listitem [ref=f14e374]:
+                  - link "FAQ" [ref=f14e375]:
+                    - /url: en/vision/qa/
+                    - generic [ref=f14e377]: FAQ
+            - listitem [ref=f14e378] [cursor=pointer]:
+              - button "Translate" [ref=f14e379]:
+                - generic [ref=f14e380]: Translate
+              - list "AI Studio documentation" [ref=f14e381]:
+                - listitem [ref=f14e382]:
+                  - link "About Translate" [ref=f14e383]:
+                    - /url: en/translate/concepts/
+                    - generic [ref=f14e385]: About Translate
+                - listitem [ref=f14e386]:
+                  - link "Getting started" [ref=f14e387]:
+                    - /url: en/translate/quickstart
+                    - generic [ref=f14e389]: Getting started
+                - listitem [ref=f14e390]:
+                  - button "Drop-down list Concepts" [ref=f14e391]:
+                    - img [ref=f14e392]
+                    - generic [ref=f14e394]: Concepts
+                - listitem [ref=f14e395]:
+                  - button "Drop-down list Step-by-step guides" [ref=f14e396]:
+                    - img [ref=f14e397]
+                    - generic [ref=f14e399]: Step-by-step guides
+                - listitem [ref=f14e400]:
+                  - button "Drop-down list API reference" [ref=f14e401]:
+                    - img [ref=f14e402]
+                    - generic [ref=f14e404]: API reference
+                - listitem [ref=f14e405]:
+                  - button "Drop-down list Troubleshooting" [ref=f14e406]:
+                    - img [ref=f14e407]
+                    - generic [ref=f14e409]: Troubleshooting
+            - listitem [ref=f14e410] [cursor=pointer]:
+              - button "Security" [ref=f14e411]:
+                - generic [ref=f14e412]: Security
+              - list "AI Studio documentation" [ref=f14e413]:
+                - listitem [ref=f14e414]:
+                  - link "Getting an API key" [ref=f14e415]:
+                    - /url: en/ai-studio/operations/get-api-key
+                    - generic [ref=f14e417]: Getting an API key
+                - listitem [ref=f14e418]:
+                  - link "Disabling request logging" [ref=f14e419]:
+                    - /url: en/ai-studio/operations/disable-logging
+                    - generic [ref=f14e421]: Disabling request logging
+                - listitem [ref=f14e422]:
+                  - button "Drop-down list Guardrails" [ref=f14e423]:
+                    - img [ref=f14e424]
+                    - generic [ref=f14e426]: Guardrails
+                - listitem [ref=f14e427]:
+                  - button "Drop-down list Access management" [ref=f14e428]:
+                    - img [ref=f14e429]
+                    - generic [ref=f14e431]: Access management
+                - listitem [ref=f14e432]:
+                  - button "Drop-down list Audit Trails events" [ref=f14e433]:
+                    - img [ref=f14e434]
+                    - generic [ref=f14e436]: Audit Trails events
+                - listitem [ref=f14e437]:
+                  - button "Drop-down list Metrics Monitoring" [ref=f14e438]:
+                    - img [ref=f14e439]
+                    - generic [ref=f14e441]: Metrics Monitoring
+            - listitem [ref=f14e442] [cursor=pointer]:
+              - button "Quotas and limits" [ref=f14e443]:
+                - generic [ref=f14e444]: Quotas and limits
+              - list "AI Studio documentation" [ref=f14e445]:
+                - listitem [ref=f14e446]:
+                  - link "AI Studio" [ref=f14e447]:
+                    - /url: en/ai-studio/concepts/limits
+                    - generic [ref=f14e449]: AI Studio
+                - listitem [ref=f14e450]:
+                  - link "SpeechKit" [ref=f14e451]:
+                    - /url: en/speechkit/concepts/limits
+                    - generic [ref=f14e453]: SpeechKit
+                - listitem [ref=f14e454]:
+                  - link "Yandex Search API" [ref=f14e455]:
+                    - /url: en/search-api/concepts/limits
+                    - generic [ref=f14e457]: Yandex Search API
+                - listitem [ref=f14e458]:
+                  - link "Vision OCR" [ref=f14e459]:
+                    - /url: en/vision/concepts/limits
+                    - generic [ref=f14e461]: Vision OCR
+                - listitem [ref=f14e462]:
+                  - link "Translate" [ref=f14e463]:
+                    - /url: en/translate/concepts/limits
+                    - generic [ref=f14e465]: Translate
+            - listitem [ref=f14e466] [cursor=pointer]:
+              - button "Pricing policy" [ref=f14e467]:
+                - generic [ref=f14e468]: Pricing policy
+              - list "AI Studio documentation" [ref=f14e469]:
+                - listitem [ref=f14e470]:
+                  - link "AI Studio" [ref=f14e471]:
+                    - /url: en/ai-studio/pricing
+                    - generic [ref=f14e473]: AI Studio
+                - listitem [ref=f14e474]:
+                  - link "SpeechKit" [ref=f14e475]:
+                    - /url: en/speechkit/pricing
+                    - generic [ref=f14e477]: SpeechKit
+                - listitem [ref=f14e478]:
+                  - link "Yandex Search API" [ref=f14e479]:
+                    - /url: en/search-api/pricing
+                    - generic [ref=f14e481]: Yandex Search API
+                - listitem [ref=f14e482]:
+                  - link "Vision OCR" [ref=f14e483]:
+                    - /url: en/vision/pricing
+                    - generic [ref=f14e485]: Vision OCR
+                - listitem [ref=f14e486]:
+                  - link "Translate" [ref=f14e487]:
+                    - /url: en/translate/pricing
+                    - generic [ref=f14e489]: Translate
+            - listitem [ref=f14e490] [cursor=pointer]:
+              - button "Release notes" [ref=f14e491]:
+                - generic [ref=f14e492]: Release notes
+              - list "AI Studio documentation" [ref=f14e493]:
+                - listitem [ref=f14e494]:
+                  - link "AI Studio" [ref=f14e495]:
+                    - /url: en/ai-studio/release-notes/
+                    - generic [ref=f14e497]: AI Studio
+                - listitem [ref=f14e498]:
+                  - 'link "SpeechKit: Speech recognition" [ref=f14e499]':
+                    - /url: en/speechkit/release-notes-stt
+                    - generic [ref=f14e501]: "SpeechKit: Speech recognition"
+                - listitem [ref=f14e502]:
+                  - 'link "SpeechKit: Synthesis" [ref=f14e503]':
+                    - /url: en/speechkit/release-notes-tts
+                    - generic [ref=f14e505]: "SpeechKit: Synthesis"
+                - listitem [ref=f14e506]:
+                  - link "Yandex Search API" [ref=f14e507]:
+                    - /url: en/search-api/release-notes/
+                    - generic [ref=f14e509]: Yandex Search API
+                - listitem [ref=f14e510]:
+                  - link "Vision OCR" [ref=f14e511]:
+                    - /url: en/vision/release-notes
+                    - generic [ref=f14e513]: Vision OCR
+        - navigation "Article navigation" [ref=f14e518]:
+          - heading "In this article:" [level=2] [ref=f14e519]
+          - list "Current article contents" [ref=f14e520]:
+            - listitem [ref=f14e521]:
+              - link "HTTP request" [ref=f14e522] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#http-request
+            - listitem [ref=f14e523]:
+              - link "Body parameters" [ref=f14e524] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.CompletionRequest
+            - listitem [ref=f14e525]:
+              - link "CompletionOptions" [ref=f14e526] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.CompletionOptions
+            - listitem [ref=f14e527]:
+              - link "ReasoningOptions" [ref=f14e528] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ReasoningOptions
+            - listitem [ref=f14e529]:
+              - link "Message" [ref=f14e530] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Message
+            - listitem [ref=f14e531]:
+              - link "ToolCallList" [ref=f14e532] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCallList
+            - listitem [ref=f14e533]:
+              - link "ToolCall" [ref=f14e534] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCall
+            - listitem [ref=f14e535]:
+              - link "FunctionCall" [ref=f14e536] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionCall
+            - listitem [ref=f14e537]:
+              - link "ToolResultList" [ref=f14e538] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResultList
+            - listitem [ref=f14e539]:
+              - link "ToolResult" [ref=f14e540] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResult
+            - listitem [ref=f14e541]:
+              - link "FunctionResult" [ref=f14e542] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionResult
+            - listitem [ref=f14e543]:
+              - link "Tool" [ref=f14e544] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Tool
+            - listitem [ref=f14e545]:
+              - link "FunctionTool" [ref=f14e546] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionTool
+            - listitem [ref=f14e547]:
+              - link "JsonSchema" [ref=f14e548] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.JsonSchema
+            - listitem [ref=f14e549]:
+              - link "ToolChoice" [ref=f14e550] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolChoice
+            - listitem [ref=f14e551]:
+              - link "Response" [ref=f14e552] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.CompletionResponse
+            - listitem [ref=f14e553]:
+              - link "Alternative" [ref=f14e554] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Alternative
+            - listitem [ref=f14e555]:
+              - link "Message" [ref=f14e556] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Message2
+            - listitem [ref=f14e557]:
+              - link "ToolCallList" [ref=f14e558] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCallList2
+            - listitem [ref=f14e559]:
+              - link "ToolCall" [ref=f14e560] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCall2
+            - listitem [ref=f14e561]:
+              - link "FunctionCall" [ref=f14e562] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionCall2
+            - listitem [ref=f14e563]:
+              - link "ToolResultList" [ref=f14e564] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResultList2
+            - listitem [ref=f14e565]:
+              - link "ToolResult" [ref=f14e566] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResult2
+            - listitem [ref=f14e567]:
+              - link "FunctionResult" [ref=f14e568] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionResult2
+            - listitem [ref=f14e569]:
+              - link "ContentUsage" [ref=f14e570] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ContentUsage
+            - listitem [ref=f14e571]:
+              - link "CompletionTokensDetails" [ref=f14e572] [cursor=pointer]:
+                - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ContentUsage.CompletionTokensDetails
+        - generic [ref=f14e573]:
+          - generic [ref=f14e574]:
+            - button "Reading mode" [ref=f14e575] [cursor=pointer]:
+              - img [ref=f14e578]
+            - button "Settings" [ref=f14e580] [cursor=pointer]:
+              - img [ref=f14e583]
+            - button "Language" [ref=f14e585] [cursor=pointer]:
+              - img [ref=f14e588]
+            - button "Helpful" [ref=f14e590] [cursor=pointer]:
+              - img [ref=f14e593]
+            - button "Not helpful" [ref=f14e595] [cursor=pointer]:
+              - img [ref=f14e598]
+          - generic [ref=f14e600]:
+            - main [ref=f14e601]:
+              - 'heading "Foundation Models Text Generation API, REST: TextGeneration.Completion" [level=1] [ref=f14e602]':
+                - generic [ref=f14e603]: "Foundation Models Text Generation API, REST: TextGeneration.Completion"
+              - generic [ref=f14e604]:
+                - paragraph [ref=f14e605]:
+                  - text: A method for generating text completions in
+                  - link "synchronous mode" [ref=f14e606] [cursor=pointer]:
+                    - /url: /docs/foundation-models/concepts/#working-mode
+                  - text: .
+                - heading "HTTP request" [level=2] [ref=f14e607]:
+                  - link [ref=f14e608] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#http-request
+                    - text: "#"
+                    - generic [ref=f14e609]: HTTP request
+                  - text: HTTP request
+                - generic [ref=f14e610]:
+                  - code [ref=f14e612]: POST https://llm.api.cloud.yandex.net/foundationModels/v1/completion
+                  - button [ref=f14e614] [cursor=pointer]:
+                    - img
+                - heading "Body parameters" [level=2] [ref=f14e615]:
+                  - link [ref=f14e616] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.CompletionRequest
+                    - text: "#"
+                    - generic [ref=f14e617]: Body parameters
+                  - text: Body parameters
+                - generic [ref=f14e618]:
+                  - code [ref=f14e620]: "{ \"modelUri\": \"string\", \"completionOptions\": { \"stream\": \"boolean\", \"temperature\": \"number\", \"maxTokens\": \"string\", \"reasoningOptions\": { \"mode\": \"string\" } }, \"messages\": [ { \"role\": \"string\", // Includes only one of the fields `text`, `toolCallList`, `toolResultList` \"text\": \"string\", \"toolCallList\": { \"toolCalls\": [ { // Includes only one of the fields `functionCall` \"functionCall\": { \"name\": \"string\", \"arguments\": \"object\" } // end of the list of possible fields } ] }, \"toolResultList\": { \"toolResults\": [ { // Includes only one of the fields `functionResult` \"functionResult\": { \"name\": \"string\", // Includes only one of the fields `content` \"content\": \"string\" // end of the list of possible fields } // end of the list of possible fields } ] } // end of the list of possible fields } ], \"tools\": [ { // Includes only one of the fields `function` \"function\": { \"name\": \"string\", \"description\": \"string\", \"parameters\": \"object\", \"strict\": \"boolean\" } // end of the list of possible fields } ], // Includes only one of the fields `jsonObject`, `jsonSchema` \"jsonObject\": \"boolean\", \"jsonSchema\": { \"schema\": \"object\" }, // end of the list of possible fields \"parallelToolCalls\": \"boolean\", \"toolChoice\": { // Includes only one of the fields `mode`, `functionName` \"mode\": \"string\", \"functionName\": \"string\" // end of the list of possible fields } }"
+                  - button [ref=f14e622] [cursor=pointer]:
+                    - img
+                - paragraph [ref=f14e623]: Request for the service to generate text completion.
+                - table [ref=f14e624]:
+                  - rowgroup [ref=f14e625]:
+                    - row "Field Description" [ref=f14e626]:
+                      - cell "Field" [ref=f14e627]:
+                        - paragraph [ref=f14e628]: Field
+                      - cell "Description" [ref=f14e629]:
+                        - paragraph [ref=f14e630]: Description
+                    - row "modelUri string The ID of the model to be used for completion generation." [ref=f14e631]:
+                      - cell "modelUri" [ref=f14e632]:
+                        - paragraph [ref=f14e633]: modelUri
+                      - cell "string The ID of the model to be used for completion generation." [ref=f14e634]:
+                        - paragraph [ref=f14e635]:
+                          - strong [ref=f14e636]: string
+                        - paragraph [ref=f14e637]:
+                          - text: The
+                          - link "ID of the model" [ref=f14e638] [cursor=pointer]:
+                            - /url: /docs/foundation-models/concepts/yandexgpt/models
+                          - text: to be used for completion generation.
+                    - row "completionOptions CompletionOptions Configuration options for completion generation." [ref=f14e639]:
+                      - cell "completionOptions" [ref=f14e640]:
+                        - paragraph [ref=f14e641]: completionOptions
+                      - cell "CompletionOptions Configuration options for completion generation." [ref=f14e642]:
+                        - paragraph [ref=f14e643]:
+                          - strong [ref=f14e644]:
+                            - link "CompletionOptions" [ref=f14e645] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.CompletionOptions
+                        - paragraph [ref=f14e646]: Configuration options for completion generation.
+                    - row "messages[] Message A list of messages representing the context for the completion model." [ref=f14e647]:
+                      - cell "messages[]" [ref=f14e648]:
+                        - paragraph [ref=f14e649]: messages[]
+                      - cell "Message A list of messages representing the context for the completion model." [ref=f14e650]:
+                        - paragraph [ref=f14e651]:
+                          - strong [ref=f14e652]:
+                            - link "Message" [ref=f14e653] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Message
+                        - paragraph [ref=f14e654]: A list of messages representing the context for the completion model.
+                    - 'row "tools[] Tool List of tools that are available for the model to invoke during the completion generation. Note: This parameter is not yet supported and will be ignored if provided." [ref=f14e655]':
+                      - cell "tools[]" [ref=f14e656]:
+                        - paragraph [ref=f14e657]: tools[]
+                      - 'cell "Tool List of tools that are available for the model to invoke during the completion generation. Note: This parameter is not yet supported and will be ignored if provided." [ref=f14e658]':
+                        - paragraph [ref=f14e659]:
+                          - strong [ref=f14e660]:
+                            - link "Tool" [ref=f14e661] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Tool
+                        - paragraph [ref=f14e662]:
+                          - text: List of tools that are available for the model to invoke during the completion generation.
+                          - text: "Note: This parameter is not yet supported and will be ignored if provided."
+                    - row "jsonObject boolean When set to true, the model will respond with a valid JSON object. Be sure to explicitly ask the model for JSON. Otherwise, it may generate excessive whitespace and run indefinitely until it reaches the token limit. Includes only one of the fields jsonObject, jsonSchema. Specifies the format of the model's response." [ref=f14e663]:
+                      - cell "jsonObject" [ref=f14e664]:
+                        - paragraph [ref=f14e665]: jsonObject
+                      - cell "boolean When set to true, the model will respond with a valid JSON object. Be sure to explicitly ask the model for JSON. Otherwise, it may generate excessive whitespace and run indefinitely until it reaches the token limit. Includes only one of the fields jsonObject, jsonSchema. Specifies the format of the model's response." [ref=f14e666]:
+                        - paragraph [ref=f14e667]:
+                          - strong [ref=f14e668]: boolean
+                        - paragraph [ref=f14e669]:
+                          - text: When set to true, the model will respond with a valid JSON object.
+                          - text: Be sure to explicitly ask the model for JSON.
+                          - text: Otherwise, it may generate excessive whitespace and run indefinitely until it reaches the token limit.
+                        - paragraph [ref=f14e670]:
+                          - text: Includes only one of the fields
+                          - button "jsonObject" [ref=f14e671]
+                          - text: ","
+                          - button "jsonSchema" [ref=f14e672]
+                          - text: .
+                        - paragraph [ref=f14e673]: Specifies the format of the model's response.
+                    - row "jsonSchema JsonSchema Enforces a specific JSON structure for the model's response based on a provided schema. Includes only one of the fields jsonObject, jsonSchema. Specifies the format of the model's response." [ref=f14e674]:
+                      - cell "jsonSchema" [ref=f14e675]:
+                        - paragraph [ref=f14e676]: jsonSchema
+                      - cell "JsonSchema Enforces a specific JSON structure for the model's response based on a provided schema. Includes only one of the fields jsonObject, jsonSchema. Specifies the format of the model's response." [ref=f14e677]:
+                        - paragraph [ref=f14e678]:
+                          - strong [ref=f14e679]:
+                            - link "JsonSchema" [ref=f14e680] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.JsonSchema
+                        - paragraph [ref=f14e681]: Enforces a specific JSON structure for the model's response based on a provided schema.
+                        - paragraph [ref=f14e682]:
+                          - text: Includes only one of the fields
+                          - button "jsonObject" [ref=f14e683]
+                          - text: ","
+                          - button "jsonSchema" [ref=f14e684]
+                          - text: .
+                        - paragraph [ref=f14e685]: Specifies the format of the model's response.
+                    - row "parallelToolCalls boolean Controls whether the model can generate multiple tool calls in a single response. Defaults to true." [ref=f14e686]:
+                      - cell "parallelToolCalls" [ref=f14e687]:
+                        - paragraph [ref=f14e688]: parallelToolCalls
+                      - cell "boolean Controls whether the model can generate multiple tool calls in a single response. Defaults to true." [ref=f14e689]:
+                        - paragraph [ref=f14e690]:
+                          - strong [ref=f14e691]: boolean
+                        - paragraph [ref=f14e692]: Controls whether the model can generate multiple tool calls in a single response. Defaults to true.
+                    - row "toolChoice ToolChoice Specifies how the model should select which tool (or tools) to use when generating a response." [ref=f14e693]:
+                      - cell "toolChoice" [ref=f14e694]:
+                        - paragraph [ref=f14e695]: toolChoice
+                      - cell "ToolChoice Specifies how the model should select which tool (or tools) to use when generating a response." [ref=f14e696]:
+                        - paragraph [ref=f14e697]:
+                          - strong [ref=f14e698]:
+                            - link "ToolChoice" [ref=f14e699] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolChoice
+                        - paragraph [ref=f14e700]: Specifies how the model should select which tool (or tools) to use when generating a response.
+                - heading "CompletionOptions" [level=2] [ref=f14e701]:
+                  - link [ref=f14e702] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.CompletionOptions
+                    - text: "#"
+                    - generic [ref=f14e703]: CompletionOptions
+                  - text: CompletionOptions
+                - paragraph [ref=f14e704]: Defines the options for completion generation.
+                - table [ref=f14e705]:
+                  - rowgroup [ref=f14e706]:
+                    - row "Field Description" [ref=f14e707]:
+                      - cell "Field" [ref=f14e708]:
+                        - paragraph [ref=f14e709]: Field
+                      - cell "Description" [ref=f14e710]:
+                        - paragraph [ref=f14e711]: Description
+                    - row "stream boolean Enables streaming of partially generated text." [ref=f14e712]:
+                      - cell "stream" [ref=f14e713]:
+                        - paragraph [ref=f14e714]: stream
+                      - cell "boolean Enables streaming of partially generated text." [ref=f14e715]:
+                        - paragraph [ref=f14e716]:
+                          - strong [ref=f14e717]: boolean
+                        - paragraph [ref=f14e718]: Enables streaming of partially generated text.
+                    - 'row "temperature number (double) Affects creativity and randomness of responses. Should be a double number between 0 (inclusive) and 1 (inclusive). Lower values produce more straightforward responses while higher values lead to increased creativity and randomness. Default temperature: 0.3" [ref=f14e719]':
+                      - cell "temperature" [ref=f14e720]:
+                        - paragraph [ref=f14e721]: temperature
+                      - 'cell "number (double) Affects creativity and randomness of responses. Should be a double number between 0 (inclusive) and 1 (inclusive). Lower values produce more straightforward responses while higher values lead to increased creativity and randomness. Default temperature: 0.3" [ref=f14e722]':
+                        - paragraph [ref=f14e723]:
+                          - strong [ref=f14e724]: number
+                          - text: (double)
+                        - paragraph [ref=f14e725]:
+                          - text: Affects creativity and randomness of responses. Should be a double number between 0 (inclusive) and 1 (inclusive).
+                          - text: Lower values produce more straightforward responses while higher values lead to increased creativity and randomness.
+                          - text: "Default temperature: 0.3"
+                    - row "maxTokens string (int64) The limit on the number of tokens used for single completion generation. Must be greater than zero. This maximum allowed parameter value may depend on the model being used." [ref=f14e726]:
+                      - cell "maxTokens" [ref=f14e727]:
+                        - paragraph [ref=f14e728]: maxTokens
+                      - cell "string (int64) The limit on the number of tokens used for single completion generation. Must be greater than zero. This maximum allowed parameter value may depend on the model being used." [ref=f14e729]:
+                        - paragraph [ref=f14e730]:
+                          - strong [ref=f14e731]: string
+                          - text: (int64)
+                        - paragraph [ref=f14e732]:
+                          - text: The limit on the number of tokens used for single completion generation.
+                          - text: Must be greater than zero. This maximum allowed parameter value may depend on the model being used.
+                    - row "reasoningOptions ReasoningOptions Configures reasoning capabilities for the model, allowing it to perform internal reasoning before responding." [ref=f14e733]:
+                      - cell "reasoningOptions" [ref=f14e734]:
+                        - paragraph [ref=f14e735]: reasoningOptions
+                      - cell "ReasoningOptions Configures reasoning capabilities for the model, allowing it to perform internal reasoning before responding." [ref=f14e736]:
+                        - paragraph [ref=f14e737]:
+                          - strong [ref=f14e738]:
+                            - link "ReasoningOptions" [ref=f14e739] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ReasoningOptions
+                        - paragraph [ref=f14e740]: Configures reasoning capabilities for the model, allowing it to perform internal reasoning before responding.
+                - heading "ReasoningOptions" [level=2] [ref=f14e741]:
+                  - link [ref=f14e742] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ReasoningOptions
+                    - text: "#"
+                    - generic [ref=f14e743]: ReasoningOptions
+                  - text: ReasoningOptions
+                - paragraph [ref=f14e744]: Represents reasoning options that enable the model's ability to perform internal reasoning before generating a response.
+                - table [ref=f14e745]:
+                  - rowgroup [ref=f14e746]:
+                    - row "Field Description" [ref=f14e747]:
+                      - cell "Field" [ref=f14e748]:
+                        - paragraph [ref=f14e749]: Field
+                      - cell "Description" [ref=f14e750]:
+                        - paragraph [ref=f14e751]: Description
+                    - 'row "mode enum (ReasoningMode) Specifies the reasoning mode to be used. REASONING_MODE_UNSPECIFIED: Unspecified reasoning mode. DISABLED: Disables reasoning. The model will generate a response without performing any internal reasoning. ENABLED_HIDDEN: Enables reasoning in a hidden manner without exposing the reasoning steps to the user." [ref=f14e752]':
+                      - cell "mode" [ref=f14e753]:
+                        - paragraph [ref=f14e754]: mode
+                      - 'cell "enum (ReasoningMode) Specifies the reasoning mode to be used. REASONING_MODE_UNSPECIFIED: Unspecified reasoning mode. DISABLED: Disables reasoning. The model will generate a response without performing any internal reasoning. ENABLED_HIDDEN: Enables reasoning in a hidden manner without exposing the reasoning steps to the user." [ref=f14e755]':
+                        - paragraph [ref=f14e756]:
+                          - strong [ref=f14e757]: enum
+                          - text: (ReasoningMode)
+                        - paragraph [ref=f14e758]: Specifies the reasoning mode to be used.
+                        - list [ref=f14e759]:
+                          - listitem [ref=f14e760]:
+                            - button "REASONING_MODE_UNSPECIFIED" [ref=f14e761]
+                            - text: ": Unspecified reasoning mode."
+                          - listitem [ref=f14e762]:
+                            - button "DISABLED" [ref=f14e763]
+                            - text: ": Disables reasoning. The model will generate a response without performing any internal reasoning."
+                          - listitem [ref=f14e764]:
+                            - button "ENABLED_HIDDEN" [ref=f14e765]
+                            - text: ": Enables reasoning in a hidden manner without exposing the reasoning steps to the user."
+                - heading "Message" [level=2] [ref=f14e766]:
+                  - link [ref=f14e767] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Message
+                    - text: "#"
+                    - generic [ref=f14e768]: Message
+                  - text: Message
+                - paragraph [ref=f14e769]: A message object representing a wrapper over the inputs and outputs of the completion model.
+                - table [ref=f14e770]:
+                  - rowgroup [ref=f14e771]:
+                    - row "Field Description" [ref=f14e772]:
+                      - cell "Field" [ref=f14e773]:
+                        - paragraph [ref=f14e774]: Field
+                      - cell "Description" [ref=f14e775]:
+                        - paragraph [ref=f14e776]: Description
+                    - 'row "role string The ID of the message sender. Supported roles: system: Special role used to define the behavior of the completion model. assistant: A role used by the model to generate responses. user: A role used by the user to describe requests to the model." [ref=f14e777]':
+                      - cell "role" [ref=f14e778]:
+                        - paragraph [ref=f14e779]: role
+                      - 'cell "string The ID of the message sender. Supported roles: system: Special role used to define the behavior of the completion model. assistant: A role used by the model to generate responses. user: A role used by the user to describe requests to the model." [ref=f14e780]':
+                        - paragraph [ref=f14e781]:
+                          - strong [ref=f14e782]: string
+                        - paragraph [ref=f14e783]: "The ID of the message sender. Supported roles:"
+                        - list [ref=f14e784]:
+                          - listitem [ref=f14e785]:
+                            - button "system" [ref=f14e786]
+                            - text: ": Special role used to define the behavior of the completion model."
+                          - listitem [ref=f14e787]:
+                            - button "assistant" [ref=f14e788]
+                            - text: ": A role used by the model to generate responses."
+                          - listitem [ref=f14e789]:
+                            - button "user" [ref=f14e790]
+                            - text: ": A role used by the user to describe requests to the model."
+                    - row "text string Textual content of the message. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e791]:
+                      - cell "text" [ref=f14e792]:
+                        - paragraph [ref=f14e793]: text
+                      - cell "string Textual content of the message. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e794]:
+                        - paragraph [ref=f14e795]:
+                          - strong [ref=f14e796]: string
+                        - paragraph [ref=f14e797]: Textual content of the message.
+                        - paragraph [ref=f14e798]:
+                          - text: Includes only one of the fields
+                          - button "text" [ref=f14e799]
+                          - text: ","
+                          - button "toolCallList" [ref=f14e800]
+                          - text: ","
+                          - button "toolResultList" [ref=f14e801]
+                          - text: .
+                        - paragraph [ref=f14e802]: Message content.
+                    - row "toolCallList ToolCallList List of tool calls made by the model as part of the response generation. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e803]:
+                      - cell "toolCallList" [ref=f14e804]:
+                        - paragraph [ref=f14e805]: toolCallList
+                      - cell "ToolCallList List of tool calls made by the model as part of the response generation. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e806]:
+                        - paragraph [ref=f14e807]:
+                          - strong [ref=f14e808]:
+                            - link "ToolCallList" [ref=f14e809] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCallList
+                        - paragraph [ref=f14e810]: List of tool calls made by the model as part of the response generation.
+                        - paragraph [ref=f14e811]:
+                          - text: Includes only one of the fields
+                          - button "text" [ref=f14e812]
+                          - text: ","
+                          - button "toolCallList" [ref=f14e813]
+                          - text: ","
+                          - button "toolResultList" [ref=f14e814]
+                          - text: .
+                        - paragraph [ref=f14e815]: Message content.
+                    - row "toolResultList ToolResultList List of tool results returned from external tools that were invoked by the model. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e816]:
+                      - cell "toolResultList" [ref=f14e817]:
+                        - paragraph [ref=f14e818]: toolResultList
+                      - cell "ToolResultList List of tool results returned from external tools that were invoked by the model. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e819]:
+                        - paragraph [ref=f14e820]:
+                          - strong [ref=f14e821]:
+                            - link "ToolResultList" [ref=f14e822] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResultList
+                        - paragraph [ref=f14e823]: List of tool results returned from external tools that were invoked by the model.
+                        - paragraph [ref=f14e824]:
+                          - text: Includes only one of the fields
+                          - button "text" [ref=f14e825]
+                          - text: ","
+                          - button "toolCallList" [ref=f14e826]
+                          - text: ","
+                          - button "toolResultList" [ref=f14e827]
+                          - text: .
+                        - paragraph [ref=f14e828]: Message content.
+                - heading "ToolCallList" [level=2] [ref=f14e829]:
+                  - link [ref=f14e830] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCallList
+                    - text: "#"
+                    - generic [ref=f14e831]: ToolCallList
+                  - text: ToolCallList
+                - paragraph [ref=f14e832]: Represents a list of tool calls.
+                - table [ref=f14e833]:
+                  - rowgroup [ref=f14e834]:
+                    - row "Field Description" [ref=f14e835]:
+                      - cell "Field" [ref=f14e836]:
+                        - paragraph [ref=f14e837]: Field
+                      - cell "Description" [ref=f14e838]:
+                        - paragraph [ref=f14e839]: Description
+                    - row "toolCalls[] ToolCall A list of tool calls to be executed." [ref=f14e840]:
+                      - cell "toolCalls[]" [ref=f14e841]:
+                        - paragraph [ref=f14e842]: toolCalls[]
+                      - cell "ToolCall A list of tool calls to be executed." [ref=f14e843]:
+                        - paragraph [ref=f14e844]:
+                          - strong [ref=f14e845]:
+                            - link "ToolCall" [ref=f14e846] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCall
+                        - paragraph [ref=f14e847]: A list of tool calls to be executed.
+                - heading "ToolCall" [level=2] [ref=f14e848]:
+                  - link [ref=f14e849] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCall
+                    - text: "#"
+                    - generic [ref=f14e850]: ToolCall
+                  - text: ToolCall
+                - paragraph [ref=f14e851]: Represents a call to a tool.
+                - table [ref=f14e852]:
+                  - rowgroup [ref=f14e853]:
+                    - row "Field Description" [ref=f14e854]:
+                      - cell "Field" [ref=f14e855]:
+                        - paragraph [ref=f14e856]: Field
+                      - cell "Description" [ref=f14e857]:
+                        - paragraph [ref=f14e858]: Description
+                    - row "functionCall FunctionCall Represents a call to a function. Includes only one of the fields functionCall." [ref=f14e859]:
+                      - cell "functionCall" [ref=f14e860]:
+                        - paragraph [ref=f14e861]: functionCall
+                      - cell "FunctionCall Represents a call to a function. Includes only one of the fields functionCall." [ref=f14e862]:
+                        - paragraph [ref=f14e863]:
+                          - strong [ref=f14e864]:
+                            - link "FunctionCall" [ref=f14e865] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionCall
+                        - paragraph [ref=f14e866]: Represents a call to a function.
+                        - paragraph [ref=f14e867]:
+                          - text: Includes only one of the fields
+                          - button "functionCall" [ref=f14e868]
+                          - text: .
+                - heading "FunctionCall" [level=2] [ref=f14e869]:
+                  - link [ref=f14e870] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionCall
+                    - text: "#"
+                    - generic [ref=f14e871]: FunctionCall
+                  - text: FunctionCall
+                - paragraph [ref=f14e872]: Represents the invocation of a function with specific arguments.
+                - table [ref=f14e873]:
+                  - rowgroup [ref=f14e874]:
+                    - row "Field Description" [ref=f14e875]:
+                      - cell "Field" [ref=f14e876]:
+                        - paragraph [ref=f14e877]: Field
+                      - cell "Description" [ref=f14e878]:
+                        - paragraph [ref=f14e879]: Description
+                    - row "name string The name of the function being called." [ref=f14e880]:
+                      - cell "name" [ref=f14e881]:
+                        - paragraph [ref=f14e882]: name
+                      - cell "string The name of the function being called." [ref=f14e883]:
+                        - paragraph [ref=f14e884]:
+                          - strong [ref=f14e885]: string
+                        - paragraph [ref=f14e886]: The name of the function being called.
+                    - row "arguments object The structured arguments passed to the function. These arguments must adhere to the JSON Schema defined in the corresponding function's parameters." [ref=f14e887]:
+                      - cell "arguments" [ref=f14e888]:
+                        - paragraph [ref=f14e889]: arguments
+                      - cell "object The structured arguments passed to the function. These arguments must adhere to the JSON Schema defined in the corresponding function's parameters." [ref=f14e890]:
+                        - paragraph [ref=f14e891]:
+                          - strong [ref=f14e892]: object
+                        - paragraph [ref=f14e893]:
+                          - text: The structured arguments passed to the function.
+                          - text: These arguments must adhere to the JSON Schema defined in the corresponding function's parameters.
+                - heading "ToolResultList" [level=2] [ref=f14e894]:
+                  - link [ref=f14e895] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResultList
+                    - text: "#"
+                    - generic [ref=f14e896]: ToolResultList
+                  - text: ToolResultList
+                - paragraph [ref=f14e897]: Represents a list of tool results.
+                - table [ref=f14e898]:
+                  - rowgroup [ref=f14e899]:
+                    - row "Field Description" [ref=f14e900]:
+                      - cell "Field" [ref=f14e901]:
+                        - paragraph [ref=f14e902]: Field
+                      - cell "Description" [ref=f14e903]:
+                        - paragraph [ref=f14e904]: Description
+                    - row "toolResults[] ToolResult A list of tool results." [ref=f14e905]:
+                      - cell "toolResults[]" [ref=f14e906]:
+                        - paragraph [ref=f14e907]: toolResults[]
+                      - cell "ToolResult A list of tool results." [ref=f14e908]:
+                        - paragraph [ref=f14e909]:
+                          - strong [ref=f14e910]:
+                            - link "ToolResult" [ref=f14e911] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResult
+                        - paragraph [ref=f14e912]: A list of tool results.
+                - heading "ToolResult" [level=2] [ref=f14e913]:
+                  - link [ref=f14e914] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResult
+                    - text: "#"
+                    - generic [ref=f14e915]: ToolResult
+                  - text: ToolResult
+                - paragraph [ref=f14e916]: Represents the result of a tool call.
+                - table [ref=f14e917]:
+                  - rowgroup [ref=f14e918]:
+                    - row "Field Description" [ref=f14e919]:
+                      - cell "Field" [ref=f14e920]:
+                        - paragraph [ref=f14e921]: Field
+                      - cell "Description" [ref=f14e922]:
+                        - paragraph [ref=f14e923]: Description
+                    - row "functionResult FunctionResult Represents the result of a function call. Includes only one of the fields functionResult." [ref=f14e924]:
+                      - cell "functionResult" [ref=f14e925]:
+                        - paragraph [ref=f14e926]: functionResult
+                      - cell "FunctionResult Represents the result of a function call. Includes only one of the fields functionResult." [ref=f14e927]:
+                        - paragraph [ref=f14e928]:
+                          - strong [ref=f14e929]:
+                            - link "FunctionResult" [ref=f14e930] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionResult
+                        - paragraph [ref=f14e931]: Represents the result of a function call.
+                        - paragraph [ref=f14e932]:
+                          - text: Includes only one of the fields
+                          - button "functionResult" [ref=f14e933]
+                          - text: .
+                - heading "FunctionResult" [level=2] [ref=f14e934]:
+                  - link [ref=f14e935] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionResult
+                    - text: "#"
+                    - generic [ref=f14e936]: FunctionResult
+                  - text: FunctionResult
+                - paragraph [ref=f14e937]: Represents the result of a function call.
+                - table [ref=f14e938]:
+                  - rowgroup [ref=f14e939]:
+                    - row "Field Description" [ref=f14e940]:
+                      - cell "Field" [ref=f14e941]:
+                        - paragraph [ref=f14e942]: Field
+                      - cell "Description" [ref=f14e943]:
+                        - paragraph [ref=f14e944]: Description
+                    - row "name string The name of the function that was executed." [ref=f14e945]:
+                      - cell "name" [ref=f14e946]:
+                        - paragraph [ref=f14e947]: name
+                      - cell "string The name of the function that was executed." [ref=f14e948]:
+                        - paragraph [ref=f14e949]:
+                          - strong [ref=f14e950]: string
+                        - paragraph [ref=f14e951]: The name of the function that was executed.
+                    - row "content string The result of the function call, represented as a string. This field can be used to store the output of the function. Includes only one of the fields content." [ref=f14e952]:
+                      - cell "content" [ref=f14e953]:
+                        - paragraph [ref=f14e954]: content
+                      - cell "string The result of the function call, represented as a string. This field can be used to store the output of the function. Includes only one of the fields content." [ref=f14e955]:
+                        - paragraph [ref=f14e956]:
+                          - strong [ref=f14e957]: string
+                        - paragraph [ref=f14e958]:
+                          - text: The result of the function call, represented as a string.
+                          - text: This field can be used to store the output of the function.
+                        - paragraph [ref=f14e959]:
+                          - text: Includes only one of the fields
+                          - button "content" [ref=f14e960]
+                          - text: .
+                - heading "Tool" [level=2] [ref=f14e961]:
+                  - link [ref=f14e962] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Tool
+                    - text: "#"
+                    - generic [ref=f14e963]: Tool
+                  - text: Tool
+                - paragraph [ref=f14e964]: Represents a tool that can be invoked during completion generation.
+                - table [ref=f14e965]:
+                  - rowgroup [ref=f14e966]:
+                    - row "Field Description" [ref=f14e967]:
+                      - cell "Field" [ref=f14e968]:
+                        - paragraph [ref=f14e969]: Field
+                      - cell "Description" [ref=f14e970]:
+                        - paragraph [ref=f14e971]: Description
+                    - row "function FunctionTool Represents a function that can be called. Includes only one of the fields function." [ref=f14e972]:
+                      - cell "function" [ref=f14e973]:
+                        - paragraph [ref=f14e974]: function
+                      - cell "FunctionTool Represents a function that can be called. Includes only one of the fields function." [ref=f14e975]:
+                        - paragraph [ref=f14e976]:
+                          - strong [ref=f14e977]:
+                            - link "FunctionTool" [ref=f14e978] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionTool
+                        - paragraph [ref=f14e979]: Represents a function that can be called.
+                        - paragraph [ref=f14e980]:
+                          - text: Includes only one of the fields
+                          - button "function" [ref=f14e981]
+                          - text: .
+                - heading "FunctionTool" [level=2] [ref=f14e982]:
+                  - link [ref=f14e983] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionTool
+                    - text: "#"
+                    - generic [ref=f14e984]: FunctionTool
+                  - text: FunctionTool
+                - paragraph [ref=f14e985]: Represents a function tool that can be invoked during completion generation.
+                - table [ref=f14e986]:
+                  - rowgroup [ref=f14e987]:
+                    - row "Field Description" [ref=f14e988]:
+                      - cell "Field" [ref=f14e989]:
+                        - paragraph [ref=f14e990]: Field
+                      - cell "Description" [ref=f14e991]:
+                        - paragraph [ref=f14e992]: Description
+                    - row "name string The name of the function." [ref=f14e993]:
+                      - cell "name" [ref=f14e994]:
+                        - paragraph [ref=f14e995]: name
+                      - cell "string The name of the function." [ref=f14e996]:
+                        - paragraph [ref=f14e997]:
+                          - strong [ref=f14e998]: string
+                        - paragraph [ref=f14e999]: The name of the function.
+                    - row "description string A description of the function's purpose or behavior." [ref=f14e1000]:
+                      - cell "description" [ref=f14e1001]:
+                        - paragraph [ref=f14e1002]: description
+                      - cell "string A description of the function's purpose or behavior." [ref=f14e1003]:
+                        - paragraph [ref=f14e1004]:
+                          - strong [ref=f14e1005]: string
+                        - paragraph [ref=f14e1006]: A description of the function's purpose or behavior.
+                    - row "parameters object A JSON Schema that defines the expected parameters for the function. The schema should describe the required fields, their types, and any constraints or default values." [ref=f14e1007]:
+                      - cell "parameters" [ref=f14e1008]:
+                        - paragraph [ref=f14e1009]: parameters
+                      - cell "object A JSON Schema that defines the expected parameters for the function. The schema should describe the required fields, their types, and any constraints or default values." [ref=f14e1010]:
+                        - paragraph [ref=f14e1011]:
+                          - strong [ref=f14e1012]: object
+                        - paragraph [ref=f14e1013]:
+                          - text: A JSON Schema that defines the expected parameters for the function.
+                          - text: The schema should describe the required fields, their types, and any constraints or default values.
+                    - row "strict boolean Enforces strict adherence to the function schema, ensuring only defined parameters are used." [ref=f14e1014]:
+                      - cell "strict" [ref=f14e1015]:
+                        - paragraph [ref=f14e1016]: strict
+                      - cell "boolean Enforces strict adherence to the function schema, ensuring only defined parameters are used." [ref=f14e1017]:
+                        - paragraph [ref=f14e1018]:
+                          - strong [ref=f14e1019]: boolean
+                        - paragraph [ref=f14e1020]: Enforces strict adherence to the function schema, ensuring only defined parameters are used.
+                - heading "JsonSchema" [level=2] [ref=f14e1021]:
+                  - link [ref=f14e1022] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.JsonSchema
+                    - text: "#"
+                    - generic [ref=f14e1023]: JsonSchema
+                  - text: JsonSchema
+                - paragraph [ref=f14e1024]: Represents the expected structure of the model's response using a JSON Schema.
+                - table [ref=f14e1025]:
+                  - rowgroup [ref=f14e1026]:
+                    - row "Field Description" [ref=f14e1027]:
+                      - cell "Field" [ref=f14e1028]:
+                        - paragraph [ref=f14e1029]: Field
+                      - cell "Description" [ref=f14e1030]:
+                        - paragraph [ref=f14e1031]: Description
+                    - row "schema object The JSON Schema that the model's output must conform to." [ref=f14e1032]:
+                      - cell "schema" [ref=f14e1033]:
+                        - paragraph [ref=f14e1034]: schema
+                      - cell "object The JSON Schema that the model's output must conform to." [ref=f14e1035]:
+                        - paragraph [ref=f14e1036]:
+                          - strong [ref=f14e1037]: object
+                        - paragraph [ref=f14e1038]: The JSON Schema that the model's output must conform to.
+                - heading "ToolChoice" [level=2] [ref=f14e1039]:
+                  - link [ref=f14e1040] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolChoice
+                    - text: "#"
+                    - generic [ref=f14e1041]: ToolChoice
+                  - text: ToolChoice
+                - paragraph [ref=f14e1042]: Specifies how the model should select which tool (or tools) to use when generating a response.
+                - table [ref=f14e1043]:
+                  - rowgroup [ref=f14e1044]:
+                    - row "Field Description" [ref=f14e1045]:
+                      - cell "Field" [ref=f14e1046]:
+                        - paragraph [ref=f14e1047]: Field
+                      - cell "Description" [ref=f14e1048]:
+                        - paragraph [ref=f14e1049]: Description
+                    - 'row "mode enum (ToolChoiceMode) Specifies the overall tool-calling mode. Includes only one of the fields mode, functionName. TOOL_CHOICE_MODE_UNSPECIFIED: The server will choose the default behavior, which is AUTO. NONE: The model will not call any tool and will generate a standard text response. AUTO: The model can choose between generating a text response or calling one or more tools. This is the default behavior. REQUIRED: The model is required to call one or more tools." [ref=f14e1050]':
+                      - cell "mode" [ref=f14e1051]:
+                        - paragraph [ref=f14e1052]: mode
+                      - 'cell "enum (ToolChoiceMode) Specifies the overall tool-calling mode. Includes only one of the fields mode, functionName. TOOL_CHOICE_MODE_UNSPECIFIED: The server will choose the default behavior, which is AUTO. NONE: The model will not call any tool and will generate a standard text response. AUTO: The model can choose between generating a text response or calling one or more tools. This is the default behavior. REQUIRED: The model is required to call one or more tools." [ref=f14e1053]':
+                        - paragraph [ref=f14e1054]:
+                          - strong [ref=f14e1055]: enum
+                          - text: (ToolChoiceMode)
+                        - paragraph [ref=f14e1056]: Specifies the overall tool-calling mode.
+                        - paragraph [ref=f14e1057]:
+                          - text: Includes only one of the fields
+                          - button "mode" [ref=f14e1058]
+                          - text: ","
+                          - button "functionName" [ref=f14e1059]
+                          - text: .
+                        - list [ref=f14e1060]:
+                          - listitem [ref=f14e1061]:
+                            - button "TOOL_CHOICE_MODE_UNSPECIFIED" [ref=f14e1062]
+                            - text: ": The server will choose the default behavior, which is AUTO."
+                          - listitem [ref=f14e1063]:
+                            - button "NONE" [ref=f14e1064]
+                            - text: ": The model will not call any tool and will generate a standard text response."
+                          - listitem [ref=f14e1065]:
+                            - button "AUTO" [ref=f14e1066]
+                            - text: ": The model can choose between generating a text response or calling one or more tools."
+                            - text: This is the default behavior.
+                          - listitem [ref=f14e1067]:
+                            - button "REQUIRED" [ref=f14e1068]
+                            - text: ": The model is required to call one or more tools."
+                    - row "functionName string Forces the model to call a specific function. The provided string must match the name of a function in the API request. Includes only one of the fields mode, functionName." [ref=f14e1069]:
+                      - cell "functionName" [ref=f14e1070]:
+                        - paragraph [ref=f14e1071]: functionName
+                      - cell "string Forces the model to call a specific function. The provided string must match the name of a function in the API request. Includes only one of the fields mode, functionName." [ref=f14e1072]:
+                        - paragraph [ref=f14e1073]:
+                          - strong [ref=f14e1074]: string
+                        - paragraph [ref=f14e1075]:
+                          - text: Forces the model to call a specific function.
+                          - text: The provided string must match the name of a function in the API request.
+                        - paragraph [ref=f14e1076]:
+                          - text: Includes only one of the fields
+                          - button "mode" [ref=f14e1077]
+                          - text: ","
+                          - button "functionName" [ref=f14e1078]
+                          - text: .
+                - heading "Response" [level=2] [ref=f14e1079]:
+                  - link [ref=f14e1080] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.CompletionResponse
+                    - text: "#"
+                    - generic [ref=f14e1081]: Response
+                  - text: Response
+                - paragraph [ref=f14e1082]:
+                  - strong [ref=f14e1083]: "HTTP Code: 200 - OK"
+                - generic [ref=f14e1084]:
+                  - code [ref=f14e1086]: "{ \"alternatives\": [ { \"message\": { \"role\": \"string\", // Includes only one of the fields `text`, `toolCallList`, `toolResultList` \"text\": \"string\", \"toolCallList\": { \"toolCalls\": [ { // Includes only one of the fields `functionCall` \"functionCall\": { \"name\": \"string\", \"arguments\": \"object\" } // end of the list of possible fields } ] }, \"toolResultList\": { \"toolResults\": [ { // Includes only one of the fields `functionResult` \"functionResult\": { \"name\": \"string\", // Includes only one of the fields `content` \"content\": \"string\" // end of the list of possible fields } // end of the list of possible fields } ] } // end of the list of possible fields }, \"status\": \"string\" } ], \"usage\": { \"inputTextTokens\": \"string\", \"completionTokens\": \"string\", \"totalTokens\": \"string\", \"completionTokensDetails\": { \"reasoningTokens\": \"string\" } }, \"modelVersion\": \"string\" }"
+                  - button [ref=f14e1088] [cursor=pointer]:
+                    - img
+                - paragraph [ref=f14e1089]: Response containing generated text completions.
+                - table [ref=f14e1090]:
+                  - rowgroup [ref=f14e1091]:
+                    - row "Field Description" [ref=f14e1092]:
+                      - cell "Field" [ref=f14e1093]:
+                        - paragraph [ref=f14e1094]: Field
+                      - cell "Description" [ref=f14e1095]:
+                        - paragraph [ref=f14e1096]: Description
+                    - row "alternatives[] Alternative A list of generated completion alternatives." [ref=f14e1097]:
+                      - cell "alternatives[]" [ref=f14e1098]:
+                        - paragraph [ref=f14e1099]: alternatives[]
+                      - cell "Alternative A list of generated completion alternatives." [ref=f14e1100]:
+                        - paragraph [ref=f14e1101]:
+                          - strong [ref=f14e1102]:
+                            - link "Alternative" [ref=f14e1103] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Alternative
+                        - paragraph [ref=f14e1104]: A list of generated completion alternatives.
+                    - row "usage ContentUsage A set of statistics describing the number of content tokens used by the completion model." [ref=f14e1105]:
+                      - cell "usage" [ref=f14e1106]:
+                        - paragraph [ref=f14e1107]: usage
+                      - cell "ContentUsage A set of statistics describing the number of content tokens used by the completion model." [ref=f14e1108]:
+                        - paragraph [ref=f14e1109]:
+                          - strong [ref=f14e1110]:
+                            - link "ContentUsage" [ref=f14e1111] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ContentUsage
+                        - paragraph [ref=f14e1112]: A set of statistics describing the number of content tokens used by the completion model.
+                    - row "modelVersion string The model version changes with each new releases." [ref=f14e1113]:
+                      - cell "modelVersion" [ref=f14e1114]:
+                        - paragraph [ref=f14e1115]: modelVersion
+                      - cell "string The model version changes with each new releases." [ref=f14e1116]:
+                        - paragraph [ref=f14e1117]:
+                          - strong [ref=f14e1118]: string
+                        - paragraph [ref=f14e1119]: The model version changes with each new releases.
+                - heading "Alternative" [level=2] [ref=f14e1120]:
+                  - link [ref=f14e1121] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Alternative
+                    - text: "#"
+                    - generic [ref=f14e1122]: Alternative
+                  - text: Alternative
+                - paragraph [ref=f14e1123]: Represents a generated completion alternative, including its content and generation status.
+                - table [ref=f14e1124]:
+                  - rowgroup [ref=f14e1125]:
+                    - row "Field Description" [ref=f14e1126]:
+                      - cell "Field" [ref=f14e1127]:
+                        - paragraph [ref=f14e1128]: Field
+                      - cell "Description" [ref=f14e1129]:
+                        - paragraph [ref=f14e1130]: Description
+                    - row "message Message A message with the content of the alternative." [ref=f14e1131]:
+                      - cell "message" [ref=f14e1132]:
+                        - paragraph [ref=f14e1133]: message
+                      - cell "Message A message with the content of the alternative." [ref=f14e1134]:
+                        - paragraph [ref=f14e1135]:
+                          - strong [ref=f14e1136]:
+                            - link "Message" [ref=f14e1137] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Message2
+                        - paragraph [ref=f14e1138]: A message with the content of the alternative.
+                    - 'row "status enum (AlternativeStatus) The generation status of the alternative. ALTERNATIVE_STATUS_UNSPECIFIED: Unspecified generation status. ALTERNATIVE_STATUS_PARTIAL: Partially generated alternative. ALTERNATIVE_STATUS_TRUNCATED_FINAL: Incomplete final alternative resulting from reaching the maximum allowed number of tokens. ALTERNATIVE_STATUS_FINAL: Final alternative generated without running into any limits. ALTERNATIVE_STATUS_CONTENT_FILTER: Generation was stopped due to the discovery of potentially sensitive content in the prompt or generated response. To fix, modify the prompt and restart generation. ALTERNATIVE_STATUS_TOOL_CALLS: Tools were invoked during the completion generation." [ref=f14e1139]':
+                      - cell "status" [ref=f14e1140]:
+                        - paragraph [ref=f14e1141]: status
+                      - 'cell "enum (AlternativeStatus) The generation status of the alternative. ALTERNATIVE_STATUS_UNSPECIFIED: Unspecified generation status. ALTERNATIVE_STATUS_PARTIAL: Partially generated alternative. ALTERNATIVE_STATUS_TRUNCATED_FINAL: Incomplete final alternative resulting from reaching the maximum allowed number of tokens. ALTERNATIVE_STATUS_FINAL: Final alternative generated without running into any limits. ALTERNATIVE_STATUS_CONTENT_FILTER: Generation was stopped due to the discovery of potentially sensitive content in the prompt or generated response. To fix, modify the prompt and restart generation. ALTERNATIVE_STATUS_TOOL_CALLS: Tools were invoked during the completion generation." [ref=f14e1142]':
+                        - paragraph [ref=f14e1143]:
+                          - strong [ref=f14e1144]: enum
+                          - text: (AlternativeStatus)
+                        - paragraph [ref=f14e1145]: The generation status of the alternative.
+                        - list [ref=f14e1146]:
+                          - listitem [ref=f14e1147]:
+                            - button "ALTERNATIVE_STATUS_UNSPECIFIED" [ref=f14e1148]
+                            - text: ": Unspecified generation status."
+                          - listitem [ref=f14e1149]:
+                            - button "ALTERNATIVE_STATUS_PARTIAL" [ref=f14e1150]
+                            - text: ": Partially generated alternative."
+                          - listitem [ref=f14e1151]:
+                            - button "ALTERNATIVE_STATUS_TRUNCATED_FINAL" [ref=f14e1152]
+                            - text: ": Incomplete final alternative resulting from reaching the maximum allowed number of tokens."
+                          - listitem [ref=f14e1153]:
+                            - button "ALTERNATIVE_STATUS_FINAL" [ref=f14e1154]
+                            - text: ": Final alternative generated without running into any limits."
+                          - listitem [ref=f14e1155]:
+                            - button "ALTERNATIVE_STATUS_CONTENT_FILTER" [ref=f14e1156]
+                            - text: ": Generation was stopped due to the discovery of potentially sensitive content in the prompt or generated response."
+                            - text: To fix, modify the prompt and restart generation.
+                          - listitem [ref=f14e1157]:
+                            - button "ALTERNATIVE_STATUS_TOOL_CALLS" [ref=f14e1158]
+                            - text: ": Tools were invoked during the completion generation."
+                - heading "Message" [level=2] [ref=f14e1159]:
+                  - link [ref=f14e1160] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.Message2
+                    - text: "#"
+                    - generic [ref=f14e1161]: Message
+                  - text: Message
+                - paragraph [ref=f14e1162]: A message object representing a wrapper over the inputs and outputs of the completion model.
+                - table [ref=f14e1163]:
+                  - rowgroup [ref=f14e1164]:
+                    - row "Field Description" [ref=f14e1165]:
+                      - cell "Field" [ref=f14e1166]:
+                        - paragraph [ref=f14e1167]: Field
+                      - cell "Description" [ref=f14e1168]:
+                        - paragraph [ref=f14e1169]: Description
+                    - 'row "role string The ID of the message sender. Supported roles: system: Special role used to define the behavior of the completion model. assistant: A role used by the model to generate responses. user: A role used by the user to describe requests to the model." [ref=f14e1170]':
+                      - cell "role" [ref=f14e1171]:
+                        - paragraph [ref=f14e1172]: role
+                      - 'cell "string The ID of the message sender. Supported roles: system: Special role used to define the behavior of the completion model. assistant: A role used by the model to generate responses. user: A role used by the user to describe requests to the model." [ref=f14e1173]':
+                        - paragraph [ref=f14e1174]:
+                          - strong [ref=f14e1175]: string
+                        - paragraph [ref=f14e1176]: "The ID of the message sender. Supported roles:"
+                        - list [ref=f14e1177]:
+                          - listitem [ref=f14e1178]:
+                            - button "system" [ref=f14e1179]
+                            - text: ": Special role used to define the behavior of the completion model."
+                          - listitem [ref=f14e1180]:
+                            - button "assistant" [ref=f14e1181]
+                            - text: ": A role used by the model to generate responses."
+                          - listitem [ref=f14e1182]:
+                            - button "user" [ref=f14e1183]
+                            - text: ": A role used by the user to describe requests to the model."
+                    - row "text string Textual content of the message. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e1184]:
+                      - cell "text" [ref=f14e1185]:
+                        - paragraph [ref=f14e1186]: text
+                      - cell "string Textual content of the message. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e1187]:
+                        - paragraph [ref=f14e1188]:
+                          - strong [ref=f14e1189]: string
+                        - paragraph [ref=f14e1190]: Textual content of the message.
+                        - paragraph [ref=f14e1191]:
+                          - text: Includes only one of the fields
+                          - button "text" [ref=f14e1192]
+                          - text: ","
+                          - button "toolCallList" [ref=f14e1193]
+                          - text: ","
+                          - button "toolResultList" [ref=f14e1194]
+                          - text: .
+                        - paragraph [ref=f14e1195]: Message content.
+                    - row "toolCallList ToolCallList List of tool calls made by the model as part of the response generation. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e1196]:
+                      - cell "toolCallList" [ref=f14e1197]:
+                        - paragraph [ref=f14e1198]: toolCallList
+                      - cell "ToolCallList List of tool calls made by the model as part of the response generation. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e1199]:
+                        - paragraph [ref=f14e1200]:
+                          - strong [ref=f14e1201]:
+                            - link "ToolCallList" [ref=f14e1202] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCallList2
+                        - paragraph [ref=f14e1203]: List of tool calls made by the model as part of the response generation.
+                        - paragraph [ref=f14e1204]:
+                          - text: Includes only one of the fields
+                          - button "text" [ref=f14e1205]
+                          - text: ","
+                          - button "toolCallList" [ref=f14e1206]
+                          - text: ","
+                          - button "toolResultList" [ref=f14e1207]
+                          - text: .
+                        - paragraph [ref=f14e1208]: Message content.
+                    - row "toolResultList ToolResultList List of tool results returned from external tools that were invoked by the model. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e1209]:
+                      - cell "toolResultList" [ref=f14e1210]:
+                        - paragraph [ref=f14e1211]: toolResultList
+                      - cell "ToolResultList List of tool results returned from external tools that were invoked by the model. Includes only one of the fields text, toolCallList, toolResultList. Message content." [ref=f14e1212]:
+                        - paragraph [ref=f14e1213]:
+                          - strong [ref=f14e1214]:
+                            - link "ToolResultList" [ref=f14e1215] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResultList2
+                        - paragraph [ref=f14e1216]: List of tool results returned from external tools that were invoked by the model.
+                        - paragraph [ref=f14e1217]:
+                          - text: Includes only one of the fields
+                          - button "text" [ref=f14e1218]
+                          - text: ","
+                          - button "toolCallList" [ref=f14e1219]
+                          - text: ","
+                          - button "toolResultList" [ref=f14e1220]
+                          - text: .
+                        - paragraph [ref=f14e1221]: Message content.
+                - heading "ToolCallList" [level=2] [ref=f14e1222]:
+                  - link [ref=f14e1223] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCallList2
+                    - text: "#"
+                    - generic [ref=f14e1224]: ToolCallList
+                  - text: ToolCallList
+                - paragraph [ref=f14e1225]: Represents a list of tool calls.
+                - table [ref=f14e1226]:
+                  - rowgroup [ref=f14e1227]:
+                    - row "Field Description" [ref=f14e1228]:
+                      - cell "Field" [ref=f14e1229]:
+                        - paragraph [ref=f14e1230]: Field
+                      - cell "Description" [ref=f14e1231]:
+                        - paragraph [ref=f14e1232]: Description
+                    - row "toolCalls[] ToolCall A list of tool calls to be executed." [ref=f14e1233]:
+                      - cell "toolCalls[]" [ref=f14e1234]:
+                        - paragraph [ref=f14e1235]: toolCalls[]
+                      - cell "ToolCall A list of tool calls to be executed." [ref=f14e1236]:
+                        - paragraph [ref=f14e1237]:
+                          - strong [ref=f14e1238]:
+                            - link "ToolCall" [ref=f14e1239] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCall2
+                        - paragraph [ref=f14e1240]: A list of tool calls to be executed.
+                - heading "ToolCall" [level=2] [ref=f14e1241]:
+                  - link [ref=f14e1242] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolCall2
+                    - text: "#"
+                    - generic [ref=f14e1243]: ToolCall
+                  - text: ToolCall
+                - paragraph [ref=f14e1244]: Represents a call to a tool.
+                - table [ref=f14e1245]:
+                  - rowgroup [ref=f14e1246]:
+                    - row "Field Description" [ref=f14e1247]:
+                      - cell "Field" [ref=f14e1248]:
+                        - paragraph [ref=f14e1249]: Field
+                      - cell "Description" [ref=f14e1250]:
+                        - paragraph [ref=f14e1251]: Description
+                    - row "functionCall FunctionCall Represents a call to a function. Includes only one of the fields functionCall." [ref=f14e1252]:
+                      - cell "functionCall" [ref=f14e1253]:
+                        - paragraph [ref=f14e1254]: functionCall
+                      - cell "FunctionCall Represents a call to a function. Includes only one of the fields functionCall." [ref=f14e1255]:
+                        - paragraph [ref=f14e1256]:
+                          - strong [ref=f14e1257]:
+                            - link "FunctionCall" [ref=f14e1258] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionCall2
+                        - paragraph [ref=f14e1259]: Represents a call to a function.
+                        - paragraph [ref=f14e1260]:
+                          - text: Includes only one of the fields
+                          - button "functionCall" [ref=f14e1261]
+                          - text: .
+                - heading "FunctionCall" [level=2] [ref=f14e1262]:
+                  - link [ref=f14e1263] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionCall2
+                    - text: "#"
+                    - generic [ref=f14e1264]: FunctionCall
+                  - text: FunctionCall
+                - paragraph [ref=f14e1265]: Represents the invocation of a function with specific arguments.
+                - table [ref=f14e1266]:
+                  - rowgroup [ref=f14e1267]:
+                    - row "Field Description" [ref=f14e1268]:
+                      - cell "Field" [ref=f14e1269]:
+                        - paragraph [ref=f14e1270]: Field
+                      - cell "Description" [ref=f14e1271]:
+                        - paragraph [ref=f14e1272]: Description
+                    - row "name string The name of the function being called." [ref=f14e1273]:
+                      - cell "name" [ref=f14e1274]:
+                        - paragraph [ref=f14e1275]: name
+                      - cell "string The name of the function being called." [ref=f14e1276]:
+                        - paragraph [ref=f14e1277]:
+                          - strong [ref=f14e1278]: string
+                        - paragraph [ref=f14e1279]: The name of the function being called.
+                    - row "arguments object The structured arguments passed to the function. These arguments must adhere to the JSON Schema defined in the corresponding function's parameters." [ref=f14e1280]:
+                      - cell "arguments" [ref=f14e1281]:
+                        - paragraph [ref=f14e1282]: arguments
+                      - cell "object The structured arguments passed to the function. These arguments must adhere to the JSON Schema defined in the corresponding function's parameters." [ref=f14e1283]:
+                        - paragraph [ref=f14e1284]:
+                          - strong [ref=f14e1285]: object
+                        - paragraph [ref=f14e1286]:
+                          - text: The structured arguments passed to the function.
+                          - text: These arguments must adhere to the JSON Schema defined in the corresponding function's parameters.
+                - heading "ToolResultList" [level=2] [ref=f14e1287]:
+                  - link [ref=f14e1288] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResultList2
+                    - text: "#"
+                    - generic [ref=f14e1289]: ToolResultList
+                  - text: ToolResultList
+                - paragraph [ref=f14e1290]: Represents a list of tool results.
+                - table [ref=f14e1291]:
+                  - rowgroup [ref=f14e1292]:
+                    - row "Field Description" [ref=f14e1293]:
+                      - cell "Field" [ref=f14e1294]:
+                        - paragraph [ref=f14e1295]: Field
+                      - cell "Description" [ref=f14e1296]:
+                        - paragraph [ref=f14e1297]: Description
+                    - row "toolResults[] ToolResult A list of tool results." [ref=f14e1298]:
+                      - cell "toolResults[]" [ref=f14e1299]:
+                        - paragraph [ref=f14e1300]: toolResults[]
+                      - cell "ToolResult A list of tool results." [ref=f14e1301]:
+                        - paragraph [ref=f14e1302]:
+                          - strong [ref=f14e1303]:
+                            - link "ToolResult" [ref=f14e1304] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResult2
+                        - paragraph [ref=f14e1305]: A list of tool results.
+                - heading "ToolResult" [level=2] [ref=f14e1306]:
+                  - link [ref=f14e1307] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ToolResult2
+                    - text: "#"
+                    - generic [ref=f14e1308]: ToolResult
+                  - text: ToolResult
+                - paragraph [ref=f14e1309]: Represents the result of a tool call.
+                - table [ref=f14e1310]:
+                  - rowgroup [ref=f14e1311]:
+                    - row "Field Description" [ref=f14e1312]:
+                      - cell "Field" [ref=f14e1313]:
+                        - paragraph [ref=f14e1314]: Field
+                      - cell "Description" [ref=f14e1315]:
+                        - paragraph [ref=f14e1316]: Description
+                    - row "functionResult FunctionResult Represents the result of a function call. Includes only one of the fields functionResult." [ref=f14e1317]:
+                      - cell "functionResult" [ref=f14e1318]:
+                        - paragraph [ref=f14e1319]: functionResult
+                      - cell "FunctionResult Represents the result of a function call. Includes only one of the fields functionResult." [ref=f14e1320]:
+                        - paragraph [ref=f14e1321]:
+                          - strong [ref=f14e1322]:
+                            - link "FunctionResult" [ref=f14e1323] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionResult2
+                        - paragraph [ref=f14e1324]: Represents the result of a function call.
+                        - paragraph [ref=f14e1325]:
+                          - text: Includes only one of the fields
+                          - button "functionResult" [ref=f14e1326]
+                          - text: .
+                - heading "FunctionResult" [level=2] [ref=f14e1327]:
+                  - link [ref=f14e1328] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.FunctionResult2
+                    - text: "#"
+                    - generic [ref=f14e1329]: FunctionResult
+                  - text: FunctionResult
+                - paragraph [ref=f14e1330]: Represents the result of a function call.
+                - table [ref=f14e1331]:
+                  - rowgroup [ref=f14e1332]:
+                    - row "Field Description" [ref=f14e1333]:
+                      - cell "Field" [ref=f14e1334]:
+                        - paragraph [ref=f14e1335]: Field
+                      - cell "Description" [ref=f14e1336]:
+                        - paragraph [ref=f14e1337]: Description
+                    - row "name string The name of the function that was executed." [ref=f14e1338]:
+                      - cell "name" [ref=f14e1339]:
+                        - paragraph [ref=f14e1340]: name
+                      - cell "string The name of the function that was executed." [ref=f14e1341]:
+                        - paragraph [ref=f14e1342]:
+                          - strong [ref=f14e1343]: string
+                        - paragraph [ref=f14e1344]: The name of the function that was executed.
+                    - row "content string The result of the function call, represented as a string. This field can be used to store the output of the function. Includes only one of the fields content." [ref=f14e1345]:
+                      - cell "content" [ref=f14e1346]:
+                        - paragraph [ref=f14e1347]: content
+                      - cell "string The result of the function call, represented as a string. This field can be used to store the output of the function. Includes only one of the fields content." [ref=f14e1348]:
+                        - paragraph [ref=f14e1349]:
+                          - strong [ref=f14e1350]: string
+                        - paragraph [ref=f14e1351]:
+                          - text: The result of the function call, represented as a string.
+                          - text: This field can be used to store the output of the function.
+                        - paragraph [ref=f14e1352]:
+                          - text: Includes only one of the fields
+                          - button "content" [ref=f14e1353]
+                          - text: .
+                - heading "ContentUsage" [level=2] [ref=f14e1354]:
+                  - link [ref=f14e1355] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ContentUsage
+                    - text: "#"
+                    - generic [ref=f14e1356]: ContentUsage
+                  - text: ContentUsage
+                - paragraph [ref=f14e1357]:
+                  - text: An object representing the number of content
+                  - link "tokens" [ref=f14e1358] [cursor=pointer]:
+                    - /url: /docs/foundation-models/concepts/yandexgpt/tokens
+                  - text: used by the completion model.
+                - table [ref=f14e1359]:
+                  - rowgroup [ref=f14e1360]:
+                    - row "Field Description" [ref=f14e1361]:
+                      - cell "Field" [ref=f14e1362]:
+                        - paragraph [ref=f14e1363]: Field
+                      - cell "Description" [ref=f14e1364]:
+                        - paragraph [ref=f14e1365]: Description
+                    - row "inputTextTokens string (int64) The number of tokens in the textual part of the model input." [ref=f14e1366]:
+                      - cell "inputTextTokens" [ref=f14e1367]:
+                        - paragraph [ref=f14e1368]: inputTextTokens
+                      - cell "string (int64) The number of tokens in the textual part of the model input." [ref=f14e1369]:
+                        - paragraph [ref=f14e1370]:
+                          - strong [ref=f14e1371]: string
+                          - text: (int64)
+                        - paragraph [ref=f14e1372]: The number of tokens in the textual part of the model input.
+                    - row "completionTokens string (int64) The number of tokens in the generated completion." [ref=f14e1373]:
+                      - cell "completionTokens" [ref=f14e1374]:
+                        - paragraph [ref=f14e1375]: completionTokens
+                      - cell "string (int64) The number of tokens in the generated completion." [ref=f14e1376]:
+                        - paragraph [ref=f14e1377]:
+                          - strong [ref=f14e1378]: string
+                          - text: (int64)
+                        - paragraph [ref=f14e1379]: The number of tokens in the generated completion.
+                    - row "totalTokens string (int64) The total number of tokens, including all input tokens and all generated tokens." [ref=f14e1380]:
+                      - cell "totalTokens" [ref=f14e1381]:
+                        - paragraph [ref=f14e1382]: totalTokens
+                      - cell "string (int64) The total number of tokens, including all input tokens and all generated tokens." [ref=f14e1383]:
+                        - paragraph [ref=f14e1384]:
+                          - strong [ref=f14e1385]: string
+                          - text: (int64)
+                        - paragraph [ref=f14e1386]: The total number of tokens, including all input tokens and all generated tokens.
+                    - row "completionTokensDetails CompletionTokensDetails Provides additional information about how the completion tokens were utilized." [ref=f14e1387]:
+                      - cell "completionTokensDetails" [ref=f14e1388]:
+                        - paragraph [ref=f14e1389]: completionTokensDetails
+                      - cell "CompletionTokensDetails Provides additional information about how the completion tokens were utilized." [ref=f14e1390]:
+                        - paragraph [ref=f14e1391]:
+                          - strong [ref=f14e1392]:
+                            - link "CompletionTokensDetails" [ref=f14e1393] [cursor=pointer]:
+                              - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ContentUsage.CompletionTokensDetails
+                        - paragraph [ref=f14e1394]: Provides additional information about how the completion tokens were utilized.
+                - heading "CompletionTokensDetails" [level=2] [ref=f14e1395]:
+                  - link [ref=f14e1396] [cursor=pointer]:
+                    - /url: en/ai-studio/text-generation/api-ref/TextGeneration/completion#yandex.cloud.ai.foundation_models.v1.ContentUsage.CompletionTokensDetails
+                    - text: "#"
+                    - generic [ref=f14e1397]: CompletionTokensDetails
+                  - text: CompletionTokensDetails
+                - paragraph [ref=f14e1398]: Provides additional information about how the completion tokens were utilized.
+                - table [ref=f14e1399]:
+                  - rowgroup [ref=f14e1400]:
+                    - row "Field Description" [ref=f14e1401]:
+                      - cell "Field" [ref=f14e1402]:
+                        - paragraph [ref=f14e1403]: Field
+                      - cell "Description" [ref=f14e1404]:
+                        - paragraph [ref=f14e1405]: Description
+                    - row "reasoningTokens string (int64) The number of tokens used specifically for internal reasoning performed by the model." [ref=f14e1406]:
+                      - cell "reasoningTokens" [ref=f14e1407]:
+                        - paragraph [ref=f14e1408]: reasoningTokens
+                      - cell "string (int64) The number of tokens used specifically for internal reasoning performed by the model." [ref=f14e1409]:
+                        - paragraph [ref=f14e1410]:
+                          - strong [ref=f14e1411]: string
+                          - text: (int64)
+                        - paragraph [ref=f14e1412]: The number of tokens used specifically for internal reasoning performed by the model.
+              - generic [ref=f14e1415]:
+                - heading "Was the article helpful?" [level=3] [ref=f14e1416]
+                - generic [ref=f14e1417]:
+                  - button "Yes" [ref=f14e1418] [cursor=pointer]:
+                    - img [ref=f14e1421]
+                    - generic [ref=f14e1423]: "Yes"
+                  - button "No" [ref=f14e1424] [cursor=pointer]:
+                    - img [ref=f14e1427]
+                    - generic [ref=f14e1429]: "No"
+            - generic [ref=f14e1431]:
+              - generic [ref=f14e1432]:
+                - generic [ref=f14e1433]: Previous
+                - link "Overview" [ref=f14e1435] [cursor=pointer]:
+                  - /url: en/ai-studio/text-generation/api-ref/TextGeneration/
+                  - img [ref=f14e1436]
+                  - generic [ref=f14e1438]: Overview
+              - generic [ref=f14e1439]:
+                - generic [ref=f14e1440]: Next
+                - link "Overview" [ref=f14e1442] [cursor=pointer]:
+                  - /url: en/ai-studio/text-generation/api-ref/Tokenizer/
+                  - generic [ref=f14e1443]: Overview
+                  - img [ref=f14e1444]
+  - alert "Yandex uses cookies" [ref=f14e1446]:
+    - generic [ref=f14e1447]:
+      - heading "Yandex uses cookies" [level=1] [ref=f14e1448]
+      - generic [ref=f14e1449]:
+        - text: They ensure the smooth operation of all Yandex sites and services. For more information, please read our
+        - link "Cookie Policy" [ref=f14e1450] [cursor=pointer]:
+          - /url: https://yandex.com/legal/cookies_policy_eng/
+      - generic [ref=f14e1451]:
+        - button "Allow all" [ref=f14e1452] [cursor=pointer]
+        - button "Allow essential cookies" [ref=f14e1453] [cursor=pointer]
+        - button "Settings" [ref=f14e1454] [cursor=pointer]

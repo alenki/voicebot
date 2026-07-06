@@ -19,12 +19,14 @@ test("synthesizePcmEleven: правильный URL, заголовки и те�
   try {
     await synthesizePcmEleven("привет", 8000);
   } finally { setElevenFetch(null); }
-  assert.equal(captured.url, "https://api.elevenlabs.io/v1/text-to-speech/test-voice/stream?output_format=pcm_8000");
+  assert.equal(captured.url, "https://api.elevenlabs.io/v1/text-to-speech/test-voice/stream?optimize_streaming_latency=3&output_format=pcm_8000");
   assert.equal(captured.opts.headers["xi-api-key"], "test-key");
   const body = JSON.parse(captured.opts.body);
   assert.equal(body.text, "привет");
   assert.equal(body.model_id, "eleven_flash_v2_5"); // дефолт
   assert.equal(body.language_code, "ru"); // flash поддерживает и требует явный ru
+  // Характер голоса по умолчанию: медленнее и живее (живой фидбэк 2026-07-06).
+  assert.deepEqual(body.voice_settings, { speed: 0.9, stability: 0.3, similarity_boost: 0.75, style: 0.4 });
   assert.ok(captured.opts.signal instanceof AbortSignal, "должен быть таймаут-сигнал");
 });
 
@@ -57,4 +59,31 @@ test("synthesizePcmEleven: не-ok ответ бросает ошибку со �
 
 test("assertElevenConfigured: с ключом и голосом не бросает", () => {
   assert.doesNotThrow(() => assertElevenConfigured());
+});
+
+// Потоковый режим: PCM уходит вызывающему чанками по мере скачивания тела ответа
+// (первый чанк flash ~280мс — на него и завязано «Ева заговорила раньше»).
+test("synthesizePcmEleven: onChunk получает чанки по мере прихода, возврат — полный буфер", async () => {
+  const c1 = Buffer.from([1, 2]), c2 = Buffer.from([3, 4, 5]);
+  setElevenFetch(async () => ({
+    ok: true,
+    body: (async function* () { yield c1; yield c2; })(),
+  }));
+  try {
+    const chunks = [];
+    const out = await synthesizePcmEleven("тест", 8000, { onChunk: (b) => chunks.push(Buffer.from(b)) });
+    assert.deepEqual(chunks, [c1, c2]);
+    assert.deepEqual(out, Buffer.concat([c1, c2]));
+  } finally { setElevenFetch(null); }
+});
+
+test("synthesizePcmEleven: onChunk без body у ответа — фолбэк на целый буфер", async () => {
+  const pcm = Buffer.from([9, 8, 7]);
+  setElevenFetch(async () => okResponse(pcm));
+  try {
+    const chunks = [];
+    const out = await synthesizePcmEleven("тест", 8000, { onChunk: (b) => chunks.push(b) });
+    assert.deepEqual(out, pcm);
+    assert.equal(chunks.length, 0, "без стрим-тела чанков нет — играется целиком");
+  } finally { setElevenFetch(null); }
 });

@@ -1,0 +1,1127 @@
+- generic [active] [ref=f10e1]:
+  - generic [ref=f10e6]:
+    - navigation [ref=f10e11]:
+      - generic [ref=f10e12]:
+        - link "Logo icon" [ref=f10e14] [cursor=pointer]:
+          - /url: /
+          - img "Logo icon" [ref=f10e16]
+        - list [ref=f10e21]:
+          - listitem [ref=f10e22] [cursor=pointer]:
+            - button "Platform" [ref=f10e23]:
+              - generic [ref=f10e24]: Platform
+              - img [ref=f10e25]:
+                - img [ref=f10e26]
+          - listitem [ref=f10e28] [cursor=pointer]:
+            - button "Businesses" [ref=f10e29]:
+              - generic [ref=f10e30]: Businesses
+              - img [ref=f10e31]:
+                - img [ref=f10e32]
+          - listitem [ref=f10e34] [cursor=pointer]:
+            - link "Developers" [ref=f10e35]:
+              - /url: /developers
+              - generic [ref=f10e36]: Developers
+          - listitem [ref=f10e37] [cursor=pointer]:
+            - link "Documentation" [ref=f10e38]:
+              - /url: /docs/en/
+              - generic [ref=f10e39]: Documentation
+          - listitem [ref=f10e40] [cursor=pointer]:
+            - link "Pricing" [ref=f10e41]:
+              - /url: /docs/en/ai-studio/pricing
+              - generic [ref=f10e42]: Pricing
+        - list [ref=f10e44]:
+          - listitem [ref=f10e45] [cursor=pointer]:
+            - combobox "Search" [ref=f10e49]
+          - listitem [ref=f10e51] [cursor=pointer]:
+            - button "Language" [ref=f10e52]:
+              - img [ref=f10e54]
+              - generic [ref=f10e55]: Language
+              - img [ref=f10e56]:
+                - img [ref=f10e57]
+          - listitem [ref=f10e59] [cursor=pointer]:
+            - link "Contact us" [ref=f10e60]:
+              - /url: /en#contact-form
+              - generic [ref=f10e63]: Contact us
+          - listitem [ref=f10e64] [cursor=pointer]:
+            - link "Log in" [ref=f10e65]:
+              - /url: /platform
+              - generic [ref=f10e68]: Log in
+    - main [ref=f10e69]:
+      - generic [ref=f10e78]:
+        - navigation [ref=f10e80]:
+          - link "AI Studio documentation" [ref=f10e82] [cursor=pointer]:
+            - /url: en/
+            - generic [ref=f10e83]: AI Studio documentation
+          - list "AI Studio documentation" [ref=f10e85]:
+            - listitem [ref=f10e86] [cursor=pointer]:
+              - link "Getting started" [ref=f10e87]:
+                - /url: en/ai-studio/quickstart/
+                - generic [ref=f10e89]: Getting started
+            - listitem [ref=f10e90] [cursor=pointer]:
+              - button "AI Studio" [ref=f10e91]:
+                - generic [ref=f10e92]: AI Studio
+              - list "AI Studio documentation" [ref=f10e93]:
+                - listitem [ref=f10e94]:
+                  - link "About AI Studio" [ref=f10e95]:
+                    - /url: en/ai-studio/concepts/
+                    - generic [ref=f10e97]: About AI Studio
+                - listitem [ref=f10e98]:
+                  - button "Drop-down list Model Gallery" [ref=f10e99]:
+                    - img [ref=f10e100]
+                    - generic [ref=f10e102]: Model Gallery
+                - listitem [ref=f10e103]:
+                  - button "Drop-down list Agent Atelier" [ref=f10e104]:
+                    - img [ref=f10e105]
+                    - generic [ref=f10e107]: Agent Atelier
+                - listitem [ref=f10e108]:
+                  - button "Drop-down list MCP Hub" [ref=f10e109]:
+                    - img [ref=f10e110]
+                    - generic [ref=f10e112]: MCP Hub
+                - listitem [ref=f10e113]:
+                  - button "Drop-down list AI Search" [ref=f10e114]:
+                    - img [ref=f10e115]
+                    - generic [ref=f10e117]: AI Search
+                - listitem [ref=f10e118]:
+                  - button "Drop-down list Step-by-step guides" [ref=f10e119]:
+                    - img [ref=f10e120]
+                    - generic [ref=f10e122]: Step-by-step guides
+                - listitem [ref=f10e123]:
+                  - button "Drop-down list API references" [ref=f10e124]:
+                    - img [ref=f10e125]
+                    - generic [ref=f10e127]: API references
+                - listitem [ref=f10e128]:
+                  - button "Drop-down list Yandex Cloud ML SDK" [ref=f10e129]:
+                    - img [ref=f10e130]
+                    - generic [ref=f10e132]: Yandex Cloud ML SDK
+                - listitem [ref=f10e133]:
+                  - link "Public materials" [ref=f10e134]:
+                    - /url: en/ai-studio/public-talks
+                    - generic [ref=f10e136]: Public materials
+                - listitem [ref=f10e137]:
+                  - link "Terms and definitions" [ref=f10e138]:
+                    - /url: en/ai-studio/concepts/glossary
+                    - generic [ref=f10e140]: Terms and definitions
+                - listitem [ref=f10e141]:
+                  - link "FAQ" [ref=f10e142]:
+                    - /url: en/ai-studio/qa/
+                    - generic [ref=f10e144]: FAQ
+                - listitem [ref=f10e145]:
+                  - button "Drop-down list Troubleshooting" [ref=f10e146]:
+                    - img [ref=f10e147]
+                    - generic [ref=f10e149]: Troubleshooting
+            - listitem [ref=f10e150] [cursor=pointer]:
+              - button "SpeechKit" [ref=f10e151]:
+                - generic [ref=f10e152]: SpeechKit
+              - list "AI Studio documentation" [ref=f10e153]:
+                - listitem [ref=f10e154]:
+                  - link "SpeechKit technology overview" [ref=f10e155]:
+                    - /url: en/speechkit/overview
+                    - generic [ref=f10e157]: SpeechKit technology overview
+                - listitem [ref=f10e158]:
+                  - button "Drop-down list Getting started with SpeechKit" [ref=f10e159]:
+                    - img [ref=f10e160]
+                    - generic [ref=f10e162]: Getting started with SpeechKit
+                - listitem [ref=f10e163]:
+                  - button "Drop-down list Speech recognition" [ref=f10e164]:
+                    - img [ref=f10e165]
+                    - generic [ref=f10e167]: Speech recognition
+                - listitem [ref=f10e168]:
+                  - button "Drop-down list Speech synthesis" [ref=f10e169]:
+                    - img [ref=f10e170]
+                    - generic [ref=f10e172]: Speech synthesis
+                - listitem [ref=f10e173]:
+                  - button "Drop-down list Step-by-step guides" [ref=f10e174]:
+                    - img [ref=f10e175]
+                    - generic [ref=f10e177]: Step-by-step guides
+                - listitem [ref=f10e178]:
+                  - button "Drop-down list SpeechKit Hybrid" [ref=f10e179]:
+                    - img [ref=f10e180]
+                    - generic [ref=f10e182]: SpeechKit Hybrid
+                - listitem [ref=f10e183]:
+                  - button "Drop-down list API references" [ref=f10e184]:
+                    - img [ref=f10e185]
+                    - generic [ref=f10e187]: API references
+                - listitem [ref=f10e188]:
+                  - link "Supported audio formats" [ref=f10e189]:
+                    - /url: en/speechkit/formats
+                    - generic [ref=f10e191]: Supported audio formats
+                - listitem [ref=f10e192]:
+                  - link "IVR integration" [ref=f10e193]:
+                    - /url: en/speechkit/concepts/ivr-integration
+                    - generic [ref=f10e195]: IVR integration
+                - listitem [ref=f10e196]:
+                  - button "Drop-down list Troubleshooting" [ref=f10e197]:
+                    - img [ref=f10e198]
+                    - generic [ref=f10e200]: Troubleshooting
+            - listitem [ref=f10e201] [cursor=pointer]:
+              - button "Yandex Search API" [ref=f10e202]:
+                - generic [ref=f10e203]: Yandex Search API
+              - list "AI Studio documentation" [ref=f10e204]:
+                - listitem [ref=f10e205]:
+                  - link "About Yandex Search API" [ref=f10e206]:
+                    - /url: en/search-api/concepts/
+                    - generic [ref=f10e208]: About Yandex Search API
+                - listitem [ref=f10e209]:
+                  - link "Getting started" [ref=f10e210]:
+                    - /url: en/search-api/quickstart/
+                    - generic [ref=f10e212]: Getting started
+                - listitem [ref=f10e213]:
+                  - button "Drop-down list Concepts" [ref=f10e214]:
+                    - img [ref=f10e215]
+                    - generic [ref=f10e217]: Concepts
+                - listitem [ref=f10e218]:
+                  - button "Drop-down list Step-by-step guides" [ref=f10e219]:
+                    - img [ref=f10e220]
+                    - generic [ref=f10e222]: Step-by-step guides
+                - listitem [ref=f10e223]:
+                  - button "Drop-down list API reference" [ref=f10e224]:
+                    - img [ref=f10e225]
+                    - generic [ref=f10e227]: API reference
+                - listitem [ref=f10e228]:
+                  - button "Drop-down list Apps" [ref=f10e229]:
+                    - img [ref=f10e230]
+                    - generic [ref=f10e232]: Apps
+            - listitem [ref=f10e233] [cursor=pointer]:
+              - button "Vision OCR" [ref=f10e234]:
+                - generic [ref=f10e235]: Vision OCR
+              - list "AI Studio documentation" [ref=f10e236]:
+                - listitem [ref=f10e237]:
+                  - link "About Vision OCR" [ref=f10e238]:
+                    - /url: en/vision/concepts/ocr/
+                    - generic [ref=f10e240]: About Vision OCR
+                - listitem [ref=f10e241]:
+                  - link "Getting started" [ref=f10e242]:
+                    - /url: en/vision/quickstart
+                    - generic [ref=f10e244]: Getting started
+                - listitem [ref=f10e245]:
+                  - button "Drop-down list Concepts" [ref=f10e246]:
+                    - img [ref=f10e247]
+                    - generic [ref=f10e249]: Concepts
+                - listitem [ref=f10e250]:
+                  - button "Drop-down list Step-by-step guides" [ref=f10e251]:
+                    - img [ref=f10e252]
+                    - generic [ref=f10e254]: Step-by-step guides
+                - listitem [ref=f10e255]:
+                  - button "Drop-down list API references" [ref=f10e256]:
+                    - img [ref=f10e257]
+                    - generic [ref=f10e259]: API references
+                - listitem [ref=f10e260]:
+                  - button "Drop-down list Troubleshooting" [ref=f10e261]:
+                    - img [ref=f10e262]
+                    - generic [ref=f10e264]: Troubleshooting
+                - listitem [ref=f10e265]:
+                  - link "FAQ" [ref=f10e266]:
+                    - /url: en/vision/qa/
+                    - generic [ref=f10e268]: FAQ
+            - listitem [ref=f10e269] [cursor=pointer]:
+              - button "Translate" [ref=f10e270]:
+                - generic [ref=f10e271]: Translate
+              - list "AI Studio documentation" [ref=f10e272]:
+                - listitem [ref=f10e273]:
+                  - link "About Translate" [ref=f10e274]:
+                    - /url: en/translate/concepts/
+                    - generic [ref=f10e276]: About Translate
+                - listitem [ref=f10e277]:
+                  - link "Getting started" [ref=f10e278]:
+                    - /url: en/translate/quickstart
+                    - generic [ref=f10e280]: Getting started
+                - listitem [ref=f10e281]:
+                  - button "Drop-down list Concepts" [ref=f10e282]:
+                    - img [ref=f10e283]
+                    - generic [ref=f10e285]: Concepts
+                - listitem [ref=f10e286]:
+                  - button "Drop-down list Step-by-step guides" [ref=f10e287]:
+                    - img [ref=f10e288]
+                    - generic [ref=f10e290]: Step-by-step guides
+                - listitem [ref=f10e291]:
+                  - button "Drop-down list API reference" [ref=f10e292]:
+                    - img [ref=f10e293]
+                    - generic [ref=f10e295]: API reference
+                - listitem [ref=f10e296]:
+                  - button "Drop-down list Troubleshooting" [ref=f10e297]:
+                    - img [ref=f10e298]
+                    - generic [ref=f10e300]: Troubleshooting
+            - listitem [ref=f10e301] [cursor=pointer]:
+              - button "Security" [ref=f10e302]:
+                - generic [ref=f10e303]: Security
+              - list "AI Studio documentation" [ref=f10e304]:
+                - listitem [ref=f10e305]:
+                  - link "Getting an API key" [ref=f10e306]:
+                    - /url: en/ai-studio/operations/get-api-key
+                    - generic [ref=f10e308]: Getting an API key
+                - listitem [ref=f10e309]:
+                  - link "Disabling request logging" [ref=f10e310]:
+                    - /url: en/ai-studio/operations/disable-logging
+                    - generic [ref=f10e312]: Disabling request logging
+                - listitem [ref=f10e313]:
+                  - button "Drop-down list Guardrails" [ref=f10e314]:
+                    - img [ref=f10e315]
+                    - generic [ref=f10e317]: Guardrails
+                - listitem [ref=f10e318]:
+                  - button "Drop-down list Access management" [ref=f10e319]:
+                    - img [ref=f10e320]
+                    - generic [ref=f10e322]: Access management
+                - listitem [ref=f10e323]:
+                  - button "Drop-down list Audit Trails events" [ref=f10e324]:
+                    - img [ref=f10e325]
+                    - generic [ref=f10e327]: Audit Trails events
+                - listitem [ref=f10e328]:
+                  - button "Drop-down list Metrics Monitoring" [ref=f10e329]:
+                    - img [ref=f10e330]
+                    - generic [ref=f10e332]: Metrics Monitoring
+            - listitem [ref=f10e333] [cursor=pointer]:
+              - button "Quotas and limits" [ref=f10e334]:
+                - generic [ref=f10e335]: Quotas and limits
+              - list "AI Studio documentation" [ref=f10e336]:
+                - listitem [ref=f10e337]:
+                  - link "AI Studio" [ref=f10e338]:
+                    - /url: en/ai-studio/concepts/limits
+                    - generic [ref=f10e340]: AI Studio
+                - listitem [ref=f10e341]:
+                  - link "SpeechKit" [ref=f10e342]:
+                    - /url: en/speechkit/concepts/limits
+                    - generic [ref=f10e344]: SpeechKit
+                - listitem [ref=f10e345]:
+                  - link "Yandex Search API" [ref=f10e346]:
+                    - /url: en/search-api/concepts/limits
+                    - generic [ref=f10e348]: Yandex Search API
+                - listitem [ref=f10e349]:
+                  - link "Vision OCR" [ref=f10e350]:
+                    - /url: en/vision/concepts/limits
+                    - generic [ref=f10e352]: Vision OCR
+                - listitem [ref=f10e353]:
+                  - link "Translate" [ref=f10e354]:
+                    - /url: en/translate/concepts/limits
+                    - generic [ref=f10e356]: Translate
+            - listitem [ref=f10e357] [cursor=pointer]:
+              - button "Pricing policy" [ref=f10e358]:
+                - generic [ref=f10e359]: Pricing policy
+              - list "AI Studio documentation" [ref=f10e360]:
+                - listitem [ref=f10e361]:
+                  - link "AI Studio" [ref=f10e362]:
+                    - /url: en/ai-studio/pricing
+                    - generic [ref=f10e364]: AI Studio
+                - listitem [ref=f10e365]:
+                  - link "SpeechKit" [ref=f10e366]:
+                    - /url: en/speechkit/pricing
+                    - generic [ref=f10e368]: SpeechKit
+                - listitem [ref=f10e369]:
+                  - link "Yandex Search API" [ref=f10e370]:
+                    - /url: en/search-api/pricing
+                    - generic [ref=f10e372]: Yandex Search API
+                - listitem [ref=f10e373]:
+                  - link "Vision OCR" [ref=f10e374]:
+                    - /url: en/vision/pricing
+                    - generic [ref=f10e376]: Vision OCR
+                - listitem [ref=f10e377]:
+                  - link "Translate" [ref=f10e378]:
+                    - /url: en/translate/pricing
+                    - generic [ref=f10e380]: Translate
+            - listitem [ref=f10e381] [cursor=pointer]:
+              - button "Release notes" [ref=f10e382]:
+                - generic [ref=f10e383]: Release notes
+              - list "AI Studio documentation" [ref=f10e384]:
+                - listitem [ref=f10e385]:
+                  - link "AI Studio" [ref=f10e386]:
+                    - /url: en/ai-studio/release-notes/
+                    - generic [ref=f10e388]: AI Studio
+                - listitem [ref=f10e389]:
+                  - 'link "SpeechKit: Speech recognition" [ref=f10e390]':
+                    - /url: en/speechkit/release-notes-stt
+                    - generic [ref=f10e392]: "SpeechKit: Speech recognition"
+                - listitem [ref=f10e393]:
+                  - 'link "SpeechKit: Synthesis" [ref=f10e394]':
+                    - /url: en/speechkit/release-notes-tts
+                    - generic [ref=f10e396]: "SpeechKit: Synthesis"
+                - listitem [ref=f10e397]:
+                  - link "Yandex Search API" [ref=f10e398]:
+                    - /url: en/search-api/release-notes/
+                    - generic [ref=f10e400]: Yandex Search API
+                - listitem [ref=f10e401]:
+                  - link "Vision OCR" [ref=f10e402]:
+                    - /url: en/vision/release-notes
+                    - generic [ref=f10e404]: Vision OCR
+        - navigation "Article navigation" [ref=f10e409]:
+          - heading "In this article:" [level=2] [ref=f10e410]
+          - list "Current article contents" [ref=f10e411]:
+            - listitem [ref=f10e412]:
+              - link "Release as of 28/05/2026" [ref=f10e413] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#280526
+            - listitem [ref=f10e414]:
+              - link "Release as of 19/05/2026" [ref=f10e415] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#190526
+            - listitem [ref=f10e416]:
+              - link "Release as of 29/04/2026" [ref=f10e417] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#290426
+            - listitem [ref=f10e418]:
+              - link "Release as of 20/04/2026" [ref=f10e419] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#200426
+            - listitem [ref=f10e420]:
+              - link "Release as of 07/04/2026" [ref=f10e421] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#070426
+            - listitem [ref=f10e422]:
+              - link "Release as of 31/03/2026" [ref=f10e423] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#310326
+            - listitem [ref=f10e424]:
+              - link "Release as of 3/3/2026" [ref=f10e425] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#030326
+            - listitem [ref=f10e426]:
+              - link "Release as of 11/2/2026" [ref=f10e427] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#110226
+            - listitem [ref=f10e428]:
+              - link "Release as of 27/01/2026" [ref=f10e429] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#270126
+            - listitem [ref=f10e430]:
+              - link "Release as of 26/01/2026" [ref=f10e431] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#260126
+            - listitem [ref=f10e432]:
+              - link "Release as of 22/01/2026" [ref=f10e433] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#220126
+            - listitem [ref=f10e434]:
+              - link "Release as of 21/01/2026" [ref=f10e435] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#210126
+            - listitem [ref=f10e436]:
+              - link "Release as of 25/11/2025" [ref=f10e437] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#251125
+            - listitem [ref=f10e438]:
+              - link "Release as of 10/11/2025" [ref=f10e439] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#101125
+            - listitem [ref=f10e440]:
+              - link "Release as of 07/11/2025" [ref=f10e441] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#071125
+            - listitem [ref=f10e442]:
+              - link "Release as of 02/10/2025" [ref=f10e443] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#release-as-of-02/10/2025
+            - listitem [ref=f10e444]:
+              - link "Release as of 24/09/2025" [ref=f10e445] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#240925
+            - listitem [ref=f10e446]:
+              - link "Release as of 19/09/2025" [ref=f10e447] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#190925
+            - listitem [ref=f10e448]:
+              - link "Release as of 16/09/2025" [ref=f10e449] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#160925
+            - listitem [ref=f10e450]:
+              - link "Release as of 03/09/2025" [ref=f10e451] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#030925
+            - listitem [ref=f10e452]:
+              - link "Release as of 28/08/2025" [ref=f10e453] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#280825
+            - listitem [ref=f10e454]:
+              - link "Release as of 06/08/2025" [ref=f10e455] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#060825
+            - listitem [ref=f10e456]:
+              - link "Release as of 24/07/2025" [ref=f10e457] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#240725
+            - listitem [ref=f10e458]:
+              - link "Release as of 03/07/2025" [ref=f10e459] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#030725
+            - listitem [ref=f10e460]:
+              - link "Release as of 15/05/2025" [ref=f10e461] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#150525
+            - listitem [ref=f10e462]:
+              - link "Release as of 30/04/2025" [ref=f10e463] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#290425
+            - listitem [ref=f10e464]:
+              - link "Release as of 24/04/2025" [ref=f10e465] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#240425
+            - listitem [ref=f10e466]:
+              - link "Release as of 31/03/2025" [ref=f10e467] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#310325
+            - listitem [ref=f10e468]:
+              - link "Release as of 19/03/2025" [ref=f10e469] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#190325
+            - listitem [ref=f10e470]:
+              - link "Release as of 25/02/2025" [ref=f10e471] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#250225
+            - listitem [ref=f10e472]:
+              - link "Release as of 11/02/25" [ref=f10e473] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#110225
+            - listitem [ref=f10e474]:
+              - link "Release as of 07/02/25" [ref=f10e475] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#070225
+            - listitem [ref=f10e476]:
+              - link "Release as of 09/12/24" [ref=f10e477] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#091224
+            - listitem [ref=f10e478]:
+              - link "Release as of 04/12/24" [ref=f10e479] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#041224
+            - listitem [ref=f10e480]:
+              - link "Release as of 02/12/24" [ref=f10e481] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#021224
+            - listitem [ref=f10e482]:
+              - link "Release as of 21/11/24" [ref=f10e483] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#211124
+            - listitem [ref=f10e484]:
+              - link "Release as of 01/11/24" [ref=f10e485] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#011124
+            - listitem [ref=f10e486]:
+              - link "Release as of 24/10/2024" [ref=f10e487] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#241024
+            - listitem [ref=f10e488]:
+              - link "Release as of 10/10/24" [ref=f10e489] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#101024
+            - listitem [ref=f10e490]:
+              - link "Release as of 21/06/24" [ref=f10e491] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#210624
+            - listitem [ref=f10e492]:
+              - link "Release as of 07/06/24" [ref=f10e493] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#070624
+            - listitem [ref=f10e494]:
+              - link "Release as of 29/05/24" [ref=f10e495] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#280524
+            - listitem [ref=f10e496]:
+              - link "Release as of 28/05/24" [ref=f10e497] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#2805241
+            - listitem [ref=f10e498]:
+              - link "Release as of 19/04/24" [ref=f10e499] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#190424
+            - listitem [ref=f10e500]:
+              - link "Release as of 09/04/24" [ref=f10e501] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#090424
+            - listitem [ref=f10e502]:
+              - link "Release as of 25/03/24" [ref=f10e503] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#250324
+            - listitem [ref=f10e504]:
+              - link "Release as of 26/01/24" [ref=f10e505] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#260124
+            - listitem [ref=f10e506]:
+              - link "Release as of 06/12/23" [ref=f10e507] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#061223
+            - listitem [ref=f10e508]:
+              - link "Release as of 02/08/23" [ref=f10e509] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/#020823
+        - generic [ref=f10e510]:
+          - generic [ref=f10e511]:
+            - button "Reading mode" [ref=f10e512] [cursor=pointer]:
+              - img [ref=f10e515]
+            - button "Settings" [ref=f10e517] [cursor=pointer]:
+              - img [ref=f10e520]
+            - button "Language" [ref=f10e522] [cursor=pointer]:
+              - img [ref=f10e525]
+            - button "Helpful" [ref=f10e527] [cursor=pointer]:
+              - img [ref=f10e530]
+            - button "Not helpful" [ref=f10e532] [cursor=pointer]:
+              - img [ref=f10e535]
+          - generic [ref=f10e537]:
+            - main [ref=f10e538]:
+              - heading "Yandex Cloud AI Studio release notes" [level=1] [ref=f10e539]:
+                - generic [ref=f10e540]: Yandex Cloud AI Studio release notes
+              - generic [ref=f10e541]:
+                - heading "Release as of 28/05/2026" [level=2] [ref=f10e542]:
+                  - link [ref=f10e543] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#280526
+                    - text: "#"
+                    - generic [ref=f10e544]: Release as of 28/05/2026
+                  - text: Release as of 28/05/2026
+                - list [ref=f10e545]:
+                  - listitem [ref=f10e546]: Added the DeepSeek V4 Flash model to the base instance, replacing DeepSeek V3.2. DeepSeek V3.2 has been switched in favor of the new model and is no longer operational. The URI DeepSeek V3.2 will be valid until June 28, 2026.
+                  - listitem [ref=f10e547]: A new model, Speech Realtime 260528, is now available for voice agents.
+                  - listitem [ref=f10e548]: Added new embedding models.
+                - heading "Release as of 19/05/2026" [level=2] [ref=f10e549]:
+                  - link [ref=f10e550] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#190526
+                    - text: "#"
+                    - generic [ref=f10e551]: Release as of 19/05/2026
+                  - text: Release as of 19/05/2026
+                - list [ref=f10e552]:
+                  - listitem [ref=f10e553]: The common instance now includes Alice AI ART models for image generation and a lightweight Alice AI LLM Flash text model. Alice AI ART is only available through the new OpenAI-compatible Images API and in the AI Studio interface.
+                  - listitem [ref=f10e554]: Added Image Generation Tool to the Responses API.
+                - heading "Release as of 29/04/2026" [level=2] [ref=f10e555]:
+                  - link [ref=f10e556] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#290426
+                    - text: "#"
+                    - generic [ref=f10e557]: Release as of 29/04/2026
+                  - text: Release as of 29/04/2026
+                - paragraph [ref=f10e558]: Added the Qwen3.6 35B vision-language model to the base instance, replacing Qwen3.5 35B. Qwen3.5 35B has been switched in favor of the new model and is no longer operational. The Qwen3.5 URI will remain valid until May 28, 2026.
+                - heading "Release as of 20/04/2026" [level=2] [ref=f10e559]:
+                  - link [ref=f10e560] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#200426
+                    - text: "#"
+                    - generic [ref=f10e561]: Release as of 20/04/2026
+                  - text: Release as of 20/04/2026
+                - paragraph [ref=f10e562]: Updated the Realtime API interaction format. The previous format will be supported until May 12, 2026.
+                - heading "Release as of 07/04/2026" [level=2] [ref=f10e563]:
+                  - link [ref=f10e564] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#070426
+                    - text: "#"
+                    - generic [ref=f10e565]: Release as of 07/04/2026
+                  - text: Release as of 07/04/2026
+                - paragraph [ref=f10e566]: Code Interpreter turned generally available (GA).
+                - heading "Release as of 31/03/2026" [level=2] [ref=f10e567]:
+                  - link [ref=f10e568] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#310326
+                    - text: "#"
+                    - generic [ref=f10e569]: Release as of 31/03/2026
+                  - text: Release as of 31/03/2026
+                - list [ref=f10e570]:
+                  - listitem [ref=f10e571]: The common instance now features the Qwen3.5 35B visual-linguistic model.
+                  - listitem [ref=f10e572]: MCP Hub has become generally available (GA).
+                  - listitem [ref=f10e573]:
+                    - text: ML SDK now supports the
+                    - link "Yandex SpeechKit speech recognition service" [ref=f10e574] [cursor=pointer]:
+                      - /url: en/speechkit/stt/
+                    - text: .
+                  - listitem [ref=f10e575]:
+                    - text: The Vector Stores CLI console utility is now also available in ML SDK, allowing you to create search indexes based on data from various sources. Local files, Atlassian Confluence, S3-compatible object storage (such as Yandex Object Storage), and knowledge bases based on the MediaWiki engine are supported. For more information on connectors for creating search indexes, see
+                    - link "Connectors for creating Vector Store search indexes" [ref=f10e576] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/search/vectorstore-cli
+                    - text: .
+                - heading "Release as of 3/3/2026" [level=2] [ref=f10e577]:
+                  - link [ref=f10e578] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#030326
+                    - text: "#"
+                    - generic [ref=f10e579]: Release as of 3/3/2026
+                  - text: Release as of 3/3/2026
+                - paragraph [ref=f10e580]: "Large AI Studio update:"
+                - list [ref=f10e581]:
+                  - listitem [ref=f10e582]: Added the DeepSeek V3.2 model.
+                  - listitem [ref=f10e583]:
+                    - text: The AI Studio platform, along with other Yandex Cloud AI services, is now available on
+                    - link "its own domain" [ref=f10e584] [cursor=pointer]:
+                      - /url: https://aistudio.yandex.ru/
+                    - text: .
+                  - listitem [ref=f10e585]:
+                    - text: Now you can set custom model
+                    - link "guardrails" [ref=f10e586] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/security/guardrails
+                    - text: .
+                  - listitem [ref=f10e587]: The process of creating API keys became significantly simpler, plus many other improvements were added.
+                  - listitem [ref=f10e588]:
+                    - text: "The platform has switched to a new pricing model. For information on the new pricing policy, watch this video overview:"
+                    - list [ref=f10e589]:
+                      - listitem [ref=f10e590]:
+                        - link "YouTube" [ref=f10e591] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=SuecSzdUGWY
+                      - listitem [ref=f10e592]:
+                        - link "VK Video" [ref=f10e593] [cursor=pointer]:
+                          - /url: https://vk.com/video-200452713_456240396
+                      - listitem [ref=f10e594]:
+                        - link "Rutube" [ref=f10e595] [cursor=pointer]:
+                          - /url: https://rutube.ru/video/b3186cf175f89c901e22338f9cd4a0f4/
+                - heading "Release as of 11/2/2026" [level=2] [ref=f10e596]:
+                  - link [ref=f10e597] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#110226
+                    - text: "#"
+                    - generic [ref=f10e598]: Release as of 11/2/2026
+                  - text: Release as of 11/2/2026
+                - paragraph [ref=f10e599]:
+                  - text: Added support for
+                  - link "Code Interpreter" [ref=f10e600] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/agents/tools/code-interpreter
+                  - text: ", an in-built Yandex Cloud AI Studio tool allowing the model to write and execute Python code in an isolated environment."
+                - heading "Release as of 27/01/2026" [level=2] [ref=f10e601]:
+                  - link [ref=f10e602] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#270126
+                    - text: "#"
+                    - generic [ref=f10e603]: Release as of 27/01/2026
+                  - text: Release as of 27/01/2026
+                - paragraph [ref=f10e604]:
+                  - link "Renamed" [ref=f10e605] [cursor=pointer]:
+                    - /url: https://github.com/yandex-cloud/yandex-ai-studio-sdk/blob/master/compat/yandex-cloud-ml-sdk/MIGRATION.md
+                  - text: the Yandex ML SDK to Yandex Cloud ML SDK.
+                - heading "Release as of 26/01/2026" [level=2] [ref=f10e606]:
+                  - link [ref=f10e607] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#260126
+                    - text: "#"
+                    - generic [ref=f10e608]: Release as of 26/01/2026
+                  - text: Release as of 26/01/2026
+                - paragraph [ref=f10e609]: The AI Assistant API functionality is discontinued and no longer available.
+                - heading "Release as of 22/01/2026" [level=2] [ref=f10e610]:
+                  - link [ref=f10e611] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#220126
+                    - text: "#"
+                    - generic [ref=f10e612]: Release as of 22/01/2026
+                  - text: Release as of 22/01/2026
+                - paragraph [ref=f10e613]:
+                  - text: Added support for the
+                  - link "Conversations API" [ref=f10e614] [cursor=pointer]:
+                    - /url: en/ai-studio/api/Conversations/
+                  - text: for flexible management of conversation context.
+                - heading "Release as of 21/01/2026" [level=2] [ref=f10e615]:
+                  - link [ref=f10e616] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#210126
+                    - text: "#"
+                    - generic [ref=f10e617]: Release as of 21/01/2026
+                  - text: Release as of 21/01/2026
+                - paragraph [ref=f10e618]:
+                  - text: Added support for the
+                  - link "Yandex SpeechKit" [ref=f10e619] [cursor=pointer]:
+                    - /url: en/speechkit/tts/
+                  - text: synthesis service in Yandex Cloud ML SDK.
+                - heading "Release as of 25/11/2025" [level=2] [ref=f10e620]:
+                  - link [ref=f10e621] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#251125
+                    - text: "#"
+                    - generic [ref=f10e622]: Release as of 25/11/2025
+                  - text: Release as of 25/11/2025
+                - paragraph [ref=f10e623]:
+                  - text: Alice AI LLM is now available in the
+                  - link "common instance" [ref=f10e624] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models#generation
+                  - text: for all AI Studio users. Same as YandexGPT Pro, Yandex's new model is really good with RAG scenarios, but it is by far a much better free dialog partner, which makes it a model of choice for AI agents.
+                - heading "Release as of 10/11/2025" [level=2] [ref=f10e625]:
+                  - link [ref=f10e626] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#101125
+                    - text: "#"
+                    - generic [ref=f10e627]: Release as of 10/11/2025
+                  - text: Release as of 10/11/2025
+                - paragraph [ref=f10e628]:
+                  - text: You can no longer deploy the gpt-oss-20b and gpt-oss-120b models in dedicated instances. These models remain available in the
+                  - link "common instance" [ref=f10e629] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models#generation
+                  - text: .
+                - heading "Release as of 07/11/2025" [level=2] [ref=f10e630]:
+                  - link [ref=f10e631] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#071125
+                    - text: "#"
+                    - generic [ref=f10e632]: Release as of 07/11/2025
+                  - text: Release as of 07/11/2025
+                - paragraph [ref=f10e633]:
+                  - text: Added support for
+                  - link "Yandex Search API" [ref=f10e634] [cursor=pointer]:
+                    - /url: en/search-api/
+                  - text: in Yandex Cloud ML SDK.
+                - heading "Release as of 02/10/2025" [level=2] [ref=f10e635]:
+                  - link [ref=f10e636] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#release-as-of-02/10/2025
+                    - text: "#"
+                    - generic [ref=f10e637]: Release as of 02/10/2025
+                  - text: Release as of 02/10/2025
+                - paragraph [ref=f10e638]: The Llama 8B and Llama 70B models are no longer supported in the common instance.
+                - heading "Release as of 24/09/2025" [level=2] [ref=f10e639]:
+                  - link [ref=f10e640] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#240925
+                    - text: "#"
+                    - generic [ref=f10e641]: Release as of 24/09/2025
+                  - text: Release as of 24/09/2025
+                - paragraph [ref=f10e642]: "Yandex Foundation Models has evolved into Yandex Cloud AI Studio, a full-value generative model and AI agent platform. There are some further updates:"
+                - list [ref=f10e643]:
+                  - listitem [ref=f10e644]: Our voice assistants and the Realtime API you need to use them are now available at the Preview stage.
+                  - listitem [ref=f10e645]: MCP Hub is now available from the management console. The feature is at the Preview stage.
+                  - listitem [ref=f10e646]: Extended compatibility with the OpenAI API. Added support for the Responses API, Realtime API, and Vector Store API.
+                  - listitem [ref=f10e647]: Agent Atelier, the agent constructor, is now available from the management console.
+                  - listitem [ref=f10e648]: Added the option to manage Vector Store search indexes and search files from the management console.
+                  - listitem [ref=f10e649]: The AI agents with the main tools for the Responses API and Vector Store API have now entered the General Availability stage. The AI Assistant API is still there but will not be developed further. Use the Responses API for your new projects.
+                - heading "Release as of 19/09/2025" [level=2] [ref=f10e650]:
+                  - link [ref=f10e651] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#190925
+                    - text: "#"
+                    - generic [ref=f10e652]: Release as of 19/09/2025
+                  - text: Release as of 19/09/2025
+                - paragraph [ref=f10e653]: In the management console, users without a billing account will no longer enjoy free requests to YandexGPT and YandexART.
+                - heading "Release as of 16/09/2025" [level=2] [ref=f10e654]:
+                  - link [ref=f10e655] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#160925
+                    - text: "#"
+                    - generic [ref=f10e656]: Release as of 16/09/2025
+                  - text: Release as of 16/09/2025
+                - paragraph [ref=f10e657]:
+                  - text: Added the ability to deploy some models on
+                  - link "dedicated instances" [ref=f10e658] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/dedicated-instance
+                  - text: .
+                - heading "Release as of 03/09/2025" [level=2] [ref=f10e659]:
+                  - link [ref=f10e660] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#030925
+                    - text: "#"
+                    - generic [ref=f10e661]: Release as of 03/09/2025
+                  - text: Release as of 03/09/2025
+                - paragraph [ref=f10e662]:
+                  - text: The
+                  - link "common instance" [ref=f10e663] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models#generation
+                  - text: now features the Gemma 3 27B visual-linguistic model. For text-to-text, access the model in AI Playground; for images, use the OpenAI API or AI Studio SDK.
+                - heading "Release as of 28/08/2025" [level=2] [ref=f10e664]:
+                  - link [ref=f10e665] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#280825
+                    - text: "#"
+                    - generic [ref=f10e666]: Release as of 28/08/2025
+                  - text: Release as of 28/08/2025
+                - list [ref=f10e667]:
+                  - listitem [ref=f10e668]:
+                    - text: The YandexGPT Pro 5.1 model is available for testing (
+                    - button "RC" [ref=f10e669]
+                    - text: branch). The new model does not support the reasoning mode.
+                  - listitem [ref=f10e670]: Discontinued support for version 4 of the YandexGPT Pro, YandexGPT Pro 32k, YandexGPT Lite models, and models fine-tuned on YandexGPT Lite version 4.
+                - heading "Release as of 06/08/2025" [level=2] [ref=f10e671]:
+                  - link [ref=f10e672] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#060825
+                    - text: "#"
+                    - generic [ref=f10e673]: Release as of 06/08/2025
+                  - text: Release as of 06/08/2025
+                - paragraph [ref=f10e674]: The OpenAI gpt-oss-120b and gpt-oss-20b models are now available in synchronous mode via the OpenAI API. These models are good at reasoning, but do not yet support function calling.
+                - heading "Release as of 24/07/2025" [level=2] [ref=f10e675]:
+                  - link [ref=f10e676] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#240725
+                    - text: "#"
+                    - generic [ref=f10e677]: Release as of 24/07/2025
+                  - text: Release as of 24/07/2025
+                - paragraph [ref=f10e678]: Updated the Qwen3 235B model by increasing its context length to 256,000 tokens.
+                - heading "Release as of 03/07/2025" [level=2] [ref=f10e679]:
+                  - link [ref=f10e680] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#030725
+                    - text: "#"
+                    - generic [ref=f10e681]: Release as of 03/07/2025
+                  - text: Release as of 03/07/2025
+                - paragraph [ref=f10e682]: Qwen3 235B is now available in synchronous mode. The model works only through the OpenAI API.
+                - heading "Release as of 15/05/2025" [level=2] [ref=f10e683]:
+                  - link [ref=f10e684] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#150525
+                    - text: "#"
+                    - generic [ref=f10e685]: Release as of 15/05/2025
+                  - text: Release as of 15/05/2025
+                - paragraph [ref=f10e686]:
+                  - text: In line with the lifecycle, updated the
+                  - link "text generation model" [ref=f10e687] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models#generation
+                  - text: versions available in synchronous and asynchronous mode. Discontinued support of YandexGPT version 3 models and models fine-tuned in Yandex DataSphere.
+                - heading "Release as of 30/04/2025" [level=2] [ref=f10e688]:
+                  - link [ref=f10e689] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#290425
+                    - text: "#"
+                    - generic [ref=f10e690]: Release as of 30/04/2025
+                  - text: Release as of 30/04/2025
+                - paragraph [ref=f10e691]: New text models of the Qwen3 family are now available in batch mode.
+                - heading "Release as of 24/04/2025" [level=2] [ref=f10e692]:
+                  - link [ref=f10e693] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#240425
+                    - text: "#"
+                    - generic [ref=f10e694]: Release as of 24/04/2025
+                  - text: Release as of 24/04/2025
+                - paragraph [ref=f10e695]: Vision language models are now available in AI Studio.
+                - paragraph [ref=f10e696]:
+                  - text: Added the
+                  - link "batch mode" [ref=f10e697] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/#working-mode
+                  - text: "for working with models: now you can process large amounts of data with a single request. The batch mode is supported for"
+                  - link "text generation models" [ref=f10e698] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models#batch
+                  - text: and vision language models. Added new types of
+                  - link "datasets" [ref=f10e699] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/resources/dataset
+                  - text: to use in batch mode.
+                - heading "Release as of 31/03/2025" [level=2] [ref=f10e700]:
+                  - link [ref=f10e701] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#310325
+                    - text: "#"
+                    - generic [ref=f10e702]: Release as of 31/03/2025
+                  - text: Release as of 31/03/2025
+                - list [ref=f10e703]:
+                  - listitem [ref=f10e704]:
+                    - text: The
+                    - button "RC" [ref=f10e705]
+                    - text: branch now features the YandexGPT Lite 5th generation model, which supports contexts of up to 32,000 tokens in both synchronous and asynchronous modes.
+                  - listitem [ref=f10e706]: Added support for OpenAI tools to work with text generation models.
+                - heading "Release as of 19/03/2025" [level=2] [ref=f10e707]:
+                  - link [ref=f10e708] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#190325
+                    - text: "#"
+                    - generic [ref=f10e709]: Release as of 19/03/2025
+                  - text: Release as of 19/03/2025
+                - paragraph [ref=f10e710]:
+                  - text: "Increased some limits for AI Assistant API: now you can add up to 10,000 documents with the total size of 5 million tokens to a search index. You can upload up to 100 documents at a time. Also, increased the maximum number of threads to 10,000 and maximum number of messages per thread to 100,000. For a complete list of limits, see"
+                  - link "Yandex Cloud AI Studio quotas and limits" [ref=f10e711] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/limits
+                  - text: .
+                - heading "Release as of 25/02/2025" [level=2] [ref=f10e712]:
+                  - link [ref=f10e713] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#250225
+                    - text: "#"
+                    - generic [ref=f10e714]: Release as of 25/02/2025
+                  - text: Release as of 25/02/2025
+                - paragraph [ref=f10e715]:
+                  - text: The YandexGPT Pro 5th generation model is now available for testing in the
+                  - button "RC" [ref=f10e716]
+                  - text: "branch. The 5th generation key upgrades include:"
+                - list [ref=f10e717]:
+                  - listitem [ref=f10e718]:
+                    - link "Function calling" [ref=f10e719] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/generation/function-call
+                    - text: was significantly improved.
+                  - listitem [ref=f10e720]:
+                    - text: Added support for structured output. This feature enables you to set up the model to generate responses in random JSON format or according to the provided schema. For more information on structuring model output, see
+                    - link "Text generation overview" [ref=f10e721] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/generation/#answers-formatting
+                    - text: .
+                  - listitem [ref=f10e722]: Increased the supported context to 32,000 tokens for all modes.
+                - heading "Release as of 11/02/25" [level=2] [ref=f10e723]:
+                  - link [ref=f10e724] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#110225
+                    - text: "#"
+                    - generic [ref=f10e725]: Release as of 11/02/25
+                  - text: Release as of 11/02/25
+                - list [ref=f10e726]:
+                  - listitem [ref=f10e727]:
+                    - text: Updated the
+                    - link "Llama 70B" [ref=f10e728] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/generation/models
+                    - text: model version. Now Llama 3.3. Llama was created by Meta. Meta is designated as an extremist organization and its activities are prohibited in Russia. is available in all branches.
+                  - listitem [ref=f10e729]:
+                    - text: "A new version is out: ML SDK 0.3.1. It features the following updates:"
+                    - list [ref=f10e730]:
+                      - listitem [ref=f10e731]: Python 3.8 is no longer supported.
+                      - listitem [ref=f10e732]: Added the multipart mode for uploading large datasets.
+                      - listitem [ref=f10e733]:
+                        - text: Added the
+                        - button "allow_data_logging" [ref=f10e734]
+                        - text: option that allows you to use dataset data to improve the tuning service when loading datasets.
+                      - listitem [ref=f10e735]:
+                        - text: Added the
+                        - button "validation_errors" [ref=f10e736]
+                        - text: field that stores dataset validation errors.
+                      - listitem [ref=f10e737]:
+                        - text: Replaced the
+                        - button "grpc_credentials" [ref=f10e738]
+                        - text: field with
+                        - button "verify" [ref=f10e739]
+                        - text: in the SDK builder.
+                - heading "Release as of 07/02/25" [level=2] [ref=f10e740]:
+                  - link [ref=f10e741] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#070225
+                    - text: "#"
+                    - generic [ref=f10e742]: Release as of 07/02/25
+                  - text: Release as of 07/02/25
+                - paragraph [ref=f10e743]:
+                  - text: Added support for the
+                  - link "reasoning mode" [ref=f10e744] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/chain-of-thought
+                  - text: in the YandexGPT Pro model.
+                - heading "Release as of 09/12/24" [level=2] [ref=f10e745]:
+                  - link [ref=f10e746] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#091224
+                    - text: "#"
+                    - generic [ref=f10e747]: Release as of 09/12/24
+                  - text: Release as of 09/12/24
+                - paragraph [ref=f10e748]:
+                  - text: LoRA-based model and classifier
+                  - link "fine-tuning" [ref=f10e749] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/tuning/
+                  - text: is now available on request in Preview.
+                - paragraph [ref=f10e750]: YandexGPT-based classifiers are now publicly available.
+                - heading "Release as of 04/12/24" [level=2] [ref=f10e751]:
+                  - link [ref=f10e752] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#041224
+                    - text: "#"
+                    - generic [ref=f10e753]: Release as of 04/12/24
+                  - text: Release as of 04/12/24
+                - paragraph [ref=f10e754]:
+                  - link "Llama 3.1 models" [ref=f10e755] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models
+                  - text: are now available in AI Studio. For model usage costs, see
+                  - link "Yandex Cloud AI Studio pricing policy" [ref=f10e756] [cursor=pointer]:
+                    - /url: en/ai-studio/pricing
+                  - text: .
+                - heading "Release as of 02/12/24" [level=2] [ref=f10e757]:
+                  - link [ref=f10e758] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#021224
+                    - text: "#"
+                    - generic [ref=f10e759]: Release as of 02/12/24
+                  - text: Release as of 02/12/24
+                - paragraph [ref=f10e760]:
+                  - text: The YandexGPT 4th generation model is now available in the main branch (
+                  - button "Latest" [ref=f10e761]
+                  - text: ). Version 3 will remain available in the
+                  - button "Deprecated" [ref=f10e762]
+                  - text: branch as per the models'
+                  - link "lifecycle" [ref=f10e763] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models#model-lifecycle
+                  - text: .
+                - heading "Release as of 21/11/24" [level=2] [ref=f10e764]:
+                  - link [ref=f10e765] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#211124
+                    - text: "#"
+                    - generic [ref=f10e766]: Release as of 21/11/24
+                  - text: Release as of 21/11/24
+                - paragraph [ref=f10e767]: The AI Assistant API functionality is now available to all Yandex Cloud AI Studio users at the Preview stage.
+                - heading "Release as of 01/11/24" [level=2] [ref=f10e768]:
+                  - link [ref=f10e769] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#011124
+                    - text: "#"
+                    - generic [ref=f10e770]: Release as of 01/11/24
+                  - text: Release as of 01/11/24
+                - list [ref=f10e771]:
+                  - listitem [ref=f10e772]:
+                    - text: Image generation with YandexART is now publicly available. Starting November 1, 2024, YandexART is billed as per the rules described on the
+                    - link "AI Studio pricing policy" [ref=f10e773] [cursor=pointer]:
+                      - /url: en/ai-studio/pricing#rules-image-generation
+                    - text: page.
+                  - listitem [ref=f10e774]: Increased the YandexART quotas for the number of generation requests per minute and full day (24 hours).
+                  - listitem [ref=f10e775]:
+                    - text: Increased the YandexGPT quota for the number of concurrent generations. For information on the restrictions in place, refer to
+                    - link "Yandex Cloud AI Studio quotas and limits" [ref=f10e776] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/limits
+                    - text: .
+                  - listitem [ref=f10e777]:
+                    - text: Starting December 2, 2024, the YandexGPT model's test version (
+                    - button "RC" [ref=f10e778]
+                    - text: branch) will become the main version (
+                    - button "Latest" [ref=f10e779]
+                    - text: branch). The current version will remain available in the
+                    - button "Deprecated" [ref=f10e780]
+                    - text: branch as per the models'
+                    - link "lifecycle" [ref=f10e781] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/generation/models#model-lifecycle
+                    - text: .
+                - heading "Release as of 24/10/2024" [level=2] [ref=f10e782]:
+                  - link [ref=f10e783] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#241024
+                    - text: "#"
+                    - generic [ref=f10e784]: Release as of 24/10/2024
+                  - text: Release as of 24/10/2024
+                - list [ref=f10e785]:
+                  - listitem [ref=f10e786]:
+                    - text: The YandexGPT 4th generation model is available for testing (
+                    - button "RC" [ref=f10e787]
+                    - text: branch). Compared to the previous generation, the model's response speed has increased by an average of 2.5 times. The maximum context the model operates has also been increased. In asynchronous mode, 4th generation models can process up to 32,000 tokens. And now there is the YandexGPT Pro 32k model added to process large contexts in synchronous mode. For more information on model limitations, see
+                    - link "Yandex Cloud AI Studio quotas and limits" [ref=f10e788] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/limits
+                    - text: .
+                  - listitem [ref=f10e789]: Increased the maximum number of tokens per response in the management console.
+                - heading "Release as of 10/10/24" [level=2] [ref=f10e790]:
+                  - link [ref=f10e791] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#101024
+                    - text: "#"
+                    - generic [ref=f10e792]: Release as of 10/10/24
+                  - text: Release as of 10/10/24
+                - paragraph [ref=f10e793]: Updated the YandexART model. The updated version has better understanding of prompts, considers more details, and can generate text in Latin characters on the image.
+                - heading "Release as of 21/06/24" [level=2] [ref=f10e794]:
+                  - link [ref=f10e795] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#210624
+                    - text: "#"
+                    - generic [ref=f10e796]: Release as of 21/06/24
+                  - text: Release as of 21/06/24
+                - paragraph [ref=f10e797]:
+                  - text: Starting June 24, 2024, the YandexGPT Lite model based on YandexGPT 3 is available by default (
+                  - button "latest" [ref=f10e798]
+                  - text: branch). The deprecated model based on YandexGPT 2 is available in the
+                  - button "deprecated" [ref=f10e799]
+                  - text: branch until July 1, 2024.
+                - heading "Release as of 07/06/24" [level=2] [ref=f10e800]:
+                  - link [ref=f10e801] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#070624
+                    - text: "#"
+                    - generic [ref=f10e802]: Release as of 07/06/24
+                  - text: Release as of 07/06/24
+                - paragraph [ref=f10e803]: "Updated the YandexART model:"
+                - list [ref=f10e804]:
+                  - listitem [ref=f10e805]: Compared to the previous version, the updated model understands text prompts better and creates more realistic images.
+                  - listitem [ref=f10e806]:
+                    - text: Added the optional
+                    - button "aspectRatio" [ref=f10e807]
+                    - text: parameter for the image aspect ratio.
+                - heading "Release as of 29/05/24" [level=2] [ref=f10e808]:
+                  - link [ref=f10e809] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#280524
+                    - text: "#"
+                    - generic [ref=f10e810]: Release as of 29/05/24
+                  - text: Release as of 29/05/24
+                - paragraph [ref=f10e811]:
+                  - text: Added the
+                  - link "text classification" [ref=f10e812] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/classifier/
+                  - text: feature.
+                - heading "Release as of 28/05/24" [level=2] [ref=f10e813]:
+                  - link [ref=f10e814] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#280524
+                    - text: "#"
+                    - generic [ref=f10e815]: Release as of 28/05/24
+                  - text: Release as of 28/05/24
+                - paragraph [ref=f10e816]: The YandexGPT 3-based YandexGPT Lite RC model is now available in Release Candidate status. The model may replace the current YandexGPT Lite in the future.
+                - heading "Release as of 19/04/24" [level=2] [ref=f10e817]:
+                  - link [ref=f10e818] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#190424
+                    - text: "#"
+                    - generic [ref=f10e819]: Release as of 19/04/24
+                  - text: Release as of 19/04/24
+                - paragraph [ref=f10e820]: Now you can send asynchronous requests to YandexGPT models fine-tuned in DataSphere.
+                - heading "Release as of 09/04/24" [level=2] [ref=f10e821]:
+                  - link [ref=f10e822] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#090424
+                    - text: "#"
+                    - generic [ref=f10e823]: Release as of 09/04/24
+                  - text: Release as of 09/04/24
+                - list [ref=f10e824]:
+                  - listitem [ref=f10e825]:
+                    - text: Added the generation of images based on a text description. The YandexART model works in asynchronous mode and is available in the management console in AI Playground and via the
+                    - link "API" [ref=f10e826] [cursor=pointer]:
+                      - /url: en/ai-studio/image-generation/api-ref/
+                    - text: .
+                  - listitem [ref=f10e827]: Added examples of requests to a YandexART model to the guide.
+                - heading "Release as of 25/03/24" [level=2] [ref=f10e828]:
+                  - link [ref=f10e829] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#250324
+                    - text: "#"
+                    - generic [ref=f10e830]: Release as of 25/03/24
+                  - text: Release as of 25/03/24
+                - paragraph [ref=f10e831]: Added a new YandexGPT Pro model of the YandexGPT 3 family.
+                - heading "Release as of 26/01/24" [level=2] [ref=f10e832]:
+                  - link [ref=f10e833] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#260124
+                    - text: "#"
+                    - generic [ref=f10e834]: Release as of 26/01/24
+                  - text: Release as of 26/01/24
+                - paragraph [ref=f10e835]:
+                  - text: Updated the YandexGPT and YandexGPT Lite
+                  - link "models" [ref=f10e836] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models
+                  - text: and improved their response performance.
+                - heading "Release as of 06/12/23" [level=2] [ref=f10e837]:
+                  - link [ref=f10e838] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#061223
+                    - text: "#"
+                    - generic [ref=f10e839]: Release as of 06/12/23
+                  - text: Release as of 06/12/23
+                - list [ref=f10e840]:
+                  - listitem [ref=f10e841]:
+                    - text: Added a new YandexGPT
+                    - link "model" [ref=f10e842] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/generation/models
+                    - text: for asynchronous mode.
+                  - listitem [ref=f10e843]: Significantly revised the service's API.
+                  - listitem [ref=f10e844]: Unified model names and the way to access the models.
+                - heading "Release as of 02/08/23" [level=2] [ref=f10e845]:
+                  - link [ref=f10e846] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/#020823
+                    - text: "#"
+                    - generic [ref=f10e847]: Release as of 02/08/23
+                  - text: Release as of 02/08/23
+                - list [ref=f10e848]:
+                  - listitem [ref=f10e849]:
+                    - link "Increased" [ref=f10e850] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/limits
+                    - text: the total number of tokens in the prompt and response.
+                  - listitem [ref=f10e851]: Added a new mode called Chat.
+                  - listitem [ref=f10e852]: Added a method for counting the number of tokens in a request.
+              - generic [ref=f10e855]:
+                - heading "Was the article helpful?" [level=3] [ref=f10e856]
+                - generic [ref=f10e857]:
+                  - button "Yes" [ref=f10e858] [cursor=pointer]:
+                    - img [ref=f10e861]
+                    - generic [ref=f10e863]: "Yes"
+                  - button "No" [ref=f10e864] [cursor=pointer]:
+                    - img [ref=f10e867]
+                    - generic [ref=f10e869]: "No"
+            - generic [ref=f10e871]:
+              - generic [ref=f10e872]:
+                - generic [ref=f10e873]: Previous
+                - link "Translate" [ref=f10e875] [cursor=pointer]:
+                  - /url: en/translate/pricing
+                  - img [ref=f10e876]
+                  - generic [ref=f10e878]: Translate
+              - generic [ref=f10e879]:
+                - generic [ref=f10e880]: Next
+                - 'link "SpeechKit: Speech recognition" [ref=f10e882] [cursor=pointer]':
+                  - /url: en/speechkit/release-notes-stt
+                  - generic [ref=f10e883]: "SpeechKit: Speech recognition"
+                  - img [ref=f10e884]
+  - alert "Yandex uses cookies" [ref=f10e886]:
+    - generic [ref=f10e887]:
+      - heading "Yandex uses cookies" [level=1] [ref=f10e888]
+      - generic [ref=f10e889]:
+        - text: They ensure the smooth operation of all Yandex sites and services. For more information, please read our
+        - link "Cookie Policy" [ref=f10e890] [cursor=pointer]:
+          - /url: https://yandex.com/legal/cookies_policy_eng/
+      - generic [ref=f10e891]:
+        - button "Allow all" [ref=f10e892] [cursor=pointer]
+        - button "Allow essential cookies" [ref=f10e893] [cursor=pointer]
+        - button "Settings" [ref=f10e894] [cursor=pointer]

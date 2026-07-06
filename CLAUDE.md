@@ -22,16 +22,19 @@ The Node backend is just the "brain" orchestrator behind `POST /reply`.
 
 ## Current focus
 
-**Polish pass shipped (2026-07-04), needs a live-call verification.** The dialog brain
-defaults to `aliceai-llm` since 2026-07-05 (smarter + ~250-400 ms faster TTFT than the
-`yandexgpt` pro it replaced; eva-eval clean, live call still owed) — before that, lite
-was behind most of the "works really bad"
-symptoms; the persona prompt was reworked (phone captured early, no copyable digits/dates
-in examples, facts answered directly, «мне просто цену узнать» handled); BOTH paths now
-share the deterministic reply gates; and **both paths deliver the lead to Telegram**
-(turn-based via `dialog-store.mjs` on `/end`/TTL/shutdown — before, the live path threw
-every lead away). Next: owner places a real call (turn-based + streaming), then tune from
-its logs; later a richer FAQ and CRM/Sheets export.
+**Latency overhaul shipped (2026-07-05), needs a live-call verification.** Voice-to-voice
+on the streaming path dropped from ~2.7–4.5 s to a target ~0.9–1.3 s via four stacked
+changes: (1) **speculative turns** — the LLM (and TTS prewarm) starts while the endpoint
+window is still confirming silence, and the commit attaches to the in-flight stream;
+(2) **EOU fast path** — a Yandex stt-eou final shrinks the remaining silence window to
+`ENDPOINT_FAST_MS` measured from last voice (a final used to RE-ARM the full 1200 ms);
+(3) **chunk-streamed TTS** — PCM flows into the player as the provider generates it
+instead of after the whole sentence; (4) dialog brain defaults to **`aliceai-llm-flash`**
+(fastest TTFT ~553 ms warm, OpenAI-compatible API branch; eva-eval clean 2026-07-05).
+All offline-tested (168 tests); the polish pass of 2026-07-04 (persona rework, shared
+reply gates, Telegram lead delivery on both paths) also still awaits its live call.
+Next: owner places a real call (turn-based + streaming), then tune from its logs; later
+a richer FAQ and CRM/Sheets export.
 
 The Voximplant scenario itself is **not in this repo** — it lives in the Voximplant
 cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario").
@@ -42,13 +45,16 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
   marina is the only new-gen Yandex voice that works over v1 REST — dasha/lera/masha
   are v3-only; rollback: alena+good),
   `recognize(audio)` (STT, oggopus, ru-RU), `ask(messages)` — **default dialog model
-  is `aliceai-llm`** (Yandex's Alice AI flagship, 2026): benchmarked 2026-07-05
-  (`bench-llm.mjs`, same native endpoint) it's smarter than `yandexgpt` pro AND
-  ~250-400 ms faster to first token (~610-770 ms vs ~850-1180 ms); eva-eval passed
-  clean. Rollback: `LLM_MODEL=yandexgpt`. `aliceai-llm-flash` is faster still
-  (~510-570 ms TTFT, `bench-llm-openai.mjs`) but only speaks the OpenAI-compatible
-  API — would need its own branch in ask/askStream. `temperature 0.4` — env
-  `LLM_TEMPERATURE`; `maxTokens 120` — env `LLM_MAX_TOKENS`.
+  is `aliceai-llm-flash`** since 2026-07-05 (fastest TTFT in the catalog: ~553 ms warm,
+  re-measured through our own `askStream`; eva-eval clean — phone gate, two-refusal
+  release, digit read-back, robot deflection, no price/срок leaks). Flash speaks ONLY
+  the **OpenAI-compatible API** — `ask`/`askStream` auto-branch to
+  `https://ai.api.cloud.yandex.net/v1/chat/completions` (SSE deltas, model
+  `gpt://<folder>/<model>` WITHOUT `/latest`, `max_completion_tokens`) for models in
+  `OPENAI_ONLY_MODELS`; `LLM_API=openai` forces any model onto that branch. Rollbacks
+  by degree: `LLM_MODEL=aliceai-llm` (flagship, ~610-770 ms TTFT, native API) →
+  `LLM_MODEL=yandexgpt` (old prod). `temperature 0.4` — env `LLM_TEMPERATURE`;
+  `maxTokens 120` — env `LLM_MAX_TOKENS`.
   lite was the root cause of "the AI works really bad": it spelled the caller's NAME
   letter-by-letter like a phone number, asked double questions, repeated canned lines
   verbatim and said goodbye without taking the phone. All Yandex HTTP calls go through
@@ -57,16 +63,22 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
   failed`: the aliceai backend resets ~5% of connections — measured 2026-07-05, fresh
   connections too; yandexgpt also blips). askStream retries only before the first
   chunk; timeouts and caller aborts are never retried. Verified ~190 turns, 0 errors.
-  `synthesizePcm` dispatches on `TTS_PROVIDER` (`yandex` default | `elevenlabs`);
-  STT and `synthesize()` (oggopus) stay Yandex always.
+  `synthesizePcm(text, rate, {onChunk})` dispatches on `TTS_PROVIDER` (`yandex` default
+  | `elevenlabs`) and, given `onChunk`, **streams PCM chunks as the response body
+  arrives** (returns the full buffer either way); STT and `synthesize()` (oggopus)
+  stay Yandex always.
 - `tts-elevenlabs.mjs` — ElevenLabs PCM synthesis for the streaming path (voice
   Victoria via `ELEVENLABS_VOICE_ID`, model `eleven_flash_v2_5`, ~280 ms to first
-  pcm_8000 chunk, no VPN needed). **Requires a paid ElevenLabs plan** — Voice Library
-  voices over the API return 402 on free (verified 2026-07-05; integration is wired and
-  tested up to that paywall, flip `TTS_PROVIDER=elevenlabs` once subscribed). Own
-  keep-alive agent; test seam `setElevenFetch()`. Unit-tested offline. Note: with this
-  provider the boot-time PCM-cache prewarm (~18 phrases) spends ElevenLabs credits on
-  every stream-server restart.
+  pcm_8000 chunk, no VPN needed). With `{onChunk}` the response body **streams
+  chunk-by-chunk** (before, the whole sentence was buffered — +0.3–1.4 s to first
+  sound); URL carries `optimize_streaming_latency=3` (deprecated-but-accepted; level 4
+  would disable text normalization and mangle spoken prices/phones — never use it; env
+  `ELEVENLABS_STREAM_LATENCY`, empty = don't send). **Requires a paid ElevenLabs
+  plan** — Voice Library voices over the API return 402 on free (verified 2026-07-05;
+  integration is wired and tested up to that paywall, flip `TTS_PROVIDER=elevenlabs`
+  once subscribed). Own keep-alive agent; test seam `setElevenFetch()`. Unit-tested
+  offline. Note: with this provider the boot-time PCM-cache prewarm (~18 phrases) and
+  **discarded speculations** (see `SPECULATE_TTS`) spend ElevenLabs credits.
 - `server.mjs` — Express on port `3000`. `POST /reply {callId, text} → {reply}`;
   `POST /end {callId}` now **finalizes the lead** (extractOrder → Telegram) — before,
   the LIVE path silently threw every lead away (Telegram delivery existed only in the
@@ -115,8 +127,23 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
   (frame-based deferrals are budgeted — max ~3 s — so a no-DTX line with constant
   comfort-noise frames can't mute Ева forever), and newline-as-sentence-boundary so
   list-shaped LLM replies stream instead of stalling.
+  **Speed stack (2026-07-05, offline-tested — live call still owed):** (1) **speculative
+  turns** — after `SPECULATE_MS` (250) of stable partial or on a stt-eou final, the LLM
+  starts on `[...history, user]` WITHOUT touching state, and (at `SPECULATE_TTS=1`) its
+  cleaned sentences pre-synthesize through the same exported `makeReplyGater` the real
+  turn uses (byte-identical text → cache/inflight hits); the commit attaches to the
+  in-flight stream via `takeSpec()` — no second LLM call; continued speech / discard
+  paths / close abort it, and NOTHING plays before the endpoint commits. (2) **EOU fast
+  path** — when Yandex closed the utterance (segments non-empty, partial consumed) the
+  window shrinks to `ENDPOINT_FAST_MS` measured **from last voice** (a final used to
+  re-arm the full window: commit ≈ final+1200 ms). (3) **per-session `inflightSynth`** —
+  concurrent synthesis of the same sentence (speculation + commit) shares one TTS call;
+  late subscribers replay received chunks, then stream; retry only before the first
+  emitted chunk. (4) **chunk-streamed playback** — `Speaker.say` feeds provider chunks
+  straight into the player under the turn token.
   **Turn finalization is silence-driven:** Yandex stt-eou finals do NOT start a turn — they
-  accumulate as segments, and the turn fires only after `ENDPOINT_MS` of real silence. The
+  accumulate as segments, and the turn fires only after the endpoint window of real silence
+  (fast or full). The
   late-duplicate dedup now has a **fresh-voice exemption**: a caller legitimately answering
   «да» to two consecutive questions is a new turn (has fresh partials/frames), while a late
   stt-eou replay (silence in the line) is still dropped. A **tail-echo gate** drops a "turn"
@@ -130,11 +157,33 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
   aborted (queued sentences stop burning TTS calls) and the session stays in the drain set
   until its lead delivery settles; a duplicate `start` frame is ignored; WS `maxPayload`
   is 1 MiB. Lead is sent when the extraction says `hasOrder` **or a phone was captured**.
+  **Noise robustness (energy gates, 2026-07-05, offline-tested — live call still owed):**
+  STT transcribes ANY speech in the line (TV, people nearby), and the session used to trust
+  partials as proof the *caller* spoke — background chatter deferred the endpoint forever
+  (Ева stopped answering), barged in on her, and became "caller turns". Now `vad.mjs`
+  classifies every inbound frame loud/quiet and three gates use it: (1) **endpoint** —
+  energy-less partial changes don't re-arm the silence window and don't defer the fire,
+  plus a hard `MAX_TURN_MS` cap so a turn ALWAYS finalizes; (2) **barge-in** — a
+  substantive partial with no recent loud frame is logged and ignored; (3) **turn
+  acceptance** — a finalized turn whose window (1 s pre-roll for STT lag) had almost no
+  loud audio is dropped silently as background; after 2 consecutive drops Ева asks
+  «не расслышала» — **max 2 such prompts in a row** (continuous chatter used to loop the
+  apology every ~4 s till hangup; a real accepted turn resets the cap). Safety rule:
+  gates activate only after the caller has proven
+  near-field loudness (`callLoudEver`); a quiet-mic call degrades to the old behavior,
+  never to a deaf Ева. Audio always reaches STT — energy shapes decisions only.
 - `speaker.mjs` — voices a reply sentence-by-sentence under a per-call cancellation token;
   `abort()` stops the player, invalidates queued/in-flight sentences **and resets the synth
   chain** (the next turn no longer queues behind a stalled TTS call of the cancelled turn).
-  `sayPcm(token, buf)` plays pre-synthesized PCM (fillers) bypassing the synth chain — it
-  does NOT set `spokeThisTurn`. Unit-tested in `speaker.test.mjs`.
+  `synth(text, emit)` may **stream PCM chunks** via `emit` — each chunk is token-gated, so
+  barge-in mid-stream drops the rest; a non-streaming synth (old fakes, cache hits without
+  chunks) still returns a whole buffer. `sayPcm(token, buf)` plays pre-synthesized PCM
+  (fillers) bypassing the synth chain — it does NOT set `spokeThisTurn`. Unit-tested in
+  `speaker.test.mjs`.
+- `vad.mjs` — energy VAD for the streaming path: per-frame RMS vs an **adaptive noise
+  floor** (drifts to the line's comfort-noise level on quiet frames, creeps up slowly on
+  loud ones, capped at `floorMaxDb` so adaptation can never mute real speech).
+  `new EnergyVad().frame(pcm)` → `{db, speech}`. Unit-tested in `vad.test.mjs`.
 - `bargein.mjs` — `isSubstantive(text)` (substantive speech vs backchannels),
   `isEchoOf(partial, selfText)` (≥80 % of the partial's words are in Ева's current reply →
   it's her own voice echoing back, not the caller) and
@@ -159,8 +208,11 @@ cloud; its canonical source is in `README.md` ("The Voximplant inbound scenario"
 - `prompt.mjs` — the shared Ева `SYSTEM` persona, imported by both servers.
 - `speech.mjs` (streaming additions) — `synthesizePcm(text, rate)` (LPCM TTS) and
   `askStream(messages, onChunk, { model, signal })` (streaming + abortable YandexGPT).
-- Offline harnesses: `stt-offline.mjs` (STT on a recorded PCM) and `vox-replay.mjs` (replays
-  captured Voximplant frames into the server — full loop without telephony).
+- Offline harnesses: `stt-offline.mjs` (STT on a recorded PCM), `vox-replay.mjs` (replays
+  captured Voximplant frames into the server — full loop without telephony) and
+  `call-sim.mjs` (synthetic caller: synthesizes caller phrases, streams them into a live
+  stream-server at real-time pace and measures voice-to-voice latency — uses real Yandex
+  services, costs money; measured 767–1227 ms warm on 2026-07-05).
 
 ## Commands
 
@@ -191,24 +243,54 @@ timeouts (`TTS_TIMEOUT_MS` 8000 / `STT_TIMEOUT_MS` 10000 / `LLM_TIMEOUT_MS` 1500
 sessions (flushes each call's Telegram lead) before exit.
 
 **Latency/turn-taking knobs (env, all optional):** `ENDPOINT_MS` (default 1200) — streaming
-end-of-utterance silence window, the dominant per-turn cost. Deliberately conservative per
-owner feedback ("answer only when the caller has really stopped talking"); lowering it
-trades politeness for speed — verify **on live calls only**. `FILLER_MS` (default 1200,
+end-of-utterance silence window when the utterance is NOT yet closed by a Yandex final.
+Deliberately conservative per owner feedback ("answer only when the caller has really
+stopped talking"); lowering it trades politeness for speed — verify **on live calls only**.
+`ENDPOINT_FAST_MS` (default 800, clamped ≤ `ENDPOINT_MS`; set = `ENDPOINT_MS` to disable) —
+the shorter window used once a stt-eou final closed the utterance (Yandex's EOU classifier
+already sat out its own pause); measured from last voice, not from final arrival.
+`SPECULATE_MS` (default 250, `0` off) — partial-stability window before the speculative
+LLM turn starts; a reply never sounds before the endpoint commits, discarded speculations
+just cost an LLM call. `SPECULATE_TTS` (default 1, `0` off) — whether speculation also
+pre-synthesizes TTS (burns ElevenLabs credits on discarded speculations when
+`TTS_PROVIDER=elevenlabs`). `FILLER_MS` (default 1200,
 `0` disables) — delay before the cached filler masks a slow LLM+TTS turn (skipped if the
 reply is already in TTS). `FILLER_COOLDOWN_MS` (default 10000) — minimum gap between
 fillers. `BARGE_SUSTAIN_MS` (default 300) — how long substantive caller speech must persist
 before it interrupts Ева. `IDLE_PROMPT_MS` (default 15000, `0` off) — caller-silence window
 before Ева asks «алло?» (max 2 in a row).
 
-**Voice knobs (env):** `TTS_PROVIDER` (`yandex` default | `elevenlabs` — bad value =
-fail-fast at boot), `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` (Victoria:
-`D5RRIJYa9pFwxiSpbGbR`; Elena Gromova backup: `0ArNnoIAWKlT4WweaVMY`),
-`ELEVENLABS_MODEL` (default `eleven_flash_v2_5` — the only latency tier fit for live
-calls). Yandex voice/role live in `speech.mjs` (`marina`/`friendly` since 2026-07-05).
+**Noise-robustness knobs (env, streaming path):** `VAD_MARGIN_DB` (default 10) — how far
+above the adaptive noise floor a frame must be to count as caller speech; **`0` disables
+all energy gates** (full rollback to pre-VAD behavior). `VAD_MIN_DB` (default -50) —
+absolute speech minimum in dBFS. `MAX_TURN_MS` (default 40000, `0` off) — hard cap on one
+caller turn; a noisy-line safety net, NOT a limit on real callers (12000 cut off a live
+caller's monologue mid-thought on 2026-07-06 — felt like being interrupted; keep it high).
+`MIN_TURN_LOUD_MS`
+(default 150) — minimum loud audio inside a turn's window before it's accepted (below it =
+background speech, dropped). `BARGE_ENERGY_MS` (default 600) — how recent a loud frame must
+be for a partial to count toward barge-in. All gates self-disarm on quiet-mic calls
+(`callLoudEver`): they only tighten behavior after the caller has been heard loud once.
 
-**Brain knobs (env):** `LLM_MODEL` (default `aliceai-llm` — Yandex flagship, fastest
-smart model in the catalog; `yandexgpt` = previous prod and the safe rollback;
-`yandexgpt-lite` saves money at a real quality cost), `LLM_TEMPERATURE` (default 0.4),
+**Voice knobs (env):** `TTS_PROVIDER` (`yandex` default | `elevenlabs` — bad value =
+fail-fast at boot), `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` (**Elena Gromova
+`0ArNnoIAWKlT4WweaVMY` since 2026-07-06** — "Podcasts & Conversation", naturally
+conversational, picked after live-call feedback that Victoria sounded aggressive/theatrical;
+Victoria rollback: `D5RRIJYa9pFwxiSpbGbR`),
+`ELEVENLABS_MODEL` (default `eleven_flash_v2_5` — the only latency tier fit for live
+calls). **Voice character** (live-call feedback 2026-07-06: stock Victoria was too
+aggressive/fast): `ELEVENLABS_SPEED` (default 0.9, range 0.7–1.2), `ELEVENLABS_STABILITY`
+(default 0.3 — lower = livelier intonation), `ELEVENLABS_SIMILARITY` (default 0.75),
+`ELEVENLABS_STYLE` (default 0.4 — expressiveness), `ELEVENLABS_VOICE_SETTINGS=0` = send
+none (stock Voice Library preset, the pre-2026-07-06 sound). All verified on flash_v2_5
+live — no first-chunk latency penalty. Yandex voice/role live in `speech.mjs`
+(`marina`/`friendly` since 2026-07-05).
+
+**Brain knobs (env):** `LLM_MODEL` (default `aliceai-llm-flash` — fastest TTFT, lives on
+the OpenAI-compatible API only; `aliceai-llm` = flagship on the native API, first
+rollback; `yandexgpt` = previous prod, second rollback; `yandexgpt-lite` saves money at a
+real quality cost — never go back to it), `LLM_API=openai` forces any model onto the
+OpenAI-compatible endpoint, `LLM_TEMPERATURE` (default 0.4),
 `LLM_MAX_TOKENS` (default 120; order extraction passes its own 400 explicitly).
 `REPLY_SECRET` — gates `/reply`+`/end` via `X-Backend-Token` (set the same value in the
 Voximplant scenario's `BACKEND_TOKEN`). `DIALOG_TTL_MS` (default 30 min) — turn-based

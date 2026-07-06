@@ -1,0 +1,728 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e6]:
+    - navigation [ref=f3e11]:
+      - generic [ref=f3e12]:
+        - link "Logo icon" [ref=f3e14] [cursor=pointer]:
+          - /url: /
+          - img "Logo icon" [ref=f3e16]
+        - generic [ref=f3e18]:
+          - list [ref=f3e21]:
+            - listitem [ref=f3e22] [cursor=pointer]:
+              - button "Platform" [ref=f3e23]:
+                - generic [ref=f3e24]: Platform
+                - img [ref=f3e25]:
+                  - img [ref=f3e26]
+            - listitem [ref=f3e28] [cursor=pointer]:
+              - button "Businesses" [ref=f3e29]:
+                - generic [ref=f3e30]: Businesses
+                - img [ref=f3e31]:
+                  - img [ref=f3e32]
+            - listitem [ref=f3e34] [cursor=pointer]:
+              - link "Developers" [ref=f3e35]:
+                - /url: /developers
+                - generic [ref=f3e36]: Developers
+            - listitem [ref=f3e37] [cursor=pointer]:
+              - link "Documentation" [ref=f3e38]:
+                - /url: /docs/en/
+                - generic [ref=f3e39]: Documentation
+            - listitem [ref=f3e40] [cursor=pointer]:
+              - link "Pricing" [ref=f3e41]:
+                - /url: /docs/en/ai-studio/pricing
+                - generic [ref=f3e42]: Pricing
+          - button "Next" [ref=f3e43] [cursor=pointer]:
+            - img [ref=f3e44]:
+              - img [ref=f3e45]
+        - generic [ref=f3e47]:
+          - generic:
+            - generic:
+              - button "Next":
+                - img [ref=f3e48] [cursor=pointer]:
+                  - img [ref=f3e49]
+          - list [ref=f3e51]:
+            - listitem [ref=f3e52] [cursor=pointer]:
+              - combobox "Search" [ref=f3e56]
+            - listitem [ref=f3e58] [cursor=pointer]:
+              - button "Language" [ref=f3e59]:
+                - img [ref=f3e61]
+                - generic [ref=f3e62]: Language
+                - img [ref=f3e63]:
+                  - img [ref=f3e64]
+            - listitem [ref=f3e66] [cursor=pointer]:
+              - link "Contact us" [ref=f3e67]:
+                - /url: /en#contact-form
+                - generic [ref=f3e70]: Contact us
+            - listitem [ref=f3e71] [cursor=pointer]:
+              - link "Log in" [ref=f3e72]:
+                - /url: /platform
+                - generic [ref=f3e75]: Log in
+    - main [ref=f3e76]:
+      - generic [ref=f3e85]:
+        - navigation [ref=f3e87]:
+          - link "AI Studio documentation" [ref=f3e89] [cursor=pointer]:
+            - /url: en/
+            - generic [ref=f3e90]: AI Studio documentation
+          - list "AI Studio documentation" [ref=f3e92]:
+            - listitem [ref=f3e93] [cursor=pointer]:
+              - link "Getting started" [ref=f3e94]:
+                - /url: en/ai-studio/quickstart/
+                - generic [ref=f3e96]: Getting started
+            - listitem [ref=f3e97] [cursor=pointer]:
+              - button "AI Studio" [ref=f3e98]:
+                - generic [ref=f3e99]: AI Studio
+              - list "AI Studio documentation" [ref=f3e100]:
+                - listitem [ref=f3e101]:
+                  - link "About AI Studio" [ref=f3e102]:
+                    - /url: en/ai-studio/concepts/
+                    - generic [ref=f3e104]: About AI Studio
+                - listitem [ref=f3e105]:
+                  - button "Drop-down list Model Gallery" [expanded] [ref=f3e106]:
+                    - img [ref=f3e107]
+                    - generic [ref=f3e109]: Model Gallery
+                  - list "AI Studio documentation" [ref=f3e110]:
+                    - listitem [ref=f3e111]:
+                      - link "Overview" [ref=f3e112]:
+                        - /url: en/ai-studio/concepts/generation/
+                        - generic [ref=f3e114]: Overview
+                    - listitem [ref=f3e115]:
+                      - link "Common instance models" [ref=f3e116]:
+                        - /url: en/ai-studio/concepts/generation/models
+                        - generic [ref=f3e118]: Common instance models
+                    - listitem [ref=f3e119]:
+                      - link "Dedicated instance models" [ref=f3e120]:
+                        - /url: en/ai-studio/concepts/generation/dedicated-instance
+                        - generic [ref=f3e122]: Dedicated instance models
+                    - listitem [ref=f3e123]:
+                      - link "Batch processing" [ref=f3e124]:
+                        - /url: en/ai-studio/concepts/generation/batch-processing
+                        - generic [ref=f3e126]: Batch processing
+                    - listitem [ref=f3e127]:
+                      - link "Function calling" [ref=f3e128]:
+                        - /url: en/ai-studio/concepts/generation/function-call
+                        - generic [ref=f3e130]: Function calling
+                    - listitem [ref=f3e131]:
+                      - link "Reasoning mode" [ref=f3e132]:
+                        - /url: en/ai-studio/concepts/generation/chain-of-thought
+                        - generic [ref=f3e134]: Reasoning mode
+                    - listitem [ref=f3e135]:
+                      - link "Formatting model responses" [ref=f3e136]:
+                        - /url: en/ai-studio/concepts/generation/structured-output
+                        - generic [ref=f3e138]: Formatting model responses
+                    - listitem [ref=f3e139]:
+                      - button "Drop-down list Classifiers" [ref=f3e140]:
+                        - img [ref=f3e141]
+                        - generic [ref=f3e143]: Classifiers
+                    - listitem [ref=f3e144]:
+                      - link "Embeddings" [ref=f3e145]:
+                        - /url: en/ai-studio/concepts/embeddings
+                        - generic [ref=f3e147]: Embeddings
+                    - listitem [ref=f3e148]:
+                      - link "Datasets" [ref=f3e149]:
+                        - /url: en/ai-studio/concepts/resources/dataset
+                        - generic [ref=f3e151]: Datasets
+                    - listitem [ref=f3e152]:
+                      - link "Fine-tuning" [ref=f3e153]:
+                        - /url: en/ai-studio/concepts/tuning/
+                        - generic [ref=f3e155]: Fine-tuning
+                    - listitem [ref=f3e156]:
+                      - link "Tokens" [ref=f3e157]:
+                        - /url: en/ai-studio/concepts/generation/tokens
+                        - generic [ref=f3e159]: Tokens
+                - listitem [ref=f3e160]:
+                  - button "Drop-down list Agent Atelier" [ref=f3e161]:
+                    - img [ref=f3e162]
+                    - generic [ref=f3e164]: Agent Atelier
+                - listitem [ref=f3e165]:
+                  - button "Drop-down list MCP Hub" [ref=f3e166]:
+                    - img [ref=f3e167]
+                    - generic [ref=f3e169]: MCP Hub
+                - listitem [ref=f3e170]:
+                  - button "Drop-down list AI Search" [ref=f3e171]:
+                    - img [ref=f3e172]
+                    - generic [ref=f3e174]: AI Search
+                - listitem [ref=f3e175]:
+                  - button "Drop-down list Step-by-step guides" [ref=f3e176]:
+                    - img [ref=f3e177]
+                    - generic [ref=f3e179]: Step-by-step guides
+                - listitem [ref=f3e180]:
+                  - button "Drop-down list API references" [ref=f3e181]:
+                    - img [ref=f3e182]
+                    - generic [ref=f3e184]: API references
+                - listitem [ref=f3e185]:
+                  - button "Drop-down list Yandex Cloud ML SDK" [ref=f3e186]:
+                    - img [ref=f3e187]
+                    - generic [ref=f3e189]: Yandex Cloud ML SDK
+                - listitem [ref=f3e190]:
+                  - link "Public materials" [ref=f3e191]:
+                    - /url: en/ai-studio/public-talks
+                    - generic [ref=f3e193]: Public materials
+                - listitem [ref=f3e194]:
+                  - link "Terms and definitions" [ref=f3e195]:
+                    - /url: en/ai-studio/concepts/glossary
+                    - generic [ref=f3e197]: Terms and definitions
+                - listitem [ref=f3e198]:
+                  - link "FAQ" [ref=f3e199]:
+                    - /url: en/ai-studio/qa/
+                    - generic [ref=f3e201]: FAQ
+                - listitem [ref=f3e202]:
+                  - button "Drop-down list Troubleshooting" [ref=f3e203]:
+                    - img [ref=f3e204]
+                    - generic [ref=f3e206]: Troubleshooting
+            - listitem [ref=f3e207] [cursor=pointer]:
+              - button "SpeechKit" [ref=f3e208]:
+                - generic [ref=f3e209]: SpeechKit
+              - list "AI Studio documentation" [ref=f3e210]:
+                - listitem [ref=f3e211]:
+                  - link "SpeechKit technology overview" [ref=f3e212]:
+                    - /url: en/speechkit/overview
+                    - generic [ref=f3e214]: SpeechKit technology overview
+                - listitem [ref=f3e215]:
+                  - button "Drop-down list Getting started with SpeechKit" [ref=f3e216]:
+                    - img [ref=f3e217]
+                    - generic [ref=f3e219]: Getting started with SpeechKit
+                - listitem [ref=f3e220]:
+                  - button "Drop-down list Speech recognition" [ref=f3e221]:
+                    - img [ref=f3e222]
+                    - generic [ref=f3e224]: Speech recognition
+                - listitem [ref=f3e225]:
+                  - button "Drop-down list Speech synthesis" [ref=f3e226]:
+                    - img [ref=f3e227]
+                    - generic [ref=f3e229]: Speech synthesis
+                - listitem [ref=f3e230]:
+                  - button "Drop-down list Step-by-step guides" [ref=f3e231]:
+                    - img [ref=f3e232]
+                    - generic [ref=f3e234]: Step-by-step guides
+                - listitem [ref=f3e235]:
+                  - button "Drop-down list SpeechKit Hybrid" [ref=f3e236]:
+                    - img [ref=f3e237]
+                    - generic [ref=f3e239]: SpeechKit Hybrid
+                - listitem [ref=f3e240]:
+                  - button "Drop-down list API references" [ref=f3e241]:
+                    - img [ref=f3e242]
+                    - generic [ref=f3e244]: API references
+                - listitem [ref=f3e245]:
+                  - link "Supported audio formats" [ref=f3e246]:
+                    - /url: en/speechkit/formats
+                    - generic [ref=f3e248]: Supported audio formats
+                - listitem [ref=f3e249]:
+                  - link "IVR integration" [ref=f3e250]:
+                    - /url: en/speechkit/concepts/ivr-integration
+                    - generic [ref=f3e252]: IVR integration
+                - listitem [ref=f3e253]:
+                  - button "Drop-down list Troubleshooting" [ref=f3e254]:
+                    - img [ref=f3e255]
+                    - generic [ref=f3e257]: Troubleshooting
+            - listitem [ref=f3e258] [cursor=pointer]:
+              - button "Yandex Search API" [ref=f3e259]:
+                - generic [ref=f3e260]: Yandex Search API
+              - list "AI Studio documentation" [ref=f3e261]:
+                - listitem [ref=f3e262]:
+                  - link "About Yandex Search API" [ref=f3e263]:
+                    - /url: en/search-api/concepts/
+                    - generic [ref=f3e265]: About Yandex Search API
+                - listitem [ref=f3e266]:
+                  - link "Getting started" [ref=f3e267]:
+                    - /url: en/search-api/quickstart/
+                    - generic [ref=f3e269]: Getting started
+                - listitem [ref=f3e270]:
+                  - button "Drop-down list Concepts" [ref=f3e271]:
+                    - img [ref=f3e272]
+                    - generic [ref=f3e274]: Concepts
+                - listitem [ref=f3e275]:
+                  - button "Drop-down list Step-by-step guides" [ref=f3e276]:
+                    - img [ref=f3e277]
+                    - generic [ref=f3e279]: Step-by-step guides
+                - listitem [ref=f3e280]:
+                  - button "Drop-down list API reference" [ref=f3e281]:
+                    - img [ref=f3e282]
+                    - generic [ref=f3e284]: API reference
+                - listitem [ref=f3e285]:
+                  - button "Drop-down list Apps" [ref=f3e286]:
+                    - img [ref=f3e287]
+                    - generic [ref=f3e289]: Apps
+            - listitem [ref=f3e290] [cursor=pointer]:
+              - button "Vision OCR" [ref=f3e291]:
+                - generic [ref=f3e292]: Vision OCR
+              - list "AI Studio documentation" [ref=f3e293]:
+                - listitem [ref=f3e294]:
+                  - link "About Vision OCR" [ref=f3e295]:
+                    - /url: en/vision/concepts/ocr/
+                    - generic [ref=f3e297]: About Vision OCR
+                - listitem [ref=f3e298]:
+                  - link "Getting started" [ref=f3e299]:
+                    - /url: en/vision/quickstart
+                    - generic [ref=f3e301]: Getting started
+                - listitem [ref=f3e302]:
+                  - button "Drop-down list Concepts" [ref=f3e303]:
+                    - img [ref=f3e304]
+                    - generic [ref=f3e306]: Concepts
+                - listitem [ref=f3e307]:
+                  - button "Drop-down list Step-by-step guides" [ref=f3e308]:
+                    - img [ref=f3e309]
+                    - generic [ref=f3e311]: Step-by-step guides
+                - listitem [ref=f3e312]:
+                  - button "Drop-down list API references" [ref=f3e313]:
+                    - img [ref=f3e314]
+                    - generic [ref=f3e316]: API references
+                - listitem [ref=f3e317]:
+                  - button "Drop-down list Troubleshooting" [ref=f3e318]:
+                    - img [ref=f3e319]
+                    - generic [ref=f3e321]: Troubleshooting
+                - listitem [ref=f3e322]:
+                  - link "FAQ" [ref=f3e323]:
+                    - /url: en/vision/qa/
+                    - generic [ref=f3e325]: FAQ
+            - listitem [ref=f3e326] [cursor=pointer]:
+              - button "Translate" [ref=f3e327]:
+                - generic [ref=f3e328]: Translate
+              - list "AI Studio documentation" [ref=f3e329]:
+                - listitem [ref=f3e330]:
+                  - link "About Translate" [ref=f3e331]:
+                    - /url: en/translate/concepts/
+                    - generic [ref=f3e333]: About Translate
+                - listitem [ref=f3e334]:
+                  - link "Getting started" [ref=f3e335]:
+                    - /url: en/translate/quickstart
+                    - generic [ref=f3e337]: Getting started
+                - listitem [ref=f3e338]:
+                  - button "Drop-down list Concepts" [ref=f3e339]:
+                    - img [ref=f3e340]
+                    - generic [ref=f3e342]: Concepts
+                - listitem [ref=f3e343]:
+                  - button "Drop-down list Step-by-step guides" [ref=f3e344]:
+                    - img [ref=f3e345]
+                    - generic [ref=f3e347]: Step-by-step guides
+                - listitem [ref=f3e348]:
+                  - button "Drop-down list API reference" [ref=f3e349]:
+                    - img [ref=f3e350]
+                    - generic [ref=f3e352]: API reference
+                - listitem [ref=f3e353]:
+                  - button "Drop-down list Troubleshooting" [ref=f3e354]:
+                    - img [ref=f3e355]
+                    - generic [ref=f3e357]: Troubleshooting
+            - listitem [ref=f3e358] [cursor=pointer]:
+              - button "Security" [ref=f3e359]:
+                - generic [ref=f3e360]: Security
+              - list "AI Studio documentation" [ref=f3e361]:
+                - listitem [ref=f3e362]:
+                  - link "Getting an API key" [ref=f3e363]:
+                    - /url: en/ai-studio/operations/get-api-key
+                    - generic [ref=f3e365]: Getting an API key
+                - listitem [ref=f3e366]:
+                  - link "Disabling request logging" [ref=f3e367]:
+                    - /url: en/ai-studio/operations/disable-logging
+                    - generic [ref=f3e369]: Disabling request logging
+                - listitem [ref=f3e370]:
+                  - button "Drop-down list Guardrails" [ref=f3e371]:
+                    - img [ref=f3e372]
+                    - generic [ref=f3e374]: Guardrails
+                - listitem [ref=f3e375]:
+                  - button "Drop-down list Access management" [ref=f3e376]:
+                    - img [ref=f3e377]
+                    - generic [ref=f3e379]: Access management
+                - listitem [ref=f3e380]:
+                  - button "Drop-down list Audit Trails events" [ref=f3e381]:
+                    - img [ref=f3e382]
+                    - generic [ref=f3e384]: Audit Trails events
+                - listitem [ref=f3e385]:
+                  - button "Drop-down list Metrics Monitoring" [ref=f3e386]:
+                    - img [ref=f3e387]
+                    - generic [ref=f3e389]: Metrics Monitoring
+            - listitem [ref=f3e390] [cursor=pointer]:
+              - button "Quotas and limits" [ref=f3e391]:
+                - generic [ref=f3e392]: Quotas and limits
+              - list "AI Studio documentation" [ref=f3e393]:
+                - listitem [ref=f3e394]:
+                  - link "AI Studio" [ref=f3e395]:
+                    - /url: en/ai-studio/concepts/limits
+                    - generic [ref=f3e397]: AI Studio
+                - listitem [ref=f3e398]:
+                  - link "SpeechKit" [ref=f3e399]:
+                    - /url: en/speechkit/concepts/limits
+                    - generic [ref=f3e401]: SpeechKit
+                - listitem [ref=f3e402]:
+                  - link "Yandex Search API" [ref=f3e403]:
+                    - /url: en/search-api/concepts/limits
+                    - generic [ref=f3e405]: Yandex Search API
+                - listitem [ref=f3e406]:
+                  - link "Vision OCR" [ref=f3e407]:
+                    - /url: en/vision/concepts/limits
+                    - generic [ref=f3e409]: Vision OCR
+                - listitem [ref=f3e410]:
+                  - link "Translate" [ref=f3e411]:
+                    - /url: en/translate/concepts/limits
+                    - generic [ref=f3e413]: Translate
+            - listitem [ref=f3e414] [cursor=pointer]:
+              - button "Pricing policy" [ref=f3e415]:
+                - generic [ref=f3e416]: Pricing policy
+              - list "AI Studio documentation" [ref=f3e417]:
+                - listitem [ref=f3e418]:
+                  - link "AI Studio" [ref=f3e419]:
+                    - /url: en/ai-studio/pricing
+                    - generic [ref=f3e421]: AI Studio
+                - listitem [ref=f3e422]:
+                  - link "SpeechKit" [ref=f3e423]:
+                    - /url: en/speechkit/pricing
+                    - generic [ref=f3e425]: SpeechKit
+                - listitem [ref=f3e426]:
+                  - link "Yandex Search API" [ref=f3e427]:
+                    - /url: en/search-api/pricing
+                    - generic [ref=f3e429]: Yandex Search API
+                - listitem [ref=f3e430]:
+                  - link "Vision OCR" [ref=f3e431]:
+                    - /url: en/vision/pricing
+                    - generic [ref=f3e433]: Vision OCR
+                - listitem [ref=f3e434]:
+                  - link "Translate" [ref=f3e435]:
+                    - /url: en/translate/pricing
+                    - generic [ref=f3e437]: Translate
+            - listitem [ref=f3e438] [cursor=pointer]:
+              - button "Release notes" [ref=f3e439]:
+                - generic [ref=f3e440]: Release notes
+              - list "AI Studio documentation" [ref=f3e441]:
+                - listitem [ref=f3e442]:
+                  - link "AI Studio" [ref=f3e443]:
+                    - /url: en/ai-studio/release-notes/
+                    - generic [ref=f3e445]: AI Studio
+                - listitem [ref=f3e446]:
+                  - 'link "SpeechKit: Speech recognition" [ref=f3e447]':
+                    - /url: en/speechkit/release-notes-stt
+                    - generic [ref=f3e449]: "SpeechKit: Speech recognition"
+                - listitem [ref=f3e450]:
+                  - 'link "SpeechKit: Synthesis" [ref=f3e451]':
+                    - /url: en/speechkit/release-notes-tts
+                    - generic [ref=f3e453]: "SpeechKit: Synthesis"
+                - listitem [ref=f3e454]:
+                  - link "Yandex Search API" [ref=f3e455]:
+                    - /url: en/search-api/release-notes/
+                    - generic [ref=f3e457]: Yandex Search API
+                - listitem [ref=f3e458]:
+                  - link "Vision OCR" [ref=f3e459]:
+                    - /url: en/vision/release-notes
+                    - generic [ref=f3e461]: Vision OCR
+        - navigation "Article navigation" [ref=f3e466]:
+          - heading "In this article:" [level=2] [ref=f3e467]
+          - list "Current article contents" [ref=f3e468]:
+            - listitem [ref=f3e469]:
+              - link "Model lifecycle" [ref=f3e470] [cursor=pointer]:
+                - /url: en/ai-studio/concepts/generation/models#model-lifecycle
+            - listitem [ref=f3e471]:
+              - link "Use cases" [ref=f3e472] [cursor=pointer]:
+                - /url: en/ai-studio/concepts/generation/models#examples
+        - generic [ref=f3e473]:
+          - generic [ref=f3e474]:
+            - button "Reading mode" [ref=f3e475] [cursor=pointer]:
+              - img [ref=f3e478]
+            - button "Settings" [ref=f3e480] [cursor=pointer]:
+              - img [ref=f3e483]
+            - button "Language" [ref=f3e485] [cursor=pointer]:
+              - img [ref=f3e488]
+            - button "Helpful" [ref=f3e490] [cursor=pointer]:
+              - img [ref=f3e493]
+            - button "Not helpful" [ref=f3e495] [cursor=pointer]:
+              - img [ref=f3e498]
+          - generic [ref=f3e500]:
+            - main [ref=f3e501]:
+              - heading "Common instance models" [level=1] [ref=f3e502]:
+                - generic [ref=f3e503]: Common instance models
+              - generic [ref=f3e504]:
+                - paragraph [ref=f3e505]:
+                  - text: Yandex Cloud AI Studio provides access to large generative models from different vendors. If out-of-the-box models are not enough, you can
+                  - link "fine-tune" [ref=f3e506] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/tuning/
+                  - text: some of them for more accurate responses. All roles required for working with the models are listed in
+                  - link "Access management in Yandex Cloud AI Studio" [ref=f3e507] [cursor=pointer]:
+                    - /url: en/ai-studio/security/
+                  - text: .
+                - paragraph [ref=f3e508]:
+                  - text: "In a common instance, model resources are available to all Yandex Cloud users and shared between them, so model response time may increase under heavy workloads. You can be assured that other users have no access to the context of your exchanges with the model: even with logging on, requests are stored anonymized and potentially sensitive information is masked. However, we recommend"
+                  - link "disabling" [ref=f3e509] [cursor=pointer]:
+                    - /url: en/ai-studio/operations/disable-logging
+                  - text: data logging whenever you use our models to process sensitive information.
+                - paragraph [ref=f3e510]:
+                  - text: Common instance models are subject to the update rules described in
+                  - link "Model lifecycle" [ref=f3e511] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models#model-lifecycle
+                  - text: . Modified models share usage
+                  - link "quotas" [ref=f3e512] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/limits#quotas
+                  - text: with their basic models.
+                - table [ref=f3e513]:
+                  - rowgroup [ref=f3e514]:
+                    - row "Model and URI Context Available APIs" [ref=f3e515]:
+                      - cell "Model and URI" [ref=f3e516]:
+                        - paragraph [ref=f3e517]:
+                          - strong [ref=f3e518]: Model and URI
+                      - cell "Context" [ref=f3e519]:
+                        - paragraph [ref=f3e520]:
+                          - strong [ref=f3e521]: Context
+                      - cell "Available APIs" [ref=f3e522]:
+                        - paragraph [ref=f3e523]:
+                          - strong [ref=f3e524]: Available APIs
+                    - row "Alice AI LLM gpt://<folder_ID>/aliceai-llm 64k (65,536) Text generation APIs, OpenAI-compatible APIs" [ref=f3e525]:
+                      - cell "Alice AI LLM gpt://<folder_ID>/aliceai-llm" [ref=f3e526]:
+                        - paragraph [ref=f3e527]:
+                          - strong [ref=f3e528]: Alice AI LLM
+                          - button "gpt://<folder_ID>/aliceai-llm" [ref=f3e529]
+                      - cell "64k (65,536)" [ref=f3e530]:
+                        - paragraph [ref=f3e531]:
+                          - text: 64k
+                          - text: (65,536)
+                      - cell "Text generation APIs, OpenAI-compatible APIs" [ref=f3e532]:
+                        - paragraph [ref=f3e533]: Text generation APIs, OpenAI-compatible APIs
+                    - row "Alice AI LLM Flash gpt://<folder_ID>/aliceai-llm-flash 64k (65,536) OpenAI-compatible APIs" [ref=f3e534]:
+                      - cell "Alice AI LLM Flash gpt://<folder_ID>/aliceai-llm-flash" [ref=f3e535]:
+                        - paragraph [ref=f3e536]:
+                          - strong [ref=f3e537]: Alice AI LLM Flash
+                          - button "gpt://<folder_ID>/aliceai-llm-flash" [ref=f3e538]
+                      - cell "64k (65,536)" [ref=f3e539]:
+                        - paragraph [ref=f3e540]:
+                          - text: 64k
+                          - text: (65,536)
+                      - cell "OpenAI-compatible APIs" [ref=f3e541]:
+                        - paragraph [ref=f3e542]: OpenAI-compatible APIs
+                    - row "YandexGPT Pro 5.1 gpt://<folder_ID>/yandexgpt-5.1 32k (32,768) Text generation APIs, OpenAI-compatible APIs" [ref=f3e543]:
+                      - cell "YandexGPT Pro 5.1 gpt://<folder_ID>/yandexgpt-5.1" [ref=f3e544]:
+                        - paragraph [ref=f3e545]:
+                          - strong [ref=f3e546]: YandexGPT Pro 5.1
+                          - button "gpt://<folder_ID>/yandexgpt-5.1" [ref=f3e547]
+                      - cell "32k (32,768)" [ref=f3e548]:
+                        - paragraph [ref=f3e549]:
+                          - text: 32k
+                          - text: (32,768)
+                      - cell "Text generation APIs, OpenAI-compatible APIs" [ref=f3e550]:
+                        - paragraph [ref=f3e551]: Text generation APIs, OpenAI-compatible APIs
+                    - row "YandexGPT Pro 5 gpt://<folder_ID>/yandexgpt-5-pro 32k (32,768) Text generation APIs, OpenAI-compatible APIs" [ref=f3e552]:
+                      - cell "YandexGPT Pro 5 gpt://<folder_ID>/yandexgpt-5-pro" [ref=f3e553]:
+                        - paragraph [ref=f3e554]:
+                          - strong [ref=f3e555]: YandexGPT Pro 5
+                          - button "gpt://<folder_ID>/yandexgpt-5-pro" [ref=f3e556]
+                      - cell "32k (32,768)" [ref=f3e557]:
+                        - paragraph [ref=f3e558]:
+                          - text: 32k
+                          - text: (32,768)
+                      - cell "Text generation APIs, OpenAI-compatible APIs" [ref=f3e559]:
+                        - paragraph [ref=f3e560]: Text generation APIs, OpenAI-compatible APIs
+                    - row "YandexGPT Lite 5 gpt://<folder_ID>/yandexgpt-5-lite 32k (32,768) Text generation APIs, OpenAI-compatible APIs" [ref=f3e561]:
+                      - cell "YandexGPT Lite 5 gpt://<folder_ID>/yandexgpt-5-lite" [ref=f3e562]:
+                        - paragraph [ref=f3e563]:
+                          - strong [ref=f3e564]: YandexGPT Lite 5
+                          - button "gpt://<folder_ID>/yandexgpt-5-lite" [ref=f3e565]
+                      - cell "32k (32,768)" [ref=f3e566]:
+                        - paragraph [ref=f3e567]:
+                          - text: 32k
+                          - text: (32,768)
+                      - cell "Text generation APIs, OpenAI-compatible APIs" [ref=f3e568]:
+                        - paragraph [ref=f3e569]: Text generation APIs, OpenAI-compatible APIs
+                    - row "DeepSeek V4 Flash gpt://<folder_ID>/deepseek-v4-flash 1M (1,048,576) OpenAI-compatible APIs" [ref=f3e570]:
+                      - cell "DeepSeek V4 Flash gpt://<folder_ID>/deepseek-v4-flash" [ref=f3e571]:
+                        - paragraph [ref=f3e572]:
+                          - strong [ref=f3e573]: DeepSeek V4 Flash
+                          - button "gpt://<folder_ID>/deepseek-v4-flash" [ref=f3e574]
+                      - cell "1M (1,048,576)" [ref=f3e575]:
+                        - paragraph [ref=f3e576]:
+                          - text: 1M
+                          - text: (1,048,576)
+                      - cell "OpenAI-compatible APIs" [ref=f3e577]:
+                        - paragraph [ref=f3e578]: OpenAI-compatible APIs
+                    - row "DeepSeek V3.2 gpt://<folder_ID>/deepseek-v32 exclamation Switched in favor of DeepSeek V4 Flash. The URI will be valid until June 28, 2026. 128k (131,072) OpenAI-compatible APIs" [ref=f3e579]:
+                      - cell "DeepSeek V3.2 gpt://<folder_ID>/deepseek-v32 exclamation Switched in favor of DeepSeek V4 Flash. The URI will be valid until June 28, 2026." [ref=f3e580]:
+                        - paragraph [ref=f3e581]:
+                          - strong [ref=f3e582]: DeepSeek V3.2
+                          - button "gpt://<folder_ID>/deepseek-v32" [ref=f3e583]
+                          - img "exclamation" [ref=f3e584]
+                          - text: Switched in favor of DeepSeek V4 Flash. The URI will be valid until June 28, 2026.
+                      - cell "128k (131,072)" [ref=f3e585]:
+                        - paragraph [ref=f3e586]:
+                          - text: 128k
+                          - text: (131,072)
+                      - cell "OpenAI-compatible APIs" [ref=f3e587]:
+                        - paragraph [ref=f3e588]: OpenAI-compatible APIs
+                    - row "Qwen3 235B gpt://<folder_ID>/qwen3-235b-a22b-fp8 256k (262,144) OpenAI-compatible APIs" [ref=f3e589]:
+                      - cell "Qwen3 235B gpt://<folder_ID>/qwen3-235b-a22b-fp8" [ref=f3e590]:
+                        - paragraph [ref=f3e591]:
+                          - strong [ref=f3e592]: Qwen3 235B
+                          - button "gpt://<folder_ID>/qwen3-235b-a22b-fp8" [ref=f3e593]
+                      - cell "256k (262,144)" [ref=f3e594]:
+                        - paragraph [ref=f3e595]:
+                          - text: 256k
+                          - text: (262,144)
+                      - cell "OpenAI-compatible APIs" [ref=f3e596]:
+                        - paragraph [ref=f3e597]: OpenAI-compatible APIs
+                    - row "gpt-oss-120b gpt://<folder_ID>/gpt-oss-120b 128k (131,072) OpenAI-compatible APIs" [ref=f3e598]:
+                      - cell "gpt-oss-120b gpt://<folder_ID>/gpt-oss-120b" [ref=f3e599]:
+                        - paragraph [ref=f3e600]:
+                          - strong [ref=f3e601]: gpt-oss-120b
+                          - button "gpt://<folder_ID>/gpt-oss-120b" [ref=f3e602]
+                      - cell "128k (131,072)" [ref=f3e603]:
+                        - paragraph [ref=f3e604]:
+                          - text: 128k
+                          - text: (131,072)
+                      - cell "OpenAI-compatible APIs" [ref=f3e605]:
+                        - paragraph [ref=f3e606]: OpenAI-compatible APIs
+                    - row "gpt-oss-20b gpt://<folder_ID>/gpt-oss-20b 128k (131,072) OpenAI-compatible APIs" [ref=f3e607]:
+                      - cell "gpt-oss-20b gpt://<folder_ID>/gpt-oss-20b" [ref=f3e608]:
+                        - paragraph [ref=f3e609]:
+                          - strong [ref=f3e610]: gpt-oss-20b
+                          - button "gpt://<folder_ID>/gpt-oss-20b" [ref=f3e611]
+                      - cell "128k (131,072)" [ref=f3e612]:
+                        - paragraph [ref=f3e613]:
+                          - text: 128k
+                          - text: (131,072)
+                      - cell "OpenAI-compatible APIs" [ref=f3e614]:
+                        - paragraph [ref=f3e615]: OpenAI-compatible APIs
+                    - row "Fine-tuned YandexGPT Lite gpt://<folder_ID>/yandexgpt-lite/latest@<suffix> 32k (32,768) Text generation APIs, OpenAI-compatible APIs" [ref=f3e616]:
+                      - cell "Fine-tuned YandexGPT Lite gpt://<folder_ID>/yandexgpt-lite/latest@<suffix>" [ref=f3e617]:
+                        - paragraph [ref=f3e618]:
+                          - link "Fine-tuned YandexGPT Lite" [ref=f3e619] [cursor=pointer]:
+                            - /url: en/ai-studio/concepts/tuning/
+                            - strong [ref=f3e620]: Fine-tuned YandexGPT Lite
+                          - button "gpt://<folder_ID>/yandexgpt-lite/latest@<suffix>" [ref=f3e621]
+                      - cell "32k (32,768)" [ref=f3e622]:
+                        - paragraph [ref=f3e623]:
+                          - text: 32k
+                          - text: (32,768)
+                      - cell "Text generation APIs, OpenAI-compatible APIs" [ref=f3e624]:
+                        - paragraph [ref=f3e625]: Text generation APIs, OpenAI-compatible APIs
+                    - row "Qwen3.6 35B gpt://<folder_ID>/qwen3.6-35b-a3b 256k (262,144) OpenAI-compatible APIs" [ref=f3e626]:
+                      - cell "Qwen3.6 35B gpt://<folder_ID>/qwen3.6-35b-a3b" [ref=f3e627]:
+                        - paragraph [ref=f3e628]:
+                          - strong [ref=f3e629]: Qwen3.6 35B
+                          - button "gpt://<folder_ID>/qwen3.6-35b-a3b" [ref=f3e630]
+                      - cell "256k (262,144)" [ref=f3e631]:
+                        - paragraph [ref=f3e632]:
+                          - text: 256k
+                          - text: (262,144)
+                      - cell "OpenAI-compatible APIs" [ref=f3e633]:
+                        - paragraph [ref=f3e634]: OpenAI-compatible APIs
+                    - row "Alice AI ART art://<folder_ID>/aliceai-image-art-3.0 500 characters Images API" [ref=f3e635]:
+                      - cell "Alice AI ART art://<folder_ID>/aliceai-image-art-3.0" [ref=f3e636]:
+                        - paragraph [ref=f3e637]:
+                          - strong [ref=f3e638]: Alice AI ART
+                          - button "art://<folder_ID>/aliceai-image-art-3.0" [ref=f3e639]
+                      - cell "500 characters" [ref=f3e640]:
+                        - paragraph [ref=f3e641]: 500 characters
+                      - cell "Images API" [ref=f3e642]:
+                        - paragraph [ref=f3e643]: Images API
+                    - row "YandexART art://<folder_ID>/yandex-art-2.0 500 characters Image generation APIs" [ref=f3e644]:
+                      - cell "YandexART art://<folder_ID>/yandex-art-2.0" [ref=f3e645]:
+                        - paragraph [ref=f3e646]:
+                          - strong [ref=f3e647]: YandexART
+                          - button "art://<folder_ID>/yandex-art-2.0" [ref=f3e648]
+                      - cell "500 characters" [ref=f3e649]:
+                        - paragraph [ref=f3e650]: 500 characters
+                      - cell "Image generation APIs" [ref=f3e651]:
+                        - paragraph [ref=f3e652]: Image generation APIs
+                    - row "Speech Realtime 260528 gpt://<folder_ID>/speech-realtime-260528 64k (65,536) Realtime API" [ref=f3e653]:
+                      - cell "Speech Realtime 260528 gpt://<folder_ID>/speech-realtime-260528" [ref=f3e654]:
+                        - paragraph [ref=f3e655]:
+                          - strong [ref=f3e656]: Speech Realtime 260528
+                          - button "gpt://<folder_ID>/speech-realtime-260528" [ref=f3e657]
+                      - cell "64k (65,536)" [ref=f3e658]:
+                        - paragraph [ref=f3e659]:
+                          - text: 64k
+                          - text: (65,536)
+                      - cell "Realtime API" [ref=f3e660]:
+                        - paragraph [ref=f3e661]: Realtime API
+                    - row "Speech Realtime 250923 gpt://<folder_ID>/speech-realtime-250923 32k (32,768) Realtime API" [ref=f3e662]:
+                      - cell "Speech Realtime 250923 gpt://<folder_ID>/speech-realtime-250923" [ref=f3e663]:
+                        - paragraph [ref=f3e664]:
+                          - strong [ref=f3e665]: Speech Realtime 250923
+                          - button "gpt://<folder_ID>/speech-realtime-250923" [ref=f3e666]
+                      - cell "32k (32,768)" [ref=f3e667]:
+                        - paragraph [ref=f3e668]:
+                          - text: 32k
+                          - text: (32,768)
+                      - cell "Realtime API" [ref=f3e669]:
+                        - paragraph [ref=f3e670]: Realtime API
+                - paragraph [ref=f3e671]: Qwen3.6 35B works with Base64-encoded images.
+                - heading "Model lifecycle" [level=2] [ref=f3e672]:
+                  - link [ref=f3e673] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models#model-lifecycle
+                    - text: "#"
+                    - generic [ref=f3e674]: Model lifecycle
+                  - text: Model lifecycle
+                - paragraph [ref=f3e675]: Each base instance model has its own URI, which allows you to uniquely identify the model family and version. The URI stays with the model until the latter gets decommissioned. If major changes are made, a new version of the model is published separately and gets a URI of its own.
+                - paragraph [ref=f3e676]:
+                  - text: AI Studio informs you in advance about the decommissioning of model versions through
+                  - link "release notes" [ref=f3e677] [cursor=pointer]:
+                    - /url: en/ai-studio/release-notes/
+                  - text: ", the"
+                  - link "user community" [ref=f3e678] [cursor=pointer]:
+                    - /url: https://t.me/YFM_Community
+                  - text: ", and direct mail so you could make proper changes to your products. Until the end of the support period, the version will operate normally, after which all requests sent to the obsolete URI will return the"
+                  - button "400 Bad Request" [ref=f3e679]
+                  - text: error. There is no auto switching between versions.
+                - paragraph [ref=f3e680]: "To keep your apps working with a legacy model onboard, change the model's URI in the code and follow these steps:"
+                - list [ref=f3e681]:
+                  - listitem [ref=f3e682]: Check the prompt and correct it for the new model to perform up to your expectations.
+                  - listitem [ref=f3e683]:
+                    - text: If your legacy model's
+                    - link "quotas" [ref=f3e684] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/limits
+                    - text: had been increased, re-request the necessary quotas for the new one.
+                  - listitem [ref=f3e685]:
+                    - text: If you used a
+                    - link "fine-tuned model" [ref=f3e686] [cursor=pointer]:
+                      - /url: en/ai-studio/concepts/tuning/
+                    - text: ", fine-tune it again."
+                - paragraph [ref=f3e687]: Plan your migration to a new model well in advance because it may take time to test your new model version and fine-tune it again.
+                - paragraph [ref=f3e688]:
+                  - text: All models are covered by the
+                  - link "SLA" [ref=f3e689] [cursor=pointer]:
+                    - /url: https://yandex.cloud/en/docs/overview/sla
+                  - text: .
+                - paragraph [ref=f3e690]:
+                  - text: YandexGPT Pro 5 and YandexGPT Pro 5.1 models remain available at
+                  - button "gpt://<folder_ID>/yandexgpt/latest" [ref=f3e691]
+                  - text: and
+                  - button "gpt://<folder_ID>/yandexgpt/rc" [ref=f3e692]
+                  - text: ", respectively, until the end of support; however, we recommend using their explicit URIs."
+                - heading "Use cases" [level=2] [ref=f3e693]:
+                  - link [ref=f3e694] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/generation/models#examples
+                    - text: "#"
+                    - generic [ref=f3e695]: Use cases
+                  - text: Use cases
+                - list [ref=f3e696]:
+                  - listitem [ref=f3e697]:
+                    - link "Sending a basic request via the Responses API" [ref=f3e698] [cursor=pointer]:
+                      - /url: en/ai-studio/operations/generation/create-prompt
+                  - listitem [ref=f3e699]:
+                    - link "Sending an asynchronous request" [ref=f3e700] [cursor=pointer]:
+                      - /url: en/ai-studio/operations/generation/async-request
+                  - listitem [ref=f3e701]:
+                    - link "Generating an image using YandexART" [ref=f3e702] [cursor=pointer]:
+                      - /url: en/ai-studio/operations/generation/yandexart-request
+              - generic [ref=f3e705]:
+                - heading "Was the article helpful?" [level=3] [ref=f3e706]
+                - generic [ref=f3e707]:
+                  - button "Yes" [ref=f3e708] [cursor=pointer]:
+                    - img [ref=f3e711]
+                    - generic [ref=f3e713]: "Yes"
+                  - button "No" [ref=f3e714] [cursor=pointer]:
+                    - img [ref=f3e717]
+                    - generic [ref=f3e719]: "No"
+            - generic [ref=f3e721]:
+              - generic [ref=f3e722]:
+                - generic [ref=f3e723]: Previous
+                - link "Overview" [ref=f3e725] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/generation/
+                  - img [ref=f3e726]
+                  - generic [ref=f3e728]: Overview
+              - generic [ref=f3e729]:
+                - generic [ref=f3e730]: Next
+                - link "Dedicated instance models" [ref=f3e732] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/generation/dedicated-instance
+                  - generic [ref=f3e733]: Dedicated instance models
+                  - img [ref=f3e734]
+  - alert "Yandex uses cookies" [ref=f3e736]:
+    - generic [ref=f3e737]:
+      - heading "Yandex uses cookies" [level=1] [ref=f3e738]
+      - generic [ref=f3e739]:
+        - text: They ensure the smooth operation of all Yandex sites and services. For more information, please read our
+        - link "Cookie Policy" [ref=f3e740] [cursor=pointer]:
+          - /url: https://yandex.com/legal/cookies_policy_eng/
+      - generic [ref=f3e741]:
+        - button "Allow all" [ref=f3e742] [cursor=pointer]
+        - button "Allow essential cookies" [ref=f3e743] [cursor=pointer]
+        - button "Settings" [ref=f3e744] [cursor=pointer]

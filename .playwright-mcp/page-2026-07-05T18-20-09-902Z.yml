@@ -1,0 +1,539 @@
+- generic [active] [ref=f13e1]:
+  - generic [ref=f13e6]:
+    - navigation [ref=f13e11]:
+      - generic [ref=f13e12]:
+        - link "Logo icon" [ref=f13e14] [cursor=pointer]:
+          - /url: /
+          - img "Logo icon" [ref=f13e16]
+        - list [ref=f13e21]:
+          - listitem [ref=f13e22] [cursor=pointer]:
+            - button "Platform" [ref=f13e23]:
+              - generic [ref=f13e24]: Platform
+              - img [ref=f13e25]:
+                - img [ref=f13e26]
+          - listitem [ref=f13e28] [cursor=pointer]:
+            - button "Businesses" [ref=f13e29]:
+              - generic [ref=f13e30]: Businesses
+              - img [ref=f13e31]:
+                - img [ref=f13e32]
+          - listitem [ref=f13e34] [cursor=pointer]:
+            - link "Developers" [ref=f13e35]:
+              - /url: /developers
+              - generic [ref=f13e36]: Developers
+          - listitem [ref=f13e37] [cursor=pointer]:
+            - link "Documentation" [ref=f13e38]:
+              - /url: /docs/en/
+              - generic [ref=f13e39]: Documentation
+          - listitem [ref=f13e40] [cursor=pointer]:
+            - link "Pricing" [ref=f13e41]:
+              - /url: /docs/en/ai-studio/pricing
+              - generic [ref=f13e42]: Pricing
+        - list [ref=f13e44]:
+          - listitem [ref=f13e45] [cursor=pointer]:
+            - combobox "Search" [ref=f13e49]
+          - listitem [ref=f13e51] [cursor=pointer]:
+            - button "Language" [ref=f13e52]:
+              - img [ref=f13e54]
+              - generic [ref=f13e55]: Language
+              - img [ref=f13e56]:
+                - img [ref=f13e57]
+          - listitem [ref=f13e59] [cursor=pointer]:
+            - link "Contact us" [ref=f13e60]:
+              - /url: /en#contact-form
+              - generic [ref=f13e63]: Contact us
+          - listitem [ref=f13e64] [cursor=pointer]:
+            - link "Log in" [ref=f13e65]:
+              - /url: /platform
+              - generic [ref=f13e68]: Log in
+    - main [ref=f13e69]:
+      - generic [ref=f13e78]:
+        - navigation [ref=f13e80]:
+          - link "AI Studio documentation" [ref=f13e82] [cursor=pointer]:
+            - /url: en/
+            - generic [ref=f13e83]: AI Studio documentation
+          - list "AI Studio documentation" [ref=f13e85]:
+            - listitem [ref=f13e86] [cursor=pointer]:
+              - link "Getting started" [ref=f13e87]:
+                - /url: en/ai-studio/quickstart/
+                - generic [ref=f13e89]: Getting started
+            - listitem [ref=f13e90] [cursor=pointer]:
+              - button "AI Studio" [ref=f13e91]:
+                - generic [ref=f13e92]: AI Studio
+              - list "AI Studio documentation" [ref=f13e93]:
+                - listitem [ref=f13e94]:
+                  - link "About AI Studio" [ref=f13e95]:
+                    - /url: en/ai-studio/concepts/
+                    - generic [ref=f13e97]: About AI Studio
+                - listitem [ref=f13e98]:
+                  - button "Drop-down list Model Gallery" [ref=f13e99]:
+                    - img [ref=f13e100]
+                    - generic [ref=f13e102]: Model Gallery
+                - listitem [ref=f13e103]:
+                  - button "Drop-down list Agent Atelier" [ref=f13e104]:
+                    - img [ref=f13e105]
+                    - generic [ref=f13e107]: Agent Atelier
+                - listitem [ref=f13e108]:
+                  - button "Drop-down list MCP Hub" [ref=f13e109]:
+                    - img [ref=f13e110]
+                    - generic [ref=f13e112]: MCP Hub
+                - listitem [ref=f13e113]:
+                  - button "Drop-down list AI Search" [ref=f13e114]:
+                    - img [ref=f13e115]
+                    - generic [ref=f13e117]: AI Search
+                - listitem [ref=f13e118]:
+                  - button "Drop-down list Step-by-step guides" [ref=f13e119]:
+                    - img [ref=f13e120]
+                    - generic [ref=f13e122]: Step-by-step guides
+                - listitem [ref=f13e123]:
+                  - button "Drop-down list API references" [expanded] [ref=f13e124]:
+                    - img [ref=f13e125]
+                    - generic [ref=f13e127]: API references
+                  - list "AI Studio documentation" [ref=f13e128]:
+                    - listitem [ref=f13e129]:
+                      - link "Overview" [ref=f13e130]:
+                        - /url: en/ai-studio/concepts/api
+                        - generic [ref=f13e132]: Overview
+                    - listitem [ref=f13e133]:
+                      - link "API authentication" [ref=f13e134]:
+                        - /url: en/ai-studio/api-ref/authentication
+                        - generic [ref=f13e136]: API authentication
+                    - listitem [ref=f13e137]:
+                      - button "Drop-down list OpenAI-compatible APIs" [expanded] [ref=f13e138]:
+                        - img [ref=f13e139]
+                        - generic [ref=f13e141]: OpenAI-compatible APIs
+                      - list "AI Studio documentation" [ref=f13e142]:
+                        - listitem [ref=f13e143]:
+                          - link "Overview" [ref=f13e144]:
+                            - /url: en/ai-studio/api/
+                            - generic [ref=f13e146]: Overview
+                        - listitem [ref=f13e147]:
+                          - button "Drop-down list Chat Completions" [ref=f13e148]:
+                            - img [ref=f13e149]
+                            - generic [ref=f13e151]: Chat Completions
+                        - listitem [ref=f13e152]:
+                          - button "Drop-down list Conversations" [ref=f13e153]:
+                            - img [ref=f13e154]
+                            - generic [ref=f13e156]: Conversations
+                        - listitem [ref=f13e157]:
+                          - button "Drop-down list Embeddings" [ref=f13e158]:
+                            - img [ref=f13e159]
+                            - generic [ref=f13e161]: Embeddings
+                        - listitem [ref=f13e162]:
+                          - button "Drop-down list Files" [ref=f13e163]:
+                            - img [ref=f13e164]
+                            - generic [ref=f13e166]: Files
+                        - listitem [ref=f13e167]:
+                          - button "Drop-down list Images" [ref=f13e168]:
+                            - img [ref=f13e169]
+                            - generic [ref=f13e171]: Images
+                        - listitem [ref=f13e172]:
+                          - button "Drop-down list Models" [ref=f13e173]:
+                            - img [ref=f13e174]
+                            - generic [ref=f13e176]: Models
+                        - listitem [ref=f13e177]:
+                          - button "Drop-down list Responses" [ref=f13e178]:
+                            - img [ref=f13e179]
+                            - generic [ref=f13e181]: Responses
+                        - listitem [ref=f13e182]:
+                          - button "Drop-down list Vector stores" [ref=f13e183]:
+                            - img [ref=f13e184]
+                            - generic [ref=f13e186]: Vector stores
+                        - listitem [ref=f13e187]:
+                          - button "Drop-down list Realtime" [ref=f13e188]:
+                            - img [ref=f13e189]
+                            - generic [ref=f13e191]: Realtime
+                    - listitem [ref=f13e192]:
+                      - button "Drop-down list Text Generation API" [ref=f13e193]:
+                        - img [ref=f13e194]
+                        - generic [ref=f13e196]: Text Generation API
+                    - listitem [ref=f13e197]:
+                      - button "Drop-down list Image Generation API" [ref=f13e198]:
+                        - img [ref=f13e199]
+                        - generic [ref=f13e201]: Image Generation API
+                    - listitem [ref=f13e202]:
+                      - button "Drop-down list Batch Inference API" [ref=f13e203]:
+                        - img [ref=f13e204]
+                        - generic [ref=f13e206]: Batch Inference API
+                    - listitem [ref=f13e207]:
+                      - button "Drop-down list Text Classification API" [ref=f13e208]:
+                        - img [ref=f13e209]
+                        - generic [ref=f13e211]: Text Classification API
+                    - listitem [ref=f13e212]:
+                      - button "Drop-down list Embeddings API" [ref=f13e213]:
+                        - img [ref=f13e214]
+                        - generic [ref=f13e216]: Embeddings API
+                    - listitem [ref=f13e217]:
+                      - button "Drop-down list Files API" [ref=f13e218]:
+                        - img [ref=f13e219]
+                        - generic [ref=f13e221]: Files API
+                    - listitem [ref=f13e222]:
+                      - button "Drop-down list Dataset API" [ref=f13e223]:
+                        - img [ref=f13e224]
+                        - generic [ref=f13e226]: Dataset API
+                    - listitem [ref=f13e227]:
+                      - button "Drop-down list Tuning API" [ref=f13e228]:
+                        - img [ref=f13e229]
+                        - generic [ref=f13e231]: Tuning API
+                    - listitem [ref=f13e232]:
+                      - button "Drop-down list MCP Gateway API" [ref=f13e233]:
+                        - img [ref=f13e234]
+                        - generic [ref=f13e236]: MCP Gateway API
+                - listitem [ref=f13e237]:
+                  - button "Drop-down list Yandex Cloud ML SDK" [ref=f13e238]:
+                    - img [ref=f13e239]
+                    - generic [ref=f13e241]: Yandex Cloud ML SDK
+                - listitem [ref=f13e242]:
+                  - link "Public materials" [ref=f13e243]:
+                    - /url: en/ai-studio/public-talks
+                    - generic [ref=f13e245]: Public materials
+                - listitem [ref=f13e246]:
+                  - link "Terms and definitions" [ref=f13e247]:
+                    - /url: en/ai-studio/concepts/glossary
+                    - generic [ref=f13e249]: Terms and definitions
+                - listitem [ref=f13e250]:
+                  - link "FAQ" [ref=f13e251]:
+                    - /url: en/ai-studio/qa/
+                    - generic [ref=f13e253]: FAQ
+                - listitem [ref=f13e254]:
+                  - button "Drop-down list Troubleshooting" [ref=f13e255]:
+                    - img [ref=f13e256]
+                    - generic [ref=f13e258]: Troubleshooting
+            - listitem [ref=f13e259] [cursor=pointer]:
+              - button "SpeechKit" [ref=f13e260]:
+                - generic [ref=f13e261]: SpeechKit
+              - list "AI Studio documentation" [ref=f13e262]:
+                - listitem [ref=f13e263]:
+                  - link "SpeechKit technology overview" [ref=f13e264]:
+                    - /url: en/speechkit/overview
+                    - generic [ref=f13e266]: SpeechKit technology overview
+                - listitem [ref=f13e267]:
+                  - button "Drop-down list Getting started with SpeechKit" [ref=f13e268]:
+                    - img [ref=f13e269]
+                    - generic [ref=f13e271]: Getting started with SpeechKit
+                - listitem [ref=f13e272]:
+                  - button "Drop-down list Speech recognition" [ref=f13e273]:
+                    - img [ref=f13e274]
+                    - generic [ref=f13e276]: Speech recognition
+                - listitem [ref=f13e277]:
+                  - button "Drop-down list Speech synthesis" [ref=f13e278]:
+                    - img [ref=f13e279]
+                    - generic [ref=f13e281]: Speech synthesis
+                - listitem [ref=f13e282]:
+                  - button "Drop-down list Step-by-step guides" [ref=f13e283]:
+                    - img [ref=f13e284]
+                    - generic [ref=f13e286]: Step-by-step guides
+                - listitem [ref=f13e287]:
+                  - button "Drop-down list SpeechKit Hybrid" [ref=f13e288]:
+                    - img [ref=f13e289]
+                    - generic [ref=f13e291]: SpeechKit Hybrid
+                - listitem [ref=f13e292]:
+                  - button "Drop-down list API references" [ref=f13e293]:
+                    - img [ref=f13e294]
+                    - generic [ref=f13e296]: API references
+                - listitem [ref=f13e297]:
+                  - link "Supported audio formats" [ref=f13e298]:
+                    - /url: en/speechkit/formats
+                    - generic [ref=f13e300]: Supported audio formats
+                - listitem [ref=f13e301]:
+                  - link "IVR integration" [ref=f13e302]:
+                    - /url: en/speechkit/concepts/ivr-integration
+                    - generic [ref=f13e304]: IVR integration
+                - listitem [ref=f13e305]:
+                  - button "Drop-down list Troubleshooting" [ref=f13e306]:
+                    - img [ref=f13e307]
+                    - generic [ref=f13e309]: Troubleshooting
+            - listitem [ref=f13e310] [cursor=pointer]:
+              - button "Yandex Search API" [ref=f13e311]:
+                - generic [ref=f13e312]: Yandex Search API
+              - list "AI Studio documentation" [ref=f13e313]:
+                - listitem [ref=f13e314]:
+                  - link "About Yandex Search API" [ref=f13e315]:
+                    - /url: en/search-api/concepts/
+                    - generic [ref=f13e317]: About Yandex Search API
+                - listitem [ref=f13e318]:
+                  - link "Getting started" [ref=f13e319]:
+                    - /url: en/search-api/quickstart/
+                    - generic [ref=f13e321]: Getting started
+                - listitem [ref=f13e322]:
+                  - button "Drop-down list Concepts" [ref=f13e323]:
+                    - img [ref=f13e324]
+                    - generic [ref=f13e326]: Concepts
+                - listitem [ref=f13e327]:
+                  - button "Drop-down list Step-by-step guides" [ref=f13e328]:
+                    - img [ref=f13e329]
+                    - generic [ref=f13e331]: Step-by-step guides
+                - listitem [ref=f13e332]:
+                  - button "Drop-down list API reference" [ref=f13e333]:
+                    - img [ref=f13e334]
+                    - generic [ref=f13e336]: API reference
+                - listitem [ref=f13e337]:
+                  - button "Drop-down list Apps" [ref=f13e338]:
+                    - img [ref=f13e339]
+                    - generic [ref=f13e341]: Apps
+            - listitem [ref=f13e342] [cursor=pointer]:
+              - button "Vision OCR" [ref=f13e343]:
+                - generic [ref=f13e344]: Vision OCR
+              - list "AI Studio documentation" [ref=f13e345]:
+                - listitem [ref=f13e346]:
+                  - link "About Vision OCR" [ref=f13e347]:
+                    - /url: en/vision/concepts/ocr/
+                    - generic [ref=f13e349]: About Vision OCR
+                - listitem [ref=f13e350]:
+                  - link "Getting started" [ref=f13e351]:
+                    - /url: en/vision/quickstart
+                    - generic [ref=f13e353]: Getting started
+                - listitem [ref=f13e354]:
+                  - button "Drop-down list Concepts" [ref=f13e355]:
+                    - img [ref=f13e356]
+                    - generic [ref=f13e358]: Concepts
+                - listitem [ref=f13e359]:
+                  - button "Drop-down list Step-by-step guides" [ref=f13e360]:
+                    - img [ref=f13e361]
+                    - generic [ref=f13e363]: Step-by-step guides
+                - listitem [ref=f13e364]:
+                  - button "Drop-down list API references" [ref=f13e365]:
+                    - img [ref=f13e366]
+                    - generic [ref=f13e368]: API references
+                - listitem [ref=f13e369]:
+                  - button "Drop-down list Troubleshooting" [ref=f13e370]:
+                    - img [ref=f13e371]
+                    - generic [ref=f13e373]: Troubleshooting
+                - listitem [ref=f13e374]:
+                  - link "FAQ" [ref=f13e375]:
+                    - /url: en/vision/qa/
+                    - generic [ref=f13e377]: FAQ
+            - listitem [ref=f13e378] [cursor=pointer]:
+              - button "Translate" [ref=f13e379]:
+                - generic [ref=f13e380]: Translate
+              - list "AI Studio documentation" [ref=f13e381]:
+                - listitem [ref=f13e382]:
+                  - link "About Translate" [ref=f13e383]:
+                    - /url: en/translate/concepts/
+                    - generic [ref=f13e385]: About Translate
+                - listitem [ref=f13e386]:
+                  - link "Getting started" [ref=f13e387]:
+                    - /url: en/translate/quickstart
+                    - generic [ref=f13e389]: Getting started
+                - listitem [ref=f13e390]:
+                  - button "Drop-down list Concepts" [ref=f13e391]:
+                    - img [ref=f13e392]
+                    - generic [ref=f13e394]: Concepts
+                - listitem [ref=f13e395]:
+                  - button "Drop-down list Step-by-step guides" [ref=f13e396]:
+                    - img [ref=f13e397]
+                    - generic [ref=f13e399]: Step-by-step guides
+                - listitem [ref=f13e400]:
+                  - button "Drop-down list API reference" [ref=f13e401]:
+                    - img [ref=f13e402]
+                    - generic [ref=f13e404]: API reference
+                - listitem [ref=f13e405]:
+                  - button "Drop-down list Troubleshooting" [ref=f13e406]:
+                    - img [ref=f13e407]
+                    - generic [ref=f13e409]: Troubleshooting
+            - listitem [ref=f13e410] [cursor=pointer]:
+              - button "Security" [ref=f13e411]:
+                - generic [ref=f13e412]: Security
+              - list "AI Studio documentation" [ref=f13e413]:
+                - listitem [ref=f13e414]:
+                  - link "Getting an API key" [ref=f13e415]:
+                    - /url: en/ai-studio/operations/get-api-key
+                    - generic [ref=f13e417]: Getting an API key
+                - listitem [ref=f13e418]:
+                  - link "Disabling request logging" [ref=f13e419]:
+                    - /url: en/ai-studio/operations/disable-logging
+                    - generic [ref=f13e421]: Disabling request logging
+                - listitem [ref=f13e422]:
+                  - button "Drop-down list Guardrails" [ref=f13e423]:
+                    - img [ref=f13e424]
+                    - generic [ref=f13e426]: Guardrails
+                - listitem [ref=f13e427]:
+                  - button "Drop-down list Access management" [ref=f13e428]:
+                    - img [ref=f13e429]
+                    - generic [ref=f13e431]: Access management
+                - listitem [ref=f13e432]:
+                  - button "Drop-down list Audit Trails events" [ref=f13e433]:
+                    - img [ref=f13e434]
+                    - generic [ref=f13e436]: Audit Trails events
+                - listitem [ref=f13e437]:
+                  - button "Drop-down list Metrics Monitoring" [ref=f13e438]:
+                    - img [ref=f13e439]
+                    - generic [ref=f13e441]: Metrics Monitoring
+            - listitem [ref=f13e442] [cursor=pointer]:
+              - button "Quotas and limits" [ref=f13e443]:
+                - generic [ref=f13e444]: Quotas and limits
+              - list "AI Studio documentation" [ref=f13e445]:
+                - listitem [ref=f13e446]:
+                  - link "AI Studio" [ref=f13e447]:
+                    - /url: en/ai-studio/concepts/limits
+                    - generic [ref=f13e449]: AI Studio
+                - listitem [ref=f13e450]:
+                  - link "SpeechKit" [ref=f13e451]:
+                    - /url: en/speechkit/concepts/limits
+                    - generic [ref=f13e453]: SpeechKit
+                - listitem [ref=f13e454]:
+                  - link "Yandex Search API" [ref=f13e455]:
+                    - /url: en/search-api/concepts/limits
+                    - generic [ref=f13e457]: Yandex Search API
+                - listitem [ref=f13e458]:
+                  - link "Vision OCR" [ref=f13e459]:
+                    - /url: en/vision/concepts/limits
+                    - generic [ref=f13e461]: Vision OCR
+                - listitem [ref=f13e462]:
+                  - link "Translate" [ref=f13e463]:
+                    - /url: en/translate/concepts/limits
+                    - generic [ref=f13e465]: Translate
+            - listitem [ref=f13e466] [cursor=pointer]:
+              - button "Pricing policy" [ref=f13e467]:
+                - generic [ref=f13e468]: Pricing policy
+              - list "AI Studio documentation" [ref=f13e469]:
+                - listitem [ref=f13e470]:
+                  - link "AI Studio" [ref=f13e471]:
+                    - /url: en/ai-studio/pricing
+                    - generic [ref=f13e473]: AI Studio
+                - listitem [ref=f13e474]:
+                  - link "SpeechKit" [ref=f13e475]:
+                    - /url: en/speechkit/pricing
+                    - generic [ref=f13e477]: SpeechKit
+                - listitem [ref=f13e478]:
+                  - link "Yandex Search API" [ref=f13e479]:
+                    - /url: en/search-api/pricing
+                    - generic [ref=f13e481]: Yandex Search API
+                - listitem [ref=f13e482]:
+                  - link "Vision OCR" [ref=f13e483]:
+                    - /url: en/vision/pricing
+                    - generic [ref=f13e485]: Vision OCR
+                - listitem [ref=f13e486]:
+                  - link "Translate" [ref=f13e487]:
+                    - /url: en/translate/pricing
+                    - generic [ref=f13e489]: Translate
+            - listitem [ref=f13e490] [cursor=pointer]:
+              - button "Release notes" [ref=f13e491]:
+                - generic [ref=f13e492]: Release notes
+              - list "AI Studio documentation" [ref=f13e493]:
+                - listitem [ref=f13e494]:
+                  - link "AI Studio" [ref=f13e495]:
+                    - /url: en/ai-studio/release-notes/
+                    - generic [ref=f13e497]: AI Studio
+                - listitem [ref=f13e498]:
+                  - 'link "SpeechKit: Speech recognition" [ref=f13e499]':
+                    - /url: en/speechkit/release-notes-stt
+                    - generic [ref=f13e501]: "SpeechKit: Speech recognition"
+                - listitem [ref=f13e502]:
+                  - 'link "SpeechKit: Synthesis" [ref=f13e503]':
+                    - /url: en/speechkit/release-notes-tts
+                    - generic [ref=f13e505]: "SpeechKit: Synthesis"
+                - listitem [ref=f13e506]:
+                  - link "Yandex Search API" [ref=f13e507]:
+                    - /url: en/search-api/release-notes/
+                    - generic [ref=f13e509]: Yandex Search API
+                - listitem [ref=f13e510]:
+                  - link "Vision OCR" [ref=f13e511]:
+                    - /url: en/vision/release-notes
+                    - generic [ref=f13e513]: Vision OCR
+        - navigation "Article navigation" [ref=f13e518]:
+          - heading "In this article:" [level=2] [ref=f13e519]
+          - list "Current article contents" [ref=f13e520]:
+            - listitem [ref=f13e521]:
+              - link "Contacts" [ref=f13e522] [cursor=pointer]:
+                - /url: en/ai-studio/api/#contacts
+            - listitem [ref=f13e523]:
+              - link "Sections" [ref=f13e524] [cursor=pointer]:
+                - /url: en/ai-studio/api/#sections
+        - generic [ref=f13e525]:
+          - generic [ref=f13e526]:
+            - button "Reading mode" [ref=f13e527] [cursor=pointer]:
+              - img [ref=f13e530]
+            - button "Settings" [ref=f13e532] [cursor=pointer]:
+              - img [ref=f13e535]
+            - button "Language" [ref=f13e537] [cursor=pointer]:
+              - img [ref=f13e540]
+            - button "Helpful" [ref=f13e542] [cursor=pointer]:
+              - img [ref=f13e545]
+            - button "Not helpful" [ref=f13e547] [cursor=pointer]:
+              - img [ref=f13e550]
+          - generic [ref=f13e552]:
+            - main [ref=f13e553]:
+              - generic [ref=f13e554]:
+                - heading "Yandex AI Studio OpenAI-compatible API" [level=1] [ref=f13e555]
+                - paragraph [ref=f13e556]: "version: 2.0.0"
+                - paragraph [ref=f13e557]:
+                  - link "Terms of service" [ref=f13e558] [cursor=pointer]:
+                    - /url: https://yandex.ru/legal/cloud_terms_yandex_ai_studio/
+                - paragraph [ref=f13e559]:
+                  - link "MIT" [ref=f13e560] [cursor=pointer]:
+                    - /url: https://opensource.org/license/mit
+                - paragraph [ref=f13e561]: The Yandex OpenAI-compatible REST and WebSocket APIs. OpenAI-compatible APIs support integration with the popular LangChain and LangGraph frameworks.
+                - heading "Contacts" [level=2] [ref=f13e562]:
+                  - link [ref=f13e563] [cursor=pointer]:
+                    - /url: en/ai-studio/api/#contacts
+                    - text: "#"
+                    - generic [ref=f13e564]: Contacts
+                  - text: Contacts
+                - list [ref=f13e565]:
+                  - listitem [ref=f13e566]:
+                    - link "Yandex Cloud Support web" [ref=f13e567] [cursor=pointer]:
+                      - /url: https://center.yandex.cloud/support
+                - heading "Sections" [level=2] [ref=f13e568]:
+                  - link [ref=f13e569] [cursor=pointer]:
+                    - /url: en/ai-studio/api/#sections
+                    - text: "#"
+                    - generic [ref=f13e570]: Sections
+                  - text: Sections
+                - list [ref=f13e571]:
+                  - listitem [ref=f13e572]:
+                    - link "Chat Completions" [ref=f13e573] [cursor=pointer]:
+                      - /url: en/ai-studio/api/Chat-Completions/
+                  - listitem [ref=f13e574]:
+                    - link "Conversations" [ref=f13e575] [cursor=pointer]:
+                      - /url: en/ai-studio/api/Conversations/
+                  - listitem [ref=f13e576]:
+                    - link "Embeddings" [ref=f13e577] [cursor=pointer]:
+                      - /url: en/ai-studio/api/Embeddings/
+                  - listitem [ref=f13e578]:
+                    - link "Files" [ref=f13e579] [cursor=pointer]:
+                      - /url: en/ai-studio/api/Files/
+                  - listitem [ref=f13e580]:
+                    - link "Images" [ref=f13e581] [cursor=pointer]:
+                      - /url: en/ai-studio/api/Images/
+                  - listitem [ref=f13e582]:
+                    - link "Models" [ref=f13e583] [cursor=pointer]:
+                      - /url: en/ai-studio/api/Models/
+                  - listitem [ref=f13e584]:
+                    - link "Responses" [ref=f13e585] [cursor=pointer]:
+                      - /url: en/ai-studio/api/Responses/
+                  - listitem [ref=f13e586]:
+                    - link "Vector stores" [ref=f13e587] [cursor=pointer]:
+                      - /url: en/ai-studio/api/Vector-stores/
+              - generic [ref=f13e590]:
+                - heading "Was the article helpful?" [level=3] [ref=f13e591]
+                - generic [ref=f13e592]:
+                  - button "Yes" [ref=f13e593] [cursor=pointer]:
+                    - img [ref=f13e596]
+                    - generic [ref=f13e598]: "Yes"
+                  - button "No" [ref=f13e599] [cursor=pointer]:
+                    - img [ref=f13e602]
+                    - generic [ref=f13e604]: "No"
+            - generic [ref=f13e606]:
+              - generic [ref=f13e607]:
+                - generic [ref=f13e608]: Previous
+                - link "API authentication" [ref=f13e610] [cursor=pointer]:
+                  - /url: en/ai-studio/api-ref/authentication
+                  - img [ref=f13e611]
+                  - generic [ref=f13e613]: API authentication
+              - generic [ref=f13e614]:
+                - generic [ref=f13e615]: Next
+                - link "Overview" [ref=f13e617] [cursor=pointer]:
+                  - /url: en/ai-studio/api/Chat-Completions/
+                  - generic [ref=f13e618]: Overview
+                  - img [ref=f13e619]
+  - alert "Yandex uses cookies" [ref=f13e621]:
+    - generic [ref=f13e622]:
+      - heading "Yandex uses cookies" [level=1] [ref=f13e623]
+      - generic [ref=f13e624]:
+        - text: They ensure the smooth operation of all Yandex sites and services. For more information, please read our
+        - link "Cookie Policy" [ref=f13e625] [cursor=pointer]:
+          - /url: https://yandex.com/legal/cookies_policy_eng/
+      - generic [ref=f13e626]:
+        - button "Allow all" [ref=f13e627] [cursor=pointer]
+        - button "Allow essential cookies" [ref=f13e628] [cursor=pointer]
+        - button "Settings" [ref=f13e629] [cursor=pointer]

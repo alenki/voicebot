@@ -1,0 +1,1232 @@
+- generic [ref=f15e6]:
+  - navigation [ref=f15e11]:
+    - generic [ref=f15e12]:
+      - link "Logo icon" [ref=f15e14] [cursor=pointer]:
+        - /url: /
+        - img "Logo icon" [ref=f15e16]
+      - generic [ref=f15e18]:
+        - list [ref=f15e21]:
+          - listitem [ref=f15e22] [cursor=pointer]:
+            - button "Platform" [ref=f15e23]:
+              - generic [ref=f15e24]: Platform
+              - img [ref=f15e25]:
+                - img [ref=f15e26]
+          - listitem [ref=f15e28] [cursor=pointer]:
+            - button "Businesses" [ref=f15e29]:
+              - generic [ref=f15e30]: Businesses
+              - img [ref=f15e31]:
+                - img [ref=f15e32]
+          - listitem [ref=f15e34] [cursor=pointer]:
+            - link "Developers" [ref=f15e35]:
+              - /url: /developers
+              - generic [ref=f15e36]: Developers
+          - listitem [ref=f15e37] [cursor=pointer]:
+            - link "Documentation" [ref=f15e38]:
+              - /url: /docs/en/
+              - generic [ref=f15e39]: Documentation
+          - listitem [ref=f15e40] [cursor=pointer]:
+            - link "Pricing" [ref=f15e41]:
+              - /url: /docs/en/ai-studio/pricing
+              - generic [ref=f15e42]: Pricing
+        - button "Next" [ref=f15e43] [cursor=pointer]:
+          - img [ref=f15e44]:
+            - img [ref=f15e45]
+      - generic [ref=f15e47]:
+        - generic:
+          - generic:
+            - button "Next":
+              - img [ref=f15e48] [cursor=pointer]:
+                - img [ref=f15e49]
+        - list [ref=f15e51]:
+          - listitem [ref=f15e52] [cursor=pointer]:
+            - combobox "Search" [ref=f15e56]
+          - listitem [ref=f15e58] [cursor=pointer]:
+            - button "Language" [ref=f15e59]:
+              - img [ref=f15e61]
+              - generic [ref=f15e62]: Language
+              - img [ref=f15e63]:
+                - img [ref=f15e64]
+          - listitem [ref=f15e66] [cursor=pointer]:
+            - link "Contact us" [ref=f15e67]:
+              - /url: /en#contact-form
+              - generic [ref=f15e70]: Contact us
+          - listitem [ref=f15e71] [cursor=pointer]:
+            - link "Log in" [ref=f15e72]:
+              - /url: /platform
+              - generic [ref=f15e75]: Log in
+  - main [ref=f15e76]:
+    - generic [ref=f15e85]:
+      - navigation [ref=f15e87]:
+        - link "AI Studio documentation" [ref=f15e89] [cursor=pointer]:
+          - /url: en/
+          - generic [ref=f15e90]: AI Studio documentation
+        - list "AI Studio documentation" [ref=f15e92]:
+          - listitem [ref=f15e93] [cursor=pointer]:
+            - link "Getting started" [ref=f15e94]:
+              - /url: en/ai-studio/quickstart/
+              - generic [ref=f15e96]: Getting started
+          - listitem [ref=f15e97] [cursor=pointer]:
+            - button "AI Studio" [ref=f15e98]:
+              - generic [ref=f15e99]: AI Studio
+            - list "AI Studio documentation" [ref=f15e100]:
+              - listitem [ref=f15e101]:
+                - link "About AI Studio" [ref=f15e102]:
+                  - /url: en/ai-studio/concepts/
+                  - generic [ref=f15e104]: About AI Studio
+              - listitem [ref=f15e105]:
+                - button "Drop-down list Model Gallery" [ref=f15e106]:
+                  - img [ref=f15e107]
+                  - generic [ref=f15e109]: Model Gallery
+              - listitem [ref=f15e110]:
+                - button "Drop-down list Agent Atelier" [ref=f15e111]:
+                  - img [ref=f15e112]
+                  - generic [ref=f15e114]: Agent Atelier
+              - listitem [ref=f15e115]:
+                - button "Drop-down list MCP Hub" [ref=f15e116]:
+                  - img [ref=f15e117]
+                  - generic [ref=f15e119]: MCP Hub
+              - listitem [ref=f15e120]:
+                - button "Drop-down list AI Search" [ref=f15e121]:
+                  - img [ref=f15e122]
+                  - generic [ref=f15e124]: AI Search
+              - listitem [ref=f15e125]:
+                - button "Drop-down list Step-by-step guides" [ref=f15e126]:
+                  - img [ref=f15e127]
+                  - generic [ref=f15e129]: Step-by-step guides
+              - listitem [ref=f15e130]:
+                - button "Drop-down list API references" [ref=f15e131]:
+                  - img [ref=f15e132]
+                  - generic [ref=f15e134]: API references
+              - listitem [ref=f15e135]:
+                - button "Drop-down list Yandex Cloud ML SDK" [ref=f15e136]:
+                  - img [ref=f15e137]
+                  - generic [ref=f15e139]: Yandex Cloud ML SDK
+              - listitem [ref=f15e140]:
+                - link "Public materials" [ref=f15e141]:
+                  - /url: en/ai-studio/public-talks
+                  - generic [ref=f15e143]: Public materials
+              - listitem [ref=f15e144]:
+                - link "Terms and definitions" [ref=f15e145]:
+                  - /url: en/ai-studio/concepts/glossary
+                  - generic [ref=f15e147]: Terms and definitions
+              - listitem [ref=f15e148]:
+                - link "FAQ" [ref=f15e149]:
+                  - /url: en/ai-studio/qa/
+                  - generic [ref=f15e151]: FAQ
+              - listitem [ref=f15e152]:
+                - button "Drop-down list Troubleshooting" [ref=f15e153]:
+                  - img [ref=f15e154]
+                  - generic [ref=f15e156]: Troubleshooting
+          - listitem [ref=f15e157] [cursor=pointer]:
+            - button "SpeechKit" [ref=f15e158]:
+              - generic [ref=f15e159]: SpeechKit
+            - list "AI Studio documentation" [ref=f15e160]:
+              - listitem [ref=f15e161]:
+                - link "SpeechKit technology overview" [ref=f15e162]:
+                  - /url: en/speechkit/overview
+                  - generic [ref=f15e164]: SpeechKit technology overview
+              - listitem [ref=f15e165]:
+                - button "Drop-down list Getting started with SpeechKit" [ref=f15e166]:
+                  - img [ref=f15e167]
+                  - generic [ref=f15e169]: Getting started with SpeechKit
+              - listitem [ref=f15e170]:
+                - button "Drop-down list Speech recognition" [ref=f15e171]:
+                  - img [ref=f15e172]
+                  - generic [ref=f15e174]: Speech recognition
+              - listitem [ref=f15e175]:
+                - button "Drop-down list Speech synthesis" [ref=f15e176]:
+                  - img [ref=f15e177]
+                  - generic [ref=f15e179]: Speech synthesis
+              - listitem [ref=f15e180]:
+                - button "Drop-down list Step-by-step guides" [ref=f15e181]:
+                  - img [ref=f15e182]
+                  - generic [ref=f15e184]: Step-by-step guides
+              - listitem [ref=f15e185]:
+                - button "Drop-down list SpeechKit Hybrid" [ref=f15e186]:
+                  - img [ref=f15e187]
+                  - generic [ref=f15e189]: SpeechKit Hybrid
+              - listitem [ref=f15e190]:
+                - button "Drop-down list API references" [ref=f15e191]:
+                  - img [ref=f15e192]
+                  - generic [ref=f15e194]: API references
+              - listitem [ref=f15e195]:
+                - link "Supported audio formats" [ref=f15e196]:
+                  - /url: en/speechkit/formats
+                  - generic [ref=f15e198]: Supported audio formats
+              - listitem [ref=f15e199]:
+                - link "IVR integration" [ref=f15e200]:
+                  - /url: en/speechkit/concepts/ivr-integration
+                  - generic [ref=f15e202]: IVR integration
+              - listitem [ref=f15e203]:
+                - button "Drop-down list Troubleshooting" [ref=f15e204]:
+                  - img [ref=f15e205]
+                  - generic [ref=f15e207]: Troubleshooting
+          - listitem [ref=f15e208] [cursor=pointer]:
+            - button "Yandex Search API" [ref=f15e209]:
+              - generic [ref=f15e210]: Yandex Search API
+            - list "AI Studio documentation" [ref=f15e211]:
+              - listitem [ref=f15e212]:
+                - link "About Yandex Search API" [ref=f15e213]:
+                  - /url: en/search-api/concepts/
+                  - generic [ref=f15e215]: About Yandex Search API
+              - listitem [ref=f15e216]:
+                - link "Getting started" [ref=f15e217]:
+                  - /url: en/search-api/quickstart/
+                  - generic [ref=f15e219]: Getting started
+              - listitem [ref=f15e220]:
+                - button "Drop-down list Concepts" [ref=f15e221]:
+                  - img [ref=f15e222]
+                  - generic [ref=f15e224]: Concepts
+              - listitem [ref=f15e225]:
+                - button "Drop-down list Step-by-step guides" [ref=f15e226]:
+                  - img [ref=f15e227]
+                  - generic [ref=f15e229]: Step-by-step guides
+              - listitem [ref=f15e230]:
+                - button "Drop-down list API reference" [ref=f15e231]:
+                  - img [ref=f15e232]
+                  - generic [ref=f15e234]: API reference
+              - listitem [ref=f15e235]:
+                - button "Drop-down list Apps" [ref=f15e236]:
+                  - img [ref=f15e237]
+                  - generic [ref=f15e239]: Apps
+          - listitem [ref=f15e240] [cursor=pointer]:
+            - button "Vision OCR" [ref=f15e241]:
+              - generic [ref=f15e242]: Vision OCR
+            - list "AI Studio documentation" [ref=f15e243]:
+              - listitem [ref=f15e244]:
+                - link "About Vision OCR" [ref=f15e245]:
+                  - /url: en/vision/concepts/ocr/
+                  - generic [ref=f15e247]: About Vision OCR
+              - listitem [ref=f15e248]:
+                - link "Getting started" [ref=f15e249]:
+                  - /url: en/vision/quickstart
+                  - generic [ref=f15e251]: Getting started
+              - listitem [ref=f15e252]:
+                - button "Drop-down list Concepts" [ref=f15e253]:
+                  - img [ref=f15e254]
+                  - generic [ref=f15e256]: Concepts
+              - listitem [ref=f15e257]:
+                - button "Drop-down list Step-by-step guides" [ref=f15e258]:
+                  - img [ref=f15e259]
+                  - generic [ref=f15e261]: Step-by-step guides
+              - listitem [ref=f15e262]:
+                - button "Drop-down list API references" [ref=f15e263]:
+                  - img [ref=f15e264]
+                  - generic [ref=f15e266]: API references
+              - listitem [ref=f15e267]:
+                - button "Drop-down list Troubleshooting" [ref=f15e268]:
+                  - img [ref=f15e269]
+                  - generic [ref=f15e271]: Troubleshooting
+              - listitem [ref=f15e272]:
+                - link "FAQ" [ref=f15e273]:
+                  - /url: en/vision/qa/
+                  - generic [ref=f15e275]: FAQ
+          - listitem [ref=f15e276] [cursor=pointer]:
+            - button "Translate" [ref=f15e277]:
+              - generic [ref=f15e278]: Translate
+            - list "AI Studio documentation" [ref=f15e279]:
+              - listitem [ref=f15e280]:
+                - link "About Translate" [ref=f15e281]:
+                  - /url: en/translate/concepts/
+                  - generic [ref=f15e283]: About Translate
+              - listitem [ref=f15e284]:
+                - link "Getting started" [ref=f15e285]:
+                  - /url: en/translate/quickstart
+                  - generic [ref=f15e287]: Getting started
+              - listitem [ref=f15e288]:
+                - button "Drop-down list Concepts" [ref=f15e289]:
+                  - img [ref=f15e290]
+                  - generic [ref=f15e292]: Concepts
+              - listitem [ref=f15e293]:
+                - button "Drop-down list Step-by-step guides" [ref=f15e294]:
+                  - img [ref=f15e295]
+                  - generic [ref=f15e297]: Step-by-step guides
+              - listitem [ref=f15e298]:
+                - button "Drop-down list API reference" [ref=f15e299]:
+                  - img [ref=f15e300]
+                  - generic [ref=f15e302]: API reference
+              - listitem [ref=f15e303]:
+                - button "Drop-down list Troubleshooting" [ref=f15e304]:
+                  - img [ref=f15e305]
+                  - generic [ref=f15e307]: Troubleshooting
+          - listitem [ref=f15e308] [cursor=pointer]:
+            - button "Security" [ref=f15e309]:
+              - generic [ref=f15e310]: Security
+            - list "AI Studio documentation" [ref=f15e311]:
+              - listitem [ref=f15e312]:
+                - link "Getting an API key" [ref=f15e313]:
+                  - /url: en/ai-studio/operations/get-api-key
+                  - generic [ref=f15e315]: Getting an API key
+              - listitem [ref=f15e316]:
+                - link "Disabling request logging" [ref=f15e317]:
+                  - /url: en/ai-studio/operations/disable-logging
+                  - generic [ref=f15e319]: Disabling request logging
+              - listitem [ref=f15e320]:
+                - button "Drop-down list Guardrails" [ref=f15e321]:
+                  - img [ref=f15e322]
+                  - generic [ref=f15e324]: Guardrails
+              - listitem [ref=f15e325]:
+                - button "Drop-down list Access management" [ref=f15e326]:
+                  - img [ref=f15e327]
+                  - generic [ref=f15e329]: Access management
+              - listitem [ref=f15e330]:
+                - button "Drop-down list Audit Trails events" [ref=f15e331]:
+                  - img [ref=f15e332]
+                  - generic [ref=f15e334]: Audit Trails events
+              - listitem [ref=f15e335]:
+                - button "Drop-down list Metrics Monitoring" [ref=f15e336]:
+                  - img [ref=f15e337]
+                  - generic [ref=f15e339]: Metrics Monitoring
+          - listitem [ref=f15e340] [cursor=pointer]:
+            - button "Quotas and limits" [ref=f15e341]:
+              - generic [ref=f15e342]: Quotas and limits
+            - list "AI Studio documentation" [ref=f15e343]:
+              - listitem [ref=f15e344]:
+                - link "AI Studio" [ref=f15e345]:
+                  - /url: en/ai-studio/concepts/limits
+                  - generic [ref=f15e347]: AI Studio
+              - listitem [ref=f15e348]:
+                - link "SpeechKit" [ref=f15e349]:
+                  - /url: en/speechkit/concepts/limits
+                  - generic [ref=f15e351]: SpeechKit
+              - listitem [ref=f15e352]:
+                - link "Yandex Search API" [ref=f15e353]:
+                  - /url: en/search-api/concepts/limits
+                  - generic [ref=f15e355]: Yandex Search API
+              - listitem [ref=f15e356]:
+                - link "Vision OCR" [ref=f15e357]:
+                  - /url: en/vision/concepts/limits
+                  - generic [ref=f15e359]: Vision OCR
+              - listitem [ref=f15e360]:
+                - link "Translate" [ref=f15e361]:
+                  - /url: en/translate/concepts/limits
+                  - generic [ref=f15e363]: Translate
+          - listitem [ref=f15e364] [cursor=pointer]:
+            - button "Pricing policy" [ref=f15e365]:
+              - generic [ref=f15e366]: Pricing policy
+            - list "AI Studio documentation" [ref=f15e367]:
+              - listitem [ref=f15e368]:
+                - link "AI Studio" [ref=f15e369]:
+                  - /url: en/ai-studio/pricing
+                  - generic [ref=f15e371]: AI Studio
+              - listitem [ref=f15e372]:
+                - link "SpeechKit" [ref=f15e373]:
+                  - /url: en/speechkit/pricing
+                  - generic [ref=f15e375]: SpeechKit
+              - listitem [ref=f15e376]:
+                - link "Yandex Search API" [ref=f15e377]:
+                  - /url: en/search-api/pricing
+                  - generic [ref=f15e379]: Yandex Search API
+              - listitem [ref=f15e380]:
+                - link "Vision OCR" [ref=f15e381]:
+                  - /url: en/vision/pricing
+                  - generic [ref=f15e383]: Vision OCR
+              - listitem [ref=f15e384]:
+                - link "Translate" [ref=f15e385]:
+                  - /url: en/translate/pricing
+                  - generic [ref=f15e387]: Translate
+          - listitem [ref=f15e388] [cursor=pointer]:
+            - button "Release notes" [ref=f15e389]:
+              - generic [ref=f15e390]: Release notes
+            - list "AI Studio documentation" [ref=f15e391]:
+              - listitem [ref=f15e392]:
+                - link "AI Studio" [ref=f15e393]:
+                  - /url: en/ai-studio/release-notes/
+                  - generic [ref=f15e395]: AI Studio
+              - listitem [ref=f15e396]:
+                - 'link "SpeechKit: Speech recognition" [ref=f15e397]':
+                  - /url: en/speechkit/release-notes-stt
+                  - generic [ref=f15e399]: "SpeechKit: Speech recognition"
+              - listitem [ref=f15e400]:
+                - 'link "SpeechKit: Synthesis" [ref=f15e401]':
+                  - /url: en/speechkit/release-notes-tts
+                  - generic [ref=f15e403]: "SpeechKit: Synthesis"
+              - listitem [ref=f15e404]:
+                - link "Yandex Search API" [ref=f15e405]:
+                  - /url: en/search-api/release-notes/
+                  - generic [ref=f15e407]: Yandex Search API
+              - listitem [ref=f15e408]:
+                - link "Vision OCR" [ref=f15e409]:
+                  - /url: en/vision/release-notes
+                  - generic [ref=f15e411]: Vision OCR
+      - navigation "Article navigation" [ref=f15e416]:
+        - heading "In this article:" [level=2] [ref=f15e417]
+        - list "Current article contents" [ref=f15e418]:
+          - listitem [ref=f15e419]:
+            - link "Model Gallery" [ref=f15e420] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-model-gallery
+          - listitem [ref=f15e421]:
+            - link "Synchronous mode" [ref=f15e422] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#common-instance-sync
+          - listitem [ref=f15e423]:
+            - link "Asynchronous mode" [ref=f15e424] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#common-instance-async
+          - listitem [ref=f15e425]:
+            - link "Batch mode" [ref=f15e426] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#batch-instance
+          - listitem [ref=f15e427]:
+            - link "Dedicated instances" [ref=f15e428] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-dedicated
+          - listitem [ref=f15e429]:
+            - link "Model fine-tuning" [ref=f15e430] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-tuned-generating
+          - listitem [ref=f15e431]:
+            - link "Text tokenization" [ref=f15e432] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-tokens
+          - listitem [ref=f15e433]:
+            - link "Text vectorization" [ref=f15e434] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-embedding
+          - listitem [ref=f15e435]:
+            - link "Text classifications" [ref=f15e436] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-text-classifier
+          - listitem [ref=f15e437]:
+            - link "Image generation" [ref=f15e438] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-image-generation
+          - listitem [ref=f15e439]:
+            - link "Agent Atelier" [ref=f15e440] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-agent
+          - listitem [ref=f15e441]:
+            - link "Voice agents" [ref=f15e442] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-voice-agents
+          - listitem [ref=f15e443]:
+            - link "Text-based agents" [ref=f15e444] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-assistant
+          - listitem [ref=f15e445]:
+            - link "Invoking tools in agents" [ref=f15e446] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#rules-tools
+          - listitem [ref=f15e447]:
+            - link "AI Search" [ref=f15e448] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#ai-search
+          - listitem [ref=f15e449]:
+            - link "MCP Hub" [ref=f15e450] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#mcp-hub
+          - listitem [ref=f15e451]:
+            - link "Internal server errors" [ref=f15e452] [cursor=pointer]:
+              - /url: en/ai-studio/pricing#error-request
+      - generic [ref=f15e453]:
+        - generic [ref=f15e454]:
+          - button "Reading mode" [ref=f15e455] [cursor=pointer]:
+            - img [ref=f15e458]
+          - button "Settings" [ref=f15e460] [cursor=pointer]:
+            - img [ref=f15e463]
+          - button "Language" [ref=f15e465] [cursor=pointer]:
+            - img [ref=f15e468]
+          - button "Helpful" [ref=f15e470] [cursor=pointer]:
+            - img [ref=f15e473]
+          - button "Not helpful" [ref=f15e475] [cursor=pointer]:
+            - img [ref=f15e478]
+        - generic [ref=f15e480]:
+          - main [ref=f15e481]:
+            - heading "Yandex Cloud AI Studio pricing policy" [level=1] [ref=f15e482]:
+              - generic [ref=f15e483]: Yandex Cloud AI Studio pricing policy
+            - generic [ref=f15e484]:
+              - generic [ref=f15e485]:
+                - paragraph [ref=f15e486]: Note
+                - generic [ref=f15e487]:
+                  - paragraph [ref=f15e488]: "Currency of Service rates (prices) depends on the company you made a contract with:"
+                  - list [ref=f15e489]:
+                    - listitem [ref=f15e490]: Prices in US dollars are applicable to customers of Iron Hive doo Beograd (Serbia) or Direct Cursus Technology L.L.C. (Dubai).
+                    - listitem [ref=f15e491]: Prices in Russian roubles are applicable to customers of Yandex.Cloud LLC.
+              - paragraph [ref=f15e492]: All prices in RUB and KZT are inclusive of VAT; in USD, net of VAT.
+              - heading "Model Gallery" [level=2] [ref=f15e493]:
+                - link [ref=f15e494] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-model-gallery
+                  - text: "#"
+                  - generic [ref=f15e495]: Model Gallery
+                - text: Model Gallery
+              - paragraph [ref=f15e496]:
+                - text: The cost of using the models depends on the
+                - link "operating mode" [ref=f15e497] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/generation/#working-mode
+                - text: and the number of
+                - link "tokens" [ref=f15e498] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/generation/tokens
+                - text: "for different consumption types:"
+              - list [ref=f15e499]:
+                - listitem [ref=f15e500]: Input query tokens.
+                - listitem [ref=f15e501]: Output model response tokens.
+                - listitem [ref=f15e502]: Cached tokens, if certain information is re-used without additional computation, such as instructions for a model.
+                - listitem [ref=f15e503]:
+                  - text: Tool tokens provided to the model as a result of invoking any
+                  - link "tool" [ref=f15e504] [cursor=pointer]:
+                    - /url: en/ai-studio/concepts/agents/#tools
+                  - text: .
+              - paragraph [ref=f15e505]: Caching is enabled automatically where possible and applicable. Caching is not guaranteed and does not apply to output tokens.
+              - paragraph [ref=f15e506]:
+                - text: Tool tokens include all uncached tokens stored in the message history at the time the tool's results were transmitted. Tool tokens are calculated only for AI Studio built-in tools and do not apply to the results of custom functions.
+                - link "Use of tools" [ref=f15e507] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-tools
+                - text: is charged separately.
+              - heading "Synchronous mode" [level=3] [ref=f15e508]:
+                - link [ref=f15e509] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#common-instance-sync
+                  - text: "#"
+                  - generic [ref=f15e510]: Synchronous mode
+                - text: Synchronous mode
+              - table [ref=f15e511]:
+                - rowgroup [ref=f15e512]:
+                  - row "Model Price per 1,000 input tokens, without VAT Price per 1,000 cached tokens, without VAT Price per 1,000 tool tokens, without VAT Price per 1,000 output tokens, without VAT" [ref=f15e513]:
+                    - cell "Model" [ref=f15e514]:
+                      - paragraph [ref=f15e515]:
+                        - strong [ref=f15e516]: Model
+                    - cell "Price per 1,000 input tokens, without VAT" [ref=f15e517]:
+                      - paragraph [ref=f15e518]:
+                        - strong [ref=f15e519]:
+                          - text: Price per 1,000 input tokens,
+                          - text: without VAT
+                    - cell "Price per 1,000 cached tokens, without VAT" [ref=f15e520]:
+                      - paragraph [ref=f15e521]:
+                        - strong [ref=f15e522]:
+                          - text: Price per 1,000 cached tokens,
+                          - text: without VAT
+                    - cell "Price per 1,000 tool tokens, without VAT" [ref=f15e523]:
+                      - paragraph [ref=f15e524]:
+                        - strong [ref=f15e525]:
+                          - text: Price per 1,000 tool tokens,
+                          - text: without VAT
+                    - cell "Price per 1,000 output tokens, without VAT" [ref=f15e526]:
+                      - paragraph [ref=f15e527]:
+                        - strong [ref=f15e528]:
+                          - text: Price per 1,000 output tokens,
+                          - text: without VAT
+                  - row "Alice AI LLM $0.00409836 $0.00409836 $0.0010655736 $0.009836064" [ref=f15e529]:
+                    - cell "Alice AI LLM" [ref=f15e530]:
+                      - paragraph [ref=f15e531]: Alice AI LLM
+                    - cell "$0.00409836" [ref=f15e532]:
+                      - paragraph [ref=f15e533]: $0.00409836
+                    - cell "$0.00409836" [ref=f15e534]:
+                      - paragraph [ref=f15e535]: $0.00409836
+                    - cell "$0.0010655736" [ref=f15e536]:
+                      - paragraph [ref=f15e537]: $0.0010655736
+                    - cell "$0.009836064" [ref=f15e538]:
+                      - paragraph [ref=f15e539]: $0.009836064
+                  - row "YandexGPT Pro 5.1 $0.006557376 $0.006557376 $0.001639344 $0.006557376" [ref=f15e540]:
+                    - cell "YandexGPT Pro 5.1" [ref=f15e541]:
+                      - paragraph [ref=f15e542]: YandexGPT Pro 5.1
+                    - cell "$0.006557376" [ref=f15e543]:
+                      - paragraph [ref=f15e544]: $0.006557376
+                    - cell "$0.006557376" [ref=f15e545]:
+                      - paragraph [ref=f15e546]: $0.006557376
+                    - cell "$0.001639344" [ref=f15e547]:
+                      - paragraph [ref=f15e548]: $0.001639344
+                    - cell "$0.006557376" [ref=f15e549]:
+                      - paragraph [ref=f15e550]: $0.006557376
+                  - row "YandexGPT Pro 5 $0.009836064 $0.009836064 $0.009836064 $0.009836064" [ref=f15e551]:
+                    - cell "YandexGPT Pro 5" [ref=f15e552]:
+                      - paragraph [ref=f15e553]: YandexGPT Pro 5
+                    - cell "$0.009836064" [ref=f15e554]:
+                      - paragraph [ref=f15e555]: $0.009836064
+                    - cell "$0.009836064" [ref=f15e556]:
+                      - paragraph [ref=f15e557]: $0.009836064
+                    - cell "$0.009836064" [ref=f15e558]:
+                      - paragraph [ref=f15e559]: $0.009836064
+                    - cell "$0.009836064" [ref=f15e560]:
+                      - paragraph [ref=f15e561]: $0.009836064
+                  - row "YandexGPT Lite $0.001639344 $0.001639344 $0.001639344 $0.001639344" [ref=f15e562]:
+                    - cell "YandexGPT Lite" [ref=f15e563]:
+                      - paragraph [ref=f15e564]: YandexGPT Lite
+                    - cell "$0.001639344" [ref=f15e565]:
+                      - paragraph [ref=f15e566]: $0.001639344
+                    - cell "$0.001639344" [ref=f15e567]:
+                      - paragraph [ref=f15e568]: $0.001639344
+                    - cell "$0.001639344" [ref=f15e569]:
+                      - paragraph [ref=f15e570]: $0.001639344
+                    - cell "$0.001639344" [ref=f15e571]:
+                      - paragraph [ref=f15e572]: $0.001639344
+                  - row "Alice AI LLM Flash $0.000819672 $0.000204918 $0.000204918 $0.001639344" [ref=f15e573]:
+                    - cell "Alice AI LLM Flash" [ref=f15e574]:
+                      - paragraph [ref=f15e575]: Alice AI LLM Flash
+                    - cell "$0.000819672" [ref=f15e576]:
+                      - paragraph [ref=f15e577]: $0.000819672
+                    - cell "$0.000204918" [ref=f15e578]:
+                      - paragraph [ref=f15e579]: $0.000204918
+                    - cell "$0.000204918" [ref=f15e580]:
+                      - paragraph [ref=f15e581]: $0.000204918
+                    - cell "$0.001639344" [ref=f15e582]:
+                      - paragraph [ref=f15e583]: $0.001639344
+                  - row "DeepSeek V4 Flash $0.002459016 $0.000614754 $0.000614754 $0.00409836" [ref=f15e584]:
+                    - cell "DeepSeek V4 Flash" [ref=f15e585]:
+                      - paragraph [ref=f15e586]: DeepSeek V4 Flash
+                    - cell "$0.002459016" [ref=f15e587]:
+                      - paragraph [ref=f15e588]: $0.002459016
+                    - cell "$0.000614754" [ref=f15e589]:
+                      - paragraph [ref=f15e590]: $0.000614754
+                    - cell "$0.000614754" [ref=f15e591]:
+                      - paragraph [ref=f15e592]: $0.000614754
+                    - cell "$0.00409836" [ref=f15e593]:
+                      - paragraph [ref=f15e594]: $0.00409836
+                  - row "DeepSeek V3.2 $0.00409836 $0.0010655736 $0.0010655736 $0.006557376" [ref=f15e595]:
+                    - cell "DeepSeek V3.2" [ref=f15e596]:
+                      - paragraph [ref=f15e597]: DeepSeek V3.2
+                    - cell "$0.00409836" [ref=f15e598]:
+                      - paragraph [ref=f15e599]: $0.00409836
+                    - cell "$0.0010655736" [ref=f15e600]:
+                      - paragraph [ref=f15e601]: $0.0010655736
+                    - cell "$0.0010655736" [ref=f15e602]:
+                      - paragraph [ref=f15e603]: $0.0010655736
+                    - cell "$0.006557376" [ref=f15e604]:
+                      - paragraph [ref=f15e605]: $0.006557376
+                  - row "Qwen3 235B $0.00409836 $0.00409836 $0.00409836 $0.00409836" [ref=f15e606]:
+                    - cell "Qwen3 235B" [ref=f15e607]:
+                      - paragraph [ref=f15e608]: Qwen3 235B
+                    - cell "$0.00409836" [ref=f15e609]:
+                      - paragraph [ref=f15e610]: $0.00409836
+                    - cell "$0.00409836" [ref=f15e611]:
+                      - paragraph [ref=f15e612]: $0.00409836
+                    - cell "$0.00409836" [ref=f15e613]:
+                      - paragraph [ref=f15e614]: $0.00409836
+                    - cell "$0.00409836" [ref=f15e615]:
+                      - paragraph [ref=f15e616]: $0.00409836
+                  - row "gpt-oss-120b $0.002459016 $0.002459016 $0.002459016 $0.002459016" [ref=f15e617]:
+                    - cell "gpt-oss-120b" [ref=f15e618]:
+                      - paragraph [ref=f15e619]: gpt-oss-120b
+                    - cell "$0.002459016" [ref=f15e620]:
+                      - paragraph [ref=f15e621]: $0.002459016
+                    - cell "$0.002459016" [ref=f15e622]:
+                      - paragraph [ref=f15e623]: $0.002459016
+                    - cell "$0.002459016" [ref=f15e624]:
+                      - paragraph [ref=f15e625]: $0.002459016
+                    - cell "$0.002459016" [ref=f15e626]:
+                      - paragraph [ref=f15e627]: $0.002459016
+                  - row "gpt-oss-20b $0.000819672 $0.000819672 $0.000819672 $0.000819672" [ref=f15e628]:
+                    - cell "gpt-oss-20b" [ref=f15e629]:
+                      - paragraph [ref=f15e630]: gpt-oss-20b
+                    - cell "$0.000819672" [ref=f15e631]:
+                      - paragraph [ref=f15e632]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e633]:
+                      - paragraph [ref=f15e634]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e635]:
+                      - paragraph [ref=f15e636]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e637]:
+                      - paragraph [ref=f15e638]: $0.000819672
+                  - row "Qwen3.6 35B $0.001639344 $0.000409836 $0.000409836 $0.002459016" [ref=f15e639]:
+                    - cell "Qwen3.6 35B" [ref=f15e640]:
+                      - paragraph [ref=f15e641]: Qwen3.6 35B
+                    - cell "$0.001639344" [ref=f15e642]:
+                      - paragraph [ref=f15e643]: $0.001639344
+                    - cell "$0.000409836" [ref=f15e644]:
+                      - paragraph [ref=f15e645]: $0.000409836
+                    - cell "$0.000409836" [ref=f15e646]:
+                      - paragraph [ref=f15e647]: $0.000409836
+                    - cell "$0.002459016" [ref=f15e648]:
+                      - paragraph [ref=f15e649]: $0.002459016
+                  - row "Speech Realtime 260528 $0.000819672 $0.000204918 $0.000204918 $0.001639344" [ref=f15e650]:
+                    - cell "Speech Realtime 260528" [ref=f15e651]:
+                      - paragraph [ref=f15e652]: Speech Realtime 260528
+                    - cell "$0.000819672" [ref=f15e653]:
+                      - paragraph [ref=f15e654]: $0.000819672
+                    - cell "$0.000204918" [ref=f15e655]:
+                      - paragraph [ref=f15e656]: $0.000204918
+                    - cell "$0.000204918" [ref=f15e657]:
+                      - paragraph [ref=f15e658]: $0.000204918
+                    - cell "$0.001639344" [ref=f15e659]:
+                      - paragraph [ref=f15e660]: $0.001639344
+                  - row "Speech Realtime 250923 $0.006557376 $0.001639344 $0.001639344 $0.006557376" [ref=f15e661]:
+                    - cell "Speech Realtime 250923" [ref=f15e662]:
+                      - paragraph [ref=f15e663]: Speech Realtime 250923
+                    - cell "$0.006557376" [ref=f15e664]:
+                      - paragraph [ref=f15e665]: $0.006557376
+                    - cell "$0.001639344" [ref=f15e666]:
+                      - paragraph [ref=f15e667]: $0.001639344
+                    - cell "$0.001639344" [ref=f15e668]:
+                      - paragraph [ref=f15e669]: $0.001639344
+                    - cell "$0.006557376" [ref=f15e670]:
+                      - paragraph [ref=f15e671]: $0.006557376
+              - heading "Asynchronous mode" [level=3] [ref=f15e672]:
+                - link [ref=f15e673] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#common-instance-async
+                  - text: "#"
+                  - generic [ref=f15e674]: Asynchronous mode
+                - text: Asynchronous mode
+              - table [ref=f15e675]:
+                - rowgroup [ref=f15e676]:
+                  - row "Model Price per 1,000 input tokens, without VAT Price per 1,000 output tokens, without VAT" [ref=f15e677]:
+                    - cell "Model" [ref=f15e678]:
+                      - paragraph [ref=f15e679]:
+                        - strong [ref=f15e680]: Model
+                    - cell "Price per 1,000 input tokens, without VAT" [ref=f15e681]:
+                      - paragraph [ref=f15e682]:
+                        - strong [ref=f15e683]:
+                          - text: Price per 1,000 input tokens,
+                          - text: without VAT
+                    - cell "Price per 1,000 output tokens, without VAT" [ref=f15e684]:
+                      - paragraph [ref=f15e685]:
+                        - strong [ref=f15e686]:
+                          - text: Price per 1,000 output tokens,
+                          - text: without VAT
+                  - row "Alice AI LLM $0.00204918 $0.0083606544" [ref=f15e687]:
+                    - cell "Alice AI LLM" [ref=f15e688]:
+                      - paragraph [ref=f15e689]: Alice AI LLM
+                    - cell "$0.00204918" [ref=f15e690]:
+                      - paragraph [ref=f15e691]: $0.00204918
+                    - cell "$0.0083606544" [ref=f15e692]:
+                      - paragraph [ref=f15e693]: $0.0083606544
+                  - row "YandexGPT Pro 5.1 $0.0033606552 $0.0033606552" [ref=f15e694]:
+                    - cell "YandexGPT Pro 5.1" [ref=f15e695]:
+                      - paragraph [ref=f15e696]: YandexGPT Pro 5.1
+                    - cell "$0.0033606552" [ref=f15e697]:
+                      - paragraph [ref=f15e698]: $0.0033606552
+                    - cell "$0.0033606552" [ref=f15e699]:
+                      - paragraph [ref=f15e700]: $0.0033606552
+                  - row "YandexGPT Pro 5 $0.0049999992 $0.0049999992" [ref=f15e701]:
+                    - cell "YandexGPT Pro 5" [ref=f15e702]:
+                      - paragraph [ref=f15e703]: YandexGPT Pro 5
+                    - cell "$0.0049999992" [ref=f15e704]:
+                      - paragraph [ref=f15e705]: $0.0049999992
+                    - cell "$0.0049999992" [ref=f15e706]:
+                      - paragraph [ref=f15e707]: $0.0049999992
+                  - row "YandexGPT Lite $0.000819672 $0.000819672" [ref=f15e708]:
+                    - cell "YandexGPT Lite" [ref=f15e709]:
+                      - paragraph [ref=f15e710]: YandexGPT Lite
+                    - cell "$0.000819672" [ref=f15e711]:
+                      - paragraph [ref=f15e712]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e713]:
+                      - paragraph [ref=f15e714]: $0.000819672
+              - heading "Batch mode" [level=3] [ref=f15e715]:
+                - link [ref=f15e716] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#batch-instance
+                  - text: "#"
+                  - generic [ref=f15e717]: Batch mode
+                - text: Batch mode
+              - paragraph [ref=f15e718]: With models in batch mode, the minimum cost per run is 200,000 tokens.
+              - table [ref=f15e719]:
+                - rowgroup [ref=f15e720]:
+                  - row "Model Price per 1,000 input tokens, without VAT Price per 1,000 output tokens, without VAT" [ref=f15e721]:
+                    - cell "Model" [ref=f15e722]:
+                      - paragraph [ref=f15e723]:
+                        - strong [ref=f15e724]: Model
+                    - cell "Price per 1,000 input tokens, without VAT" [ref=f15e725]:
+                      - paragraph [ref=f15e726]:
+                        - strong [ref=f15e727]:
+                          - text: Price per 1,000 input tokens,
+                          - text: without VAT
+                    - cell "Price per 1,000 output tokens, without VAT" [ref=f15e728]:
+                      - paragraph [ref=f15e729]:
+                        - strong [ref=f15e730]:
+                          - text: Price per 1,000 output tokens,
+                          - text: without VAT
+                  - row "Qwen2.5 7B Instruct $0.000819672 $0.000819672" [ref=f15e731]:
+                    - cell "Qwen2.5 7B Instruct" [ref=f15e732]:
+                      - paragraph [ref=f15e733]: Qwen2.5 7B Instruct
+                    - cell "$0.000819672" [ref=f15e734]:
+                      - paragraph [ref=f15e735]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e736]:
+                      - paragraph [ref=f15e737]: $0.000819672
+                  - row "Qwen2.5 72B Instruct $0.0049999992 $0.0049999992" [ref=f15e738]:
+                    - cell "Qwen2.5 72B Instruct" [ref=f15e739]:
+                      - paragraph [ref=f15e740]: Qwen2.5 72B Instruct
+                    - cell "$0.0049999992" [ref=f15e741]:
+                      - paragraph [ref=f15e742]: $0.0049999992
+                    - cell "$0.0049999992" [ref=f15e743]:
+                      - paragraph [ref=f15e744]: $0.0049999992
+                  - row "QwQ 32B Instruct $0.0033606552 $0.0033606552" [ref=f15e745]:
+                    - cell "QwQ 32B Instruct" [ref=f15e746]:
+                      - paragraph [ref=f15e747]: QwQ 32B Instruct
+                    - cell "$0.0033606552" [ref=f15e748]:
+                      - paragraph [ref=f15e749]: $0.0033606552
+                    - cell "$0.0033606552" [ref=f15e750]:
+                      - paragraph [ref=f15e751]: $0.0033606552
+                  - row "Llama-3.3-70B-Instruct $0.0049999992 $0.0049999992" [ref=f15e752]:
+                    - cell "Llama-3.3-70B-Instruct" [ref=f15e753]:
+                      - paragraph [ref=f15e754]: Llama-3.3-70B-Instruct
+                    - cell "$0.0049999992" [ref=f15e755]:
+                      - paragraph [ref=f15e756]: $0.0049999992
+                    - cell "$0.0049999992" [ref=f15e757]:
+                      - paragraph [ref=f15e758]: $0.0049999992
+                  - row "Llama-3.1-70B-Instruct $0.0049999992 $0.0049999992" [ref=f15e759]:
+                    - cell "Llama-3.1-70B-Instruct" [ref=f15e760]:
+                      - paragraph [ref=f15e761]: Llama-3.1-70B-Instruct
+                    - cell "$0.0049999992" [ref=f15e762]:
+                      - paragraph [ref=f15e763]: $0.0049999992
+                    - cell "$0.0049999992" [ref=f15e764]:
+                      - paragraph [ref=f15e765]: $0.0049999992
+                  - row "DeepSeek-R1-Distill-Llama-70B $0.0049999992 $0.0049999992" [ref=f15e766]:
+                    - cell "DeepSeek-R1-Distill-Llama-70B" [ref=f15e767]:
+                      - paragraph [ref=f15e768]: DeepSeek-R1-Distill-Llama-70B
+                    - cell "$0.0049999992" [ref=f15e769]:
+                      - paragraph [ref=f15e770]: $0.0049999992
+                    - cell "$0.0049999992" [ref=f15e771]:
+                      - paragraph [ref=f15e772]: $0.0049999992
+                  - row "Qwen2.5 32B Instruct $0.0033606552 $0.0033606552" [ref=f15e773]:
+                    - cell "Qwen2.5 32B Instruct" [ref=f15e774]:
+                      - paragraph [ref=f15e775]: Qwen2.5 32B Instruct
+                    - cell "$0.0033606552" [ref=f15e776]:
+                      - paragraph [ref=f15e777]: $0.0033606552
+                    - cell "$0.0033606552" [ref=f15e778]:
+                      - paragraph [ref=f15e779]: $0.0033606552
+                  - row "DeepSeek-R1-Distill-Qwen-32B $0.0033606552 $0.0033606552" [ref=f15e780]:
+                    - cell "DeepSeek-R1-Distill-Qwen-32B" [ref=f15e781]:
+                      - paragraph [ref=f15e782]: DeepSeek-R1-Distill-Qwen-32B
+                    - cell "$0.0033606552" [ref=f15e783]:
+                      - paragraph [ref=f15e784]: $0.0033606552
+                    - cell "$0.0033606552" [ref=f15e785]:
+                      - paragraph [ref=f15e786]: $0.0033606552
+                  - row "phi-4 $0.001639344 $0.001639344" [ref=f15e787]:
+                    - cell "phi-4" [ref=f15e788]:
+                      - paragraph [ref=f15e789]: phi-4
+                    - cell "$0.001639344" [ref=f15e790]:
+                      - paragraph [ref=f15e791]: $0.001639344
+                    - cell "$0.001639344" [ref=f15e792]:
+                      - paragraph [ref=f15e793]: $0.001639344
+                  - row "Qwen2 VL 7B $0.000819672 $0.000819672" [ref=f15e794]:
+                    - cell "Qwen2 VL 7B" [ref=f15e795]:
+                      - paragraph [ref=f15e796]: Qwen2 VL 7B
+                    - cell "$0.000819672" [ref=f15e797]:
+                      - paragraph [ref=f15e798]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e799]:
+                      - paragraph [ref=f15e800]: $0.000819672
+                  - row "Qwen2.5 VL 7B $0.000819672 $0.000819672" [ref=f15e801]:
+                    - cell "Qwen2.5 VL 7B" [ref=f15e802]:
+                      - paragraph [ref=f15e803]: Qwen2.5 VL 7B
+                    - cell "$0.000819672" [ref=f15e804]:
+                      - paragraph [ref=f15e805]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e806]:
+                      - paragraph [ref=f15e807]: $0.000819672
+                  - row "DeepSeek 2 VL $0.0033606552 $0.0033606552" [ref=f15e808]:
+                    - cell "DeepSeek 2 VL" [ref=f15e809]:
+                      - paragraph [ref=f15e810]: DeepSeek 2 VL
+                    - cell "$0.0033606552" [ref=f15e811]:
+                      - paragraph [ref=f15e812]: $0.0033606552
+                    - cell "$0.0033606552" [ref=f15e813]:
+                      - paragraph [ref=f15e814]: $0.0033606552
+                  - row "DeepSeek 2 VL Tiny $0.000819672 $0.000819672" [ref=f15e815]:
+                    - cell "DeepSeek 2 VL Tiny" [ref=f15e816]:
+                      - paragraph [ref=f15e817]: DeepSeek 2 VL Tiny
+                    - cell "$0.000819672" [ref=f15e818]:
+                      - paragraph [ref=f15e819]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e820]:
+                      - paragraph [ref=f15e821]: $0.000819672
+                  - row "Gemma3 1B it $0.000819672 $0.000819672" [ref=f15e822]:
+                    - cell "Gemma3 1B it" [ref=f15e823]:
+                      - paragraph [ref=f15e824]: Gemma3 1B it
+                    - cell "$0.000819672" [ref=f15e825]:
+                      - paragraph [ref=f15e826]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e827]:
+                      - paragraph [ref=f15e828]: $0.000819672
+                  - row "Gemma3 4B it $0.000819672 $0.000819672" [ref=f15e829]:
+                    - cell "Gemma3 4B it" [ref=f15e830]:
+                      - paragraph [ref=f15e831]: Gemma3 4B it
+                    - cell "$0.000819672" [ref=f15e832]:
+                      - paragraph [ref=f15e833]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e834]:
+                      - paragraph [ref=f15e835]: $0.000819672
+                  - row "Gemma3 12B it $0.001639344 $0.001639344" [ref=f15e836]:
+                    - cell "Gemma3 12B it" [ref=f15e837]:
+                      - paragraph [ref=f15e838]: Gemma3 12B it
+                    - cell "$0.001639344" [ref=f15e839]:
+                      - paragraph [ref=f15e840]: $0.001639344
+                    - cell "$0.001639344" [ref=f15e841]:
+                      - paragraph [ref=f15e842]: $0.001639344
+                  - row "Gemma3 27B it $0.0033606552 $0.0033606552" [ref=f15e843]:
+                    - cell "Gemma3 27B it" [ref=f15e844]:
+                      - paragraph [ref=f15e845]: Gemma3 27B it
+                    - cell "$0.0033606552" [ref=f15e846]:
+                      - paragraph [ref=f15e847]: $0.0033606552
+                    - cell "$0.0033606552" [ref=f15e848]:
+                      - paragraph [ref=f15e849]: $0.0033606552
+                  - row "Qwen 2.5 VL 32B Instruct $0.0033606552 $0.0033606552" [ref=f15e850]:
+                    - cell "Qwen 2.5 VL 32B Instruct" [ref=f15e851]:
+                      - paragraph [ref=f15e852]: Qwen 2.5 VL 32B Instruct
+                    - cell "$0.0033606552" [ref=f15e853]:
+                      - paragraph [ref=f15e854]: $0.0033606552
+                    - cell "$0.0033606552" [ref=f15e855]:
+                      - paragraph [ref=f15e856]: $0.0033606552
+                  - row "Qwen3-0.6B $0.000819672 $0.000819672" [ref=f15e857]:
+                    - cell "Qwen3-0.6B" [ref=f15e858]:
+                      - paragraph [ref=f15e859]: Qwen3-0.6B
+                    - cell "$0.000819672" [ref=f15e860]:
+                      - paragraph [ref=f15e861]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e862]:
+                      - paragraph [ref=f15e863]: $0.000819672
+                  - row "Qwen3-1.7B $0.000819672 $0.000819672" [ref=f15e864]:
+                    - cell "Qwen3-1.7B" [ref=f15e865]:
+                      - paragraph [ref=f15e866]: Qwen3-1.7B
+                    - cell "$0.000819672" [ref=f15e867]:
+                      - paragraph [ref=f15e868]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e869]:
+                      - paragraph [ref=f15e870]: $0.000819672
+                  - row "Qwen3-4B $0.000819672 $0.000819672" [ref=f15e871]:
+                    - cell "Qwen3-4B" [ref=f15e872]:
+                      - paragraph [ref=f15e873]: Qwen3-4B
+                    - cell "$0.000819672" [ref=f15e874]:
+                      - paragraph [ref=f15e875]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e876]:
+                      - paragraph [ref=f15e877]: $0.000819672
+                  - row "Qwen3-8B $0.000819672 $0.000819672" [ref=f15e878]:
+                    - cell "Qwen3-8B" [ref=f15e879]:
+                      - paragraph [ref=f15e880]: Qwen3-8B
+                    - cell "$0.000819672" [ref=f15e881]:
+                      - paragraph [ref=f15e882]: $0.000819672
+                    - cell "$0.000819672" [ref=f15e883]:
+                      - paragraph [ref=f15e884]: $0.000819672
+                  - row "Qwen3-14B $0.001639344 $0.001639344" [ref=f15e885]:
+                    - cell "Qwen3-14B" [ref=f15e886]:
+                      - paragraph [ref=f15e887]: Qwen3-14B
+                    - cell "$0.001639344" [ref=f15e888]:
+                      - paragraph [ref=f15e889]: $0.001639344
+                    - cell "$0.001639344" [ref=f15e890]:
+                      - paragraph [ref=f15e891]: $0.001639344
+                  - row "Qwen3-32B $0.0033606552 $0.0033606552" [ref=f15e892]:
+                    - cell "Qwen3-32B" [ref=f15e893]:
+                      - paragraph [ref=f15e894]: Qwen3-32B
+                    - cell "$0.0033606552" [ref=f15e895]:
+                      - paragraph [ref=f15e896]: $0.0033606552
+                    - cell "$0.0033606552" [ref=f15e897]:
+                      - paragraph [ref=f15e898]: $0.0033606552
+                  - row "Qwen3-30B-A3B $0.0033606552 $0.0033606552" [ref=f15e899]:
+                    - cell "Qwen3-30B-A3B" [ref=f15e900]:
+                      - paragraph [ref=f15e901]: Qwen3-30B-A3B
+                    - cell "$0.0033606552" [ref=f15e902]:
+                      - paragraph [ref=f15e903]: $0.0033606552
+                    - cell "$0.0033606552" [ref=f15e904]:
+                      - paragraph [ref=f15e905]: $0.0033606552
+                  - row "Qwen3-235B-A22B $0.049999992 $0.049999992" [ref=f15e906]:
+                    - cell "Qwen3-235B-A22B" [ref=f15e907]:
+                      - paragraph [ref=f15e908]: Qwen3-235B-A22B
+                    - cell "$0.049999992" [ref=f15e909]:
+                      - paragraph [ref=f15e910]: $0.049999992
+                    - cell "$0.049999992" [ref=f15e911]:
+                      - paragraph [ref=f15e912]: $0.049999992
+              - heading "Dedicated instances" [level=3] [ref=f15e913]:
+                - link [ref=f15e914] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-dedicated
+                  - text: "#"
+                  - generic [ref=f15e915]: Dedicated instances
+                - text: Dedicated instances
+              - paragraph [ref=f15e916]: The cost of operation of a dedicated instance depends on the model and selected configuration. Dedicated instances are charged per second with rounding up to a billing unit. However, there is no charge for hardware maintenance and model deployment time.
+              - paragraph [ref=f15e917]:
+                - emphasis [ref=f15e918]: Prices are shown for 1 hour of use. Billing occurs per second.
+              - paragraph [ref=f15e919]: The price per 1 unit for a dedicated instance is $0.0083327856 without VAT.
+              - table [ref=f15e920]:
+                - rowgroup [ref=f15e921]:
+                  - row "Model Price per 1 hour, S configuration, without VAT Price per 1 hour, M configuration, without VAT Price per 1 hour L configuration, without VAT" [ref=f15e922]:
+                    - columnheader "Model" [ref=f15e923]
+                    - columnheader "Price per 1 hour, S configuration, without VAT" [ref=f15e924]:
+                      - text: Price per 1 hour,
+                      - strong [ref=f15e925]: S
+                      - text: configuration,
+                      - text: without VAT
+                    - columnheader "Price per 1 hour, M configuration, without VAT" [ref=f15e926]:
+                      - text: Price per 1 hour,
+                      - strong [ref=f15e927]: M
+                      - text: configuration,
+                      - text: without VAT
+                    - columnheader "Price per 1 hour L configuration, without VAT" [ref=f15e928]:
+                      - text: Price per 1 hour
+                      - strong [ref=f15e929]: L
+                      - text: configuration,
+                      - text: without VAT
+                - rowgroup [ref=f15e930]:
+                  - row "Qwen 2.5 VL 32B Instruct $6.70 $13.40 $20.10" [ref=f15e931]:
+                    - cell "Qwen 2.5 VL 32B Instruct" [ref=f15e932]
+                    - cell "$6.70" [ref=f15e933]
+                    - cell "$13.40" [ref=f15e934]
+                    - cell "$20.10" [ref=f15e935]
+                  - row "Qwen 2.5 7B Instruct $6.70 $13.40 $20.10" [ref=f15e936]:
+                    - cell "Qwen 2.5 7B Instruct" [ref=f15e937]
+                    - cell "$6.70" [ref=f15e938]
+                    - cell "$13.40" [ref=f15e939]
+                    - cell "$20.10" [ref=f15e940]
+                  - row "Gemma 3 4B it $3.35 $6.70 $10.05" [ref=f15e941]:
+                    - cell "Gemma 3 4B it" [ref=f15e942]
+                    - cell "$3.35" [ref=f15e943]
+                    - cell "$6.70" [ref=f15e944]
+                    - cell "$10.05" [ref=f15e945]
+                  - row "Gemma 3 12B it $3.35 $6.70 $10.05" [ref=f15e946]:
+                    - cell "Gemma 3 12B it" [ref=f15e947]
+                    - cell "$3.35" [ref=f15e948]
+                    - cell "$6.70" [ref=f15e949]
+                    - cell "$10.05" [ref=f15e950]
+                  - row "T-pro-it-2.0-FP8 $6.20 $12.40 $18.60" [ref=f15e951]:
+                    - cell "T-pro-it-2.0-FP8" [ref=f15e952]
+                    - cell "$6.20" [ref=f15e953]
+                    - cell "$12.40" [ref=f15e954]
+                    - cell "$18.60" [ref=f15e955]
+              - heading "Model fine-tuning" [level=3] [ref=f15e956]:
+                - link [ref=f15e957] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-tuned-generating
+                  - text: "#"
+                  - generic [ref=f15e958]: Model fine-tuning
+                - text: Model fine-tuning
+              - paragraph [ref=f15e959]:
+                - text: At the
+                - link "Preview" [ref=f15e960] [cursor=pointer]:
+                  - /url: https://yandex.cloud/en/docs/overview/concepts/launch-stages
+                - text: stage, you can fine-tune models free of charge. A fine-tuned YandexGPT Lite model will cost the same as the basic YandexGPT Lite model.
+              - heading "Text tokenization" [level=3] [ref=f15e961]:
+                - link [ref=f15e962] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-tokens
+                  - text: "#"
+                  - generic [ref=f15e963]: Text tokenization
+                - text: Text tokenization
+              - paragraph [ref=f15e964]:
+                - text: The use of tokenizer (
+                - link "TokenizerService" [ref=f15e965] [cursor=pointer]:
+                  - /url: en/ai-studio/text-generation/api-ref/grpc/Tokenizer/
+                - text: calls and
+                - link "Tokenizer" [ref=f15e966] [cursor=pointer]:
+                  - /url: en/ai-studio/text-generation/api-ref/Tokenizer/
+                - text: methods) is free of charge.
+              - heading "Text vectorization" [level=3] [ref=f15e967]:
+                - link [ref=f15e968] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-embedding
+                  - text: "#"
+                  - generic [ref=f15e969]: Text vectorization
+                - text: Text vectorization
+              - paragraph [ref=f15e970]:
+                - text: The cost of text
+                - link "vectorization" [ref=f15e971] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/embeddings
+                - text: (getting text embeddings) depends on the size of the text submitted for vectorization.
+                - link "Yandex Cloud Billing" [ref=f15e972] [cursor=pointer]:
+                  - /url: https://yandex.cloud/en/docs/billing/operations/check-charges
+                - text: breaks down the creation of embeddings in
+                - emphasis [ref=f15e973]: vectorization units
+                - text: . One unit equals one token.
+              - table [ref=f15e974]:
+                - rowgroup [ref=f15e975]:
+                  - row "Model Price per 1,000 tokens, without VAT" [ref=f15e976]:
+                    - columnheader "Model" [ref=f15e977]:
+                      - strong [ref=f15e978]: Model
+                    - columnheader "Price per 1,000 tokens, without VAT" [ref=f15e979]:
+                      - strong [ref=f15e980]: Price per 1,000 tokens, without VAT
+                - rowgroup [ref=f15e981]:
+                  - row "Embeddings $0.0000827869" [ref=f15e982]:
+                    - cell "Embeddings" [ref=f15e983]
+                    - cell "$0.0000827869" [ref=f15e984]
+              - group [ref=f15e985]:
+                - generic "Example of cost calculation for text vectorization" [ref=f15e986] [cursor=pointer]
+              - heading "Text classifications" [level=3] [ref=f15e987]:
+                - link [ref=f15e988] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-text-classifier
+                  - text: "#"
+                  - generic [ref=f15e989]: Text classifications
+                - text: Text classifications
+              - paragraph [ref=f15e990]:
+                - text: The cost of text classification depends on the classification model you use and the number of
+                - link "tokens" [ref=f15e991] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/generation/tokens
+                - text: you provide.
+              - list [ref=f15e992]:
+                - listitem [ref=f15e993]: When classifying with YandexGPT Lite, a billing unit is a request of up to 1,000 tokens.
+                - listitem [ref=f15e994]: When classifying with YandexGPT Pro and fine-tuned classifiers, a billing unit is a request of up to 250 tokens.
+              - paragraph [ref=f15e995]: Requests with less than one billing unit are rounded up to the next integer. Large texts are billed as multiple requests with rounding up.
+              - blockquote [ref=f15e996]:
+                - paragraph [ref=f15e997]:
+                  - text: For example, classifying a text of 770 tokens with YandexGPT Lite will be billed as a single request, i.e., as one billing unit.
+                  - text: The same 770-token text classified with YandexGPT Pro or a fine-tuned classifier will be billed as four requests.
+              - table [ref=f15e998]:
+                - rowgroup [ref=f15e999]:
+                  - row "Service Price, without VAT" [ref=f15e1000]:
+                    - columnheader "Service" [ref=f15e1001]:
+                      - strong [ref=f15e1002]: Service
+                    - columnheader "Price, without VAT" [ref=f15e1003]:
+                      - strong [ref=f15e1004]:
+                        - text: Price,
+                        - text: without VAT
+                - rowgroup [ref=f15e1005]:
+                  - row "1 request (1,000 tokens) to classifier based on YandexGPT Lite $0.0012499998" [ref=f15e1006]:
+                    - cell "1 request (1,000 tokens) to classifier based on YandexGPT Lite" [ref=f15e1007]:
+                      - text: 1 request (1,000 tokens) to
+                      - link "classifier based on YandexGPT Lite" [ref=f15e1008] [cursor=pointer]:
+                        - /url: en/ai-studio/operations/classifier/readymade
+                    - cell "$0.0012499998" [ref=f15e1009]
+                  - row "1 request (250 tokens) to classifier based on YandexGPT Pro $0.0012499998" [ref=f15e1010]:
+                    - cell "1 request (250 tokens) to classifier based on YandexGPT Pro" [ref=f15e1011]:
+                      - text: 1 request (250 tokens) to
+                      - link "classifier based on YandexGPT Pro" [ref=f15e1012] [cursor=pointer]:
+                        - /url: en/ai-studio/operations/classifier/readymade
+                    - cell "$0.0012499998" [ref=f15e1013]
+                  - row "1 request (250 tokens) to tuned classifier $0.0012499998" [ref=f15e1014]:
+                    - cell "1 request (250 tokens) to tuned classifier" [ref=f15e1015]:
+                      - text: 1 request (250 tokens) to
+                      - link "tuned classifier" [ref=f15e1016] [cursor=pointer]:
+                        - /url: en/ai-studio/operations/classifier/additionally-trained
+                    - cell "$0.0012499998" [ref=f15e1017]
+              - heading "Image generation" [level=3] [ref=f15e1018]:
+                - link [ref=f15e1019] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-image-generation
+                  - text: "#"
+                  - generic [ref=f15e1020]: Image generation
+                - text: Image generation
+              - paragraph [ref=f15e1021]: The use of image generation models is charged for each generation request. Requests are not idempotent; therefore, two requests with the same settings and generation prompt are considered as two separate requests.
+              - table [ref=f15e1022]:
+                - rowgroup [ref=f15e1023]:
+                  - row "Service Price, without VAT" [ref=f15e1024]:
+                    - columnheader "Service" [ref=f15e1025]:
+                      - strong [ref=f15e1026]: Service
+                    - columnheader "Price, without VAT" [ref=f15e1027]:
+                      - strong [ref=f15e1028]:
+                        - text: Price,
+                        - text: without VAT
+                - rowgroup [ref=f15e1029]:
+                  - row "1 request for image generation $0.0182786856" [ref=f15e1030]:
+                    - cell "1 request for image generation" [ref=f15e1031]
+                    - cell "$0.0182786856" [ref=f15e1032]
+              - heading "Agent Atelier" [level=2] [ref=f15e1033]:
+                - link [ref=f15e1034] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-agent
+                  - text: "#"
+                  - generic [ref=f15e1035]: Agent Atelier
+                - text: Agent Atelier
+              - heading "Voice agents" [level=3] [ref=f15e1036]:
+                - link [ref=f15e1037] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-voice-agents
+                  - text: "#"
+                  - generic [ref=f15e1038]: Voice agents
+                - text: Voice agents
+              - paragraph [ref=f15e1039]: "The cost of using voice agents consists of the following:"
+              - list [ref=f15e1040]:
+                - listitem [ref=f15e1041]: Cost of speech recognition (incoming audio).
+                - listitem [ref=f15e1042]: Cost of speech synthesis (outgoing audio).
+                - listitem [ref=f15e1043]:
+                  - text: Cost of text generation using the
+                  - link "speech-realtime-250923 model" [ref=f15e1044] [cursor=pointer]:
+                    - /url: en/ai-studio/pricing#common-instance-sync
+                  - text: .
+                - listitem [ref=f15e1045]:
+                  - text: Cost of
+                  - link "tool invocation" [ref=f15e1046] [cursor=pointer]:
+                    - /url: en/ai-studio/pricing#rules-tools
+                  - text: .
+              - table [ref=f15e1047]:
+                - rowgroup [ref=f15e1048]:
+                  - row "Service Price per unit of tariffing, without VAT" [ref=f15e1049]:
+                    - columnheader "Service" [ref=f15e1050]:
+                      - strong [ref=f15e1051]: Service
+                    - columnheader "Price per unit of tariffing, without VAT" [ref=f15e1052]:
+                      - strong [ref=f15e1053]:
+                        - text: Price per unit of tariffing,
+                        - text: without VAT
+                - rowgroup [ref=f15e1054]:
+                  - row "Incoming audio, per 1 second $0.0002163934" [ref=f15e1055]:
+                    - cell "Incoming audio, per 1 second" [ref=f15e1056]
+                    - cell "$0.0002163934" [ref=f15e1057]
+                  - row "Outgoing audio, per 1 second $0.0001663934" [ref=f15e1058]:
+                    - cell "Outgoing audio, per 1 second" [ref=f15e1059]
+                    - cell "$0.0001663934" [ref=f15e1060]
+              - group [ref=f15e1061]:
+                - generic "Example of cost calculation for a voice agent" [ref=f15e1062] [cursor=pointer]
+              - heading "Text-based agents" [level=3] [ref=f15e1063]:
+                - link [ref=f15e1064] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-assistant
+                  - text: "#"
+                  - generic [ref=f15e1065]: Text-based agents
+                - text: Text-based agents
+              - paragraph [ref=f15e1066]: "The cost of using text-based agents consists of the following:"
+              - list [ref=f15e1067]:
+                - listitem [ref=f15e1068]:
+                  - text: Consumption of tokens as per the pricing plans of the
+                  - link "Model Gallery models" [ref=f15e1069] [cursor=pointer]:
+                    - /url: en/ai-studio/pricing#rules-model-gallery
+                  - text: .
+                - listitem [ref=f15e1070]:
+                  - text: Cost of
+                  - link "tool invocation" [ref=f15e1071] [cursor=pointer]:
+                    - /url: en/ai-studio/pricing#rules-tools
+                  - text: .
+              - heading "Invoking tools in agents" [level=3] [ref=f15e1072]:
+                - link [ref=f15e1073] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#rules-tools
+                  - text: "#"
+                  - generic [ref=f15e1074]: Invoking tools in agents
+                - text: Invoking tools in agents
+              - table [ref=f15e1075]:
+                - rowgroup [ref=f15e1076]:
+                  - row "Service Price per 1,000 requests, without VAT" [ref=f15e1077]:
+                    - columnheader "Service" [ref=f15e1078]:
+                      - strong [ref=f15e1079]: Service
+                    - columnheader "Price per 1,000 requests, without VAT" [ref=f15e1080]:
+                      - strong [ref=f15e1081]:
+                        - text: Price per 1,000 requests,
+                        - text: without VAT
+                - rowgroup [ref=f15e1082]:
+                  - row "Web Search tool $7.4999988" [ref=f15e1083]:
+                    - cell "Web Search tool" [ref=f15e1084]
+                    - cell "$7.4999988" [ref=f15e1085]
+                  - row "File Search tool $2.459016" [ref=f15e1086]:
+                    - cell "File Search tool" [ref=f15e1087]
+                    - cell "$2.459016" [ref=f15e1088]
+                  - row "Code Interpreter tool Free of charge" [ref=f15e1089]:
+                    - cell "Code Interpreter tool" [ref=f15e1090]
+                    - cell "Free of charge" [ref=f15e1091]
+                  - row "MCP tool Free" [ref=f15e1092]:
+                    - cell "MCP tool" [ref=f15e1093]
+                    - cell "Free" [ref=f15e1094]
+                  - row "Image Generation tool $18.2786856" [ref=f15e1095]:
+                    - cell "Image Generation tool" [ref=f15e1096]
+                    - cell "$18.2786856" [ref=f15e1097]
+              - heading "AI Search" [level=2] [ref=f15e1098]:
+                - link [ref=f15e1099] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#ai-search
+                  - text: "#"
+                  - generic [ref=f15e1100]: AI Search
+                - text: AI Search
+              - paragraph [ref=f15e1101]: The search index size is rounded up to the nearest whole gigabyte.
+              - table [ref=f15e1102]:
+                - rowgroup [ref=f15e1103]:
+                  - row "Service Price per day per 1 GB, without VAT" [ref=f15e1104]:
+                    - columnheader "Service" [ref=f15e1105]:
+                      - strong [ref=f15e1106]: Service
+                    - columnheader "Price per day per 1 GB, without VAT" [ref=f15e1107]:
+                      - strong [ref=f15e1108]:
+                        - text: Price per day per 1 GB,
+                        - text: without VAT
+                - rowgroup [ref=f15e1109]:
+                  - row "Search index storage $0.086885232" [ref=f15e1110]:
+                    - cell "Search index storage" [ref=f15e1111]
+                    - cell "$0.086885232" [ref=f15e1112]
+                  - row "AI Studio file storage Free of charge" [ref=f15e1113]:
+                    - cell "AI Studio file storage" [ref=f15e1114]
+                    - cell "Free of charge" [ref=f15e1115]
+              - heading "MCP Hub" [level=2] [ref=f15e1116]:
+                - link [ref=f15e1117] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#mcp-hub
+                  - text: "#"
+                  - generic [ref=f15e1118]: MCP Hub
+                - text: MCP Hub
+              - paragraph [ref=f15e1119]:
+                - text: Storing
+                - link "MCP servers" [ref=f15e1120] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/mcp-hub/#servers
+                - text: is free of charge. However, you may still be charged for tools created in MCP servers, such as
+                - link "Yandex Cloud Functions invocations" [ref=f15e1121] [cursor=pointer]:
+                  - /url: https://yandex.cloud/en/docs/functions/pricing#invoke
+                - text: .
+              - paragraph [ref=f15e1122]:
+                - text: When using external APIs, such as
+                - link "Kontur.Focus" [ref=f15e1123] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/mcp-hub/templates#kontur
+                - text: or
+                - link "amoCRM" [ref=f15e1124] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/mcp-hub/templates#amocrm
+                - text: ", you are charged directly by our respective partner."
+              - heading "Internal server errors" [level=2] [ref=f15e1125]:
+                - link [ref=f15e1126] [cursor=pointer]:
+                  - /url: en/ai-studio/pricing#error-request
+                  - text: "#"
+                  - generic [ref=f15e1127]: Internal server errors
+                - text: Internal server errors
+              - paragraph [ref=f15e1128]: You are not charged for a request that fails due to an internal server error.
+            - generic [ref=f15e1131]:
+              - heading "Was the article helpful?" [level=3] [ref=f15e1132]
+              - generic [ref=f15e1133]:
+                - button "Yes" [ref=f15e1134] [cursor=pointer]:
+                  - img [ref=f15e1137]
+                  - generic [ref=f15e1139]: "Yes"
+                - button "No" [ref=f15e1140] [cursor=pointer]:
+                  - img [ref=f15e1143]
+                  - generic [ref=f15e1145]: "No"
+          - generic [ref=f15e1147]:
+            - generic [ref=f15e1148]:
+              - generic [ref=f15e1149]: Previous
+              - link "Translate" [ref=f15e1151] [cursor=pointer]:
+                - /url: en/translate/concepts/limits
+                - img [ref=f15e1152]
+                - generic [ref=f15e1154]: Translate
+            - generic [ref=f15e1155]:
+              - generic [ref=f15e1156]: Next
+              - link "SpeechKit" [ref=f15e1158] [cursor=pointer]:
+                - /url: en/speechkit/pricing
+                - generic [ref=f15e1159]: SpeechKit
+                - img [ref=f15e1160]

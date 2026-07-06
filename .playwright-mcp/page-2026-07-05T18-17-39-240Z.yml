@@ -1,0 +1,631 @@
+- generic [ref=f9e6]:
+  - navigation [ref=f9e11]:
+    - generic [ref=f9e12]:
+      - link "Logo icon" [ref=f9e14] [cursor=pointer]:
+        - /url: /
+        - img "Logo icon" [ref=f9e16]
+      - list [ref=f9e21]:
+        - listitem [ref=f9e22] [cursor=pointer]:
+          - button "Platform" [ref=f9e23]:
+            - generic [ref=f9e24]: Platform
+            - img [ref=f9e25]:
+              - img [ref=f9e26]
+        - listitem [ref=f9e28] [cursor=pointer]:
+          - button "Businesses" [ref=f9e29]:
+            - generic [ref=f9e30]: Businesses
+            - img [ref=f9e31]:
+              - img [ref=f9e32]
+        - listitem [ref=f9e34] [cursor=pointer]:
+          - link "Developers" [ref=f9e35]:
+            - /url: /developers
+            - generic [ref=f9e36]: Developers
+        - listitem [ref=f9e37] [cursor=pointer]:
+          - link "Documentation" [ref=f9e38]:
+            - /url: /docs/en/
+            - generic [ref=f9e39]: Documentation
+        - listitem [ref=f9e40] [cursor=pointer]:
+          - link "Pricing" [ref=f9e41]:
+            - /url: /docs/en/ai-studio/pricing
+            - generic [ref=f9e42]: Pricing
+      - list [ref=f9e44]:
+        - listitem [ref=f9e45] [cursor=pointer]:
+          - combobox "Search" [ref=f9e49]
+        - listitem [ref=f9e51] [cursor=pointer]:
+          - button "Language" [ref=f9e52]:
+            - img [ref=f9e54]
+            - generic [ref=f9e55]: Language
+            - img [ref=f9e56]:
+              - img [ref=f9e57]
+        - listitem [ref=f9e59] [cursor=pointer]:
+          - link "Contact us" [ref=f9e60]:
+            - /url: /en#contact-form
+            - generic [ref=f9e63]: Contact us
+        - listitem [ref=f9e64] [cursor=pointer]:
+          - link "Log in" [ref=f9e65]:
+            - /url: /platform
+            - generic [ref=f9e68]: Log in
+  - main [ref=f9e69]:
+    - generic [ref=f9e78]:
+      - navigation [ref=f9e80]:
+        - link "AI Studio documentation" [ref=f9e82] [cursor=pointer]:
+          - /url: en/
+          - generic [ref=f9e83]: AI Studio documentation
+        - list "AI Studio documentation" [ref=f9e85]:
+          - listitem [ref=f9e86] [cursor=pointer]:
+            - link "Getting started" [ref=f9e87]:
+              - /url: en/ai-studio/quickstart/
+              - generic [ref=f9e89]: Getting started
+          - listitem [ref=f9e90] [cursor=pointer]:
+            - button "AI Studio" [ref=f9e91]:
+              - generic [ref=f9e92]: AI Studio
+            - list "AI Studio documentation" [ref=f9e93]:
+              - listitem [ref=f9e94]:
+                - link "About AI Studio" [ref=f9e95]:
+                  - /url: en/ai-studio/concepts/
+                  - generic [ref=f9e97]: About AI Studio
+              - listitem [ref=f9e98]:
+                - button "Drop-down list Model Gallery" [ref=f9e99]:
+                  - img [ref=f9e100]
+                  - generic [ref=f9e102]: Model Gallery
+              - listitem [ref=f9e103]:
+                - button "Drop-down list Agent Atelier" [ref=f9e104]:
+                  - img [ref=f9e105]
+                  - generic [ref=f9e107]: Agent Atelier
+              - listitem [ref=f9e108]:
+                - button "Drop-down list MCP Hub" [ref=f9e109]:
+                  - img [ref=f9e110]
+                  - generic [ref=f9e112]: MCP Hub
+              - listitem [ref=f9e113]:
+                - button "Drop-down list AI Search" [ref=f9e114]:
+                  - img [ref=f9e115]
+                  - generic [ref=f9e117]: AI Search
+              - listitem [ref=f9e118]:
+                - button "Drop-down list Step-by-step guides" [ref=f9e119]:
+                  - img [ref=f9e120]
+                  - generic [ref=f9e122]: Step-by-step guides
+              - listitem [ref=f9e123]:
+                - button "Drop-down list API references" [ref=f9e124]:
+                  - img [ref=f9e125]
+                  - generic [ref=f9e127]: API references
+              - listitem [ref=f9e128]:
+                - button "Drop-down list Yandex Cloud ML SDK" [ref=f9e129]:
+                  - img [ref=f9e130]
+                  - generic [ref=f9e132]: Yandex Cloud ML SDK
+              - listitem [ref=f9e133]:
+                - link "Public materials" [ref=f9e134]:
+                  - /url: en/ai-studio/public-talks
+                  - generic [ref=f9e136]: Public materials
+              - listitem [ref=f9e137]:
+                - link "Terms and definitions" [ref=f9e138]:
+                  - /url: en/ai-studio/concepts/glossary
+                  - generic [ref=f9e140]: Terms and definitions
+              - listitem [ref=f9e141]:
+                - link "FAQ" [ref=f9e142]:
+                  - /url: en/ai-studio/qa/
+                  - generic [ref=f9e144]: FAQ
+              - listitem [ref=f9e145]:
+                - button "Drop-down list Troubleshooting" [ref=f9e146]:
+                  - img [ref=f9e147]
+                  - generic [ref=f9e149]: Troubleshooting
+          - listitem [ref=f9e150] [cursor=pointer]:
+            - button "SpeechKit" [ref=f9e151]:
+              - generic [ref=f9e152]: SpeechKit
+            - list "AI Studio documentation" [ref=f9e153]:
+              - listitem [ref=f9e154]:
+                - link "SpeechKit technology overview" [ref=f9e155]:
+                  - /url: en/speechkit/overview
+                  - generic [ref=f9e157]: SpeechKit technology overview
+              - listitem [ref=f9e158]:
+                - button "Drop-down list Getting started with SpeechKit" [ref=f9e159]:
+                  - img [ref=f9e160]
+                  - generic [ref=f9e162]: Getting started with SpeechKit
+              - listitem [ref=f9e163]:
+                - button "Drop-down list Speech recognition" [ref=f9e164]:
+                  - img [ref=f9e165]
+                  - generic [ref=f9e167]: Speech recognition
+              - listitem [ref=f9e168]:
+                - button "Drop-down list Speech synthesis" [ref=f9e169]:
+                  - img [ref=f9e170]
+                  - generic [ref=f9e172]: Speech synthesis
+              - listitem [ref=f9e173]:
+                - button "Drop-down list Step-by-step guides" [ref=f9e174]:
+                  - img [ref=f9e175]
+                  - generic [ref=f9e177]: Step-by-step guides
+              - listitem [ref=f9e178]:
+                - button "Drop-down list SpeechKit Hybrid" [ref=f9e179]:
+                  - img [ref=f9e180]
+                  - generic [ref=f9e182]: SpeechKit Hybrid
+              - listitem [ref=f9e183]:
+                - button "Drop-down list API references" [ref=f9e184]:
+                  - img [ref=f9e185]
+                  - generic [ref=f9e187]: API references
+              - listitem [ref=f9e188]:
+                - link "Supported audio formats" [ref=f9e189]:
+                  - /url: en/speechkit/formats
+                  - generic [ref=f9e191]: Supported audio formats
+              - listitem [ref=f9e192]:
+                - link "IVR integration" [ref=f9e193]:
+                  - /url: en/speechkit/concepts/ivr-integration
+                  - generic [ref=f9e195]: IVR integration
+              - listitem [ref=f9e196]:
+                - button "Drop-down list Troubleshooting" [ref=f9e197]:
+                  - img [ref=f9e198]
+                  - generic [ref=f9e200]: Troubleshooting
+          - listitem [ref=f9e201] [cursor=pointer]:
+            - button "Yandex Search API" [ref=f9e202]:
+              - generic [ref=f9e203]: Yandex Search API
+            - list "AI Studio documentation" [ref=f9e204]:
+              - listitem [ref=f9e205]:
+                - link "About Yandex Search API" [ref=f9e206]:
+                  - /url: en/search-api/concepts/
+                  - generic [ref=f9e208]: About Yandex Search API
+              - listitem [ref=f9e209]:
+                - link "Getting started" [ref=f9e210]:
+                  - /url: en/search-api/quickstart/
+                  - generic [ref=f9e212]: Getting started
+              - listitem [ref=f9e213]:
+                - button "Drop-down list Concepts" [ref=f9e214]:
+                  - img [ref=f9e215]
+                  - generic [ref=f9e217]: Concepts
+              - listitem [ref=f9e218]:
+                - button "Drop-down list Step-by-step guides" [ref=f9e219]:
+                  - img [ref=f9e220]
+                  - generic [ref=f9e222]: Step-by-step guides
+              - listitem [ref=f9e223]:
+                - button "Drop-down list API reference" [ref=f9e224]:
+                  - img [ref=f9e225]
+                  - generic [ref=f9e227]: API reference
+              - listitem [ref=f9e228]:
+                - button "Drop-down list Apps" [ref=f9e229]:
+                  - img [ref=f9e230]
+                  - generic [ref=f9e232]: Apps
+          - listitem [ref=f9e233] [cursor=pointer]:
+            - button "Vision OCR" [ref=f9e234]:
+              - generic [ref=f9e235]: Vision OCR
+            - list "AI Studio documentation" [ref=f9e236]:
+              - listitem [ref=f9e237]:
+                - link "About Vision OCR" [ref=f9e238]:
+                  - /url: en/vision/concepts/ocr/
+                  - generic [ref=f9e240]: About Vision OCR
+              - listitem [ref=f9e241]:
+                - link "Getting started" [ref=f9e242]:
+                  - /url: en/vision/quickstart
+                  - generic [ref=f9e244]: Getting started
+              - listitem [ref=f9e245]:
+                - button "Drop-down list Concepts" [ref=f9e246]:
+                  - img [ref=f9e247]
+                  - generic [ref=f9e249]: Concepts
+              - listitem [ref=f9e250]:
+                - button "Drop-down list Step-by-step guides" [ref=f9e251]:
+                  - img [ref=f9e252]
+                  - generic [ref=f9e254]: Step-by-step guides
+              - listitem [ref=f9e255]:
+                - button "Drop-down list API references" [ref=f9e256]:
+                  - img [ref=f9e257]
+                  - generic [ref=f9e259]: API references
+              - listitem [ref=f9e260]:
+                - button "Drop-down list Troubleshooting" [ref=f9e261]:
+                  - img [ref=f9e262]
+                  - generic [ref=f9e264]: Troubleshooting
+              - listitem [ref=f9e265]:
+                - link "FAQ" [ref=f9e266]:
+                  - /url: en/vision/qa/
+                  - generic [ref=f9e268]: FAQ
+          - listitem [ref=f9e269] [cursor=pointer]:
+            - button "Translate" [ref=f9e270]:
+              - generic [ref=f9e271]: Translate
+            - list "AI Studio documentation" [ref=f9e272]:
+              - listitem [ref=f9e273]:
+                - link "About Translate" [ref=f9e274]:
+                  - /url: en/translate/concepts/
+                  - generic [ref=f9e276]: About Translate
+              - listitem [ref=f9e277]:
+                - link "Getting started" [ref=f9e278]:
+                  - /url: en/translate/quickstart
+                  - generic [ref=f9e280]: Getting started
+              - listitem [ref=f9e281]:
+                - button "Drop-down list Concepts" [ref=f9e282]:
+                  - img [ref=f9e283]
+                  - generic [ref=f9e285]: Concepts
+              - listitem [ref=f9e286]:
+                - button "Drop-down list Step-by-step guides" [ref=f9e287]:
+                  - img [ref=f9e288]
+                  - generic [ref=f9e290]: Step-by-step guides
+              - listitem [ref=f9e291]:
+                - button "Drop-down list API reference" [ref=f9e292]:
+                  - img [ref=f9e293]
+                  - generic [ref=f9e295]: API reference
+              - listitem [ref=f9e296]:
+                - button "Drop-down list Troubleshooting" [ref=f9e297]:
+                  - img [ref=f9e298]
+                  - generic [ref=f9e300]: Troubleshooting
+          - listitem [ref=f9e301] [cursor=pointer]:
+            - button "Security" [ref=f9e302]:
+              - generic [ref=f9e303]: Security
+            - list "AI Studio documentation" [ref=f9e304]:
+              - listitem [ref=f9e305]:
+                - link "Getting an API key" [ref=f9e306]:
+                  - /url: en/ai-studio/operations/get-api-key
+                  - generic [ref=f9e308]: Getting an API key
+              - listitem [ref=f9e309]:
+                - link "Disabling request logging" [ref=f9e310]:
+                  - /url: en/ai-studio/operations/disable-logging
+                  - generic [ref=f9e312]: Disabling request logging
+              - listitem [ref=f9e313]:
+                - button "Drop-down list Guardrails" [ref=f9e314]:
+                  - img [ref=f9e315]
+                  - generic [ref=f9e317]: Guardrails
+              - listitem [ref=f9e318]:
+                - button "Drop-down list Access management" [ref=f9e319]:
+                  - img [ref=f9e320]
+                  - generic [ref=f9e322]: Access management
+              - listitem [ref=f9e323]:
+                - button "Drop-down list Audit Trails events" [ref=f9e324]:
+                  - img [ref=f9e325]
+                  - generic [ref=f9e327]: Audit Trails events
+              - listitem [ref=f9e328]:
+                - button "Drop-down list Metrics Monitoring" [ref=f9e329]:
+                  - img [ref=f9e330]
+                  - generic [ref=f9e332]: Metrics Monitoring
+          - listitem [ref=f9e333] [cursor=pointer]:
+            - button "Quotas and limits" [ref=f9e334]:
+              - generic [ref=f9e335]: Quotas and limits
+            - list "AI Studio documentation" [ref=f9e336]:
+              - listitem [ref=f9e337]:
+                - link "AI Studio" [ref=f9e338]:
+                  - /url: en/ai-studio/concepts/limits
+                  - generic [ref=f9e340]: AI Studio
+              - listitem [ref=f9e341]:
+                - link "SpeechKit" [ref=f9e342]:
+                  - /url: en/speechkit/concepts/limits
+                  - generic [ref=f9e344]: SpeechKit
+              - listitem [ref=f9e345]:
+                - link "Yandex Search API" [ref=f9e346]:
+                  - /url: en/search-api/concepts/limits
+                  - generic [ref=f9e348]: Yandex Search API
+              - listitem [ref=f9e349]:
+                - link "Vision OCR" [ref=f9e350]:
+                  - /url: en/vision/concepts/limits
+                  - generic [ref=f9e352]: Vision OCR
+              - listitem [ref=f9e353]:
+                - link "Translate" [ref=f9e354]:
+                  - /url: en/translate/concepts/limits
+                  - generic [ref=f9e356]: Translate
+          - listitem [ref=f9e357] [cursor=pointer]:
+            - button "Pricing policy" [ref=f9e358]:
+              - generic [ref=f9e359]: Pricing policy
+            - list "AI Studio documentation" [ref=f9e360]:
+              - listitem [ref=f9e361]:
+                - link "AI Studio" [ref=f9e362]:
+                  - /url: en/ai-studio/pricing
+                  - generic [ref=f9e364]: AI Studio
+              - listitem [ref=f9e365]:
+                - link "SpeechKit" [ref=f9e366]:
+                  - /url: en/speechkit/pricing
+                  - generic [ref=f9e368]: SpeechKit
+              - listitem [ref=f9e369]:
+                - link "Yandex Search API" [ref=f9e370]:
+                  - /url: en/search-api/pricing
+                  - generic [ref=f9e372]: Yandex Search API
+              - listitem [ref=f9e373]:
+                - link "Vision OCR" [ref=f9e374]:
+                  - /url: en/vision/pricing
+                  - generic [ref=f9e376]: Vision OCR
+              - listitem [ref=f9e377]:
+                - link "Translate" [ref=f9e378]:
+                  - /url: en/translate/pricing
+                  - generic [ref=f9e380]: Translate
+          - listitem [ref=f9e381] [cursor=pointer]:
+            - button "Release notes" [ref=f9e382]:
+              - generic [ref=f9e383]: Release notes
+            - list "AI Studio documentation" [ref=f9e384]:
+              - listitem [ref=f9e385]:
+                - link "AI Studio" [ref=f9e386]:
+                  - /url: en/ai-studio/release-notes/
+                  - generic [ref=f9e388]: AI Studio
+              - listitem [ref=f9e389]:
+                - 'link "SpeechKit: Speech recognition" [ref=f9e390]':
+                  - /url: en/speechkit/release-notes-stt
+                  - generic [ref=f9e392]: "SpeechKit: Speech recognition"
+              - listitem [ref=f9e393]:
+                - 'link "SpeechKit: Synthesis" [ref=f9e394]':
+                  - /url: en/speechkit/release-notes-tts
+                  - generic [ref=f9e396]: "SpeechKit: Synthesis"
+              - listitem [ref=f9e397]:
+                - link "Yandex Search API" [ref=f9e398]:
+                  - /url: en/search-api/release-notes/
+                  - generic [ref=f9e400]: Yandex Search API
+              - listitem [ref=f9e401]:
+                - link "Vision OCR" [ref=f9e402]:
+                  - /url: en/vision/release-notes
+                  - generic [ref=f9e404]: Vision OCR
+      - generic [ref=f9e406]:
+        - generic [ref=f9e407]:
+          - button "Reading mode" [ref=f9e408] [cursor=pointer]:
+            - img [ref=f9e411]
+          - button "Settings" [ref=f9e413] [cursor=pointer]:
+            - img [ref=f9e416]
+          - button "Language" [ref=f9e418] [cursor=pointer]:
+            - img [ref=f9e421]
+          - button "Helpful" [ref=f9e424] [cursor=pointer]:
+            - img [ref=f9e427]
+          - button "Not helpful" [ref=f9e429] [cursor=pointer]:
+            - img [ref=f9e432]
+        - generic [ref=f9e434]:
+          - main [ref=f9e435]:
+            - heading "Yandex Cloud AI Studio quotas and limits" [level=1] [ref=f9e436]:
+              - generic [ref=f9e437]: Yandex Cloud AI Studio quotas and limits
+            - generic [ref=f9e438]:
+              - paragraph [ref=f9e439]: "Yandex Cloud AI Studio has the following limitations:"
+              - list [ref=f9e440]:
+                - listitem [ref=f9e441]:
+                  - emphasis [ref=f9e442]: Quotas
+                  - text: are organizational constraints that can be changed by technical support on request.
+                - listitem [ref=f9e443]:
+                  - emphasis [ref=f9e444]: Limits
+                  - text: are technical constraints due to the Yandex Cloud architecture. Limits cannot be changed.
+              - paragraph [ref=f9e445]:
+                - text: If you need more resources, contact
+                - link "support" [ref=f9e446] [cursor=pointer]:
+                  - /url: https://center.yandex.cloud/support
+                - text: and specify which quotas you want increased and by how much.
+              - heading "Quotas" [level=4] [ref=f9e447]:
+                - link [ref=f9e448] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/limits#yandexgpt-quotas
+                  - text: "#"
+                  - generic [ref=f9e449]: Quotas
+                - text: Quotas
+              - table [ref=f9e450]:
+                - rowgroup [ref=f9e451]:
+                  - row "Type of limit Value" [ref=f9e452]:
+                    - columnheader "Type of limit" [ref=f9e453]
+                    - columnheader "Value" [ref=f9e454]
+                - rowgroup [ref=f9e455]:
+                  - row "Text vectorization" [ref=f9e456]:
+                    - cell "Text vectorization" [ref=f9e457]:
+                      - strong [ref=f9e458]: Text vectorization
+                    - cell [ref=f9e459]
+                  - row "Number of text vectorization requests per second 10" [ref=f9e460]:
+                    - cell "Number of text vectorization requests per second" [ref=f9e461]
+                    - cell "10" [ref=f9e462]
+                  - row "Dedicated instances" [ref=f9e463]:
+                    - cell "Dedicated instances" [ref=f9e464]:
+                      - strong [ref=f9e465]: Dedicated instances
+                    - cell [ref=f9e466]
+                  - row "Number of concurrent dedicated instances 1" [ref=f9e467]:
+                    - cell "Number of concurrent dedicated instances" [ref=f9e468]
+                    - cell "1" [ref=f9e469]
+                  - row "Text generation" [ref=f9e470]:
+                    - cell "Text generation" [ref=f9e471]:
+                      - strong [ref=f9e472]: Text generation
+                    - cell [ref=f9e473]
+                  - row "Number of concurrent generations in synchronous mode 10" [ref=f9e474]:
+                    - cell "Number of concurrent generations in synchronous mode" [ref=f9e475]
+                    - cell "10" [ref=f9e476]
+                  - row "Number of requests per second, asynchronous mode (request) 10" [ref=f9e477]:
+                    - cell "Number of requests per second, asynchronous mode (request)" [ref=f9e478]
+                    - cell "10" [ref=f9e479]
+                  - row "Requests per second, asynchronous mode (getting a response) 50" [ref=f9e480]:
+                    - cell "Requests per second, asynchronous mode (getting a response)" [ref=f9e481]
+                    - cell "50" [ref=f9e482]
+                  - row "Number of requests per hour, asynchronous mode (request) 5,000" [ref=f9e483]:
+                    - cell "Number of requests per hour, asynchronous mode (request)" [ref=f9e484]
+                    - cell "5,000" [ref=f9e485]
+                  - row "Number of tokenization requests per second 50" [ref=f9e486]:
+                    - cell "Number of tokenization requests per second" [ref=f9e487]
+                    - cell "50" [ref=f9e488]
+                  - 'row "Model working mode: Batch" [ref=f9e489]':
+                    - 'cell "Model working mode: Batch" [ref=f9e490]':
+                      - strong [ref=f9e491]: "Model working mode: Batch"
+                    - cell [ref=f9e492]
+                  - row "Number of runs per hour 10" [ref=f9e493]:
+                    - cell "Number of runs per hour" [ref=f9e494]
+                    - cell "10" [ref=f9e495]
+                  - row "Number of runs per day 100" [ref=f9e496]:
+                    - cell "Number of runs per day" [ref=f9e497]
+                    - cell "100" [ref=f9e498]
+                  - row "Text classification" [ref=f9e499]:
+                    - cell "Text classification" [ref=f9e500]:
+                      - strong [ref=f9e501]: Text classification
+                    - cell [ref=f9e502]
+                  - row "Number of text classification requests per second 1" [ref=f9e503]:
+                    - cell "Number of text classification requests per second" [ref=f9e504]
+                    - cell "1" [ref=f9e505]
+                  - row "Image generation" [ref=f9e506]:
+                    - cell "Image generation" [ref=f9e507]:
+                      - strong [ref=f9e508]: Image generation
+                    - cell [ref=f9e509]
+                  - row "Number of generation requests per minute 500" [ref=f9e510]:
+                    - cell "Number of generation requests per minute" [ref=f9e511]
+                    - cell "500" [ref=f9e512]
+                  - row "Number of generation requests per day 5,000" [ref=f9e513]:
+                    - cell "Number of generation requests per day" [ref=f9e514]
+                    - cell "5,000" [ref=f9e515]
+                  - row "Number of result requests per second 50" [ref=f9e516]:
+                    - cell "Number of result requests per second" [ref=f9e517]
+                    - cell "50" [ref=f9e518]
+                  - row "Model tuning" [ref=f9e519]:
+                    - cell "Model tuning" [ref=f9e520]:
+                      - strong [ref=f9e521]: Model tuning
+                    - cell [ref=f9e522]
+                  - row "Number of fine-tuning runs per day 10" [ref=f9e523]:
+                    - cell "Number of fine-tuning runs per day" [ref=f9e524]
+                    - cell "10" [ref=f9e525]
+                  - row "Number of fine-tuning runs per hour 3" [ref=f9e526]:
+                    - cell "Number of fine-tuning runs per hour" [ref=f9e527]
+                    - cell "3" [ref=f9e528]
+                  - row "Datasets" [ref=f9e529]:
+                    - cell "Datasets" [ref=f9e530]:
+                      - strong [ref=f9e531]: Datasets
+                    - cell [ref=f9e532]
+                  - row "Number of uploaded datasets 100" [ref=f9e533]:
+                    - cell "Number of uploaded datasets" [ref=f9e534]
+                    - cell "100" [ref=f9e535]
+                  - row "Maximum size of one dataset 5 GB" [ref=f9e536]:
+                    - cell "Maximum size of one dataset" [ref=f9e537]
+                    - cell "5 GB" [ref=f9e538]
+                  - row "Total size of datasets 300 GB" [ref=f9e539]:
+                    - cell "Total size of datasets" [ref=f9e540]
+                    - cell "300 GB" [ref=f9e541]
+                  - row "MCP servers" [ref=f9e542]:
+                    - cell "MCP servers" [ref=f9e543]:
+                      - strong [ref=f9e544]: MCP servers
+                    - cell [ref=f9e545]
+                  - row "Number of MCP servers per cloud 30" [ref=f9e546]:
+                    - cell "Number of MCP servers per cloud" [ref=f9e547]
+                    - cell "30" [ref=f9e548]
+                  - row "Number of tools per server 150" [ref=f9e549]:
+                    - cell "Number of tools per server" [ref=f9e550]
+                    - cell "150" [ref=f9e551]
+                  - row "AI agents" [ref=f9e552]:
+                    - cell "AI agents" [ref=f9e553]:
+                      - strong [ref=f9e554]: AI agents
+                    - cell [ref=f9e555]
+                  - row "Number of concurrent Code Interpreter launches 3" [ref=f9e556]:
+                    - cell "Number of concurrent Code Interpreter launches" [ref=f9e557]
+                    - cell "3" [ref=f9e558]
+                  - row "Voice agents" [ref=f9e559]:
+                    - cell "Voice agents" [ref=f9e560]:
+                      - strong [ref=f9e561]: Voice agents
+                    - cell [ref=f9e562]
+                  - row "Number of concurrent sessions with Realtime models 10" [ref=f9e563]:
+                    - cell "Number of concurrent sessions with Realtime models" [ref=f9e564]
+                    - cell "10" [ref=f9e565]
+                  - row "Number of session creation queries per second 10" [ref=f9e566]:
+                    - cell "Number of session creation queries per second" [ref=f9e567]
+                    - cell "10" [ref=f9e568]
+                  - row "Search indexes" [ref=f9e569]:
+                    - cell "Search indexes" [ref=f9e570]:
+                      - strong [ref=f9e571]: Search indexes
+                    - cell [ref=f9e572]
+                  - row "Number of search indexes 150" [ref=f9e573]:
+                    - cell "Number of search indexes" [ref=f9e574]
+                    - cell "150" [ref=f9e575]
+              - heading "Limits" [level=4] [ref=f9e576]:
+                - link [ref=f9e577] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/limits#yandexgpt-limits
+                  - text: "#"
+                  - generic [ref=f9e578]: Limits
+                - text: Limits
+              - table [ref=f9e579]:
+                - rowgroup [ref=f9e580]:
+                  - row "Type of limit Value" [ref=f9e581]:
+                    - columnheader "Type of limit" [ref=f9e582]
+                    - columnheader "Value" [ref=f9e583]
+                - rowgroup [ref=f9e584]:
+                  - row "Storage period for results of text asynchronous requests on the server 3 days" [ref=f9e585]:
+                    - cell "Storage period for results of text asynchronous requests on the server" [ref=f9e586]
+                    - cell "3 days" [ref=f9e587]
+                  - row "Text vectorization" [ref=f9e588]:
+                    - cell "Text vectorization" [ref=f9e589]:
+                      - strong [ref=f9e590]: Text vectorization
+                    - cell [ref=f9e591]
+                  - row "Number of input tokens 2,048" [ref=f9e592]:
+                    - cell "Number of input tokens" [ref=f9e593]
+                    - cell "2,048" [ref=f9e594]
+                  - row "Output vector size 256" [ref=f9e595]:
+                    - cell "Output vector size" [ref=f9e596]
+                    - cell "256" [ref=f9e597]
+                  - row "Text generation" [ref=f9e598]:
+                    - cell "Text generation" [ref=f9e599]:
+                      - strong [ref=f9e600]: Text generation
+                    - cell [ref=f9e601]
+                  - row "Maximum number of tokens per response in AI Playground 1,000" [ref=f9e602]:
+                    - cell "Maximum number of tokens per response in AI Playground" [ref=f9e603]:
+                      - text: Maximum number of tokens per response in
+                      - link "AI Playground" [ref=f9e604] [cursor=pointer]:
+                        - /url: https://aistudio.yandex.cloud/platform/
+                    - cell "1,000" [ref=f9e605]
+                  - row "Text classification" [ref=f9e606]:
+                    - cell "Text classification" [ref=f9e607]:
+                      - strong [ref=f9e608]: Text classification
+                    - cell [ref=f9e609]
+                  - row "Number of classes in prompt-based classifiers 20" [ref=f9e610]:
+                    - cell "Number of classes in prompt-based classifiers" [ref=f9e611]
+                    - cell "20" [ref=f9e612]
+                  - row "Number of classes in fine-tuned classifiers 100" [ref=f9e613]:
+                    - cell "Number of classes in fine-tuned classifiers" [ref=f9e614]
+                    - cell "100" [ref=f9e615]
+                  - row "Image generation" [ref=f9e616]:
+                    - cell "Image generation" [ref=f9e617]:
+                      - strong [ref=f9e618]: Image generation
+                    - cell [ref=f9e619]
+                  - row "Maximum prompt length 500 characters" [ref=f9e620]:
+                    - cell "Maximum prompt length" [ref=f9e621]
+                    - cell "500 characters" [ref=f9e622]
+                  - row "Storage period for generated images 12 hours" [ref=f9e623]:
+                    - cell "Storage period for generated images" [ref=f9e624]
+                    - cell "12 hours" [ref=f9e625]
+                  - row "AI agents" [ref=f9e626]:
+                    - cell "AI agents" [ref=f9e627]:
+                      - strong [ref=f9e628]: AI agents
+                    - cell [ref=f9e629]
+                  - row "Maximum number of agents 1,000" [ref=f9e630]:
+                    - cell "Maximum number of agents" [ref=f9e631]
+                    - cell "1,000" [ref=f9e632]
+                  - row "Maximum number of files to upload 10,000" [ref=f9e633]:
+                    - cell "Maximum number of files to upload" [ref=f9e634]
+                    - cell "10,000" [ref=f9e635]
+                  - row "Maximum file size 128 MB" [ref=f9e636]:
+                    - cell "Maximum file size" [ref=f9e637]
+                    - cell "128 MB" [ref=f9e638]
+                  - row "Number of files per upload 100" [ref=f9e639]:
+                    - cell "Number of files per upload" [ref=f9e640]
+                    - cell "100" [ref=f9e641]
+                  - row "Maximum number of files per search index 10,000" [ref=f9e642]:
+                    - cell "Maximum number of files per search index" [ref=f9e643]
+                    - cell "10,000" [ref=f9e644]
+                  - row "Maximum number of search indexes 1,000" [ref=f9e645]:
+                    - cell "Maximum number of search indexes" [ref=f9e646]
+                    - cell "1,000" [ref=f9e647]
+                  - row "Maximum number of indexing operations to run 10" [ref=f9e648]:
+                    - cell "Maximum number of indexing operations to run" [ref=f9e649]
+                    - cell "10" [ref=f9e650]
+                  - row "Maximum length of user chunks 8,000 characters" [ref=f9e651]:
+                    - cell "Maximum length of user chunks" [ref=f9e652]
+                    - cell "8,000 characters" [ref=f9e653]
+                  - row "MCP servers" [ref=f9e654]:
+                    - cell "MCP servers" [ref=f9e655]:
+                      - strong [ref=f9e656]: MCP servers
+                    - cell [ref=f9e657]
+                  - row "Number of active cloud connections per availability zone 500" [ref=f9e658]:
+                    - cell "Number of active cloud connections per availability zone" [ref=f9e659]:
+                      - text: Number of active cloud connections per
+                      - link "availability zone" [ref=f9e660] [cursor=pointer]:
+                        - /url: https://yandex.cloud/en/docs/overview/concepts/geo-scope
+                    - cell "500" [ref=f9e661]
+              - heading "See also" [level=4] [ref=f9e662]:
+                - link [ref=f9e663] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/limits#see-also
+                  - text: "#"
+                  - generic [ref=f9e664]: See also
+                - text: See also
+              - list [ref=f9e665]:
+                - listitem [ref=f9e666]:
+                  - link "Generating an image using YandexART" [ref=f9e667] [cursor=pointer]:
+                    - /url: en/ai-studio/operations/generation/yandexart-request
+                - listitem [ref=f9e668]:
+                  - link "Yandex Cloud AI Studio pricing policy" [ref=f9e669] [cursor=pointer]:
+                    - /url: en/ai-studio/pricing
+            - generic [ref=f9e672]:
+              - heading "Was the article helpful?" [level=3] [ref=f9e673]
+              - generic [ref=f9e674]:
+                - button "Yes" [ref=f9e675] [cursor=pointer]:
+                  - img [ref=f9e678]
+                  - generic [ref=f9e680]: "Yes"
+                - button "No" [ref=f9e681] [cursor=pointer]:
+                  - img [ref=f9e684]
+                  - generic [ref=f9e686]: "No"
+          - generic [ref=f9e688]:
+            - generic [ref=f9e689]:
+              - generic [ref=f9e690]: Previous
+              - link "AI Studio" [ref=f9e692] [cursor=pointer]:
+                - /url: en/ai-studio/metrics
+                - img [ref=f9e693]
+                - generic [ref=f9e695]: AI Studio
+            - generic [ref=f9e696]:
+              - generic [ref=f9e697]: Next
+              - link "SpeechKit" [ref=f9e699] [cursor=pointer]:
+                - /url: en/speechkit/concepts/limits
+                - generic [ref=f9e700]: SpeechKit
+                - img [ref=f9e701]

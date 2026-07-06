@@ -11,6 +11,31 @@ test("emits fixed-size frames in order, then drains", async () => {
   assert.deepStrictEqual(sent, [320, 320, 320]);
 });
 
+// Потоковый TTS кладёт в очередь чанки произвольной длины: хвост короче кадра добивается
+// тишиной до ПОЛНОГО кадра (timestamp остаётся целым в сэмплах), а одинокий нечётный байт
+// (полсэмпла PCM16 на границе HTTP-чанка) ждёт вторую половину — иначе весь остаток
+// потока сместился бы на байт и играл шумом.
+test("хвост короче кадра уходит полным кадром, добитым тишиной", async () => {
+  const sent = [];
+  const p = new PacedPlayer((f) => sent.push(f), { sampleRate: 8000, frameMs: 20 });
+  p.enqueue(Buffer.alloc(320 + 100, 7)); // 1 полный кадр + недобор 100 байт
+  await new Promise((r) => setTimeout(r, 100));
+  assert.deepStrictEqual(sent.map((f) => f.length), [320, 320], "оба кадра полные (20мс)");
+  assert.strictEqual(sent[1][99], 7, "данные хвоста на месте");
+  assert.strictEqual(sent[1][100], 0, "добито тишиной");
+});
+
+test("одинокий нечётный байт ждёт вторую половину сэмпла", async () => {
+  const sent = [];
+  const p = new PacedPlayer((f) => sent.push(f), { sampleRate: 8000, frameMs: 20 });
+  p.enqueue(Buffer.alloc(321, 7)); // кадр + полсэмпла
+  await new Promise((r) => setTimeout(r, 80));
+  assert.deepStrictEqual(sent.map((f) => f.length), [320], "полсэмпла не отдаётся");
+  p.enqueue(Buffer.alloc(319, 7)); // вторая половина пришла — суммарно ровно кадр
+  await new Promise((r) => setTimeout(r, 80));
+  assert.deepStrictEqual(sent.map((f) => f.length), [320, 320]);
+});
+
 test("stop() halts emission and clears the queue", async () => {
   const sent = [];
   const p = new PacedPlayer((f) => sent.push(f.length), { sampleRate: 8000, frameMs: 20 });

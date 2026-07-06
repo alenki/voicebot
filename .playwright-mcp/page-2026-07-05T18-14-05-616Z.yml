@@ -1,0 +1,576 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e6]:
+    - navigation [ref=f1e11]:
+      - generic [ref=f1e12]:
+        - link "Logo icon" [ref=f1e14] [cursor=pointer]:
+          - /url: /
+          - img "Logo icon" [ref=f1e16]
+        - generic [ref=f1e18]:
+          - list [ref=f1e21]:
+            - listitem [ref=f1e22] [cursor=pointer]:
+              - button "Platform" [ref=f1e23]:
+                - generic [ref=f1e24]: Platform
+                - img [ref=f1e25]:
+                  - img [ref=f1e26]
+            - listitem [ref=f1e28] [cursor=pointer]:
+              - button "Businesses" [ref=f1e29]:
+                - generic [ref=f1e30]: Businesses
+                - img [ref=f1e31]:
+                  - img [ref=f1e32]
+            - listitem [ref=f1e34] [cursor=pointer]:
+              - link "Developers" [ref=f1e35]:
+                - /url: /developers
+                - generic [ref=f1e36]: Developers
+            - listitem [ref=f1e37] [cursor=pointer]:
+              - link "Documentation" [ref=f1e38]:
+                - /url: /docs/en/
+                - generic [ref=f1e39]: Documentation
+            - listitem [ref=f1e40] [cursor=pointer]:
+              - link "Pricing" [ref=f1e41]:
+                - /url: /docs/en/ai-studio/pricing
+                - generic [ref=f1e42]: Pricing
+          - button "Next" [ref=f1e43] [cursor=pointer]:
+            - img [ref=f1e44]:
+              - img [ref=f1e45]
+        - generic [ref=f1e47]:
+          - generic:
+            - generic:
+              - button "Next":
+                - img [ref=f1e48] [cursor=pointer]:
+                  - img [ref=f1e49]
+          - list [ref=f1e51]:
+            - listitem [ref=f1e52] [cursor=pointer]:
+              - combobox "Search" [ref=f1e56]
+            - listitem [ref=f1e58] [cursor=pointer]:
+              - button "Language" [ref=f1e59]:
+                - img [ref=f1e61]
+                - generic [ref=f1e62]: Language
+                - img [ref=f1e63]:
+                  - img [ref=f1e64]
+            - listitem [ref=f1e66] [cursor=pointer]:
+              - link "Contact us" [ref=f1e67]:
+                - /url: /en#contact-form
+                - generic [ref=f1e70]: Contact us
+            - listitem [ref=f1e71] [cursor=pointer]:
+              - link "Log in" [ref=f1e72]:
+                - /url: /platform
+                - generic [ref=f1e75]: Log in
+    - main [ref=f1e76]:
+      - generic [ref=f1e85]:
+        - navigation [ref=f1e87]:
+          - link "AI Studio documentation" [ref=f1e89] [cursor=pointer]:
+            - /url: en/
+            - generic [ref=f1e90]: AI Studio documentation
+          - list "AI Studio documentation" [ref=f1e92]:
+            - listitem [ref=f1e93] [cursor=pointer]:
+              - link "Getting started" [ref=f1e94]:
+                - /url: en/ai-studio/quickstart/
+                - generic [ref=f1e96]: Getting started
+            - listitem [ref=f1e97] [cursor=pointer]:
+              - button "AI Studio" [ref=f1e98]:
+                - generic [ref=f1e99]: AI Studio
+              - list "AI Studio documentation" [ref=f1e100]:
+                - listitem [ref=f1e101]:
+                  - link "About AI Studio" [ref=f1e102]:
+                    - /url: en/ai-studio/concepts/
+                    - generic [ref=f1e104]: About AI Studio
+                - listitem [ref=f1e105]:
+                  - button "Drop-down list Model Gallery" [ref=f1e106]:
+                    - img [ref=f1e107]
+                    - generic [ref=f1e109]: Model Gallery
+                - listitem [ref=f1e110]:
+                  - button "Drop-down list Agent Atelier" [ref=f1e111]:
+                    - img [ref=f1e112]
+                    - generic [ref=f1e114]: Agent Atelier
+                - listitem [ref=f1e115]:
+                  - button "Drop-down list MCP Hub" [ref=f1e116]:
+                    - img [ref=f1e117]
+                    - generic [ref=f1e119]: MCP Hub
+                - listitem [ref=f1e120]:
+                  - button "Drop-down list AI Search" [ref=f1e121]:
+                    - img [ref=f1e122]
+                    - generic [ref=f1e124]: AI Search
+                - listitem [ref=f1e125]:
+                  - button "Drop-down list Step-by-step guides" [ref=f1e126]:
+                    - img [ref=f1e127]
+                    - generic [ref=f1e129]: Step-by-step guides
+                - listitem [ref=f1e130]:
+                  - button "Drop-down list API references" [ref=f1e131]:
+                    - img [ref=f1e132]
+                    - generic [ref=f1e134]: API references
+                - listitem [ref=f1e135]:
+                  - button "Drop-down list Yandex Cloud ML SDK" [ref=f1e136]:
+                    - img [ref=f1e137]
+                    - generic [ref=f1e139]: Yandex Cloud ML SDK
+                - listitem [ref=f1e140]:
+                  - link "Public materials" [ref=f1e141]:
+                    - /url: en/ai-studio/public-talks
+                    - generic [ref=f1e143]: Public materials
+                - listitem [ref=f1e144]:
+                  - link "Terms and definitions" [ref=f1e145]:
+                    - /url: en/ai-studio/concepts/glossary
+                    - generic [ref=f1e147]: Terms and definitions
+                - listitem [ref=f1e148]:
+                  - link "FAQ" [ref=f1e149]:
+                    - /url: en/ai-studio/qa/
+                    - generic [ref=f1e151]: FAQ
+                - listitem [ref=f1e152]:
+                  - button "Drop-down list Troubleshooting" [ref=f1e153]:
+                    - img [ref=f1e154]
+                    - generic [ref=f1e156]: Troubleshooting
+            - listitem [ref=f1e157] [cursor=pointer]:
+              - button "SpeechKit" [ref=f1e158]:
+                - generic [ref=f1e159]: SpeechKit
+              - list "AI Studio documentation" [ref=f1e160]:
+                - listitem [ref=f1e161]:
+                  - link "SpeechKit technology overview" [ref=f1e162]:
+                    - /url: en/speechkit/overview
+                    - generic [ref=f1e164]: SpeechKit technology overview
+                - listitem [ref=f1e165]:
+                  - button "Drop-down list Getting started with SpeechKit" [ref=f1e166]:
+                    - img [ref=f1e167]
+                    - generic [ref=f1e169]: Getting started with SpeechKit
+                - listitem [ref=f1e170]:
+                  - button "Drop-down list Speech recognition" [ref=f1e171]:
+                    - img [ref=f1e172]
+                    - generic [ref=f1e174]: Speech recognition
+                - listitem [ref=f1e175]:
+                  - button "Drop-down list Speech synthesis" [ref=f1e176]:
+                    - img [ref=f1e177]
+                    - generic [ref=f1e179]: Speech synthesis
+                - listitem [ref=f1e180]:
+                  - button "Drop-down list Step-by-step guides" [ref=f1e181]:
+                    - img [ref=f1e182]
+                    - generic [ref=f1e184]: Step-by-step guides
+                - listitem [ref=f1e185]:
+                  - button "Drop-down list SpeechKit Hybrid" [ref=f1e186]:
+                    - img [ref=f1e187]
+                    - generic [ref=f1e189]: SpeechKit Hybrid
+                - listitem [ref=f1e190]:
+                  - button "Drop-down list API references" [ref=f1e191]:
+                    - img [ref=f1e192]
+                    - generic [ref=f1e194]: API references
+                - listitem [ref=f1e195]:
+                  - link "Supported audio formats" [ref=f1e196]:
+                    - /url: en/speechkit/formats
+                    - generic [ref=f1e198]: Supported audio formats
+                - listitem [ref=f1e199]:
+                  - link "IVR integration" [ref=f1e200]:
+                    - /url: en/speechkit/concepts/ivr-integration
+                    - generic [ref=f1e202]: IVR integration
+                - listitem [ref=f1e203]:
+                  - button "Drop-down list Troubleshooting" [ref=f1e204]:
+                    - img [ref=f1e205]
+                    - generic [ref=f1e207]: Troubleshooting
+            - listitem [ref=f1e208] [cursor=pointer]:
+              - button "Yandex Search API" [ref=f1e209]:
+                - generic [ref=f1e210]: Yandex Search API
+              - list "AI Studio documentation" [ref=f1e211]:
+                - listitem [ref=f1e212]:
+                  - link "About Yandex Search API" [ref=f1e213]:
+                    - /url: en/search-api/concepts/
+                    - generic [ref=f1e215]: About Yandex Search API
+                - listitem [ref=f1e216]:
+                  - link "Getting started" [ref=f1e217]:
+                    - /url: en/search-api/quickstart/
+                    - generic [ref=f1e219]: Getting started
+                - listitem [ref=f1e220]:
+                  - button "Drop-down list Concepts" [ref=f1e221]:
+                    - img [ref=f1e222]
+                    - generic [ref=f1e224]: Concepts
+                - listitem [ref=f1e225]:
+                  - button "Drop-down list Step-by-step guides" [ref=f1e226]:
+                    - img [ref=f1e227]
+                    - generic [ref=f1e229]: Step-by-step guides
+                - listitem [ref=f1e230]:
+                  - button "Drop-down list API reference" [ref=f1e231]:
+                    - img [ref=f1e232]
+                    - generic [ref=f1e234]: API reference
+                - listitem [ref=f1e235]:
+                  - button "Drop-down list Apps" [ref=f1e236]:
+                    - img [ref=f1e237]
+                    - generic [ref=f1e239]: Apps
+            - listitem [ref=f1e240] [cursor=pointer]:
+              - button "Vision OCR" [ref=f1e241]:
+                - generic [ref=f1e242]: Vision OCR
+              - list "AI Studio documentation" [ref=f1e243]:
+                - listitem [ref=f1e244]:
+                  - link "About Vision OCR" [ref=f1e245]:
+                    - /url: en/vision/concepts/ocr/
+                    - generic [ref=f1e247]: About Vision OCR
+                - listitem [ref=f1e248]:
+                  - link "Getting started" [ref=f1e249]:
+                    - /url: en/vision/quickstart
+                    - generic [ref=f1e251]: Getting started
+                - listitem [ref=f1e252]:
+                  - button "Drop-down list Concepts" [ref=f1e253]:
+                    - img [ref=f1e254]
+                    - generic [ref=f1e256]: Concepts
+                - listitem [ref=f1e257]:
+                  - button "Drop-down list Step-by-step guides" [ref=f1e258]:
+                    - img [ref=f1e259]
+                    - generic [ref=f1e261]: Step-by-step guides
+                - listitem [ref=f1e262]:
+                  - button "Drop-down list API references" [ref=f1e263]:
+                    - img [ref=f1e264]
+                    - generic [ref=f1e266]: API references
+                - listitem [ref=f1e267]:
+                  - button "Drop-down list Troubleshooting" [ref=f1e268]:
+                    - img [ref=f1e269]
+                    - generic [ref=f1e271]: Troubleshooting
+                - listitem [ref=f1e272]:
+                  - link "FAQ" [ref=f1e273]:
+                    - /url: en/vision/qa/
+                    - generic [ref=f1e275]: FAQ
+            - listitem [ref=f1e276] [cursor=pointer]:
+              - button "Translate" [ref=f1e277]:
+                - generic [ref=f1e278]: Translate
+              - list "AI Studio documentation" [ref=f1e279]:
+                - listitem [ref=f1e280]:
+                  - link "About Translate" [ref=f1e281]:
+                    - /url: en/translate/concepts/
+                    - generic [ref=f1e283]: About Translate
+                - listitem [ref=f1e284]:
+                  - link "Getting started" [ref=f1e285]:
+                    - /url: en/translate/quickstart
+                    - generic [ref=f1e287]: Getting started
+                - listitem [ref=f1e288]:
+                  - button "Drop-down list Concepts" [ref=f1e289]:
+                    - img [ref=f1e290]
+                    - generic [ref=f1e292]: Concepts
+                - listitem [ref=f1e293]:
+                  - button "Drop-down list Step-by-step guides" [ref=f1e294]:
+                    - img [ref=f1e295]
+                    - generic [ref=f1e297]: Step-by-step guides
+                - listitem [ref=f1e298]:
+                  - button "Drop-down list API reference" [ref=f1e299]:
+                    - img [ref=f1e300]
+                    - generic [ref=f1e302]: API reference
+                - listitem [ref=f1e303]:
+                  - button "Drop-down list Troubleshooting" [ref=f1e304]:
+                    - img [ref=f1e305]
+                    - generic [ref=f1e307]: Troubleshooting
+            - listitem [ref=f1e308] [cursor=pointer]:
+              - button "Security" [ref=f1e309]:
+                - generic [ref=f1e310]: Security
+              - list "AI Studio documentation" [ref=f1e311]:
+                - listitem [ref=f1e312]:
+                  - link "Getting an API key" [ref=f1e313]:
+                    - /url: en/ai-studio/operations/get-api-key
+                    - generic [ref=f1e315]: Getting an API key
+                - listitem [ref=f1e316]:
+                  - link "Disabling request logging" [ref=f1e317]:
+                    - /url: en/ai-studio/operations/disable-logging
+                    - generic [ref=f1e319]: Disabling request logging
+                - listitem [ref=f1e320]:
+                  - button "Drop-down list Guardrails" [ref=f1e321]:
+                    - img [ref=f1e322]
+                    - generic [ref=f1e324]: Guardrails
+                - listitem [ref=f1e325]:
+                  - button "Drop-down list Access management" [ref=f1e326]:
+                    - img [ref=f1e327]
+                    - generic [ref=f1e329]: Access management
+                - listitem [ref=f1e330]:
+                  - button "Drop-down list Audit Trails events" [ref=f1e331]:
+                    - img [ref=f1e332]
+                    - generic [ref=f1e334]: Audit Trails events
+                - listitem [ref=f1e335]:
+                  - button "Drop-down list Metrics Monitoring" [ref=f1e336]:
+                    - img [ref=f1e337]
+                    - generic [ref=f1e339]: Metrics Monitoring
+            - listitem [ref=f1e340] [cursor=pointer]:
+              - button "Quotas and limits" [ref=f1e341]:
+                - generic [ref=f1e342]: Quotas and limits
+              - list "AI Studio documentation" [ref=f1e343]:
+                - listitem [ref=f1e344]:
+                  - link "AI Studio" [ref=f1e345]:
+                    - /url: en/ai-studio/concepts/limits
+                    - generic [ref=f1e347]: AI Studio
+                - listitem [ref=f1e348]:
+                  - link "SpeechKit" [ref=f1e349]:
+                    - /url: en/speechkit/concepts/limits
+                    - generic [ref=f1e351]: SpeechKit
+                - listitem [ref=f1e352]:
+                  - link "Yandex Search API" [ref=f1e353]:
+                    - /url: en/search-api/concepts/limits
+                    - generic [ref=f1e355]: Yandex Search API
+                - listitem [ref=f1e356]:
+                  - link "Vision OCR" [ref=f1e357]:
+                    - /url: en/vision/concepts/limits
+                    - generic [ref=f1e359]: Vision OCR
+                - listitem [ref=f1e360]:
+                  - link "Translate" [ref=f1e361]:
+                    - /url: en/translate/concepts/limits
+                    - generic [ref=f1e363]: Translate
+            - listitem [ref=f1e364] [cursor=pointer]:
+              - button "Pricing policy" [ref=f1e365]:
+                - generic [ref=f1e366]: Pricing policy
+              - list "AI Studio documentation" [ref=f1e367]:
+                - listitem [ref=f1e368]:
+                  - link "AI Studio" [ref=f1e369]:
+                    - /url: en/ai-studio/pricing
+                    - generic [ref=f1e371]: AI Studio
+                - listitem [ref=f1e372]:
+                  - link "SpeechKit" [ref=f1e373]:
+                    - /url: en/speechkit/pricing
+                    - generic [ref=f1e375]: SpeechKit
+                - listitem [ref=f1e376]:
+                  - link "Yandex Search API" [ref=f1e377]:
+                    - /url: en/search-api/pricing
+                    - generic [ref=f1e379]: Yandex Search API
+                - listitem [ref=f1e380]:
+                  - link "Vision OCR" [ref=f1e381]:
+                    - /url: en/vision/pricing
+                    - generic [ref=f1e383]: Vision OCR
+                - listitem [ref=f1e384]:
+                  - link "Translate" [ref=f1e385]:
+                    - /url: en/translate/pricing
+                    - generic [ref=f1e387]: Translate
+            - listitem [ref=f1e388] [cursor=pointer]:
+              - button "Release notes" [ref=f1e389]:
+                - generic [ref=f1e390]: Release notes
+              - list "AI Studio documentation" [ref=f1e391]:
+                - listitem [ref=f1e392]:
+                  - link "AI Studio" [ref=f1e393]:
+                    - /url: en/ai-studio/release-notes/
+                    - generic [ref=f1e395]: AI Studio
+                - listitem [ref=f1e396]:
+                  - 'link "SpeechKit: Speech recognition" [ref=f1e397]':
+                    - /url: en/speechkit/release-notes-stt
+                    - generic [ref=f1e399]: "SpeechKit: Speech recognition"
+                - listitem [ref=f1e400]:
+                  - 'link "SpeechKit: Synthesis" [ref=f1e401]':
+                    - /url: en/speechkit/release-notes-tts
+                    - generic [ref=f1e403]: "SpeechKit: Synthesis"
+                - listitem [ref=f1e404]:
+                  - link "Yandex Search API" [ref=f1e405]:
+                    - /url: en/search-api/release-notes/
+                    - generic [ref=f1e407]: Yandex Search API
+                - listitem [ref=f1e408]:
+                  - link "Vision OCR" [ref=f1e409]:
+                    - /url: en/vision/release-notes
+                    - generic [ref=f1e411]: Vision OCR
+        - main [ref=f1e415]:
+          - generic [ref=f1e421]:
+            - generic [ref=f1e423]:
+              - generic [ref=f1e427]:
+                - generic:
+                  - img
+              - heading "AI Studio documentation" [level=1] [ref=f1e435]:
+                - paragraph [ref=f1e437]: AI Studio documentation
+            - generic [ref=f1e442]:
+              - link "Getting started" [ref=f1e444] [cursor=pointer]:
+                - /url: en/ai-studio/quickstart/
+                - generic [ref=f1e447]:
+                  - img [ref=f1e449]
+                  - generic [ref=f1e451]:
+                    - heading "Getting started" [level=3] [ref=f1e454]:
+                      - paragraph [ref=f1e456]: Getting started
+                    - paragraph [ref=f1e459]: Get an API key and start using AI Studio
+              - link "Pricing policy" [ref=f1e461] [cursor=pointer]:
+                - /url: en/ai-studio/pricing
+                - generic [ref=f1e464]:
+                  - img [ref=f1e466]
+                  - generic [ref=f1e468]:
+                    - heading "Pricing policy" [level=3] [ref=f1e471]:
+                      - paragraph [ref=f1e473]: Pricing policy
+                    - paragraph [ref=f1e476]: Pricing and cost calculations
+              - link "Quotas and limits" [ref=f1e478] [cursor=pointer]:
+                - /url: en/ai-studio/concepts/limits
+                - generic [ref=f1e481]:
+                  - img [ref=f1e483]
+                  - generic [ref=f1e485]:
+                    - heading "Quotas and limits" [level=3] [ref=f1e488]:
+                      - paragraph [ref=f1e490]: Quotas and limits
+                    - paragraph [ref=f1e493]: Technical and organizational limitations
+              - link "Release notes" [ref=f1e495] [cursor=pointer]:
+                - /url: en/ai-studio/release-notes/
+                - generic [ref=f1e498]:
+                  - img [ref=f1e500]
+                  - generic [ref=f1e502]:
+                    - heading "Release notes" [level=3] [ref=f1e505]:
+                      - paragraph [ref=f1e507]: Release notes
+                    - paragraph [ref=f1e510]: Updates and releases
+            - generic [ref=f1e512]:
+              - heading "AI Studio platform" [level=2] [ref=f1e515]:
+                - paragraph [ref=f1e517]: AI Studio platform
+              - generic [ref=f1e520]:
+                - link "Model Gallery" [ref=f1e522] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/generation/
+                  - generic [ref=f1e525]:
+                    - heading "Model Gallery" [level=3] [ref=f1e528]:
+                      - paragraph [ref=f1e530]: Model Gallery
+                    - paragraph [ref=f1e533]: Large generative models
+                - link "Agent Atelier" [ref=f1e535] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/agents/
+                  - generic [ref=f1e538]:
+                    - heading "Agent Atelier" [level=3] [ref=f1e541]:
+                      - paragraph [ref=f1e543]: Agent Atelier
+                    - paragraph [ref=f1e546]: Creating AI-based solutions
+                - link "AI Search" [ref=f1e548] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/search/
+                  - generic [ref=f1e551]:
+                    - heading "AI Search" [level=3] [ref=f1e554]:
+                      - paragraph [ref=f1e556]: AI Search
+                    - paragraph [ref=f1e559]: Enterprise search and data-based responses
+                - link "MCP Hub" [ref=f1e561] [cursor=pointer]:
+                  - /url: en/ai-studio/concepts/mcp-hub/
+                  - generic [ref=f1e564]:
+                    - heading "MCP Hub" [level=3] [ref=f1e567]:
+                      - paragraph [ref=f1e569]: MCP Hub
+                    - paragraph [ref=f1e572]: Servers for agents
+                - link "Yandex SpeechKit" [ref=f1e574] [cursor=pointer]:
+                  - /url: en/speechkit/overview
+                  - generic [ref=f1e577]:
+                    - heading "Yandex SpeechKit" [level=3] [ref=f1e580]:
+                      - paragraph [ref=f1e582]: Yandex SpeechKit
+                    - paragraph [ref=f1e585]: Speech synthesis and recognition
+                - link "Yandex Search API" [ref=f1e587] [cursor=pointer]:
+                  - /url: en/search-api/concepts/
+                  - generic [ref=f1e590]:
+                    - heading "Yandex Search API" [level=3] [ref=f1e593]:
+                      - paragraph [ref=f1e595]: Yandex Search API
+                    - paragraph [ref=f1e598]: Web search API
+                - link "Yandex Workflows" [ref=f1e600] [cursor=pointer]:
+                  - /url: https://yandex.cloud/en/docs/serverless-integrations/concepts/workflows/workflow
+                  - generic [ref=f1e603]:
+                    - heading "Yandex Workflows" [level=3] [ref=f1e606]:
+                      - paragraph [ref=f1e608]: Yandex Workflows
+                    - paragraph [ref=f1e611]: Visual process builder
+                - link "Yandex Vision OCR" [ref=f1e613] [cursor=pointer]:
+                  - /url: en/vision/concepts/ocr/
+                  - generic [ref=f1e616]:
+                    - heading "Yandex Vision OCR" [level=3] [ref=f1e619]:
+                      - paragraph [ref=f1e621]: Yandex Vision OCR
+                    - paragraph [ref=f1e624]: Computer vision
+                - link "Yandex Translate" [ref=f1e626] [cursor=pointer]:
+                  - /url: en/translate/concepts/
+                  - generic [ref=f1e629]:
+                    - heading "Yandex Translate" [level=3] [ref=f1e632]:
+                      - paragraph [ref=f1e634]: Yandex Translate
+                    - paragraph [ref=f1e637]: Machine translation
+            - generic [ref=f1e639]:
+              - heading "Yandex Cloud operational services" [level=2] [ref=f1e642]:
+                - paragraph [ref=f1e644]: Yandex Cloud operational services
+              - generic [ref=f1e647]:
+                - link "Billing" [ref=f1e649] [cursor=pointer]:
+                  - /url: https://yandex.cloud/en/docs/billing/
+                  - generic [ref=f1e652]:
+                    - img [ref=f1e654]
+                    - generic [ref=f1e656]:
+                      - heading "Billing" [level=3] [ref=f1e659]:
+                        - paragraph [ref=f1e661]: Billing
+                      - paragraph [ref=f1e664]: Cost information and payment for consumption
+                - link "Identity and Access Management" [ref=f1e666] [cursor=pointer]:
+                  - /url: https://yandex.cloud/en/docs/iam/
+                  - generic [ref=f1e669]:
+                    - img [ref=f1e671]
+                    - generic [ref=f1e673]:
+                      - heading "Identity and Access Management" [level=3] [ref=f1e676]:
+                        - paragraph [ref=f1e678]: Identity and Access Management
+                      - paragraph [ref=f1e681]: Identification and cloud resource access management
+                - link "Security in Yandex Cloud" [ref=f1e683] [cursor=pointer]:
+                  - /url: https://yandex.cloud/en/docs/security/
+                  - generic [ref=f1e686]:
+                    - img [ref=f1e688]
+                    - generic [ref=f1e690]:
+                      - heading "Security in Yandex Cloud" [level=3] [ref=f1e693]:
+                        - paragraph [ref=f1e695]: Security in Yandex Cloud
+                      - paragraph [ref=f1e698]: Recommendations for building secure applications and security bulletins
+                - link "About technical support" [ref=f1e700] [cursor=pointer]:
+                  - /url: https://yandex.cloud/en/docs/support/
+                  - generic [ref=f1e703]:
+                    - img [ref=f1e705]
+                    - generic [ref=f1e707]:
+                      - heading "About technical support" [level=3] [ref=f1e710]:
+                        - paragraph [ref=f1e712]: About technical support
+                      - paragraph [ref=f1e715]: Learn what requests can be taken to support and how
+            - heading "AI Studio-based solutions" [level=2] [ref=f1e721]:
+              - paragraph [ref=f1e723]: AI Studio-based solutions
+            - generic [ref=f1e725]:
+              - generic [ref=f1e726]:
+                - heading "Yandex SpeechSense" [level=2] [ref=f1e729]:
+                  - paragraph [ref=f1e731]: Yandex SpeechSense
+                - paragraph [ref=f1e734]: Service for deep analysis of voice and text communication channels
+                - link "Learn more about this solution" [ref=f1e736] [cursor=pointer]:
+                  - /url: en/speechsense/
+                  - generic [ref=f1e739]: Learn more about this solution
+              - generic [ref=f1e741]:
+                - generic:
+                  - img
+            - generic [ref=f1e743]:
+              - generic [ref=f1e744]:
+                - heading "Terms of use" [level=2] [ref=f1e746]:
+                  - paragraph [ref=f1e748]: Terms of use
+                - paragraph [ref=f1e752]:
+                  - text: The Yandex Cloud infrastructure is protected pursuant to the Russian Federal Law 152-FZ on Personal Data.
+                  - text: The services are subject to a
+                  - link "service level agreement" [ref=f1e753] [cursor=pointer]:
+                    - /url: https://yandex.com/legal/cloud_sla/en/
+                  - text: .
+              - generic [ref=f1e756]:
+                - generic [ref=f1e761]:
+                  - img [ref=f1e763]
+                  - generic [ref=f1e767]:
+                    - paragraph [ref=f1e768]: "The service levels are set forth in the following documents:"
+                    - list [ref=f1e769]:
+                      - listitem [ref=f1e770]:
+                        - link "Service level for Yandex AI Studio" [ref=f1e771] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_sla_yandex_ai_studio/en/
+                        - text: .
+                      - listitem [ref=f1e772]:
+                        - link "Service level for Yandex SpeechKit" [ref=f1e773] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_sla_speechkit/en/
+                        - text: .
+                      - listitem [ref=f1e774]:
+                        - link "Service level for Yandex Search API" [ref=f1e775] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_sla_search_api/en/
+                        - text: .
+                      - listitem [ref=f1e776]:
+                        - link "Service level for Yandex Translate" [ref=f1e777] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_sla_translate/en/
+                        - text: .
+                      - listitem [ref=f1e778]:
+                        - link "Service level for Yandex Vision OCR" [ref=f1e779] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_sla_vision/en/
+                        - text: .
+                - generic [ref=f1e784]:
+                  - img [ref=f1e786]
+                  - generic [ref=f1e790]:
+                    - paragraph [ref=f1e791]:
+                      - text: In addition to the
+                      - link "Yandex Cloud Terms of Use" [ref=f1e792] [cursor=pointer]:
+                        - /url: https://yandex.ru/legal/cloud_oferta
+                      - text: ", the following apply:"
+                    - list [ref=f1e793]:
+                      - listitem [ref=f1e794]:
+                        - link "Terms of use for Yandex AI Studio" [ref=f1e795] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_terms_yandex_ai_studio/en/
+                        - text: .
+                      - listitem [ref=f1e796]:
+                        - link "Terms of use for Yandex SpeechKit" [ref=f1e797] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_terms_speechkit/en/
+                        - text: .
+                      - listitem [ref=f1e798]:
+                        - link "Terms of use for Yandex Search API" [ref=f1e799] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_terms_search_api/en/
+                        - text: .
+                      - listitem [ref=f1e800]:
+                        - link "Terms of use for Yandex Translate" [ref=f1e801] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_terms_translate/en/
+                        - text: .
+                      - listitem [ref=f1e802]:
+                        - link "Terms of use for Yandex Vision OCR" [ref=f1e803] [cursor=pointer]:
+                          - /url: https://yandex.com/legal/cloud_terms_vision/en/
+                        - text: .
+  - alert "Yandex uses cookies" [ref=f1e804]:
+    - generic [ref=f1e805]:
+      - heading "Yandex uses cookies" [level=1] [ref=f1e806]
+      - generic [ref=f1e807]:
+        - text: They ensure the smooth operation of all Yandex sites and services. For more information, please read our
+        - link "Cookie Policy" [ref=f1e808] [cursor=pointer]:
+          - /url: https://yandex.com/legal/cookies_policy_eng/
+      - generic [ref=f1e809]:
+        - button "Allow all" [ref=f1e810] [cursor=pointer]
+        - button "Allow essential cookies" [ref=f1e811] [cursor=pointer]
+        - button "Settings" [ref=f1e812] [cursor=pointer]
