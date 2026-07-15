@@ -1,0 +1,700 @@
+- generic [ref=f10e3]:
+  - banner [ref=f10e4]:
+    - generic [ref=f10e5]:
+      - link "REG.Cloud" [ref=f10e7] [cursor=pointer]:
+        - /url: https://reg.cloud
+      - list [ref=f10e21]:
+        - listitem [ref=f10e22]:
+          - link "Домены и сайты" [ref=f10e23] [cursor=pointer]:
+            - /url: https://reg.ru/
+        - listitem [ref=f10e28]:
+          - button "Помощь" [ref=f10e29] [cursor=pointer]
+        - listitem [ref=f10e31]:
+          - link "Вход" [ref=f10e32] [cursor=pointer]:
+            - /url: https://cloud.reg.ru/panel/
+    - generic [ref=f10e39]:
+      - navigation "Главное меню" [ref=f10e40]:
+        - list [ref=f10e41]:
+          - listitem [ref=f10e42]:
+            - button "Продукты и сервисы" [ref=f10e43] [cursor=pointer]
+          - listitem [ref=f10e45]:
+            - button "Решения" [ref=f10e46] [cursor=pointer]
+          - listitem [ref=f10e48]:
+            - button "Приложения" [ref=f10e49] [cursor=pointer]
+          - listitem [ref=f10e51]:
+            - button "Ресурсы" [ref=f10e52] [cursor=pointer]
+          - listitem [ref=f10e54]:
+            - button "Партнерам" [ref=f10e55] [cursor=pointer]
+      - button "Получить консультацию" [ref=f10e57] [cursor=pointer]
+  - main [ref=f10e63]:
+    - article [ref=f10e65]:
+      - generic [ref=f10e66]:
+        - generic [ref=f10e67]:
+          - heading "Бесплатный облачный сервер для ваших проектов" [level=1] [ref=f10e68]
+          - paragraph [ref=f10e69]: 1 vCPU, 1 ГБ RAM, 10 ГБ SSD на современных процессорах Intel/NVMe. Подойдет для внедрения подхода CI/CD, Docker, тестирования и автоматизации. Публичный IP-адрес включен в тариф. Бесплатно до 6 месяцев
+          - generic [ref=f10e70]:
+            - link "Создать бесплатный сервер" [ref=f10e71] [cursor=pointer]:
+              - /url: "#selection"
+            - link "Возможности расширения" [ref=f10e73] [cursor=pointer]:
+              - /url: "#announce"
+        - img "Бесплатный облачный сервер для ваших проектов" [ref=f10e76]
+    - generic [ref=f10e77]:
+      - heading "Что вы получаете" [level=2] [ref=f10e80]
+      - list [ref=f10e81]:
+        - listitem [ref=f10e82]:
+          - article [ref=f10e83]:
+            - heading "VPS-сервер с полным доступом (root) 6 месяцев бесплатно" [level=3] [ref=f10e87]
+        - listitem [ref=f10e88]:
+          - article [ref=f10e89]:
+            - heading "Современное железо" [level=3] [ref=f10e93]
+        - listitem [ref=f10e94]:
+          - article [ref=f10e95]:
+            - heading "Гибкое масштабирование" [level=3] [ref=f10e99]
+        - listitem [ref=f10e100]:
+          - article [ref=f10e101]:
+            - heading "Публичный IP-адрес бесплатно" [level=3] [ref=f10e106]
+        - listitem [ref=f10e107]:
+          - article [ref=f10e108]:
+            - heading "Базовую защиту от DDoS-атак" [level=3] [ref=f10e112]
+        - listitem [ref=f10e113]:
+          - article [ref=f10e114]:
+            - heading "Круглосуточную поддержку" [level=3] [ref=f10e120]
+        - listitem [ref=f10e121]:
+          - article [ref=f10e122]:
+            - heading "Широкий выбор образов и ОС" [level=3] [ref=f10e127]
+    - generic [ref=f10e128]:
+      - heading "Сценарии и цели использования" [level=2] [ref=f10e131]
+      - article [ref=f10e132]:
+        - tablist [ref=f10e133]:
+          - tab "Cтартапы" [selected] [ref=f10e134]
+          - tab "Предприниматели" [ref=f10e135]
+          - tab "Разработчики и DevOps-инженеры" [ref=f10e136]
+          - tab "Инфраструктура" [ref=f10e137]
+          - tab "Обучение и пет-проекты" [ref=f10e138]
+        - tabpanel "Cтартапы" [ref=f10e139]:
+          - heading "Для стартапов" [level=4] [ref=f10e142]
+          - article [ref=f10e143]:
+            - list [ref=f10e145]:
+              - listitem [ref=f10e146]:
+                - article [ref=f10e147]:
+                  - article [ref=f10e148]:
+                    - strong [ref=f10e152]: Запуск продуктов без вложений в инфраструктуру
+                    - paragraph [ref=f10e153]: Создайте серверную часть (бэкенд) для веб-сервиса или мобильного приложения и покажите продукт инвесторам или первым пользователям
+              - listitem [ref=f10e154]:
+                - article [ref=f10e155]:
+                  - article [ref=f10e156]:
+                    - strong [ref=f10e160]: Тестирование гипотез и соответствия продукта рынку
+                    - paragraph [ref=f10e161]: "Используйте сервер как облако для теста: быстро проверяйте идеи без затрат на инфраструктуру"
+              - listitem [ref=f10e162]:
+                - article [ref=f10e163]:
+                  - article [ref=f10e164]:
+                    - strong [ref=f10e168]: Тестовый контур для демонстраций
+                    - paragraph [ref=f10e169]: Разворачивайте окружение для презентаций и пилотных запусков
+    - generic [ref=f10e170]:
+      - heading "Как начать тестировать облако" [level=3] [ref=f10e173]
+      - generic [ref=f10e174]:
+        - list [ref=f10e176]:
+          - listitem [ref=f10e177]:
+            - generic [ref=f10e178]: "1"
+            - strong [ref=f10e180]:
+              - generic [ref=f10e181]:
+                - text: Зарегистрируйтесь
+                - link "в панели управления Рег.облака" [ref=f10e182] [cursor=pointer]:
+                  - /url: https://cloud.reg.ru/panel/
+          - listitem [ref=f10e183]:
+            - generic [ref=f10e184]: "2"
+            - strong [ref=f10e186]: Пройдите идентификацию
+          - listitem [ref=f10e187]:
+            - generic [ref=f10e188]: "3"
+            - strong [ref=f10e190]: Пополните баланс (от 100 рублей)
+          - listitem [ref=f10e191]:
+            - generic [ref=f10e192]: "4"
+            - strong [ref=f10e194]: Создайте сервер
+          - listitem [ref=f10e195]:
+            - strong [ref=f10e200]: Работайте с бесплатным сервером
+        - article [ref=f10e201]:
+          - article [ref=f10e202]:
+            - heading "Начните прямо сейчас" [level=4] [ref=f10e208]
+            - link "Создать бесплатный сервер" [ref=f10e209] [cursor=pointer]:
+              - /url: "#selection"
+    - generic [ref=f10e215]:
+      - generic [ref=f10e216]:
+        - heading "Создайте свой первый проект" [level=2] [ref=f10e218]
+        - paragraph [ref=f10e220]: Создайте сервер бесплатно, настройте конфигурацию и сразу приступайте к работе
+      - generic [ref=f10e224]:
+        - generic [ref=f10e225]:
+          - generic [ref=f10e226]:
+            - heading "Образы" [level=3] [ref=f10e229]
+            - generic [ref=f10e230]:
+              - generic [ref=f10e234]:
+                - generic [ref=f10e235]: Операционные системы
+                - generic [ref=f10e237]: Приложения и панели управления
+                - generic [ref=f10e239]: GPU
+              - generic [ref=f10e241]:
+                - generic [ref=f10e245] [cursor=pointer]:
+                  - generic [ref=f10e246]: Ispmanager 6
+                  - combobox [ref=f10e249]:
+                    - generic [ref=f10e251]: Ubuntu 20.04 LTS
+                - generic [ref=f10e258] [cursor=pointer]:
+                  - generic [ref=f10e259]: BitrixVM
+                  - generic [ref=f10e260]: CentOS Stream 9
+                - generic [ref=f10e266] [cursor=pointer]:
+                  - generic [ref=f10e267]: FASTPANEL®
+                  - combobox [ref=f10e270]:
+                    - generic [ref=f10e272]: Ubuntu 20.04 LTS
+                - generic [ref=f10e279] [cursor=pointer]:
+                  - generic [ref=f10e280]: Django
+                  - generic [ref=f10e281]: Ubuntu 20.04 LTS
+                - generic [ref=f10e287] [cursor=pointer]:
+                  - generic [ref=f10e288]: Docker
+                  - combobox [ref=f10e291]:
+                    - generic [ref=f10e293]: Ubuntu 24.04 LTS
+                - generic [ref=f10e300] [cursor=pointer]:
+                  - generic [ref=f10e301]: LAMP
+                  - generic [ref=f10e302]: Ubuntu 20.04 LTS
+                - generic [ref=f10e308] [cursor=pointer]:
+                  - generic [ref=f10e309]: LEMP
+                  - generic [ref=f10e310]: Ubuntu 20.04 LTS
+                - generic [ref=f10e316] [cursor=pointer]:
+                  - generic [ref=f10e317]: Nextcloud
+                  - generic [ref=f10e318]: Ubuntu 20.04 LTS
+                - generic [ref=f10e324] [cursor=pointer]:
+                  - generic [ref=f10e325]: Node.js
+                  - generic [ref=f10e326]: Ubuntu 20.04 LTS
+                - generic [ref=f10e332] [cursor=pointer]:
+                  - generic [ref=f10e333]: WireGuard
+                  - generic [ref=f10e334]: Ubuntu 20.04 LTS
+                - generic [ref=f10e338] [cursor=pointer]:
+                  - generic [ref=f10e339]: GitLab
+                  - generic [ref=f10e340]: Ubuntu 24.04 LTS
+                - generic [ref=f10e346] [cursor=pointer]:
+                  - generic [ref=f10e347]: GitLab Runner
+                  - generic [ref=f10e348]: Ubuntu 24.04 LTS
+                - generic [ref=f10e354] [cursor=pointer]:
+                  - generic [ref=f10e355]: OpenVPN
+                  - generic [ref=f10e356]: Ubuntu 24.04 LTS
+                - generic [ref=f10e360] [cursor=pointer]:
+                  - generic [ref=f10e361]: Zabbix
+                  - generic [ref=f10e362]: Ubuntu 24.04 LTS
+          - generic [ref=f10e365]:
+            - heading "Тарифы и конфигурации" [level=3] [ref=f10e368]
+            - generic [ref=f10e372]:
+              - generic [ref=f10e373]: Тарифный план
+              - generic [ref=f10e375]: Своя конфигурация
+            - generic [ref=f10e378]:
+              - text: vCPU и тип диска
+              - generic [ref=f10e379]:
+                - generic [ref=f10e380]: Стандартный 2,2 ГГц + SSD
+                - generic [ref=f10e386]: Производительный2,8 ГГц + NVMeдо 25% мощнее
+                - generic [ref=f10e392]: Высокочастотный 3,7 ГГц+ NVMe до 40% производительнее
+                - generic [ref=f10e398]: Производительный с GPU2,8 ГГц + NVMe + GPU
+              - generic [ref=f10e406]:
+                - text: Тариф
+                - generic [ref=f10e407]:
+                  - generic [ref=f10e410]:
+                    - generic [ref=f10e411]: Std C1-M1-D10
+                    - generic [ref=f10e412]:
+                      - generic [ref=f10e413]: 390 ₽/мес
+                      - text: 0,58 ₽/час
+                    - generic [ref=f10e414]:
+                      - generic [ref=f10e415]: 1 ядроvCPU
+                      - generic [ref=f10e416]: 1 ГБ RAM
+                      - generic [ref=f10e417]: 10 ГБ SSD
+                  - generic [ref=f10e420]:
+                    - generic [ref=f10e421]: Std C2-M2-D40
+                    - generic [ref=f10e422]:
+                      - generic [ref=f10e423]: 980 ₽/мес
+                      - text: 1,46 ₽/час
+                    - generic [ref=f10e424]:
+                      - generic [ref=f10e425]: 2 ядраvCPU
+                      - generic [ref=f10e426]: 2 ГБRAM
+                      - generic [ref=f10e427]: 40 ГБSSD
+                  - generic [ref=f10e430]:
+                    - generic [ref=f10e431]: Std C3-M3-D60
+                    - generic [ref=f10e432]:
+                      - generic [ref=f10e433]: 1 470 ₽/мес
+                      - text: 2,19 ₽/час
+                    - generic [ref=f10e434]:
+                      - generic [ref=f10e435]: 3 ядраvCPU
+                      - generic [ref=f10e436]: 3 ГБRAM
+                      - generic [ref=f10e437]: 60 ГБSSD
+                  - generic [ref=f10e440] [cursor=pointer]:
+                    - generic [ref=f10e441]: Std C4-M4-D80
+                    - generic [ref=f10e442]:
+                      - generic [ref=f10e443]: 1 960 ₽/мес
+                      - text: 2,92 ₽/час
+                    - generic [ref=f10e444]:
+                      - generic [ref=f10e445]: 4 ядраvCPU
+                      - generic [ref=f10e446]: 4 ГБRAM
+                      - generic [ref=f10e447]: 80 ГБSSD
+                  - generic [ref=f10e450] [cursor=pointer]:
+                    - generic [ref=f10e451]: Std C6-M6-D100
+                    - generic [ref=f10e452]:
+                      - generic [ref=f10e453]: 2 740 ₽/мес
+                      - text: 4,08 ₽/час
+                    - generic [ref=f10e454]:
+                      - generic [ref=f10e455]: 6 ядерvCPU
+                      - generic [ref=f10e456]: 6 ГБRAM
+                      - generic [ref=f10e457]: 100 ГБSSD
+                  - generic [ref=f10e460] [cursor=pointer]:
+                    - generic [ref=f10e461]: Std C8-M8-D120
+                    - generic [ref=f10e462]:
+                      - generic [ref=f10e463]: 3 520 ₽/мес
+                      - text: 5,24 ₽/час
+                    - generic [ref=f10e464]:
+                      - generic [ref=f10e465]: 8 ядерvCPU
+                      - generic [ref=f10e466]: 8 ГБRAM
+                      - generic [ref=f10e467]: 120 ГБSSD
+                  - generic [ref=f10e470] [cursor=pointer]:
+                    - generic [ref=f10e471]: Std C12-M12-D160
+                    - generic [ref=f10e472]:
+                      - generic [ref=f10e473]: 5 080 ₽/мес
+                      - text: 7,56 ₽/час
+                    - generic [ref=f10e474]:
+                      - generic [ref=f10e475]: 12 ядерvCPU
+                      - generic [ref=f10e476]: 12 ГБRAM
+                      - generic [ref=f10e477]: 160 ГБSSD
+                  - generic [ref=f10e480] [cursor=pointer]:
+                    - generic [ref=f10e481]: Std C16-M16-D240
+                    - generic [ref=f10e482]:
+                      - generic [ref=f10e483]: 7 040 ₽/мес
+                      - text: 10,48 ₽/час
+                    - generic [ref=f10e484]:
+                      - generic [ref=f10e485]: 16 ядерvCPU
+                      - generic [ref=f10e486]: 16 ГБRAM
+                      - generic [ref=f10e487]: 240 ГБSSD
+                - generic [ref=f10e488]:
+                  - generic [ref=f10e491] [cursor=pointer]:
+                    - generic [ref=f10e492]: High C1-M2-D20
+                    - generic [ref=f10e493]:
+                      - generic [ref=f10e494]: 970 ₽/мес
+                      - text: 1,44 ₽/час
+                    - generic [ref=f10e495]:
+                      - generic [ref=f10e496]: 1 ядроvCPU
+                      - generic [ref=f10e497]: 2 ГБRAM
+                      - generic [ref=f10e498]: 20 ГБNVMe
+                  - generic [ref=f10e501] [cursor=pointer]:
+                    - generic [ref=f10e502]: High C2-M4-D60
+                    - generic [ref=f10e503]:
+                      - generic [ref=f10e504]: 2 180 ₽/мес
+                      - text: 3,24 ₽/час
+                    - generic [ref=f10e505]:
+                      - generic [ref=f10e506]: 2 ядраvCPU
+                      - generic [ref=f10e507]: 4 ГБRAM
+                      - generic [ref=f10e508]: 60 ГБNVMe
+                  - generic [ref=f10e511] [cursor=pointer]:
+                    - generic [ref=f10e512]: High C4-M8-D80
+                    - generic [ref=f10e513]:
+                      - generic [ref=f10e514]: 3 880 ₽/мес
+                      - text: 5,77 ₽/час
+                    - generic [ref=f10e515]:
+                      - generic [ref=f10e516]: 4 ядраvCPU
+                      - generic [ref=f10e517]: 8 ГБRAM
+                      - generic [ref=f10e518]: 80 ГБNVMe
+                  - generic [ref=f10e521] [cursor=pointer]:
+                    - generic [ref=f10e522]: High C4-M8-D120
+                    - generic [ref=f10e523]:
+                      - generic [ref=f10e524]: 4 360 ₽/мес
+                      - text: 6,49 ₽/час
+                    - generic [ref=f10e525]:
+                      - generic [ref=f10e526]: 4 ядраvCPU
+                      - generic [ref=f10e527]: 8 ГБRAM
+                      - generic [ref=f10e528]: 120 ГБNVMe
+                  - generic [ref=f10e531] [cursor=pointer]:
+                    - generic [ref=f10e532]: High C8-M16-D120
+                    - generic [ref=f10e533]:
+                      - generic [ref=f10e534]: 7 280 ₽/мес
+                      - text: 10,83 ₽/час
+                    - generic [ref=f10e535]:
+                      - generic [ref=f10e536]: 8 ядерvCPU
+                      - generic [ref=f10e537]: 16 ГБRAM
+                      - generic [ref=f10e538]: 120 ГБNVMe
+                  - generic [ref=f10e541] [cursor=pointer]:
+                    - generic [ref=f10e542]: High C8-M16-D180
+                    - generic [ref=f10e543]:
+                      - generic [ref=f10e544]: 8 000 ₽/мес
+                      - text: 11,91 ₽/час
+                    - generic [ref=f10e545]:
+                      - generic [ref=f10e546]: 8 ядерvCPU
+                      - generic [ref=f10e547]: 16 ГБRAM
+                      - generic [ref=f10e548]: 180 ГБNVMe
+                  - generic [ref=f10e551] [cursor=pointer]:
+                    - generic [ref=f10e552]: High C12-M24-D240
+                    - generic [ref=f10e553]:
+                      - generic [ref=f10e554]: 11 640 ₽/мес
+                      - text: 17,32 ₽/час
+                    - generic [ref=f10e555]:
+                      - generic [ref=f10e556]: 12 ядерvCPU
+                      - generic [ref=f10e557]: 24 ГБRAM
+                      - generic [ref=f10e558]: 240 ГБNVMe
+                  - generic [ref=f10e561] [cursor=pointer]:
+                    - generic [ref=f10e562]: High C12-M32-D320
+                    - generic [ref=f10e563]:
+                      - generic [ref=f10e564]: 15.600 ₽/мес
+                      - text: 20,89 ₽/час
+                    - generic [ref=f10e565]:
+                      - generic [ref=f10e566]: 12 ядерvCPU
+                      - generic [ref=f10e567]: 32 ГБRAM
+                      - generic [ref=f10e568]: 320 ГБNVMe
+          - generic [ref=f10e569]:
+            - heading "Регион размещения" [level=3] [ref=f10e572]
+            - generic [ref=f10e573]:
+              - generic [ref=f10e574]: Москва
+              - generic [ref=f10e581]: Санкт-Петербург
+              - generic [ref=f10e587]: Самара
+        - generic [ref=f10e596]:
+          - heading "Конфигурация" [level=3] [ref=f10e597]
+          - generic [ref=f10e598]:
+            - generic [ref=f10e600]:
+              - listitem [ref=f10e601]:
+                - generic [ref=f10e602]: РегионСанкт-Петербург
+              - listitem [ref=f10e603]
+              - listitem [ref=f10e604]:
+                - generic [ref=f10e605]: Операционная системаUbuntu 24.04 LTS
+              - listitem [ref=f10e606]
+              - listitem [ref=f10e607]:
+                - generic [ref=f10e608]: ПриложениеGitLab
+              - listitem [ref=f10e609]
+              - listitem [ref=f10e610]:
+                - text: Помесячная оплата
+                - checkbox [ref=f10e613] [cursor=pointer]
+              - listitem [ref=f10e614]:
+                - generic [ref=f10e615]: ТарифHP C4-M4-D80
+                - generic [ref=f10e617]:
+                  - generic [ref=f10e618]: 3,57 ₽/час
+                  - generic [ref=f10e619]: до 2 400 ₽/мес
+              - listitem [ref=f10e620]
+              - generic [ref=f10e621]:
+                - text: "Итого:"
+                - generic [ref=f10e622]: 3,57 ₽/час
+              - generic [ref=f10e624]: Минимальный платёж для почасовой оплаты — 100 ₽, но не менее стоимости 1 часа по выбранному тарифу.
+            - generic [ref=f10e626]:
+              - textbox "Введите промокод" [ref=f10e629]
+              - button [ref=f10e630]
+            - link "Заказать сервер" [ref=f10e638]:
+              - /url: https://cloud.reg.ru/panel/?mode=registration
+    - generic [ref=f10e642]:
+      - generic [ref=f10e643]:
+        - heading "Подробные условия программы" [level=3] [ref=f10e645]
+        - generic [ref=f10e646]:
+          - paragraph [ref=f10e647]: Программа Free Tier (бесплатный уровень ресурсов) распространяется на всех новых пользователей Рег.облака, зарегистрировавшихся с момента запуска программы В рамках акции предоставляется сервер в конфигурации 1 vCPU, 1 ГБ RAM, 10 ГБ SSD
+          - link "К правилам акции" [ref=f10e648] [cursor=pointer]:
+            - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-provedeniya-aktsii-free-tier
+      - list [ref=f10e654]:
+        - listitem [ref=f10e655]:
+          - article [ref=f10e656]:
+            - 'heading "Срок использования: до 6 месяцев бесплатно" [level=3] [ref=f10e662]'
+        - listitem [ref=f10e663]:
+          - article [ref=f10e664]:
+            - heading "Один ресурс каждого типа на аккаунт" [level=3] [ref=f10e669]
+        - listitem [ref=f10e670]:
+          - article [ref=f10e671]:
+            - heading "Идентификация пользователя обязательна" [level=3] [ref=f10e677]
+        - listitem [ref=f10e678]:
+          - article [ref=f10e679]:
+            - heading "Баланс облачного счета должен быть положительным" [level=3] [ref=f10e683]
+        - listitem [ref=f10e684]:
+          - article [ref=f10e685]:
+            - heading "Дополнительные услуги оплачиваются отдельно" [level=3] [ref=f10e690]
+        - listitem [ref=f10e691]:
+          - article [ref=f10e692]:
+            - heading "Программа может быть изменена или прекращена организатором" [level=3] [ref=f10e696]
+    - article [ref=f10e698]:
+      - article [ref=f10e699]:
+        - heading "Документация" [level=3] [ref=f10e700]
+        - paragraph [ref=f10e701]: Готовые руководства по работе с облачными серверами
+        - link "Изучить документацию" [ref=f10e702] [cursor=pointer]:
+          - /url: /support/cloud/oblachnyye-servery/
+      - list [ref=f10e708]:
+        - listitem [ref=f10e709]:
+          - link "Управление услугой «Облачные серверы» Изучить статью" [ref=f10e710] [cursor=pointer]:
+            - /url: /support/cloud/oblachnyye-servery/zakaz-i-upravleniye-uslugoy-oblachnyye-servery/upravleniye-uslugoy-oblachnyye-servery
+            - heading "Управление услугой «Облачные серверы»" [level=3] [ref=f10e711]
+            - generic [ref=f10e712]: Изучить статью
+        - listitem [ref=f10e718]:
+          - link "Подключение к облачному серверу Узнать как" [ref=f10e719] [cursor=pointer]:
+            - /url: /support/cloud/oblachnyye-servery/rabota-s-serverom/podklyucheniye-k-oblachnomu-serveru
+            - heading "Подключение к облачному серверу" [level=3] [ref=f10e720]
+            - generic [ref=f10e721]: Узнать как
+        - listitem [ref=f10e727]:
+          - link "Как привязать домен к облачному серверу Подробности" [ref=f10e728] [cursor=pointer]:
+            - /url: /support/cloud/oblachnyye-servery/rabota-s-serverom/kak-privyazat-domen-k-oblachnomu-serveru
+            - heading "Как привязать домен к облачному серверу" [level=3] [ref=f10e729]
+            - generic [ref=f10e730]: Подробности
+        - listitem [ref=f10e736]:
+          - link "Резервное копирование облачных серверов Подробности" [ref=f10e737] [cursor=pointer]:
+            - /url: /support/cloud/oblachnyye-servery/rabota-s-serverom/rezervnoe-kopirovanie-oblachnyh-serverov
+            - heading "Резервное копирование облачных серверов" [level=3] [ref=f10e738]
+            - generic [ref=f10e739]: Подробности
+    - article [ref=f10e746]:
+      - article [ref=f10e747]:
+        - strong [ref=f10e748]: Бесплатный старт сегодня — масштабирование завтра
+        - paragraph [ref=f10e749]: Free Tier (бесплатный уровень доступа) — это ваша точка входа в экосистему Рег.облака. Когда ваш проект вырастет или потребуются GPU для вычислений, вы сможете перейти на стандартные тарифы, сохранив настройки и данные
+        - generic [ref=f10e750]:
+          - paragraph [ref=f10e751]: "Путь роста:"
+          - list [ref=f10e752]:
+            - listitem [ref=f10e753]:
+              - generic [ref=f10e754]: "1"
+              - strong [ref=f10e756]: Серверы для теста Free Tier
+            - listitem [ref=f10e757]:
+              - generic [ref=f10e758]: "2"
+              - strong [ref=f10e760]: Стандартные тарифы
+            - listitem [ref=f10e761]:
+              - generic [ref=f10e762]: "3"
+              - strong [ref=f10e764]: Сети и диски
+            - listitem [ref=f10e765]:
+              - generic [ref=f10e766]: "4"
+              - strong [ref=f10e768]: Облачный сервер с GPU
+    - article [ref=f10e770]:
+      - article [ref=f10e772]:
+        - strong [ref=f10e773]: Нравится Free Tier, но не хватает возможностей?
+        - generic [ref=f10e774]:
+          - paragraph [ref=f10e775]: "Мы будем развивать проект Free Tier, чтобы вам было проще экспериментировать и тестировать работу. Скоро появится новый тариф:"
+          - list [ref=f10e776]:
+            - listitem [ref=f10e777]:
+              - strong [ref=f10e781]:
+                - text: FT3 — сервер 2 vCPU, 4 ГБ RAM, 40 ГБ NVMe
+                - strong [ref=f10e782]: для юридических лиц с предустановленной панелью ispmanager лайт
+                - text: "либо без нее. Доступ через авторизацию на Госуслугах (ЕСИА). Подходит для проектов, которым нужно больше ресурсов: тяжелых CMS (Битрикс), нескольких Docker-контейнеров, бэкендов. Нет возможности расширения параметров по запросу"
+          - paragraph [ref=f10e783]: Оставьте заявку, чтобы узнать о запуске тарифов раньше других. Количество мест ограничено
+          - button "Оставить заявку" [ref=f10e784] [cursor=pointer]
+      - img "Проект free tier" [ref=f10e791]
+    - article [ref=f10e793]:
+      - generic [ref=f10e795]:
+        - generic [ref=f10e796]: Бесплатно на 3 месяца
+        - article [ref=f10e798]:
+          - strong [ref=f10e799]: Хотите управлять сервером через панель? Попробуйте тариф с ispmanager
+          - paragraph [ref=f10e800]: Если вы хотите упростить управление сервером с помощью удобной панели, подключите тариф FT2. Вы получите полноценный облачный сервер и лицензию ispmanager «старт» бесплатно на 3 месяца
+        - list [ref=f10e801]:
+          - listitem [ref=f10e802]:
+            - strong [ref=f10e806]: 1 vCPU
+          - listitem [ref=f10e807]:
+            - strong [ref=f10e811]: 10 ГБ NVMe
+          - listitem [ref=f10e812]:
+            - strong [ref=f10e817]: 1 ГБ RAM
+          - listitem [ref=f10e818]:
+            - strong [ref=f10e824]: IP-адрес
+        - link "Заказать бесплатный сервер с ispmanager" [ref=f10e825] [cursor=pointer]:
+          - /url: /solutions/free-start
+      - generic [ref=f10e827]:
+        - img "Free Tier в Рег.облаке с панелью ispmanager"
+    - article [ref=f10e829]:
+      - heading "Частые вопросы" [level=2] [ref=f10e832]
+      - list [ref=f10e834]:
+        - listitem [ref=f10e835]:
+          - group [ref=f10e836]:
+            - heading "Хватит ли 1 ГБ RAM для Docker?" [level=3] [ref=f10e840] [cursor=pointer]
+        - listitem [ref=f10e843]:
+          - group [ref=f10e844]:
+            - heading "Подойдет ли сервер для production-проектов? Когда лучше перейти на платный тариф?" [level=3] [ref=f10e848] [cursor=pointer]
+        - listitem [ref=f10e851]:
+          - group [ref=f10e852]:
+            - heading "Что такое облачное тестирование?" [level=3] [ref=f10e856] [cursor=pointer]
+        - listitem [ref=f10e859]:
+          - group [ref=f10e860]:
+            - heading "За что могут закрыть облако для теста?" [level=3] [ref=f10e864] [cursor=pointer]
+        - listitem [ref=f10e867]:
+          - group [ref=f10e868]:
+            - heading "Можно ли держать PostgreSQL на таком сервере?" [level=3] [ref=f10e872] [cursor=pointer]
+        - listitem [ref=f10e875]:
+          - group [ref=f10e876]:
+            - heading "Подойдет ли сервер для CI/CD?" [level=3] [ref=f10e880] [cursor=pointer]
+        - listitem [ref=f10e883]:
+          - group [ref=f10e884]:
+            - heading "Что будет, если проект вырастет?" [level=3] [ref=f10e888] [cursor=pointer]
+    - generic [ref=f10e891]:
+      - article [ref=f10e892]:
+        - article [ref=f10e894]:
+          - strong [ref=f10e895]: Нужна инфраструктура под расширение или новый проект?
+          - paragraph [ref=f10e897]: Обратите внимание на нашу грантовую программу
+          - button "Подать заявку на грант" [ref=f10e898] [cursor=pointer]
+        - img "Грант Рег.облака" [ref=f10e905]
+      - list [ref=f10e906]:
+        - listitem [ref=f10e907]:
+          - article [ref=f10e908]:
+            - strong [ref=f10e909]: Преимущества грантов
+            - generic [ref=f10e910]:
+              - paragraph [ref=f10e911]: Если ваш проект перерос Free Tier или вы запускаете новый цифровой продукт, вы можете получить грант от Рег.облака.
+              - paragraph [ref=f10e912]: "Это безвозмездная поддержка на сумму до 500 000 ₽, которую можно направить на облачную инфраструктуру: серверы, базы данных, резервное копирование, управление сетями и другие сервисы"
+        - listitem [ref=f10e913]:
+          - article [ref=f10e914]:
+            - strong [ref=f10e915]: Что дает грант
+            - generic [ref=f10e916]:
+              - paragraph [ref=f10e917]: Экспертную поддержку от наших технических специалистов. Они помогут спроектировать архитектуру, подобрать оптимальную конфигурацию и осуществить миграцию в Рег.облако.
+              - paragraph [ref=f10e918]:
+                - strong [ref=f10e919]: "Кому подойдет:"
+                - text: • стартапы, разрабатывающие цифровой продукт или сервис • зрелые компании, запускающие новый продукт (если ранее не получали гранты от Рег.ру)
+    - article [ref=f10e921]:
+      - generic [ref=f10e922]:
+        - heading "Начните тестировать облачные сервисы прямо сейчас" [level=2] [ref=f10e923]
+        - paragraph [ref=f10e924]: Создайте облачный сервер бесплатно и используйте его для Docker, CI/CD, тестовых сред и учебных проектов 6 месяцев
+      - list [ref=f10e925]:
+        - listitem [ref=f10e926]:
+          - link "Создать бесплатный сервер" [ref=f10e927] [cursor=pointer]:
+            - /url: "#selection"
+        - listitem [ref=f10e929]:
+          - link "Документация" [ref=f10e930] [cursor=pointer]:
+            - /url: /support/cloud/oblachnyye-servery/zakaz-i-upravleniye-uslugoy-oblachnyye-servery/besplatnyy-server-free-tier
+  - contentinfo [ref=f10e932]:
+    - navigation "breadcrumbs" [ref=f10e936]:
+      - list [ref=f10e937]:
+        - listitem [ref=f10e938]:
+          - link "Главная" [ref=f10e939] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f10e943]:
+          - link "Продукты и сервисы" [ref=f10e944] [cursor=pointer]:
+            - /url: /services/
+        - listitem [ref=f10e948]:
+          - link "Free Tier" [ref=f10e949] [cursor=pointer]:
+            - /url: /services/free-tier
+        - listitem [ref=f10e953]:
+          - generic "Бесплатный облачный сервер" [ref=f10e954]
+    - navigation [ref=f10e957]:
+      - link "REG.Cloud" [ref=f10e960] [cursor=pointer]:
+        - /url: https://reg.cloud
+      - generic [ref=f10e975]:
+        - strong [ref=f10e976]: Продукты и сервисы
+        - list [ref=f10e977]:
+          - listitem [ref=f10e978]:
+            - link "Облачные серверы" [ref=f10e979] [cursor=pointer]:
+              - /url: /cloud/servers
+          - listitem [ref=f10e980]:
+            - link "Выделенные серверы" [ref=f10e981] [cursor=pointer]:
+              - /url: /dedicated/
+          - listitem [ref=f10e982]:
+            - link "Базы данных" [ref=f10e983] [cursor=pointer]:
+              - /url: /services/postgresql
+          - listitem [ref=f10e984]:
+            - link "S3 хранилище" [ref=f10e985] [cursor=pointer]:
+              - /url: /services/s3-storage
+          - listitem [ref=f10e986]:
+            - link "Кластеры Kubernetes" [ref=f10e987] [cursor=pointer]:
+              - /url: /services/managed-kubernetes
+          - listitem [ref=f10e988]:
+            - link "Cloud GPU" [ref=f10e989] [cursor=pointer]:
+              - /url: /cloud/gpu
+          - listitem [ref=f10e990]:
+            - link "VPS" [ref=f10e991] [cursor=pointer]:
+              - /url: /services/vps
+      - generic [ref=f10e993]:
+        - strong [ref=f10e994]: Решения
+        - list [ref=f10e995]:
+          - listitem [ref=f10e996]:
+            - link "Интернет-магазин в облаке" [ref=f10e997] [cursor=pointer]:
+              - /url: /solutions/ecommerce-website
+          - listitem [ref=f10e998]:
+            - link "Разработка и тестирование в облаке" [ref=f10e999] [cursor=pointer]:
+              - /url: /solutions/dev-test
+          - listitem [ref=f10e1000]:
+            - link "Удаленный рабочий стол" [ref=f10e1001] [cursor=pointer]:
+              - /url: /solutions/cloud-desktop
+          - listitem [ref=f10e1002]:
+            - link "Работа с 1С" [ref=f10e1003] [cursor=pointer]:
+              - /url: /solutions/1c
+          - listitem [ref=f10e1004]:
+            - link "Корпоративное хранение данных" [ref=f10e1005] [cursor=pointer]:
+              - /url: /solutions/data-warehouse-dwh
+          - listitem [ref=f10e1006]:
+            - link "Искусственный интеллект и машинное обучение в облаке" [ref=f10e1007] [cursor=pointer]:
+              - /url: /solutions/machine-learning
+          - listitem [ref=f10e1008]:
+            - link "Конфигуратор сервера" [ref=f10e1009] [cursor=pointer]:
+              - /url: /dedicated/configurator
+          - listitem [ref=f10e1010]:
+            - link "Администрирование серверов" [ref=f10e1011] [cursor=pointer]:
+              - /url: /solutions/administration
+      - generic [ref=f10e1012]:
+        - generic [ref=f10e1013]:
+          - strong [ref=f10e1014]: Техподдержка
+          - list [ref=f10e1015]:
+            - listitem [ref=f10e1016]:
+              - link "Создать тикет" [ref=f10e1017] [cursor=pointer]:
+                - /url: /support/#request
+            - listitem [ref=f10e1018]:
+              - link "Документация" [ref=f10e1019] [cursor=pointer]:
+                - /url: /support/
+        - generic [ref=f10e1020]:
+          - strong [ref=f10e1021]: Прочее
+          - list [ref=f10e1022]:
+            - listitem [ref=f10e1023]:
+              - link "О компании" [ref=f10e1024] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f10e1025]:
+              - link "Партнерские программы" [ref=f10e1026] [cursor=pointer]:
+                - /url: /partners
+            - listitem [ref=f10e1027]:
+              - link "Гранты" [ref=f10e1028] [cursor=pointer]:
+                - /url: /grants
+            - listitem [ref=f10e1029]:
+              - link "Акции" [ref=f10e1030] [cursor=pointer]:
+                - /url: /offers
+            - listitem [ref=f10e1031]:
+              - link "Блог" [ref=f10e1032] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f10e1033]:
+              - link "Контакты" [ref=f10e1034] [cursor=pointer]:
+                - /url: /contacts
+            - listitem [ref=f10e1035]:
+              - link "Отзывы клиентов" [ref=f10e1036] [cursor=pointer]:
+                - /url: /about/reviews
+        - generic [ref=f10e1037]:
+          - strong [ref=f10e1038]: Free Tier
+          - list [ref=f10e1039]:
+            - listitem [ref=f10e1040]:
+              - link "Программа Free Tier / Бесплатный старт" [ref=f10e1041] [cursor=pointer]:
+                - /url: /services/free-tier
+            - listitem [ref=f10e1042]:
+              - link "Бесплатный облачный сервер" [ref=f10e1043] [cursor=pointer]:
+                - /url: /services/free-tier/cloud-server
+            - listitem [ref=f10e1044]:
+              - link "Бесплатный сервер с ispmanager «старт»" [ref=f10e1045] [cursor=pointer]:
+                - /url: /solutions/free-start
+    - list [ref=f10e1049]:
+      - listitem [ref=f10e1050]:
+        - generic [ref=f10e1051]: © ООО «РЕГ.РУ»
+      - listitem [ref=f10e1052]:
+        - text: Облачная платформа Рег.ру включена в реестр российского ПО
+        - link "Запись №23682 от 29.08.2024" [ref=f10e1053] [cursor=pointer]:
+          - /url: https://reestr.digital.gov.ru/reestr/2623382/
+      - listitem [ref=f10e1054]:
+        - list [ref=f10e1055]:
+          - listitem [ref=f10e1056]:
+            - link "Политика конфиденциальности" [ref=f10e1057] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-konfidentsialnosti
+          - listitem [ref=f10e1058]:
+            - link "Политика обработки персональных данных" [ref=f10e1059] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-obrabotki-personalnyh-dannyh
+          - listitem [ref=f10e1060]:
+            - link "Правила применения рекомендательных технологий" [ref=f10e1061] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-primeneniya-rekomendatelnykh-tekhnologiy
+      - listitem [ref=f10e1062]:
+        - generic [ref=f10e1063]:
+          - link "8 800 333-92-23" [ref=f10e1064] [cursor=pointer]:
+            - /url: tel:8 800 333-92-23
+          - paragraph [ref=f10e1065]: Бесплатный звонок по России
+        - generic [ref=f10e1066]:
+          - link "+7 (495) 009-92-22" [ref=f10e1067] [cursor=pointer]:
+            - /url: tel:+7 (495) 009-92-22
+          - paragraph [ref=f10e1068]: Телефон в Москве
+        - list [ref=f10e1071]:
+          - listitem [ref=f10e1072]:
+            - link [ref=f10e1073] [cursor=pointer]:
+              - /url: https://max.ru/reg_cloud
+          - listitem [ref=f10e1076]:
+            - link [ref=f10e1077] [cursor=pointer]:
+              - /url: https://vk.com/reg.cloud
+          - listitem [ref=f10e1080]:
+            - link [ref=f10e1081] [cursor=pointer]:
+              - /url: https://t.me/regcloud
+          - listitem [ref=f10e1084]:
+            - link [ref=f10e1085] [cursor=pointer]:
+              - /url: https://vkvideo.ru/@reg.cloud
+          - listitem [ref=f10e1090]:
+            - link [ref=f10e1091] [cursor=pointer]:
+              - /url: https://vc.ru/reg-ru
+          - listitem [ref=f10e1094]:
+            - link [ref=f10e1095] [cursor=pointer]:
+              - /url: https://habr.com/ru/search/?q=%5B%D1%80%D0%B5%D0%B3.%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE%5D&target_type=posts&order=date
+          - listitem [ref=f10e1098]:
+            - link [ref=f10e1099] [cursor=pointer]:
+              - /url: https://companies.rbc.ru/id/1067746613494-regru

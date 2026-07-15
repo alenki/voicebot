@@ -1,0 +1,46 @@
+- generic [ref=f9e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic [ref=f9e2]:
+          - link [ref=f9e4] [cursor=pointer]:
+            - /url: https://reg.cloud
+          - generic [ref=f9e7]:
+            - generic [ref=f9e8]: Создайте аккаунт
+            - generic [ref=f9e9]: Для этого укажите только электронную почту, мы отправим на нее данные для входа
+            - generic [ref=f9e13]:
+              - paragraph [ref=f9e16] [cursor=pointer]: Регистрация
+              - paragraph [ref=f9e19] [cursor=pointer]: Вход
+            - generic [ref=f9e77]:
+              - generic [ref=f9e79]:
+                - generic [ref=f9e80]: Электронная почта
+                - textbox "Электронная почта" [ref=f9e81]
+              - button "Зарегистрироваться" [ref=f9e82] [cursor=pointer]
+              - generic [ref=f9e85]:
+                - text: Нажимая кнопку «Зарегистрироваться», я подтверждаю, что ознакомился с
+                - link "Политикой конфиденциальности" [ref=f9e86] [cursor=pointer]:
+                  - /url: https://img.reg.ru/faq/politika_konfidencyalnosti_221025.pdf
+                - text: и
+                - link "договором оферты" [ref=f9e87] [cursor=pointer]:
+                  - /url: https://help.reg.ru/support/dokymenty/dogovori/publichnaya-oferta-ooo-regru
+            - generic [ref=f9e39]:
+              - generic [ref=f9e40]: Или зарегистрироваться через
+              - generic [ref=f9e41]:
+                - button [ref=f9e42] [cursor=pointer]
+                - button [ref=f9e47] [cursor=pointer]
+                - button [ref=f9e52] [cursor=pointer]
+              - article [ref=f9e57]:
+                - generic [ref=f9e65]:
+                  - text: С 25.04.2024 регистрация и авторизация с помощью Google и Apple ID недоступны. Если вы использовали один из этих способов для входа, восстановите доступ к аккаунту
+                  - link "по инструкции" [ref=f9e66] [cursor=pointer]:
+                    - /url: https://help.reg.ru/support/lichnyy-kabinet/vosstanovleniye-dostupa-v-lichnyy-kabinet/vosstanovleniye-dostupa-v-lichnyy-kabinet-pri-ispolzovanii-google-id-i-apple-id
+        - generic [ref=f9e68]:
+          - generic [ref=f9e69]:
+            - text: Мы используем файлы cookie. Продолжив работу с сайтом, вы соглашаетесь с
+            - link "Политикой обработки персональных данных" [ref=f9e70] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/pravovyye-voprosy/personalnyye-dannyye/obshchaya-informatsiya-o-personalnykh-dannykh-i-pravovyye-osnovaniya
+            - text: и
+            - link "Правилами пользования сайтом" [ref=f9e71] [cursor=pointer]:
+              - /url: https://www.reg.ru/company/rules
+            - text: .
+          - button "Закрыть" [ref=f9e72] [cursor=pointer]

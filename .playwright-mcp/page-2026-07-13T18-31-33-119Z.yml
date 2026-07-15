@@ -1,0 +1,430 @@
+- generic [ref=f7e1]:
+  - generic [ref=f7e3]:
+    - banner [ref=f7e11]:
+      - generic [ref=f7e12]:
+        - link [ref=f7e13] [cursor=pointer]:
+          - /url: https://reg.cloud/
+        - list [ref=f7e27]:
+          - listitem [ref=f7e28]:
+            - link "Домены и сайты" [ref=f7e29] [cursor=pointer]:
+              - /url: https://www.reg.ru
+          - listitem [ref=f7e30]:
+            - button "Помощь" [ref=f7e31]
+          - listitem [ref=f7e33]:
+            - button "Поиск" [ref=f7e34]
+          - listitem [ref=f7e35]:
+            - link "Вход" [ref=f7e36] [cursor=pointer]:
+              - /url: https://cloud.reg.ru/panel/?external_client_id=04c0d712-0dc3-443d-b0f0-82c22062b04f
+      - generic [ref=f7e38]:
+        - navigation "Главное меню" [ref=f7e39]:
+          - list [ref=f7e40]:
+            - listitem [ref=f7e41]:
+              - button "Продукты и сервисы" [ref=f7e42]
+            - listitem [ref=f7e44]:
+              - button "Решения" [ref=f7e45]
+            - listitem [ref=f7e47]:
+              - button "Приложения" [ref=f7e48]
+            - listitem [ref=f7e50]:
+              - button "Ресурсы" [ref=f7e51]
+            - listitem [ref=f7e53]:
+              - button "Партнерам" [ref=f7e54]
+        - button "Получить консультацию" [ref=f7e56]
+    - article [ref=f7e61]:
+      - generic [ref=f7e65]:
+        - textbox "Введите вопрос и найдите решение" [ref=f7e71]:
+          - /placeholder: Введите вопрос и найдите решение
+        - button "Найти" [ref=f7e72] [cursor=pointer]
+      - generic [ref=f7e74]:
+        - navigation "breadcrumbs" [ref=f7e75]:
+          - list [ref=f7e76]:
+            - listitem [ref=f7e77]:
+              - link "Документация" [ref=f7e78] [cursor=pointer]:
+                - /url: /support/
+            - listitem [ref=f7e80]:
+              - link "Рег.облако" [ref=f7e81] [cursor=pointer]:
+                - /url: /support/servery-vps/
+            - listitem [ref=f7e83]:
+              - link "Биллинг" [ref=f7e84] [cursor=pointer]:
+                - /url: /support/servery-vps/billing/
+            - listitem [ref=f7e86]:
+              - generic [ref=f7e87]: "Способы оплаты: как выставить и оплатить счет в Рег.облаке"
+        - 'heading "Способы оплаты: как выставить и оплатить счет в Рег.облаке" [level=1] [ref=f7e88]'
+      - generic [ref=f7e89]:
+        - article [ref=f7e91]:
+          - paragraph [ref=f7e92]: Если счет не сформирован, необходимо выставить счет и выбрать удобный способ оплаты. О том, как выставить счет и выбрать способ оплаты, расскажем ниже.
+          - article [ref=f7e94]:
+            - tablist [ref=f7e95]:
+              - listitem [ref=f7e96]:
+                - tab "для облачных услуг" [selected] [ref=f7e97]
+              - listitem [ref=f7e98]:
+                - tab "для услуг Dedicated и VMware" [ref=f7e99]
+            - tabpanel [ref=f7e101]:
+              - paragraph [ref=f7e102]: "Плата за облачные услуги списывается с баланса облачного счета. Чтобы пополнить баланс:"
+              - list [ref=f7e104]:
+                - listitem [ref=f7e105]:
+                  - generic [ref=f7e106]: "1"
+                  - generic [ref=f7e108]:
+                    - link "В панели управления Рег.облака" [ref=f7e109] [cursor=pointer]:
+                      - /url: https://cloud.reg.ru/panel/?external_client_id=04c0d712-0dc3-443d-b0f0-82c22062b04f
+                    - text: перейдите в раздел
+                    - strong [ref=f7e110]: Финансы
+                    - text: .
+                - listitem [ref=f7e111]:
+                  - generic [ref=f7e112]: "2"
+                  - generic [ref=f7e114]:
+                    - text: Нажмите
+                    - strong [ref=f7e115]: Пополнить
+                    - text: ", введите сумму пополнения счета и кликните"
+                    - strong [ref=f7e116]: Выбрать способ пополнения
+                    - text: . Минимальная сумма пополнения баланса — 100 рублей.
+                - listitem [ref=f7e117]:
+                  - generic [ref=f7e118]: "3"
+                  - generic [ref=f7e119]: Выберите удобный способ оплаты, нажав по соответствующей строке. Счет будет выставлен и готов к оплате.
+          - group [ref=f7e122]:
+            - generic "Если нет доступа к личному кабинету" [ref=f7e123]
+          - heading "Как оплатить счет" [level=2] [ref=f7e127]
+          - paragraph [ref=f7e128]: "Процедура оплаты зависит от способа, который был выбран:"
+          - list [ref=f7e130]:
+            - listitem [ref=f7e131]:
+              - link "Баланс личного кабинета" [ref=f7e132] [cursor=pointer]:
+                - /url: "#1"
+              - text: ","
+            - listitem [ref=f7e133]:
+              - link "Банковская карта" [ref=f7e134] [cursor=pointer]:
+                - /url: "#2"
+              - text: ","
+            - listitem [ref=f7e135]:
+              - link "Безналичный перевод" [ref=f7e136] [cursor=pointer]:
+                - /url: "#3"
+              - text: ","
+            - listitem [ref=f7e137]:
+              - link "Безналичный перевод в иностранных валютах" [ref=f7e138] [cursor=pointer]:
+                - /url: "#3"
+              - text: ","
+            - listitem [ref=f7e139]:
+              - link "ЮMoney" [ref=f7e140] [cursor=pointer]:
+                - /url: "#4"
+              - text: ","
+            - listitem [ref=f7e141]:
+              - link "SberPay" [ref=f7e142] [cursor=pointer]:
+                - /url: "#5"
+              - text: ","
+            - listitem [ref=f7e143]:
+              - link "Система быстрых платежей" [ref=f7e144] [cursor=pointer]:
+                - /url: "#5"
+              - text: ","
+            - listitem [ref=f7e145]:
+              - link "Наличные" [ref=f7e146] [cursor=pointer]:
+                - /url: "#6"
+              - text: ","
+          - paragraph [ref=f7e147]:
+            - strong [ref=f7e148]: Обратите внимание!
+            - text: Способы оплаты Альфа-Клик и WebMoney
+            - strong [ref=f7e149]: недоступны
+            - text: .
+          - heading "Способы оплаты счетов" [level=2] [ref=f7e150]
+          - group [ref=f7e152]:
+            - generic "Баланс личного кабинета" [ref=f7e153]
+          - heading "Банковская карта" [level=2] [ref=f7e157]
+          - group [ref=f7e159]:
+            - generic "Банковская карта" [ref=f7e160]
+            - list [ref=f7e416]:
+              - listitem [ref=f7e417]:
+                - generic [ref=f7e418]: "1"
+                - generic [ref=f7e420]:
+                  - paragraph [ref=f7e421]:
+                    - text: В строке «Банковская карта» нажмите на
+                    - strong [ref=f7e422]: стрелку
+                    - text: .
+                  - paragraph [ref=f7e423]: "Если вы не хотите сохранять карту для дальнейших платежей, снимите галочку с пункта «Запомнить карту для оплаты и автопродления услуг»:"
+                  - paragraph
+                  - img "Способы оплаты 3" [ref=f7e427]
+                  - paragraph
+              - listitem [ref=f7e428]:
+                - generic [ref=f7e429]: "2"
+                - generic [ref=f7e431]:
+                  - paragraph [ref=f7e432]:
+                    - text: Укажите номер карты, срок действия, CVC-код и нажмите кнопку
+                    - strong [ref=f7e433]: Заплатить
+                    - text: ":"
+                  - paragraph
+                  - img "способы-оплаты-4" [ref=f7e437]
+                  - paragraph
+              - listitem [ref=f7e438]:
+                - generic [ref=f7e439]: "3"
+                - generic [ref=f7e441]:
+                  - paragraph [ref=f7e442]: На номер телефона, привязанный к банковской карте, будет выслано SMS-сообщение с кодом подтверждения. Введите полученный код, чтобы подтвердить оплату.
+                  - paragraph [ref=f7e443]: Готово, после подтверждения оплаты деньги будут автоматически списаны с банковской карты.
+                  - paragraph [ref=f7e444]:
+                    - strong [ref=f7e445]: Обратите внимание!
+                  - list [ref=f7e447]:
+                    - listitem [ref=f7e448]:
+                      - generic [ref=f7e449]: "1."
+                      - strong [ref=f7e451]: Когда вы привязываете банковскую карту к личному кабинету, автоматически подключается оплата «В один клик». При оплате этим способом SMS-сообщение с кодом для подтверждения отправляться не будет.
+                    - listitem [ref=f7e452]:
+                      - generic [ref=f7e453]: "2."
+                      - strong [ref=f7e455]: Осуществляя оплату посредством банковской карты, плательщик подтверждает, что является владельцем банковского счета/держателем платежной карты, с использованием которых осуществляет платеж. Платеж с использованием банковской карты признается платежом от физического лица, если в сведениях от платежной системы, полученных в момент зачисления платежа, не указано иное.
+          - heading "Безналичные переводы" [level=2] [ref=f7e164]
+          - group [ref=f7e166]:
+            - generic "Безналичный перевод" [ref=f7e167]
+          - group [ref=f7e172]:
+            - generic "Безналичный перевод в иностранных валютах" [active] [ref=f7e173] [cursor=pointer]
+            - generic [ref=f7e456]:
+              - paragraph [ref=f7e457]: "Способ оплаты доступен только для нерезидентов РФ: юридических лиц и ИП."
+              - paragraph [ref=f7e458]:
+                - text: Для оплаты способом «Безналичный перевод в иностранных валютах»
+                - link "оставьте заявку в службу поддержки" [ref=f7e459] [cursor=pointer]:
+                  - /url: https://reg.cloud/support/#request
+                - text: .
+              - paragraph [ref=f7e460]: "Условия:"
+              - list [ref=f7e462]:
+                - listitem [ref=f7e463]: Досрочная оплата не принимается, нужно дождаться фактического поступления;
+                - listitem [ref=f7e464]: Оплата от третьих лиц не принимается.
+          - heading "Электронные кошельки" [level=2] [ref=f7e177]
+          - group [ref=f7e179]:
+            - generic "ЮMoney" [ref=f7e180]
+          - heading "Интернет-банки" [level=2] [ref=f7e184]
+          - group [ref=f7e186]:
+            - generic "SberPay" [ref=f7e187]
+          - group [ref=f7e192]:
+            - generic "Система быстрых платежей" [ref=f7e193]
+          - heading "Наличные" [level=2] [ref=f7e197]
+          - group [ref=f7e199]:
+            - generic "Наличные" [ref=f7e200]
+          - heading "Как узнать, что счет оплачен?" [level=2] [ref=f7e204]
+          - paragraph [ref=f7e205]:
+            - text: Обычно все платежи, кроме
+            - link "безналичного перевода" [ref=f7e206] [cursor=pointer]:
+              - /url: "#beznal"
+            - text: ", поступают в течение 10-15 минут после оплаты счета."
+          - paragraph [ref=f7e207]:
+            - text: Если вы оплачивали счет из панели управления Рег.облака или личного кабинета Рег.ру, на ваш электронный адрес поступит письмо о том, что оплата по счету зачислена. Также статус счета всегда можно посмотреть в личном кабинете Рег.ру в разделе
+            - link "Счета" [ref=f7e208] [cursor=pointer]:
+              - /url: https://www.reg.ru/user/account/#/balance/bills/
+            - text: .
+          - paragraph [ref=f7e209]:
+            - text: Если же вы проводили платеж без авторизации в личном кабинете,
+            - link "отправьте заявку в службу поддержки" [ref=f7e210] [cursor=pointer]:
+              - /url: https://reg.cloud/support/#request
+            - text: ", чтобы уточнить статус счета."
+          - article [ref=f7e212]:
+            - generic [ref=f7e213]:
+              - heading "Была ли статья полезна?" [level=2] [ref=f7e214]
+              - list [ref=f7e215]:
+                - listitem [ref=f7e216]:
+                  - button "Да" [ref=f7e217] [cursor=pointer]
+                - listitem [ref=f7e218]:
+                  - button "Нет" [ref=f7e219] [cursor=pointer]
+          - group [ref=f7e221]:
+            - generic "Специальные предложения" [ref=f7e222]
+        - complementary [ref=f7e227]:
+          - list [ref=f7e228]:
+            - listitem [ref=f7e229]:
+              - link "для облачных услуг" [ref=f7e230] [cursor=pointer]:
+                - /url: "#tab-0"
+              - text: "|"
+              - link "для услуг Dedicated и VMware" [ref=f7e231] [cursor=pointer]:
+                - /url: "#tab-1"
+            - listitem [ref=f7e232]:
+              - link "Как оплатить счет" [ref=f7e233] [cursor=pointer]:
+                - /url: "#1"
+            - listitem [ref=f7e234]:
+              - link "Способы оплаты счетов" [ref=f7e235] [cursor=pointer]:
+                - /url: "#2"
+            - listitem [ref=f7e236]:
+              - link "Банковская карта" [ref=f7e237] [cursor=pointer]:
+                - /url: "#3"
+            - listitem [ref=f7e238]:
+              - link "Безналичные переводы" [ref=f7e239] [cursor=pointer]:
+                - /url: "#4"
+            - listitem [ref=f7e240]:
+              - link "Электронные кошельки" [ref=f7e241] [cursor=pointer]:
+                - /url: "#5"
+            - listitem [ref=f7e242]:
+              - link "Интернет-банки" [ref=f7e243] [cursor=pointer]:
+                - /url: "#6"
+            - listitem [ref=f7e244]:
+              - link "Наличные" [ref=f7e245] [cursor=pointer]:
+                - /url: "#7"
+            - listitem [ref=f7e246]:
+              - link "Как узнать, что счет оплачен?" [ref=f7e247] [cursor=pointer]:
+                - /url: "#8"
+  - contentinfo [ref=f7e248]:
+    - generic [ref=f7e251]:
+      - generic [ref=f7e252]:
+        - generic [ref=f7e253]: Рассылка Рег.облака
+        - paragraph [ref=f7e254]: Лайфхаки, скидки и новости об IT
+      - generic [ref=f7e256]:
+        - generic [ref=f7e257]:
+          - textbox "Введите свой email" [ref=f7e260]
+          - button "Подписаться" [disabled]
+        - generic [ref=f7e261]:
+          - checkbox [ref=f7e264]
+          - paragraph [ref=f7e266]:
+            - text: Даю
+            - link "согласие" [ref=f7e267] [cursor=pointer]:
+              - /url: https://img.reg.ru/faq/soglasie_na_poluchenie_reklami_221025.pdf?target=_blank
+            - text: на получение рекламных и информационных материалов
+    - navigation [ref=f7e270]:
+      - generic [ref=f7e285]:
+        - strong [ref=f7e286]: Продукты и сервисы
+        - list [ref=f7e287]:
+          - listitem [ref=f7e288]:
+            - link "Облачные серверы" [ref=f7e289] [cursor=pointer]:
+              - /url: /cloud/servers
+          - listitem [ref=f7e290]:
+            - link "Выделенные серверы" [ref=f7e291] [cursor=pointer]:
+              - /url: /dedicated/
+          - listitem [ref=f7e292]:
+            - link "Базы данных" [ref=f7e293] [cursor=pointer]:
+              - /url: /services/postgresql
+          - listitem [ref=f7e294]:
+            - link "S3 хранилище" [ref=f7e295] [cursor=pointer]:
+              - /url: /services/s3-storage
+          - listitem [ref=f7e296]:
+            - link "Кластеры Kubernetes" [ref=f7e297] [cursor=pointer]:
+              - /url: /services/managed-kubernetes
+          - listitem [ref=f7e298]:
+            - link "Cloud GPU" [ref=f7e299] [cursor=pointer]:
+              - /url: /cloud/gpu
+          - listitem [ref=f7e300]:
+            - link "VPS" [ref=f7e301] [cursor=pointer]:
+              - /url: /services/vps
+      - generic [ref=f7e302]:
+        - strong [ref=f7e303]: Решения
+        - list [ref=f7e304]:
+          - listitem [ref=f7e305]:
+            - link "Интернет-магазин в облаке" [ref=f7e306] [cursor=pointer]:
+              - /url: /solutions/ecommerce-website
+          - listitem [ref=f7e307]:
+            - link "Разработка и тестирование в облаке" [ref=f7e308] [cursor=pointer]:
+              - /url: /solutions/dev-test
+          - listitem [ref=f7e309]:
+            - link "Удаленный рабочий стол" [ref=f7e310] [cursor=pointer]:
+              - /url: /solutions/cloud-desktop
+          - listitem [ref=f7e311]:
+            - link "Работа с 1С" [ref=f7e312] [cursor=pointer]:
+              - /url: /solutions/1c
+          - listitem [ref=f7e313]:
+            - link "Корпоративное хранение данных" [ref=f7e314] [cursor=pointer]:
+              - /url: /solutions/data-warehouse-dwh
+          - listitem [ref=f7e315]:
+            - link "Искусственный интеллект и машинное обучение в облаке" [ref=f7e316] [cursor=pointer]:
+              - /url: /solutions/machine-learning
+          - listitem [ref=f7e317]:
+            - link "Конфигуратор сервера" [ref=f7e318] [cursor=pointer]:
+              - /url: /dedicated/configurator
+          - listitem [ref=f7e319]:
+            - link "Администрирование серверов" [ref=f7e320] [cursor=pointer]:
+              - /url: /solutions/administration
+      - generic [ref=f7e321]:
+        - generic [ref=f7e322]:
+          - strong [ref=f7e323]: Техподдержка
+          - list [ref=f7e324]:
+            - listitem [ref=f7e325]:
+              - link "Создать тикет" [ref=f7e326] [cursor=pointer]:
+                - /url: /support/#request
+            - listitem [ref=f7e327]:
+              - link "Документация" [ref=f7e328] [cursor=pointer]:
+                - /url: /support/
+        - generic [ref=f7e329]:
+          - strong [ref=f7e330]: Прочее
+          - list [ref=f7e331]:
+            - listitem [ref=f7e332]:
+              - link "О компании" [ref=f7e333] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f7e334]:
+              - link "Партнерская программа" [ref=f7e335] [cursor=pointer]:
+                - /url: /partners
+            - listitem [ref=f7e336]:
+              - link "Гранты" [ref=f7e337] [cursor=pointer]:
+                - /url: /grants
+            - listitem [ref=f7e338]:
+              - link "Акции" [ref=f7e339] [cursor=pointer]:
+                - /url: /offers
+            - listitem [ref=f7e340]:
+              - link "Блог" [ref=f7e341] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f7e342]:
+              - link "Контакты" [ref=f7e343] [cursor=pointer]:
+                - /url: /contacts
+            - listitem [ref=f7e344]:
+              - link "Отзывы клиентов" [ref=f7e345] [cursor=pointer]:
+                - /url: /about/reviews
+        - generic [ref=f7e346]:
+          - strong [ref=f7e347]: Free Tier
+          - list [ref=f7e348]:
+            - listitem [ref=f7e349]:
+              - link "Программа Free Tier / Бесплатный старт" [ref=f7e350] [cursor=pointer]:
+                - /url: /services/free-tier
+            - listitem [ref=f7e351]:
+              - link "Бесплатный облачный сервер" [ref=f7e352] [cursor=pointer]:
+                - /url: /services/free-tier/cloud-server
+            - listitem [ref=f7e353]:
+              - link "Бесплатный сервер с ispmanager «старт»" [ref=f7e354] [cursor=pointer]:
+                - /url: /solutions/free-start
+    - list [ref=f7e358]:
+      - listitem [ref=f7e359]:
+        - generic [ref=f7e360]: © ООО «РЕГ.РУ»
+        - generic [ref=f7e361]: Нашли опечатку?Выделите и нажмите Ctrl+Enter
+      - listitem [ref=f7e362]:
+        - text: Облачная платформа Рег.ру включена в реестр российского ПО
+        - link "Запись №23682 от 29.08.2024" [ref=f7e363] [cursor=pointer]:
+          - /url: https://reestr.digital.gov.ru/reestr/2623382/
+      - listitem [ref=f7e364]:
+        - list [ref=f7e365]:
+          - listitem [ref=f7e366]:
+            - link "Политика конфиденциальности" [ref=f7e367] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-konfidentsialnosti
+          - listitem [ref=f7e368]:
+            - link "Политика обработки персональных данных" [ref=f7e369] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-obrabotki-personalnyh-dannyh
+          - listitem [ref=f7e370]:
+            - link "Правила применения рекомендательных технологий" [ref=f7e371] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-primeneniya-rekomendatelnykh-tekhnologiy
+      - listitem [ref=f7e372]:
+        - generic [ref=f7e373]:
+          - link "8 800 333-92-23" [ref=f7e374] [cursor=pointer]:
+            - /url: tel:8 800 333-92-23
+          - paragraph [ref=f7e375]: Бесплатный звонок по России
+        - generic [ref=f7e376]:
+          - link "+7 (495) 009‑92‑22" [ref=f7e377] [cursor=pointer]:
+            - /url: tel:+7 (495) 009‑92‑22
+          - paragraph [ref=f7e378]: Телефон в Москве
+        - list [ref=f7e381]:
+          - listitem [ref=f7e382]:
+            - link "max" [ref=f7e383] [cursor=pointer]:
+              - /url: https://max.ru/reg_cloud
+          - listitem [ref=f7e385]:
+            - link "vk" [ref=f7e386] [cursor=pointer]:
+              - /url: https://vk.com/reg.cloud
+          - listitem [ref=f7e388]:
+            - link "telegram" [ref=f7e389] [cursor=pointer]:
+              - /url: https://t.me/regcloud
+          - listitem [ref=f7e391]:
+            - link "vkvideo" [ref=f7e392] [cursor=pointer]:
+              - /url: https://vkvideo.ru/@reg.cloud
+          - listitem [ref=f7e394]:
+            - link "vcru" [ref=f7e395] [cursor=pointer]:
+              - /url: https://vc.ru/reg-ru
+          - listitem [ref=f7e397]:
+            - link "moikrug" [ref=f7e398] [cursor=pointer]:
+              - /url: https://habr.com/ru/search/?q=%5B%D1%80%D0%B5%D0%B3.%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE%5D&target_type=posts&order=date
+          - listitem [ref=f7e400]:
+            - link "rbc" [ref=f7e401] [cursor=pointer]:
+              - /url: https://companies.rbc.ru/id/1067746613494-regru
+  - list:
+    - listitem:
+      - article [ref=f7e403]:
+        - generic [ref=f7e404]:
+          - paragraph [ref=f7e405]:
+            - text: Мы используем
+            - link "cookie" [ref=f7e406] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-v-othoshenii-obrabotki-fajlov-cookie/
+            - text: и
+            - link "рекомендательные технологии" [ref=f7e407] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-primeneniya-rekomendatelnykh-tekhnologiy
+            - text: для персонализации сервисов и удобства пользователей. Вы можете запретить сохранение cookie в настройках своего браузера
+          - button "Хорошо" [ref=f7e408] [cursor=pointer]
+    - listitem:
+      - button "Помощь" [ref=f7e410] [cursor=pointer]

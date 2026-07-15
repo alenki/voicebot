@@ -1,0 +1,398 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e3]:
+    - banner [ref=f8e11]:
+      - generic [ref=f8e12]:
+        - link [ref=f8e13] [cursor=pointer]:
+          - /url: https://reg.cloud/
+        - list [ref=f8e27]:
+          - listitem [ref=f8e28]:
+            - link "Домены и сайты" [ref=f8e29] [cursor=pointer]:
+              - /url: https://www.reg.ru
+          - listitem [ref=f8e30]:
+            - button "Помощь" [ref=f8e31]
+          - listitem [ref=f8e33]:
+            - button "Поиск" [ref=f8e34]
+          - listitem [ref=f8e35]:
+            - link "Вход" [ref=f8e36] [cursor=pointer]:
+              - /url: https://cloud.reg.ru/panel/?external_client_id=04c0d712-0dc3-443d-b0f0-82c22062b04f
+      - generic [ref=f8e38]:
+        - navigation "Главное меню" [ref=f8e39]:
+          - list [ref=f8e40]:
+            - listitem [ref=f8e41]:
+              - button "Продукты и сервисы" [ref=f8e42]
+            - listitem [ref=f8e44]:
+              - button "Решения" [ref=f8e45]
+            - listitem [ref=f8e47]:
+              - button "Приложения" [ref=f8e48]
+            - listitem [ref=f8e50]:
+              - button "Ресурсы" [ref=f8e51]
+            - listitem [ref=f8e53]:
+              - button "Партнерам" [ref=f8e54]
+        - button "Получить консультацию" [ref=f8e56]
+    - article [ref=f8e61]:
+      - generic [ref=f8e65]:
+        - textbox "Введите вопрос и найдите решение" [ref=f8e71]:
+          - /placeholder: Введите вопрос и найдите решение
+        - button "Найти" [ref=f8e72] [cursor=pointer]
+      - generic [ref=f8e74]:
+        - navigation "breadcrumbs" [ref=f8e75]:
+          - list [ref=f8e76]:
+            - listitem [ref=f8e77]:
+              - link "Документация" [ref=f8e78] [cursor=pointer]:
+                - /url: /support/
+            - listitem [ref=f8e80]:
+              - link "Рег.облако" [ref=f8e81] [cursor=pointer]:
+                - /url: /support/servery-vps/
+            - listitem [ref=f8e83]:
+              - link "Биллинг" [ref=f8e84] [cursor=pointer]:
+                - /url: /support/servery-vps/billing/
+            - listitem [ref=f8e86]:
+              - generic [ref=f8e87]: Стоимость услуг IaaS в Рег.облаке
+        - heading "Стоимость услуг IaaS в Рег.облаке" [level=1] [ref=f8e88]
+      - generic [ref=f8e89]:
+        - article [ref=f8e91]:
+          - paragraph [ref=f8e92]:
+            - text: Для услуг IaaS в Рег.облаке установлена почасовая оплата. Стоимость определяется типом и объемом заказанных ресурсов. Цены на единицу ресурса приведены в таблице
+            - strong [ref=f8e93]: (цены актуальны с 2 февраля 2026 года)
+            - text: ":"
+          - generic [ref=f8e96]:
+            - generic [ref=f8e97]:
+              - generic [ref=f8e98]: Наименование ресурса
+              - generic [ref=f8e99]: Стоимость в час (руб.)
+              - generic [ref=f8e100]: Стоимость в месяц (руб.)
+            - generic [ref=f8e101]:
+              - generic [ref=f8e102]: Плавающий публичный IP-адрес v4
+              - generic [ref=f8e103]: 0,22321
+              - generic [ref=f8e104]: 162,94
+            - generic [ref=f8e105]:
+              - generic [ref=f8e106]: Публичный IP-адрес v6
+              - generic [ref=f8e107]: 0,00149
+              - generic [ref=f8e108]: 1,09
+            - generic [ref=f8e109]:
+              - generic [ref=f8e110]: Ядро процессора Intel Xeon Scalable, базовая частота 2.2 ГГц, в турбо режиме до 3 ГГц
+              - generic [ref=f8e111]: 0,16369
+              - generic [ref=f8e112]: 119,49
+            - generic [ref=f8e113]:
+              - generic [ref=f8e114]: Ядро процессора AMD EPYC, базовая частота 2.8 ГГц, в турбо режиме до 3.7 ГГц
+              - generic [ref=f8e115]: 0,26786
+              - generic [ref=f8e116]: 195,54
+            - generic [ref=f8e117]:
+              - generic [ref=f8e118]: Ядро процессора Intel Xeon E, базовая частота 3.7 ГГц, в турбо режиме до 5.1 ГГц
+              - generic [ref=f8e119]: 0,74405
+              - generic [ref=f8e120]: 543,16
+            - generic [ref=f8e121]:
+              - generic [ref=f8e122]: Ядро процессора AMD EPYC с гарантированной долей CPU 100%, базовая частота 2.8 ГГц, в турбо режиме до 3.7 ГГц
+              - generic [ref=f8e123]: 1,116071
+              - generic [ref=f8e124]: 814,73
+            - generic [ref=f8e125]:
+              - generic [ref=f8e126]: Оперативная память DDR4, 1 ГБ
+              - generic [ref=f8e127]: 0,26786
+              - generic [ref=f8e128]: 195,54
+            - generic [ref=f8e129]:
+              - generic [ref=f8e130]: Локальный диск SSD, 1 ГБ
+              - generic [ref=f8e131]: 0,01488
+              - generic [ref=f8e132]: 10,86
+            - generic [ref=f8e133]:
+              - generic [ref=f8e134]: Локальный диск SSD NVMe, 1 ГБ
+              - generic [ref=f8e135]: 0,01786
+              - generic [ref=f8e136]: 13,04
+            - generic [ref=f8e137]:
+              - generic [ref=f8e138]: Хранение резервных копий, 1 ГБ (*)
+              - generic [ref=f8e139]: 0,0072
+              - generic [ref=f8e140]: 5,26
+            - generic [ref=f8e141]:
+              - generic [ref=f8e142]: Графический процессор NVIDIA A4000 16 ГБ
+              - generic [ref=f8e143]: 24,8
+              - generic [ref=f8e144]: 18104,00
+            - generic [ref=f8e145]:
+              - generic [ref=f8e146]: Графический процессор NVIDIA A5000 24 ГБ
+              - generic [ref=f8e147]: 62,00446
+              - generic [ref=f8e148]: 45263,26
+            - generic [ref=f8e149]:
+              - generic [ref=f8e150]: Графический процессор NVIDIA A100 80 ГБ
+              - generic [ref=f8e151]: 372,02381
+              - generic [ref=f8e152]: 271577,38
+          - paragraph [ref=f8e153]:
+            - text: (*) на серверах с доступным ненастраиваемым сервисом резервного копирования стоимость в час считается по формуле
+            - strong [ref=f8e154]: DK*0,0014881
+            - text: ", где:"
+          - list [ref=f8e156]:
+            - listitem [ref=f8e157]: DK — квота на диск по тарифу (в гигабайтах).
+          - paragraph [ref=f8e158]: Цены актуальны для линеек виртуальных серверов «Стандартный», «Высокочастотный», «Производительный», «Выделенный CPU», «Производительный с GPU», «Производительный ФЗ-152», в том числе для всех архивных тарифов в Рег.облаке.
+          - paragraph [ref=f8e159]: Разные ресурсы могут быть доступны в разных регионах, при этом стоимость не зависит от региона размещения услуги.
+          - heading "Аттестованный сегмент облака" [level=2] [ref=f8e160]
+          - paragraph [ref=f8e161]: "Стоимость услуг IaaS в аттестованном сегменте Рег.облака определяется типом и объемом заказанных ресурсов. Цены на единицу ресурса приведены в таблице:"
+          - generic [ref=f8e164]:
+            - generic [ref=f8e165]:
+              - generic [ref=f8e166]: Наименование ресурса
+              - generic [ref=f8e167]: Стоимость в час (руб.)
+              - generic [ref=f8e168]: Стоимость в месяц (руб.)
+            - generic [ref=f8e169]:
+              - generic [ref=f8e170]: Плавающий публичный IP-адрес v4
+              - generic [ref=f8e171]: 0,22321
+              - generic [ref=f8e172]: 162,94
+            - generic [ref=f8e173]:
+              - generic [ref=f8e174]: Ядро процессора Intel Xeon Gold, базовая частота 2.8 ГГц, в турбо режиме до 3,5 ГГц
+              - generic [ref=f8e175]: 0,428576
+              - generic [ref=f8e176]: 312,86
+            - generic [ref=f8e177]:
+              - generic [ref=f8e178]: Оперативная память DDR4, 1 ГБ
+              - generic [ref=f8e179]: 0,428576
+              - generic [ref=f8e180]: 312,86
+            - generic [ref=f8e181]:
+              - generic [ref=f8e182]: Локальный диск SSD NVMe, 1 ГБ
+              - generic [ref=f8e183]: 0,028576
+              - generic [ref=f8e184]: 20,86
+            - generic [ref=f8e185]:
+              - generic [ref=f8e186]: Хранение резервных копий, 1 ГБ (*)
+              - generic [ref=f8e187]: 0,011680
+              - generic [ref=f8e188]: 8,41
+          - heading "Конфигурации линеек облачных серверов" [level=2] [ref=f8e189]
+          - generic [ref=f8e192]:
+            - generic [ref=f8e193]:
+              - generic [ref=f8e194]: Линейка
+              - generic [ref=f8e195]: Процессор
+              - generic [ref=f8e196]: Память
+              - generic [ref=f8e197]: Диск
+            - generic [ref=f8e198]:
+              - generic [ref=f8e199]: Стандартные
+              - generic [ref=f8e200]: Intel Xeon Scalable, 2.2 ГГц
+              - generic [ref=f8e201]: DDR4
+              - generic [ref=f8e202]: SSD
+            - generic [ref=f8e203]:
+              - generic [ref=f8e204]: Производительные
+              - generic [ref=f8e205]: AMD EPYC, 2.8 ГГц
+              - generic [ref=f8e206]: DDR4
+              - generic [ref=f8e207]: SSD NVMe
+            - generic [ref=f8e208]:
+              - generic [ref=f8e209]: Высокочастотные
+              - generic [ref=f8e210]: Intel Xeon E, 3.7 ГГц
+              - generic [ref=f8e211]: DDR4
+              - generic [ref=f8e212]: SSD NVMe
+            - generic [ref=f8e213]:
+              - generic [ref=f8e214]: Производительные с GPU
+              - generic [ref=f8e215]: AMD EPYC, 2.8 ГГц
+              - generic [ref=f8e216]: DDR4
+              - generic [ref=f8e217]: SSD NVMe
+            - generic [ref=f8e218]:
+              - generic [ref=f8e219]: Выделенный CPU
+              - generic [ref=f8e220]: AMD EPYC, 2.8 ГГц
+              - generic [ref=f8e221]: DDR4
+              - generic [ref=f8e222]: SSD NVMe
+            - generic [ref=f8e223]:
+              - generic [ref=f8e224]: Производительный ФЗ-152
+              - generic [ref=f8e225]: Intel Xeon Gold, 2.8 ГГц
+              - generic [ref=f8e226]: DDR4
+              - generic [ref=f8e227]: SSD NVMe
+          - paragraph [ref=f8e228]: В серверах может использоваться другое аналогичное по характеристикам или более мощное оборудование.
+          - heading "Пример расчета стоимости" [level=2] [ref=f8e229]
+          - paragraph [ref=f8e230]: "Например, стоимость сервера линейки «Производительный» в конфигурации 2 ядра процессора AMD EPYC, 2 Гб оперативной памяти, 40 Гб диска NVMe и 1 публичным IP адресом будет рассчитываться по формуле:"
+          - paragraph [ref=f8e231]: Стоимость в час = 2*0,26786 (CPU) + 2*0,26786 (RAM) + 40*0,01786 (NVMe) + 0,22321 (IP) = 2,00905 р/час
+          - heading "Принцип Pay-as-you-go" [level=2] [ref=f8e232]
+          - paragraph [ref=f8e233]: Если сервер остановлен клиентом, то списание производится только за ресурсы IP-адреса и хранение данных на диске по тарифу хранения резервных копий (см. таблицу выше). Если для сервера заказаны коммерческие программные продукты, за них также будет производиться списание в соответствии с тарифом.
+          - paragraph [ref=f8e234]: Исключение составляют облачные серверы с графическими процессорами GPU, для них принцип pay-as-you-go не действует.
+          - paragraph
+          - paragraph
+          - article [ref=f8e236]:
+            - generic [ref=f8e237]:
+              - heading "Была ли статья полезна?" [level=2] [ref=f8e238]
+              - list [ref=f8e239]:
+                - listitem [ref=f8e240]:
+                  - button "Да" [ref=f8e241] [cursor=pointer]
+                - listitem [ref=f8e242]:
+                  - button "Нет" [ref=f8e243] [cursor=pointer]
+          - group [ref=f8e245]:
+            - generic "Специальные предложения" [ref=f8e246]
+        - complementary [ref=f8e251]:
+          - list [ref=f8e252]:
+            - listitem [ref=f8e253]:
+              - link "Аттестованный сегмент облака" [ref=f8e254] [cursor=pointer]:
+                - /url: "#0"
+            - listitem [ref=f8e255]:
+              - link "Конфигурации линеек облачных серверов" [ref=f8e256] [cursor=pointer]:
+                - /url: "#1"
+            - listitem [ref=f8e257]:
+              - link "Пример расчета стоимости" [ref=f8e258] [cursor=pointer]:
+                - /url: "#2"
+            - listitem [ref=f8e259]:
+              - link "Принцип Pay-as-you-go" [ref=f8e260] [cursor=pointer]:
+                - /url: "#3"
+  - contentinfo [ref=f8e261]:
+    - generic [ref=f8e264]:
+      - generic [ref=f8e265]:
+        - generic [ref=f8e266]: Рассылка Рег.облака
+        - paragraph [ref=f8e267]: Лайфхаки, скидки и новости об IT
+      - generic [ref=f8e269]:
+        - generic [ref=f8e270]:
+          - textbox "Введите свой email" [ref=f8e273]
+          - button "Подписаться" [disabled]
+        - generic [ref=f8e274]:
+          - checkbox [ref=f8e277]
+          - paragraph [ref=f8e279]:
+            - text: Даю
+            - link "согласие" [ref=f8e280] [cursor=pointer]:
+              - /url: https://img.reg.ru/faq/soglasie_na_poluchenie_reklami_221025.pdf?target=_blank
+            - text: на получение рекламных и информационных материалов
+    - navigation [ref=f8e283]:
+      - generic [ref=f8e298]:
+        - strong [ref=f8e299]: Продукты и сервисы
+        - list [ref=f8e300]:
+          - listitem [ref=f8e301]:
+            - link "Облачные серверы" [ref=f8e302] [cursor=pointer]:
+              - /url: /cloud/servers
+          - listitem [ref=f8e303]:
+            - link "Выделенные серверы" [ref=f8e304] [cursor=pointer]:
+              - /url: /dedicated/
+          - listitem [ref=f8e305]:
+            - link "Базы данных" [ref=f8e306] [cursor=pointer]:
+              - /url: /services/postgresql
+          - listitem [ref=f8e307]:
+            - link "S3 хранилище" [ref=f8e308] [cursor=pointer]:
+              - /url: /services/s3-storage
+          - listitem [ref=f8e309]:
+            - link "Кластеры Kubernetes" [ref=f8e310] [cursor=pointer]:
+              - /url: /services/managed-kubernetes
+          - listitem [ref=f8e311]:
+            - link "Cloud GPU" [ref=f8e312] [cursor=pointer]:
+              - /url: /cloud/gpu
+          - listitem [ref=f8e313]:
+            - link "VPS" [ref=f8e314] [cursor=pointer]:
+              - /url: /services/vps
+      - generic [ref=f8e315]:
+        - strong [ref=f8e316]: Решения
+        - list [ref=f8e317]:
+          - listitem [ref=f8e318]:
+            - link "Интернет-магазин в облаке" [ref=f8e319] [cursor=pointer]:
+              - /url: /solutions/ecommerce-website
+          - listitem [ref=f8e320]:
+            - link "Разработка и тестирование в облаке" [ref=f8e321] [cursor=pointer]:
+              - /url: /solutions/dev-test
+          - listitem [ref=f8e322]:
+            - link "Удаленный рабочий стол" [ref=f8e323] [cursor=pointer]:
+              - /url: /solutions/cloud-desktop
+          - listitem [ref=f8e324]:
+            - link "Работа с 1С" [ref=f8e325] [cursor=pointer]:
+              - /url: /solutions/1c
+          - listitem [ref=f8e326]:
+            - link "Корпоративное хранение данных" [ref=f8e327] [cursor=pointer]:
+              - /url: /solutions/data-warehouse-dwh
+          - listitem [ref=f8e328]:
+            - link "Искусственный интеллект и машинное обучение в облаке" [ref=f8e329] [cursor=pointer]:
+              - /url: /solutions/machine-learning
+          - listitem [ref=f8e330]:
+            - link "Конфигуратор сервера" [ref=f8e331] [cursor=pointer]:
+              - /url: /dedicated/configurator
+          - listitem [ref=f8e332]:
+            - link "Администрирование серверов" [ref=f8e333] [cursor=pointer]:
+              - /url: /solutions/administration
+      - generic [ref=f8e334]:
+        - generic [ref=f8e335]:
+          - strong [ref=f8e336]: Техподдержка
+          - list [ref=f8e337]:
+            - listitem [ref=f8e338]:
+              - link "Создать тикет" [ref=f8e339] [cursor=pointer]:
+                - /url: /support/#request
+            - listitem [ref=f8e340]:
+              - link "Документация" [ref=f8e341] [cursor=pointer]:
+                - /url: /support/
+        - generic [ref=f8e342]:
+          - strong [ref=f8e343]: Прочее
+          - list [ref=f8e344]:
+            - listitem [ref=f8e345]:
+              - link "О компании" [ref=f8e346] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f8e347]:
+              - link "Партнерская программа" [ref=f8e348] [cursor=pointer]:
+                - /url: /partners
+            - listitem [ref=f8e349]:
+              - link "Гранты" [ref=f8e350] [cursor=pointer]:
+                - /url: /grants
+            - listitem [ref=f8e351]:
+              - link "Акции" [ref=f8e352] [cursor=pointer]:
+                - /url: /offers
+            - listitem [ref=f8e353]:
+              - link "Блог" [ref=f8e354] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f8e355]:
+              - link "Контакты" [ref=f8e356] [cursor=pointer]:
+                - /url: /contacts
+            - listitem [ref=f8e357]:
+              - link "Отзывы клиентов" [ref=f8e358] [cursor=pointer]:
+                - /url: /about/reviews
+        - generic [ref=f8e359]:
+          - strong [ref=f8e360]: Free Tier
+          - list [ref=f8e361]:
+            - listitem [ref=f8e362]:
+              - link "Программа Free Tier / Бесплатный старт" [ref=f8e363] [cursor=pointer]:
+                - /url: /services/free-tier
+            - listitem [ref=f8e364]:
+              - link "Бесплатный облачный сервер" [ref=f8e365] [cursor=pointer]:
+                - /url: /services/free-tier/cloud-server
+            - listitem [ref=f8e366]:
+              - link "Бесплатный сервер с ispmanager «старт»" [ref=f8e367] [cursor=pointer]:
+                - /url: /solutions/free-start
+    - list [ref=f8e371]:
+      - listitem [ref=f8e372]:
+        - generic [ref=f8e373]: © ООО «РЕГ.РУ»
+        - generic [ref=f8e374]: Нашли опечатку?Выделите и нажмите Ctrl+Enter
+      - listitem [ref=f8e375]:
+        - text: Облачная платформа Рег.ру включена в реестр российского ПО
+        - link "Запись №23682 от 29.08.2024" [ref=f8e376] [cursor=pointer]:
+          - /url: https://reestr.digital.gov.ru/reestr/2623382/
+      - listitem [ref=f8e377]:
+        - list [ref=f8e378]:
+          - listitem [ref=f8e379]:
+            - link "Политика конфиденциальности" [ref=f8e380] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-konfidentsialnosti
+          - listitem [ref=f8e381]:
+            - link "Политика обработки персональных данных" [ref=f8e382] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-obrabotki-personalnyh-dannyh
+          - listitem [ref=f8e383]:
+            - link "Правила применения рекомендательных технологий" [ref=f8e384] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-primeneniya-rekomendatelnykh-tekhnologiy
+      - listitem [ref=f8e385]:
+        - generic [ref=f8e386]:
+          - link "8 800 333-92-23" [ref=f8e387] [cursor=pointer]:
+            - /url: tel:8 800 333-92-23
+          - paragraph [ref=f8e388]: Бесплатный звонок по России
+        - generic [ref=f8e389]:
+          - link "+7 (495) 009‑92‑22" [ref=f8e390] [cursor=pointer]:
+            - /url: tel:+7 (495) 009‑92‑22
+          - paragraph [ref=f8e391]: Телефон в Москве
+        - list [ref=f8e394]:
+          - listitem [ref=f8e395]:
+            - link "max" [ref=f8e396] [cursor=pointer]:
+              - /url: https://max.ru/reg_cloud
+          - listitem [ref=f8e398]:
+            - link "vk" [ref=f8e399] [cursor=pointer]:
+              - /url: https://vk.com/reg.cloud
+          - listitem [ref=f8e401]:
+            - link "telegram" [ref=f8e402] [cursor=pointer]:
+              - /url: https://t.me/regcloud
+          - listitem [ref=f8e404]:
+            - link "vkvideo" [ref=f8e405] [cursor=pointer]:
+              - /url: https://vkvideo.ru/@reg.cloud
+          - listitem [ref=f8e407]:
+            - link "vcru" [ref=f8e408] [cursor=pointer]:
+              - /url: https://vc.ru/reg-ru
+          - listitem [ref=f8e410]:
+            - link "moikrug" [ref=f8e411] [cursor=pointer]:
+              - /url: https://habr.com/ru/search/?q=%5B%D1%80%D0%B5%D0%B3.%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE%5D&target_type=posts&order=date
+          - listitem [ref=f8e413]:
+            - link "rbc" [ref=f8e414] [cursor=pointer]:
+              - /url: https://companies.rbc.ru/id/1067746613494-regru
+  - list:
+    - listitem:
+      - article [ref=f8e416]:
+        - generic [ref=f8e417]:
+          - paragraph [ref=f8e418]:
+            - text: Мы используем
+            - link "cookie" [ref=f8e419] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-v-othoshenii-obrabotki-fajlov-cookie/
+            - text: и
+            - link "рекомендательные технологии" [ref=f8e420] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-primeneniya-rekomendatelnykh-tekhnologiy
+            - text: для персонализации сервисов и удобства пользователей. Вы можете запретить сохранение cookie в настройках своего браузера
+          - button "Хорошо" [ref=f8e421] [cursor=pointer]
+    - listitem:
+      - button "Помощь" [ref=f8e423] [cursor=pointer]

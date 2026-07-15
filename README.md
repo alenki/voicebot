@@ -351,3 +351,18 @@ No secrets here — values live in `.env` and the cloud consoles.
   - **Windows 11 + WSL (Ubuntu)** — project at `E:\Desktop\PC\WORK\Web Development\voicebot`
     (`/mnt/e/Desktop/PC/WORK/Web Development/voicebot` in WSL), Node `v22.21.0`.
   - **macOS** — project at `~/voicebot` (per the original handover note).
+
+
+
+Доступ к серверу
+
+Логин: root
+Пароль: n4GW4SDRMzDgrfsD
+
+
+Доступ к DNS
+
+Адрес: https://dnsadmin.hosting.reg.ru/manager/ispmgr
+Логин: ce107292771
+Пароль: W!a57IOxnneKHJ6
+DNS: ns5.hosting.reg.ru • ns6.hosting.reg.ru 

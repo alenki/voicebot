@@ -1,0 +1,479 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e3]:
+    - banner [ref=f5e11]:
+      - generic [ref=f5e12]:
+        - link [ref=f5e13] [cursor=pointer]:
+          - /url: https://reg.cloud/
+        - list [ref=f5e27]:
+          - listitem [ref=f5e28]:
+            - link "Домены и сайты" [ref=f5e29] [cursor=pointer]:
+              - /url: https://www.reg.ru
+          - listitem [ref=f5e30]:
+            - button "Помощь" [ref=f5e31]
+          - listitem [ref=f5e33]:
+            - button "Поиск" [ref=f5e34]
+          - listitem [ref=f5e35]:
+            - link "Вход" [ref=f5e36] [cursor=pointer]:
+              - /url: https://cloud.reg.ru/panel/?external_client_id=04c0d712-0dc3-443d-b0f0-82c22062b04f
+      - generic [ref=f5e38]:
+        - navigation "Главное меню" [ref=f5e39]:
+          - list [ref=f5e40]:
+            - listitem [ref=f5e41]:
+              - button "Продукты и сервисы" [ref=f5e42]
+            - listitem [ref=f5e44]:
+              - button "Решения" [ref=f5e45]
+            - listitem [ref=f5e47]:
+              - button "Приложения" [ref=f5e48]
+            - listitem [ref=f5e50]:
+              - button "Ресурсы" [ref=f5e51]
+            - listitem [ref=f5e53]:
+              - button "Партнерам" [ref=f5e54]
+        - button "Получить консультацию" [ref=f5e56]
+    - article [ref=f5e61]:
+      - generic [ref=f5e65]:
+        - textbox "Введите вопрос и найдите решение" [ref=f5e71]:
+          - /placeholder: Введите вопрос и найдите решение
+        - button "Найти" [ref=f5e72] [cursor=pointer]
+      - generic [ref=f5e74]:
+        - navigation "breadcrumbs" [ref=f5e75]:
+          - list [ref=f5e76]:
+            - listitem [ref=f5e77]:
+              - link "Документация" [ref=f5e78] [cursor=pointer]:
+                - /url: /support/
+            - listitem [ref=f5e80]:
+              - link "Рег.облако" [ref=f5e81] [cursor=pointer]:
+                - /url: /support/servery-vps/
+            - listitem [ref=f5e83]:
+              - link "Облачные серверы" [ref=f5e84] [cursor=pointer]:
+                - /url: /support/servery-vps/oblachnyye-servery/
+            - listitem [ref=f5e86]:
+              - link "Заказ и управление услугой «Облачные серверы»" [ref=f5e87] [cursor=pointer]:
+                - /url: /support/servery-vps/oblachnyye-servery/zakaz-i-upravleniye-uslugoy-oblachnyye-servery/
+            - listitem [ref=f5e89]:
+              - generic [ref=f5e90]: Бесплатный сервер Free Tier
+        - heading "Бесплатный сервер Free Tier" [level=1] [ref=f5e91]
+      - generic [ref=f5e92]:
+        - article [ref=f5e94]:
+          - heading "Что такое Free Tier" [level=2] [ref=f5e95]
+          - paragraph [ref=f5e96]:
+            - strong [ref=f5e97]: Free Tier (Базовый бесплатный тариф)
+            - text: — это бесплатный облачный сервер базовой конфигурации, который предоставляется на срок 6 месяцев с момента первой активации.
+          - paragraph [ref=f5e98]: Услуга предназначена для знакомства с платформой, тестирования небольших проектов, запуска тестовой версии продукта (MVP), выполнения задач по внедрению подхода CI/CD, работы с Docker, а также для обучения и пет-проектов. Free Tier позволяет развернуть базовую инфраструктуру без затрат и оценить возможности облачной платформы.
+          - heading "Ресурсы и возможности сервера" [level=2] [ref=f5e99]
+          - paragraph [ref=f5e100]: "Сервер в рамках программы Free Tier (Базовый бесплатный тариф) предоставляется на базе тарифа «Стандартный +» со следующими параметрами:"
+          - generic [ref=f5e103]:
+            - generic [ref=f5e104]:
+              - generic [ref=f5e105]: Параметр
+              - generic [ref=f5e106]: Значение
+            - generic [ref=f5e107]:
+              - generic [ref=f5e108]: Количество ядер виртуального процессора (vCPU)
+              - generic [ref=f5e109]: 1 ядро
+            - generic [ref=f5e110]:
+              - generic [ref=f5e111]: Объем оперативной памяти (RAM)
+              - generic [ref=f5e112]: 1 ГБ
+            - generic [ref=f5e113]:
+              - generic [ref=f5e114]: Дисковое пространство (SSD)
+              - generic [ref=f5e115]: 10 ГБ
+            - generic [ref=f5e116]:
+              - generic [ref=f5e117]: Публичный IP-адрес
+              - generic [ref=f5e118]: 1 (включен в тариф)
+            - generic [ref=f5e119]:
+              - generic [ref=f5e120]: Сеть
+              - generic [ref=f5e121]: Пропускная способность (bandwidth) 20 Мбит/с (для публичной и приватной сетей)
+          - heading "Дополнительные возможности" [level=3] [ref=f5e122]
+          - list [ref=f5e124]:
+            - listitem [ref=f5e125]:
+              - paragraph [ref=f5e126]:
+                - strong [ref=f5e127]: Подключение дополнительных услуг
+                - text: ": вы можете заказать моментальные снимки сервера (снэпшоты), резервное копирование и другие сервисы платформы;"
+            - listitem [ref=f5e128]:
+              - paragraph [ref=f5e129]:
+                - strong [ref=f5e130]: масштабирование
+                - text: ": при достижении лимитов конфигурации или после окончания бесплатного периода вы можете увеличить ресурсы сервера (количество ядер виртуального процессора, объем оперативной памяти, дисковое пространство) с автоматическим переходом на платный тариф. Перенос данных не требуется."
+          - generic [ref=f5e133]:
+            - paragraph [ref=f5e134]: Важно
+            - paragraph [ref=f5e135]: Дополнительные услуги оплачиваются отдельно согласно тарифам Рег.облака.
+          - heading "Условия получения бесплатного сервера" [level=2] [ref=f5e136]
+          - paragraph [ref=f5e137]: "Для активации Free Tier необходимо соблюдение следующих условий:"
+          - list [ref=f5e139]:
+            - listitem [ref=f5e140]:
+              - generic [ref=f5e141]: "1"
+              - generic [ref=f5e143]:
+                - strong [ref=f5e144]: Идентификация пользователя
+                - text: ": услуга доступна только идентифицированным пользователям (физическим или юридическим лицам, прошедшим проверку документов). Пройти идентификацию можно"
+                - link "по инструкции" [ref=f5e145] [cursor=pointer]:
+                  - /url: https://reg.cloud/support/cloud/nachalo-raboty/kak-proyti-identifikatsiyu-kliyentam-reg-oblaka
+                - text: в базе знаний Рег.облака.
+          - list [ref=f5e147]:
+            - listitem [ref=f5e148]:
+              - generic [ref=f5e149]: "2"
+              - generic [ref=f5e151]:
+                - strong [ref=f5e152]: Положительный баланс
+                - text: ": баланс лицевого счета в личном кабинете Рег.облака должен быть положительным. Рекомендуемый минимальный остаток — от 100 рублей. Это необходимо для активации услуг, которые тарифицируются поминутно. Пополнить баланс можно способами, описанными"
+                - link "в статье" [ref=f5e153] [cursor=pointer]:
+                  - /url: https://reg.cloud/support/cloud/billing/sposoby-oplaty-kak-vystavit-i-oplatit-schet-v-regoblake
+                - text: .
+          - generic [ref=f5e156]:
+            - paragraph [ref=f5e157]: Обратите внимание
+            - paragraph
+            - paragraph [ref=f5e158]: "Программа доступна:"
+            - list [ref=f5e160]:
+              - listitem [ref=f5e161]:
+                - paragraph [ref=f5e162]: пользователям, зарегистрировавшимся 13 апреля 2026 года или позднее;
+              - listitem [ref=f5e163]:
+                - paragraph [ref=f5e164]: пользователям, зарегистрировавшимся до 13 апреля 2026 года, но ни разу не заказывавшим услуги в Рег.облаке.
+            - paragraph
+          - heading "Как заказать сервер Free Tier" [level=2] [ref=f5e165]
+          - paragraph [ref=f5e166]: "Пошаговая инструкция по созданию сервера Free Tier:"
+          - list [ref=f5e168]:
+            - listitem [ref=f5e169]:
+              - generic [ref=f5e170]: "1"
+              - generic [ref=f5e172]:
+                - text: Зарегистрируйтесь
+                - link "в панели управления Рег.облака" [ref=f5e173] [cursor=pointer]:
+                  - /url: https://cloud.reg.ru/panel/auth?utm_source=www.google.com&utm_medium=organic&utm_content=%2Fsupport%2F&utm_campaign=reg.cloud&external_client_id=04c0d712-0dc3-443d-b0f0-82c22062b04f
+                - text: .
+            - listitem [ref=f5e174]:
+              - generic [ref=f5e175]: "2"
+              - generic [ref=f5e177]:
+                - text: Пройдите
+                - link "идентификацию" [ref=f5e178] [cursor=pointer]:
+                  - /url: https://reg.cloud/support/cloud/nachalo-raboty/kak-proyti-identifikatsiyu-kliyentam-reg-oblaka
+                - text: .
+            - listitem [ref=f5e179]:
+              - generic [ref=f5e180]: "3"
+              - generic [ref=f5e182]:
+                - link "Пополните баланс" [ref=f5e183] [cursor=pointer]:
+                  - /url: https://reg.cloud/support/cloud/billing/sposoby-oplaty-kak-vystavit-i-oplatit-schet-v-regoblake
+                - text: (минимальная сумма пополнения — 100 рублей).
+            - listitem [ref=f5e184]:
+              - generic [ref=f5e185]: "4"
+              - generic [ref=f5e187]:
+                - text: Нажмите
+                - strong [ref=f5e188]: Новый ресурс > Сервер
+                - text: .
+            - listitem [ref=f5e189]:
+              - generic [ref=f5e190]: "5"
+              - generic [ref=f5e192]:
+                - text: В мастере заказа выберите тарифный план
+                - strong [ref=f5e193]: Стандартный +
+                - text: и бесплатный тариф
+                - strong [ref=f5e194]: Free Tier
+                - text: .
+            - listitem [ref=f5e195]:
+              - generic [ref=f5e196]: "6"
+              - generic [ref=f5e198]:
+                - text: На вкладке
+                - strong [ref=f5e199]: Приложения и панели управления
+                - text: выберите операционную систему или готовое приложение.
+            - listitem [ref=f5e200]:
+              - generic [ref=f5e201]: "7"
+              - generic [ref=f5e202]: Выберите регион размещения сервера.
+            - listitem [ref=f5e204]:
+              - generic [ref=f5e205]: "8"
+              - generic [ref=f5e206]: При необходимости закажите публичный плавающий IP-адрес, защиту от DDoS-атак и резервное копирование.
+            - listitem [ref=f5e208]:
+              - generic [ref=f5e209]: "9"
+              - generic [ref=f5e210]: Дополнительно добавьте SSH-ключ и укажите название сервера.
+            - listitem [ref=f5e212]:
+              - generic [ref=f5e213]: "10"
+              - generic [ref=f5e215]:
+                - text: Проверьте настройки и нажмите
+                - strong [ref=f5e216]: Создать сервер
+                - text: .
+          - paragraph [ref=f5e217]: Сервер будет создан в течение нескольких минут. Данные для подключения будут отправлены на адрес электронной почты, указанный при регистрации.
+          - generic [ref=f5e220]:
+            - paragraph [ref=f5e221]: Обратите внимание
+            - paragraph [ref=f5e222]: Заказ дополнительных публичных IP-адресов и управление сетями недоступны на тарифе Free Tier.
+          - heading "Ограничения" [level=2] [ref=f5e223]
+          - paragraph [ref=f5e224]: "При использовании Free Tier действуют следующие технические и сервисные ограничения:"
+          - list [ref=f5e226]:
+            - listitem [ref=f5e227]:
+              - paragraph [ref=f5e228]:
+                - strong [ref=f5e229]: количество серверов
+                - text: ": не более 1 сервера Free Tier на один аккаунт;"
+            - listitem [ref=f5e230]:
+              - paragraph [ref=f5e231]:
+                - strong [ref=f5e232]: сетевые ограничения
+                - text: ": дополнительные IP-адреса заказать нельзя. Управление сетями (создание подсетей, роутеров) и подключение к приватным сетям доступно только на платных тарифах;"
+            - listitem [ref=f5e233]:
+              - paragraph [ref=f5e234]:
+                - strong [ref=f5e235]: пропускная способность (bandwidth)
+                - text: ": ограничена 20 Мбит/с для публичной и приватной сетей;"
+            - listitem [ref=f5e236]:
+              - paragraph [ref=f5e237]:
+                - strong [ref=f5e238]: ресурсы
+                - text: ": увеличение ресурсов (количество ядер виртуального процессора, объем оперативной памяти, дисковое пространство) без перехода на платный тариф невозможно;"
+            - listitem [ref=f5e239]:
+              - paragraph [ref=f5e240]:
+                - strong [ref=f5e241]: дополнительные услуги
+                - text: ": все дополнительные услуги (моментальные снимки сервера, резервное копирование, расширенная защита от DDoS-атак и др.) кроме публичного IP-адреса, предоставляются за дополнительную плату согласно тарифам Рег.облака."
+          - heading "После окончания бесплатного периода" [level=2] [ref=f5e242]
+          - paragraph [ref=f5e243]: По истечении 6 месяцев с момента активации первого бесплатного сервера происходит автоматическое переключение на платную тарификацию. Ваш облачный сервер и привязанный к нему публичный IP-адрес переводятся на стандартные платные тарифы.
+          - paragraph [ref=f5e244]: "Переход осуществляется на тариф «Stdp C1-M1-D10» со следующими характеристиками: 1 ядро виртуального процессора (CPU) с частотой 2,2 ГГц, 1 ГБ оперативной памяти DDR4, 10 ГБ дискового пространства на SSD-накопителе с интерфейсом NVMe."
+          - paragraph [ref=f5e245]:
+            - text: Стоимость тарифа можно посмотреть
+            - link "по ссылке" [ref=f5e246] [cursor=pointer]:
+              - /url: https://reg.cloud/support/cloud/billing/stoimost-uslug-iaas-v-publichnom-oblake-reg-ru
+            - text: .
+          - paragraph [ref=f5e247]: "Дальнейший сценарий зависит от состояния баланса:"
+          - list [ref=f5e249]:
+            - listitem [ref=f5e250]:
+              - paragraph [ref=f5e251]:
+                - text: если
+                - strong [ref=f5e252]: баланс положительный
+                - text: — сервер продолжает работать в обычном режиме. Списание средств происходит согласно платным тарифам;
+            - listitem [ref=f5e253]:
+              - paragraph [ref=f5e254]:
+                - text: если
+                - strong [ref=f5e255]: средств для продления тарифа недостаточно
+                - text: — сервер автоматически приостанавливается. Вы можете пополнить баланс для возобновления работы.
+          - paragraph [ref=f5e256]:
+            - strong [ref=f5e257]: Удаление
+            - text: ": если баланс остается отрицательным, сервер приостанавливается на 7 дней. В течение этого времени необходимо пополнить баланс. Если средства достаточные для продления тарифа не поступили, сервер удаляется без возможности восстановления."
+          - paragraph [ref=f5e258]: Исключение — восстановление из резервной копии, если она создавалась как платная услуга и на ее оплату достаточно средств.
+          - heading "Удаление сервера" [level=2] [ref=f5e259]
+          - list [ref=f5e261]:
+            - listitem [ref=f5e262]:
+              - generic [ref=f5e263]: "1"
+              - generic [ref=f5e265]:
+                - text: Войдите
+                - link "в панель управления Рег.облака" [ref=f5e266] [cursor=pointer]:
+                  - /url: https://cloud.reg.ru/panel/?external_client_id=04c0d712-0dc3-443d-b0f0-82c22062b04f
+                - text: .
+            - listitem [ref=f5e267]:
+              - generic [ref=f5e268]: "2"
+              - generic [ref=f5e270]:
+                - text: Перейдите в раздел
+                - strong [ref=f5e271]: Мои ресурсы > Виртуальные серверы
+                - text: .
+            - listitem [ref=f5e272]:
+              - generic [ref=f5e273]: "3"
+              - generic [ref=f5e274]: Кликните по строке с именем сервера.
+            - listitem [ref=f5e276]:
+              - generic [ref=f5e277]: "4"
+              - generic [ref=f5e279]:
+                - text: Нажмите
+                - strong [ref=f5e280]: Еще
+                - text: и выберите
+                - strong [ref=f5e281]: Удалить сервер
+                - text: .
+            - listitem [ref=f5e282]:
+              - generic [ref=f5e283]: "5"
+              - generic [ref=f5e285]:
+                - text: Укажите имя сервера, который вы удаляете, и нажмите
+                - strong [ref=f5e286]: Удалить сервер
+                - text: .
+          - paragraph [ref=f5e287]: После удаления сервера вы можете создать новый сервер Free Tier, если не истек 6-месячный период с момента первой активации сервиса. Если 6 месяцев прошли, создание нового бесплатного сервера станет недоступно.
+          - article [ref=f5e289]:
+            - generic [ref=f5e290]:
+              - heading "Была ли статья полезна?" [level=2] [ref=f5e291]
+              - list [ref=f5e292]:
+                - listitem [ref=f5e293]:
+                  - button "Да" [ref=f5e294] [cursor=pointer]
+                - listitem [ref=f5e295]:
+                  - button "Нет" [ref=f5e296] [cursor=pointer]
+          - group [ref=f5e298]:
+            - generic "Специальные предложения" [ref=f5e299]
+        - complementary [ref=f5e304]:
+          - list [ref=f5e305]:
+            - listitem [ref=f5e306]:
+              - link "Что такое Free Tier" [ref=f5e307] [cursor=pointer]:
+                - /url: "#0"
+            - listitem [ref=f5e308]:
+              - link "Ресурсы и возможности сервера" [ref=f5e309] [cursor=pointer]:
+                - /url: "#1"
+            - listitem [ref=f5e310]:
+              - link "Условия получения бесплатного сервера" [ref=f5e311] [cursor=pointer]:
+                - /url: "#2"
+            - listitem [ref=f5e312]:
+              - link "Как заказать сервер Free Tier" [ref=f5e313] [cursor=pointer]:
+                - /url: "#3"
+            - listitem [ref=f5e314]:
+              - link "Ограничения" [ref=f5e315] [cursor=pointer]:
+                - /url: "#4"
+            - listitem [ref=f5e316]:
+              - link "После окончания бесплатного периода" [ref=f5e317] [cursor=pointer]:
+                - /url: "#5"
+            - listitem [ref=f5e318]:
+              - link "Удаление сервера" [ref=f5e319] [cursor=pointer]:
+                - /url: "#6"
+  - contentinfo [ref=f5e320]:
+    - generic [ref=f5e323]:
+      - generic [ref=f5e324]:
+        - generic [ref=f5e325]: Рассылка Рег.облака
+        - paragraph [ref=f5e326]: Лайфхаки, скидки и новости об IT
+      - generic [ref=f5e328]:
+        - generic [ref=f5e329]:
+          - textbox "Введите свой email" [ref=f5e332]
+          - button "Подписаться" [disabled]
+        - generic [ref=f5e333]:
+          - checkbox [ref=f5e336]
+          - paragraph [ref=f5e338]:
+            - text: Даю
+            - link "согласие" [ref=f5e339] [cursor=pointer]:
+              - /url: https://img.reg.ru/faq/soglasie_na_poluchenie_reklami_221025.pdf?target=_blank
+            - text: на получение рекламных и информационных материалов
+    - navigation [ref=f5e342]:
+      - generic [ref=f5e357]:
+        - strong [ref=f5e358]: Продукты и сервисы
+        - list [ref=f5e359]:
+          - listitem [ref=f5e360]:
+            - link "Облачные серверы" [ref=f5e361] [cursor=pointer]:
+              - /url: /cloud/servers
+          - listitem [ref=f5e362]:
+            - link "Выделенные серверы" [ref=f5e363] [cursor=pointer]:
+              - /url: /dedicated/
+          - listitem [ref=f5e364]:
+            - link "Базы данных" [ref=f5e365] [cursor=pointer]:
+              - /url: /services/postgresql
+          - listitem [ref=f5e366]:
+            - link "S3 хранилище" [ref=f5e367] [cursor=pointer]:
+              - /url: /services/s3-storage
+          - listitem [ref=f5e368]:
+            - link "Кластеры Kubernetes" [ref=f5e369] [cursor=pointer]:
+              - /url: /services/managed-kubernetes
+          - listitem [ref=f5e370]:
+            - link "Cloud GPU" [ref=f5e371] [cursor=pointer]:
+              - /url: /cloud/gpu
+          - listitem [ref=f5e372]:
+            - link "VPS" [ref=f5e373] [cursor=pointer]:
+              - /url: /services/vps
+      - generic [ref=f5e374]:
+        - strong [ref=f5e375]: Решения
+        - list [ref=f5e376]:
+          - listitem [ref=f5e377]:
+            - link "Интернет-магазин в облаке" [ref=f5e378] [cursor=pointer]:
+              - /url: /solutions/ecommerce-website
+          - listitem [ref=f5e379]:
+            - link "Разработка и тестирование в облаке" [ref=f5e380] [cursor=pointer]:
+              - /url: /solutions/dev-test
+          - listitem [ref=f5e381]:
+            - link "Удаленный рабочий стол" [ref=f5e382] [cursor=pointer]:
+              - /url: /solutions/cloud-desktop
+          - listitem [ref=f5e383]:
+            - link "Работа с 1С" [ref=f5e384] [cursor=pointer]:
+              - /url: /solutions/1c
+          - listitem [ref=f5e385]:
+            - link "Корпоративное хранение данных" [ref=f5e386] [cursor=pointer]:
+              - /url: /solutions/data-warehouse-dwh
+          - listitem [ref=f5e387]:
+            - link "Искусственный интеллект и машинное обучение в облаке" [ref=f5e388] [cursor=pointer]:
+              - /url: /solutions/machine-learning
+          - listitem [ref=f5e389]:
+            - link "Конфигуратор сервера" [ref=f5e390] [cursor=pointer]:
+              - /url: /dedicated/configurator
+          - listitem [ref=f5e391]:
+            - link "Администрирование серверов" [ref=f5e392] [cursor=pointer]:
+              - /url: /solutions/administration
+      - generic [ref=f5e393]:
+        - generic [ref=f5e394]:
+          - strong [ref=f5e395]: Техподдержка
+          - list [ref=f5e396]:
+            - listitem [ref=f5e397]:
+              - link "Создать тикет" [ref=f5e398] [cursor=pointer]:
+                - /url: /support/#request
+            - listitem [ref=f5e399]:
+              - link "Документация" [ref=f5e400] [cursor=pointer]:
+                - /url: /support/
+        - generic [ref=f5e401]:
+          - strong [ref=f5e402]: Прочее
+          - list [ref=f5e403]:
+            - listitem [ref=f5e404]:
+              - link "О компании" [ref=f5e405] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f5e406]:
+              - link "Партнерская программа" [ref=f5e407] [cursor=pointer]:
+                - /url: /partners
+            - listitem [ref=f5e408]:
+              - link "Гранты" [ref=f5e409] [cursor=pointer]:
+                - /url: /grants
+            - listitem [ref=f5e410]:
+              - link "Акции" [ref=f5e411] [cursor=pointer]:
+                - /url: /offers
+            - listitem [ref=f5e412]:
+              - link "Блог" [ref=f5e413] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f5e414]:
+              - link "Контакты" [ref=f5e415] [cursor=pointer]:
+                - /url: /contacts
+            - listitem [ref=f5e416]:
+              - link "Отзывы клиентов" [ref=f5e417] [cursor=pointer]:
+                - /url: /about/reviews
+        - generic [ref=f5e418]:
+          - strong [ref=f5e419]: Free Tier
+          - list [ref=f5e420]:
+            - listitem [ref=f5e421]:
+              - link "Программа Free Tier / Бесплатный старт" [ref=f5e422] [cursor=pointer]:
+                - /url: /services/free-tier
+            - listitem [ref=f5e423]:
+              - link "Бесплатный облачный сервер" [ref=f5e424] [cursor=pointer]:
+                - /url: /services/free-tier/cloud-server
+            - listitem [ref=f5e425]:
+              - link "Бесплатный сервер с ispmanager «старт»" [ref=f5e426] [cursor=pointer]:
+                - /url: /solutions/free-start
+    - list [ref=f5e430]:
+      - listitem [ref=f5e431]:
+        - generic [ref=f5e432]: © ООО «РЕГ.РУ»
+        - generic [ref=f5e433]: Нашли опечатку?Выделите и нажмите Ctrl+Enter
+      - listitem [ref=f5e434]:
+        - text: Облачная платформа Рег.ру включена в реестр российского ПО
+        - link "Запись №23682 от 29.08.2024" [ref=f5e435] [cursor=pointer]:
+          - /url: https://reestr.digital.gov.ru/reestr/2623382/
+      - listitem [ref=f5e436]:
+        - list [ref=f5e437]:
+          - listitem [ref=f5e438]:
+            - link "Политика конфиденциальности" [ref=f5e439] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-konfidentsialnosti
+          - listitem [ref=f5e440]:
+            - link "Политика обработки персональных данных" [ref=f5e441] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-obrabotki-personalnyh-dannyh
+          - listitem [ref=f5e442]:
+            - link "Правила применения рекомендательных технологий" [ref=f5e443] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-primeneniya-rekomendatelnykh-tekhnologiy
+      - listitem [ref=f5e444]:
+        - generic [ref=f5e445]:
+          - link "8 800 333-92-23" [ref=f5e446] [cursor=pointer]:
+            - /url: tel:8 800 333-92-23
+          - paragraph [ref=f5e447]: Бесплатный звонок по России
+        - generic [ref=f5e448]:
+          - link "+7 (495) 009‑92‑22" [ref=f5e449] [cursor=pointer]:
+            - /url: tel:+7 (495) 009‑92‑22
+          - paragraph [ref=f5e450]: Телефон в Москве
+        - list [ref=f5e453]:
+          - listitem [ref=f5e454]:
+            - link "max" [ref=f5e455] [cursor=pointer]:
+              - /url: https://max.ru/reg_cloud
+          - listitem [ref=f5e457]:
+            - link "vk" [ref=f5e458] [cursor=pointer]:
+              - /url: https://vk.com/reg.cloud
+          - listitem [ref=f5e460]:
+            - link "telegram" [ref=f5e461] [cursor=pointer]:
+              - /url: https://t.me/regcloud
+          - listitem [ref=f5e463]:
+            - link "vkvideo" [ref=f5e464] [cursor=pointer]:
+              - /url: https://vkvideo.ru/@reg.cloud
+          - listitem [ref=f5e466]:
+            - link "vcru" [ref=f5e467] [cursor=pointer]:
+              - /url: https://vc.ru/reg-ru
+          - listitem [ref=f5e469]:
+            - link "moikrug" [ref=f5e470] [cursor=pointer]:
+              - /url: https://habr.com/ru/search/?q=%5B%D1%80%D0%B5%D0%B3.%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE%5D&target_type=posts&order=date
+          - listitem [ref=f5e472]:
+            - link "rbc" [ref=f5e473] [cursor=pointer]:
+              - /url: https://companies.rbc.ru/id/1067746613494-regru
+  - list:
+    - listitem:
+      - article [ref=f5e475]:
+        - generic [ref=f5e476]:
+          - paragraph [ref=f5e477]:
+            - text: Мы используем
+            - link "cookie" [ref=f5e478] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-v-othoshenii-obrabotki-fajlov-cookie/
+            - text: и
+            - link "рекомендательные технологии" [ref=f5e479] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-primeneniya-rekomendatelnykh-tekhnologiy
+            - text: для персонализации сервисов и удобства пользователей. Вы можете запретить сохранение cookie в настройках своего браузера
+          - button "Хорошо" [ref=f5e480] [cursor=pointer]
+    - listitem:
+      - button "Помощь" [ref=f5e482] [cursor=pointer]

@@ -1,0 +1,508 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e3]:
+    - banner [ref=f3e11]:
+      - generic [ref=f3e12]:
+        - link [ref=f3e13] [cursor=pointer]:
+          - /url: https://reg.cloud/
+        - list [ref=f3e27]:
+          - listitem [ref=f3e28]:
+            - link "Домены и сайты" [ref=f3e29] [cursor=pointer]:
+              - /url: https://www.reg.ru
+          - listitem [ref=f3e30]:
+            - button "Помощь" [ref=f3e31]
+          - listitem [ref=f3e33]:
+            - button "Поиск" [ref=f3e34]
+          - listitem [ref=f3e35]:
+            - link "Вход" [ref=f3e36] [cursor=pointer]:
+              - /url: https://cloud.reg.ru/panel/?external_client_id=04c0d712-0dc3-443d-b0f0-82c22062b04f
+      - generic [ref=f3e38]:
+        - navigation "Главное меню" [ref=f3e39]:
+          - list [ref=f3e40]:
+            - listitem [ref=f3e41]:
+              - button "Продукты и сервисы" [ref=f3e42]
+            - listitem [ref=f3e44]:
+              - button "Решения" [ref=f3e45]
+            - listitem [ref=f3e47]:
+              - button "Приложения" [ref=f3e48]
+            - listitem [ref=f3e50]:
+              - button "Ресурсы" [ref=f3e51]
+            - listitem [ref=f3e53]:
+              - button "Партнерам" [ref=f3e54]
+        - button "Получить консультацию" [ref=f3e56]
+    - article [ref=f3e61]:
+      - generic [ref=f3e65]:
+        - textbox "Введите вопрос и найдите решение" [ref=f3e71]:
+          - /placeholder: Введите вопрос и найдите решение
+        - button "Найти" [ref=f3e72] [cursor=pointer]
+      - generic [ref=f3e74]:
+        - navigation "breadcrumbs" [ref=f3e75]:
+          - list [ref=f3e76]:
+            - listitem [ref=f3e77]:
+              - link "Документация" [ref=f3e78] [cursor=pointer]:
+                - /url: /support/
+            - listitem [ref=f3e80]:
+              - link "Рег.облако" [ref=f3e81] [cursor=pointer]:
+                - /url: /support/servery-vps/
+            - listitem [ref=f3e83]:
+              - link "Начало работы" [ref=f3e84] [cursor=pointer]:
+                - /url: /support/servery-vps/nachalo-raboty/
+            - listitem [ref=f3e86]:
+              - generic [ref=f3e87]: Как пройти идентификацию клиентам Рег.облака
+        - heading "Как пройти идентификацию клиентам Рег.облака" [level=1] [ref=f3e88]
+      - generic [ref=f3e89]:
+        - article [ref=f3e91]:
+          - paragraph [ref=f3e92]: С 1 декабря 2023 года для повышения безопасности интернета законодательством РФ установлено, что услуги хостинга (облачные серверы, облачные базы данных, кластеры Kubernetes, объектное хранилище S3, физические выделенные серверы) могут быть предоставлены только клиентам, прошедшим идентификацию.
+          - paragraph [ref=f3e93]: В Рег.облаке вы можете пройти идентификацию одним из способов, перечисленных ниже.
+          - generic [ref=f3e96]:
+            - paragraph [ref=f3e97]: Важно
+            - paragraph [ref=f3e98]:
+              - text: Перед прохождением идентификации обязательно заполните
+              - link "контактные данные владельца аккаунта" [ref=f3e99] [cursor=pointer]:
+                - /url: https://help.reg.ru/support/lichnyy-kabinet/registratsiya-i-kontaktnyye-dannyye/kontaktnyye-dannyye-vladeltsa-akkaunta#0
+              - text: в личном кабинете Рег.ру. Если этого не сделать, идентификация не будет пройдена.
+          - heading "Идентификация через Госуслуги" [level=2] [ref=f3e100]
+          - generic [ref=f3e103]:
+            - paragraph [ref=f3e104]: Обратите внимание
+            - paragraph [ref=f3e105]: Этот способ идентификации доступен, только если ваша учетная запись на Госуслугах подтверждена. Проверить это можно в вашем профиле на Госуслугах.
+          - paragraph [ref=f3e106]: "Чтобы пройти идентификацию хостинга с помощью Госуслуг:"
+          - list [ref=f3e108]:
+            - listitem [ref=f3e109]:
+              - generic [ref=f3e110]: "1"
+              - generic [ref=f3e112]:
+                - text: Авторизуйтесь
+                - link "в личном кабинете Рег.ру" [ref=f3e113] [cursor=pointer]:
+                  - /url: https://www.reg.ru/user/account/#/
+                - text: .
+            - listitem [ref=f3e114]:
+              - generic [ref=f3e115]: "2"
+              - generic [ref=f3e117]:
+                - text: Перейдите
+                - link "в раздел «Настройки»" [ref=f3e118] [cursor=pointer]:
+                  - /url: https://www.reg.ru/user/account/#/settings/info/
+                - text: .
+            - listitem [ref=f3e119]:
+              - generic [ref=f3e120]: "3"
+              - generic [ref=f3e122]:
+                - paragraph [ref=f3e123]: "В блоке «Контакты владельца аккаунта» нажмите «Пройти идентификацию» (если у вас не заполнены контактные данные, нажмите «Заполнить через Госуслуги»):"
+                - paragraph
+                - paragraph
+            - listitem [ref=f3e128]:
+              - generic [ref=f3e129]: "4"
+              - generic [ref=f3e130]: Авторизуйтесь на сайте Госуслуг и предоставьте права доступа для «Рег.ру Домены Хостинг».
+          - paragraph [ref=f3e132]:
+            - text: Готово, ожидайте результата идентификации. Статус идентификации будет отражен в личном кабинете Рег.ру на странице
+            - strong [ref=f3e133]: Настройки > Контакты владельца аккаунта
+            - text: . Также вы получите уведомление на email.
+          - paragraph [ref=f3e134]:
+            - text: Если данные в договоре Рег.ру отличаются от данных учетной записи на Госуслугах, идентификация будет отклонена и вам потребуется предоставить электронные копии документов
+            - link "по инструкции" [ref=f3e135] [cursor=pointer]:
+              - /url: "#4"
+            - text: .
+          - heading "Пополнение лицевого счета с банковской карты или через СБП" [level=2] [ref=f3e136]
+          - paragraph [ref=f3e137]: "Вы можете пройти идентификацию хостинга при пополнении баланса аккаунта или оплате услуг с банковской карты или через «Систему быстрых платежей». Для этого:"
+          - list [ref=f3e139]:
+            - listitem [ref=f3e140]:
+              - generic [ref=f3e141]: "1"
+              - generic [ref=f3e143]:
+                - text: Пройдите процедуру заказа,
+                - link "продления услуги" [ref=f3e144] [cursor=pointer]:
+                  - /url: https://help.reg.ru/support/lichnyy-kabinet/rabota-s-uslugami/kak-prodlit-uslugu
+                - text: или
+                - link "пополнения баланса аккаунта" [ref=f3e145] [cursor=pointer]:
+                  - /url: https://reg.cloud/support/cloud/billing/balans-uslugi-oblachnye-servery#1
+                - text: .
+            - listitem [ref=f3e146]:
+              - generic [ref=f3e147]: "2"
+              - generic [ref=f3e149]:
+                - paragraph [ref=f3e150]:
+                  - text: На странице выбора способа оплаты в блоке «Пройти автоматическую идентификацию» переведите переключатель в положение
+                  - strong [ref=f3e151]: "ON"
+                  - text: ":"
+                - img "Как пройти идентификацию владельцам хостинга 5" [ref=f3e155]
+                - paragraph
+            - listitem [ref=f3e156]:
+              - generic [ref=f3e157]: "3"
+              - generic [ref=f3e159]:
+                - paragraph [ref=f3e160]: "Выберите подходящий для идентификации способ оплаты и оплатите счет:"
+                - img "Как пройти идентификацию владельцам хостинга 6" [ref=f3e164]
+                - paragraph
+          - generic [ref=f3e167]:
+            - paragraph [ref=f3e168]: Важно
+            - paragraph
+            - list [ref=f3e170]:
+              - listitem [ref=f3e171]:
+                - paragraph [ref=f3e172]: Предоплаченная банковская карта не подходит для прохождения идентификации;
+              - listitem [ref=f3e173]:
+                - paragraph [ref=f3e174]: для прохождения идентификации необходимо использовать банковскую карту, предоставляемую субъектом национальной платежной системы;
+              - listitem [ref=f3e175]:
+                - paragraph [ref=f3e176]: владельцем банковской карты обязательно должно быть лицо, на которое зарегистрирован аккаунт. Если вы оплатите счет не с карты владельца аккаунта, идентификация не будет пройдена.
+            - paragraph
+          - heading "Перевод денежных средств на лицевой счет договора" [level=2] [ref=f3e177]
+          - paragraph [ref=f3e178]:
+            - text: Вы можете пройти идентификацию в Рег.облаке при оплате услуг или пополнив
+            - link "баланс аккаунта" [ref=f3e179] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/finansovyye-voprosy/balans-lichnogo-kabineta/balans-akkaunta
+            - text: на любую сумму. Перевод нужно произвести с вашего банковского счета в российском банке.
+          - heading "SMS с мобильного номера телефона" [level=2] [ref=f3e180]
+          - paragraph [ref=f3e181]: "Вы можете пройти идентификацию хостинга, подтвердив владение вашим контактным номером мобильного телефона. Для этого:"
+          - list [ref=f3e183]:
+            - listitem [ref=f3e184]:
+              - generic [ref=f3e185]: "1"
+              - generic [ref=f3e187]:
+                - paragraph [ref=f3e188]:
+                  - text: Авторизуйтесь
+                  - link "в личном кабинете Рег.ру" [ref=f3e189] [cursor=pointer]:
+                    - /url: https://www.reg.ru/user/account/#/
+                  - text: и перейдите в раздел
+                  - strong [ref=f3e190]: Настройки
+                  - text: ":"
+                - img "Как пройти идентификацию владельцам хостинга 1" [ref=f3e194]
+                - paragraph
+            - listitem [ref=f3e195]:
+              - generic [ref=f3e196]: "2"
+              - generic [ref=f3e198]:
+                - paragraph [ref=f3e199]:
+                  - text: В блоке «Мобильный телефон» нажмите кнопку
+                  - strong [ref=f3e200]: +Привязать
+                  - text: ":"
+                - paragraph
+                - img "Как пройти идентификацию владельцам хостинга 2" [ref=f3e204]
+                - paragraph
+            - listitem [ref=f3e205]:
+              - generic [ref=f3e206]: "3"
+              - generic [ref=f3e208]:
+                - paragraph [ref=f3e209]:
+                  - text: Укажите ваш контактный номер мобильного телефона и нажмите
+                  - strong [ref=f3e210]: Привязать
+                  - text: ":"
+                - generic [ref=f3e213]:
+                  - paragraph [ref=f3e214]: Обратите внимание
+                  - paragraph [ref=f3e215]: Номер телефона должен принадлежать оператору сотовой связи, который оказывает услуги на территории Российской Федерации.
+                - paragraph
+                - img "Как пройти идентификацию владельцам хостинга 3" [ref=f3e219]
+                - paragraph
+            - listitem [ref=f3e220]:
+              - generic [ref=f3e221]: "4"
+              - generic [ref=f3e223]:
+                - paragraph [ref=f3e224]:
+                  - text: Для подтверждения владения номером введите код из SMS и нажмите
+                  - strong [ref=f3e225]: Готово
+                  - text: ":"
+                - paragraph
+                - img "Как пройти идентификацию владельцам хостинга 4" [ref=f3e229]
+                - paragraph
+          - generic [ref=f3e232]:
+            - paragraph [ref=f3e233]: Важно
+            - paragraph [ref=f3e234]:
+              - text: Если ранее вы уже привязывали номер телефона к аккаунту, для прохождения идентификации будет необходимо сделать это еще раз. Для этого вам нужно будет отвязать номер телефона в разделе
+              - link "Настройки" [ref=f3e235] [cursor=pointer]:
+                - /url: https://www.reg.ru/user/account/#/settings/
+              - text: и привязать его заново по инструкции выше.
+          - heading "Загрузка идентификационных документов" [level=2] [ref=f3e236]
+          - paragraph [ref=f3e237]: "Вы можете пройти идентификацию хостинга после загрузки идентификационных документов в личном кабинете. Для этого:"
+          - list [ref=f3e239]:
+            - listitem [ref=f3e240]:
+              - generic [ref=f3e241]: "1"
+              - generic [ref=f3e243]:
+                - text: Авторизуйтесь
+                - link "в личном кабинете Рег.ру" [ref=f3e244] [cursor=pointer]:
+                  - /url: https://www.reg.ru/user/account/#/
+                - text: .
+            - listitem [ref=f3e245]:
+              - generic [ref=f3e246]: "2"
+              - generic [ref=f3e248]:
+                - text: Перейдите в раздел
+                - link "Настройки > Информация об аккаунте" [ref=f3e249] [cursor=pointer]:
+                  - /url: https://www.reg.ru/user/account/#/settings/info/
+                - text: .
+            - listitem [ref=f3e250]:
+              - generic [ref=f3e251]: "3"
+              - generic [ref=f3e253]:
+                - text: Откройте раздел
+                - link "Загрузка документов на верификацию" [ref=f3e254] [cursor=pointer]:
+                  - /url: https://www.reg.ru/user/docs/index
+                - text: .
+            - listitem [ref=f3e255]:
+              - generic [ref=f3e256]: "4"
+              - generic [ref=f3e258]:
+                - paragraph [ref=f3e259]:
+                  - text: В списке выберите
+                  - strong [ref=f3e260]: Добавить заявку
+                  - text: ":"
+                - paragraph
+                - img "идентификация по документам 1" [ref=f3e264]
+                - paragraph
+                - paragraph [ref=f3e265]: Если ранее вы не загружали идентификационные документы, начните загрузку со следующего шага.
+                - generic [ref=f3e268]:
+                  - paragraph [ref=f3e269]: Обратите внимание
+                  - paragraph [ref=f3e270]: Заверять документы не требуется, однако Рег.ру оставляет за собой право запросить нотариально заверенные копии документов.
+            - listitem [ref=f3e271]:
+              - generic [ref=f3e272]: "5"
+              - generic [ref=f3e274]:
+                - paragraph [ref=f3e275]: Выберите инструкцию в зависимости от типа пользователя.
+                - group [ref=f3e277]:
+                  - generic "Физическое лицо и ИП" [ref=f3e278]
+                - group [ref=f3e283]:
+                  - generic "Юридическое лицо" [ref=f3e284]
+          - heading "Личное обращение" [level=2] [ref=f3e288]
+          - paragraph [ref=f3e289]: "Чтобы пройти идентификацию хостинга в клиентском офисе, необходимо лично предъявить:"
+          - paragraph [ref=f3e290]:
+            - strong [ref=f3e291]: "Физическим лицам:"
+          - list [ref=f3e293]:
+            - listitem [ref=f3e294]: паспорт или иной документ, удостоверяющий личность.
+          - paragraph [ref=f3e295]:
+            - strong [ref=f3e296]: "ИП:"
+          - list [ref=f3e298]:
+            - listitem [ref=f3e299]: паспорт или иной документ, удостоверяющий личность;
+            - listitem [ref=f3e300]: и, обязательно, документ, подтверждающий внесение записи о регистрации физического лица в качестве индивидуального предпринимателя в Единый государственный реестр индивидуальных предпринимателей.
+          - paragraph [ref=f3e301]:
+            - strong [ref=f3e302]: "Организациям или лицу, уполномоченному от имени юридического лица на заключение договора о предоставлении услуг Рег.ру:"
+          - list [ref=f3e304]:
+            - listitem [ref=f3e305]: документ, подтверждающий внесение записи о регистрации юридического лица в Единый государственный реестр юридических лиц (с указанием ИНН);
+            - listitem [ref=f3e306]: документ, подтверждающий полномочия лица, пришедшего в офис, на заключение договора об оказании услуг от имени данного юридического лица;
+            - listitem [ref=f3e307]: паспорт или иной документ, удостоверяющего личность лица, пришедшего в офис.
+          - heading "Подписание усиленной квалифицированной электронной подписью" [level=2] [ref=f3e308]
+          - list [ref=f3e310]:
+            - listitem [ref=f3e311]:
+              - generic [ref=f3e312]: "1"
+              - generic [ref=f3e314]:
+                - paragraph [ref=f3e315]: "Заполните форму заявления от лица, которому предоставляются услуги хостинга:"
+                - paragraph
+                - link [ref=f3e317] [cursor=pointer]:
+                  - /url: https://img.reg.ru/faq/forma-zayavleniya-dlya-ip-na-identifikatsiyu.docx
+                  - button "Форма заявления на идентификацию владельца хостинга от индивидуального предпринимателя" [ref=f3e318]
+                - paragraph
+                - paragraph
+                - link [ref=f3e320] [cursor=pointer]:
+                  - /url: https://img.reg.ru/faq/forma-zayavleniya-dlya-urlica-na-identifikatsiyu.docx
+                  - button "Форма заявления на идентификацию владельца хостинга от организации" [ref=f3e321]
+                - paragraph
+            - listitem [ref=f3e322]:
+              - generic [ref=f3e323]: "2"
+              - generic [ref=f3e324]: Подпишите заявление усиленной квалифицированной электронной подписью индивидуального предпринимателя или юридического лица — в зависимости от того, на кого оформлен ваш договор.
+            - listitem [ref=f3e326]:
+              - generic [ref=f3e327]: "3"
+              - generic [ref=f3e329]:
+                - text: Отправьте заявление в РЕГ.РУ
+                - link "через электронный документооборот" [ref=f3e330] [cursor=pointer]:
+                  - /url: https://help.reg.ru/support/finansovyye-voprosy/dokumenty/edo-elektronnyy-dokumentooborot
+                - text: .
+          - generic [ref=f3e333]:
+            - paragraph [ref=f3e334]: Важно
+            - paragraph [ref=f3e335]:
+              - text: Если у вас возникли сложности с прохождением идентификации, обратитесь
+              - link "в службу поддержки" [ref=f3e336] [cursor=pointer]:
+                - /url: https://reg.cloud/support/#request
+              - text: .
+          - article [ref=f3e338]:
+            - generic [ref=f3e339]:
+              - heading "Была ли статья полезна?" [level=2] [ref=f3e340]
+              - list [ref=f3e341]:
+                - listitem [ref=f3e342]:
+                  - button "Да" [ref=f3e343] [cursor=pointer]
+                - listitem [ref=f3e344]:
+                  - button "Нет" [ref=f3e345] [cursor=pointer]
+          - group [ref=f3e347]:
+            - generic "Специальные предложения" [ref=f3e348]
+        - complementary [ref=f3e353]:
+          - list [ref=f3e354]:
+            - listitem [ref=f3e355]:
+              - link "Идентификация через Госуслуги" [ref=f3e356] [cursor=pointer]:
+                - /url: "#0"
+            - listitem [ref=f3e357]:
+              - link "Пополнение лицевого счета с банковской карты или через СБП" [ref=f3e358] [cursor=pointer]:
+                - /url: "#1"
+            - listitem [ref=f3e359]:
+              - link "Перевод денежных средств на лицевой счет договора" [ref=f3e360] [cursor=pointer]:
+                - /url: "#2"
+            - listitem [ref=f3e361]:
+              - link "SMS с мобильного номера телефона" [ref=f3e362] [cursor=pointer]:
+                - /url: "#3"
+            - listitem [ref=f3e363]:
+              - link "Загрузка идентификационных документов" [ref=f3e364] [cursor=pointer]:
+                - /url: "#4"
+            - listitem [ref=f3e365]:
+              - link "Личное обращение" [ref=f3e366] [cursor=pointer]:
+                - /url: "#5"
+            - listitem [ref=f3e367]:
+              - link "Подписание усиленной квалифицированной электронной подписью" [ref=f3e368] [cursor=pointer]:
+                - /url: "#6"
+  - contentinfo [ref=f3e369]:
+    - generic [ref=f3e372]:
+      - generic [ref=f3e373]:
+        - generic [ref=f3e374]: Рассылка Рег.облака
+        - paragraph [ref=f3e375]: Лайфхаки, скидки и новости об IT
+      - generic [ref=f3e377]:
+        - generic [ref=f3e378]:
+          - textbox "Введите свой email" [ref=f3e381]
+          - button "Подписаться" [disabled]
+        - generic [ref=f3e382]:
+          - checkbox [ref=f3e385]
+          - paragraph [ref=f3e387]:
+            - text: Даю
+            - link "согласие" [ref=f3e388] [cursor=pointer]:
+              - /url: https://img.reg.ru/faq/soglasie_na_poluchenie_reklami_221025.pdf?target=_blank
+            - text: на получение рекламных и информационных материалов
+    - navigation [ref=f3e391]:
+      - generic [ref=f3e406]:
+        - strong [ref=f3e407]: Продукты и сервисы
+        - list [ref=f3e408]:
+          - listitem [ref=f3e409]:
+            - link "Облачные серверы" [ref=f3e410] [cursor=pointer]:
+              - /url: /cloud/servers
+          - listitem [ref=f3e411]:
+            - link "Выделенные серверы" [ref=f3e412] [cursor=pointer]:
+              - /url: /dedicated/
+          - listitem [ref=f3e413]:
+            - link "Базы данных" [ref=f3e414] [cursor=pointer]:
+              - /url: /services/postgresql
+          - listitem [ref=f3e415]:
+            - link "S3 хранилище" [ref=f3e416] [cursor=pointer]:
+              - /url: /services/s3-storage
+          - listitem [ref=f3e417]:
+            - link "Кластеры Kubernetes" [ref=f3e418] [cursor=pointer]:
+              - /url: /services/managed-kubernetes
+          - listitem [ref=f3e419]:
+            - link "Cloud GPU" [ref=f3e420] [cursor=pointer]:
+              - /url: /cloud/gpu
+          - listitem [ref=f3e421]:
+            - link "VPS" [ref=f3e422] [cursor=pointer]:
+              - /url: /services/vps
+      - generic [ref=f3e423]:
+        - strong [ref=f3e424]: Решения
+        - list [ref=f3e425]:
+          - listitem [ref=f3e426]:
+            - link "Интернет-магазин в облаке" [ref=f3e427] [cursor=pointer]:
+              - /url: /solutions/ecommerce-website
+          - listitem [ref=f3e428]:
+            - link "Разработка и тестирование в облаке" [ref=f3e429] [cursor=pointer]:
+              - /url: /solutions/dev-test
+          - listitem [ref=f3e430]:
+            - link "Удаленный рабочий стол" [ref=f3e431] [cursor=pointer]:
+              - /url: /solutions/cloud-desktop
+          - listitem [ref=f3e432]:
+            - link "Работа с 1С" [ref=f3e433] [cursor=pointer]:
+              - /url: /solutions/1c
+          - listitem [ref=f3e434]:
+            - link "Корпоративное хранение данных" [ref=f3e435] [cursor=pointer]:
+              - /url: /solutions/data-warehouse-dwh
+          - listitem [ref=f3e436]:
+            - link "Искусственный интеллект и машинное обучение в облаке" [ref=f3e437] [cursor=pointer]:
+              - /url: /solutions/machine-learning
+          - listitem [ref=f3e438]:
+            - link "Конфигуратор сервера" [ref=f3e439] [cursor=pointer]:
+              - /url: /dedicated/configurator
+          - listitem [ref=f3e440]:
+            - link "Администрирование серверов" [ref=f3e441] [cursor=pointer]:
+              - /url: /solutions/administration
+      - generic [ref=f3e442]:
+        - generic [ref=f3e443]:
+          - strong [ref=f3e444]: Техподдержка
+          - list [ref=f3e445]:
+            - listitem [ref=f3e446]:
+              - link "Создать тикет" [ref=f3e447] [cursor=pointer]:
+                - /url: /support/#request
+            - listitem [ref=f3e448]:
+              - link "Документация" [ref=f3e449] [cursor=pointer]:
+                - /url: /support/
+        - generic [ref=f3e450]:
+          - strong [ref=f3e451]: Прочее
+          - list [ref=f3e452]:
+            - listitem [ref=f3e453]:
+              - link "О компании" [ref=f3e454] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f3e455]:
+              - link "Партнерская программа" [ref=f3e456] [cursor=pointer]:
+                - /url: /partners
+            - listitem [ref=f3e457]:
+              - link "Гранты" [ref=f3e458] [cursor=pointer]:
+                - /url: /grants
+            - listitem [ref=f3e459]:
+              - link "Акции" [ref=f3e460] [cursor=pointer]:
+                - /url: /offers
+            - listitem [ref=f3e461]:
+              - link "Блог" [ref=f3e462] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=f3e463]:
+              - link "Контакты" [ref=f3e464] [cursor=pointer]:
+                - /url: /contacts
+            - listitem [ref=f3e465]:
+              - link "Отзывы клиентов" [ref=f3e466] [cursor=pointer]:
+                - /url: /about/reviews
+        - generic [ref=f3e467]:
+          - strong [ref=f3e468]: Free Tier
+          - list [ref=f3e469]:
+            - listitem [ref=f3e470]:
+              - link "Программа Free Tier / Бесплатный старт" [ref=f3e471] [cursor=pointer]:
+                - /url: /services/free-tier
+            - listitem [ref=f3e472]:
+              - link "Бесплатный облачный сервер" [ref=f3e473] [cursor=pointer]:
+                - /url: /services/free-tier/cloud-server
+            - listitem [ref=f3e474]:
+              - link "Бесплатный сервер с ispmanager «старт»" [ref=f3e475] [cursor=pointer]:
+                - /url: /solutions/free-start
+    - list [ref=f3e479]:
+      - listitem [ref=f3e480]:
+        - generic [ref=f3e481]: © ООО «РЕГ.РУ»
+        - generic [ref=f3e482]: Нашли опечатку?Выделите и нажмите Ctrl+Enter
+      - listitem [ref=f3e483]:
+        - text: Облачная платформа Рег.ру включена в реестр российского ПО
+        - link "Запись №23682 от 29.08.2024" [ref=f3e484] [cursor=pointer]:
+          - /url: https://reestr.digital.gov.ru/reestr/2623382/
+      - listitem [ref=f3e485]:
+        - list [ref=f3e486]:
+          - listitem [ref=f3e487]:
+            - link "Политика конфиденциальности" [ref=f3e488] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-konfidentsialnosti
+          - listitem [ref=f3e489]:
+            - link "Политика обработки персональных данных" [ref=f3e490] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-obrabotki-personalnyh-dannyh
+          - listitem [ref=f3e491]:
+            - link "Правила применения рекомендательных технологий" [ref=f3e492] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-primeneniya-rekomendatelnykh-tekhnologiy
+      - listitem [ref=f3e493]:
+        - generic [ref=f3e494]:
+          - link "8 800 333-92-23" [ref=f3e495] [cursor=pointer]:
+            - /url: tel:8 800 333-92-23
+          - paragraph [ref=f3e496]: Бесплатный звонок по России
+        - generic [ref=f3e497]:
+          - link "+7 (495) 009‑92‑22" [ref=f3e498] [cursor=pointer]:
+            - /url: tel:+7 (495) 009‑92‑22
+          - paragraph [ref=f3e499]: Телефон в Москве
+        - list [ref=f3e502]:
+          - listitem [ref=f3e503]:
+            - link "max" [ref=f3e504] [cursor=pointer]:
+              - /url: https://max.ru/reg_cloud
+          - listitem [ref=f3e506]:
+            - link "vk" [ref=f3e507] [cursor=pointer]:
+              - /url: https://vk.com/reg.cloud
+          - listitem [ref=f3e509]:
+            - link "telegram" [ref=f3e510] [cursor=pointer]:
+              - /url: https://t.me/regcloud
+          - listitem [ref=f3e512]:
+            - link "vkvideo" [ref=f3e513] [cursor=pointer]:
+              - /url: https://vkvideo.ru/@reg.cloud
+          - listitem [ref=f3e515]:
+            - link "vcru" [ref=f3e516] [cursor=pointer]:
+              - /url: https://vc.ru/reg-ru
+          - listitem [ref=f3e518]:
+            - link "moikrug" [ref=f3e519] [cursor=pointer]:
+              - /url: https://habr.com/ru/search/?q=%5B%D1%80%D0%B5%D0%B3.%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE%5D&target_type=posts&order=date
+          - listitem [ref=f3e521]:
+            - link "rbc" [ref=f3e522] [cursor=pointer]:
+              - /url: https://companies.rbc.ru/id/1067746613494-regru
+  - list:
+    - listitem:
+      - article [ref=f3e524]:
+        - generic [ref=f3e525]:
+          - paragraph [ref=f3e526]:
+            - text: Мы используем
+            - link "cookie" [ref=f3e527] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/politika-v-othoshenii-obrabotki-fajlov-cookie/
+            - text: и
+            - link "рекомендательные технологии" [ref=f3e528] [cursor=pointer]:
+              - /url: https://help.reg.ru/support/dokymenty/pravila-i-politiki/pravila-primeneniya-rekomendatelnykh-tekhnologiy
+            - text: для персонализации сервисов и удобства пользователей. Вы можете запретить сохранение cookie в настройках своего браузера
+          - button "Хорошо" [ref=f3e529] [cursor=pointer]
+    - listitem:
+      - button "Помощь" [ref=f3e531] [cursor=pointer]
